@@ -100,7 +100,9 @@ body{
 
 .MuiDrawer-paper{ background-color:$theme-secondary!important;}
 .drawer-wrap {padding:0 0.5em;}
-.right-button a{ transition: 0.25s;;
+.drawer-box .button{ 
+    transition: 0.25s;
+    cursor: pointer;
     display: block; 
     margin-bottom: 0.5em; 
     padding:1em 2em;
@@ -110,7 +112,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height:normal;
+    line-height:normal; 
     svg{width:22px; height:auto; max-width:22px; padding-right:0.25em;}
     &:hover{background-color:white;} 
 }

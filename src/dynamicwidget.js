@@ -108,6 +108,10 @@ function App() {
     setData(jsonData);
   }, []);
 
+  if (!data) {
+    return null; // Return early if data is not available yet
+  }
+
   return (
     <>
     <PopUp/>

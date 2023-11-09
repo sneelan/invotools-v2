@@ -8,7 +8,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
-import jsonData from './CustomerPortal_Popup.json';
+import jsonData from './customer-portal-popup.json';
 
 function MyComponent() {
   const [data, setData] = useState(null);
@@ -60,14 +60,14 @@ function MyComponent() {
       </div>
       {data && data.menuPanelCSS && (<style dangerouslySetInnerHTML={{ __html: data.menuPanelCSS }}></style>)}
       <div>
-        <a onClick={toggleDrawer} color="inherit" aria-label="menu" id='burger-menu'></a>
+        <span onClick={toggleDrawer} color="inherit" aria-label="menu" id='burger-menu'></span>
 
         <Drawer anchor="right" open={open} onClose={toggleDrawer} hideBackdrop>
           <div className='drawer-wrap'>
             <div style={{ height: '52px' }}>
-              <a onClick={toggleDrawer} aria-label="close" id='burger-close'></a></div>
+              <span onClick={toggleDrawer} aria-label="close" id='burger-close'></span></div>
             <div style={{ minWidth: '150px' }} className='drawer-wrap'>
-            <div className='right-button'>
+            <div className='drawer-box'>
                 {data && data.popups && data.popups.map((popup, index) => {
                   // adding widgetClassName based on displayDevice
                   let widgetClassName = '';
@@ -76,16 +76,16 @@ function MyComponent() {
                   if (!popup.displayDevice.includes('desktop')) widgetClassName += ' des-hide';
 
                   return popup.displayState === 'Show' && popup.showInMenu === 'Yes' && (
-                    <a
+                    <span
                       key={index}
                       onClick={() => openPopup(popup)}
-                      className={widgetClassName} // Add widgetClassName to the anchor
+                      className={'button'+widgetClassName} // Add widgetClassName to the anchor
                     >
                       {popup.iconSVGCode && (
                         <span dangerouslySetInnerHTML={{ __html: popup.iconSVGCode }}></span>
                       )}
                       <span>{popup.menuLable}</span>
-                    </a>
+                    </span>
                   );
                 })}
           </div>

@@ -1,203 +1,154 @@
 {
 	"retailerId": "1001",
 	"locale": "en_GB",
-	"widgetAreaCSS": "body{xbackground-color:red!important;}",
+	"menuPanelCSS": "  ",
 	
-	"rows": [
+	"popups": [
 		{
-			"rowDisplayOrder": "1",
-			"columns": [				
-				{
-					"displayOrder": "1",
-					"displayState": "Show",
-					"showexpand": "Show",
-					"expandState": "Yes",
-					"title": "Sample Simple Widget with Text",
-					"width": "",
-					"height": "",
-					"contentHTML": "<div style=\"padding:0.5em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
-					"contentCSS": "  ",
-					"displayDevice": "desktop",
-					"displayType": "Only PDF",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				}
-			]
-		},		
+			"displayOrder": "1",
+			"displayState": "Show",
+			"loadingState": "Page Load",
+			"showInMenu": "Yes",
+			"menuLable": "Download",
+			"externalLink": "",
+			"displayDevice": "desktop",
+			"displayType": "Only Portal",
+			"displayFromDate": "01/01/2024",
+			"displayToDate": "31/01/2024",
+			"title": "Downloading PDF file now",
+			"width": "500",
+			"height": "200",
+            "contentHTML": "<div style=\"padding:2em ;\"></br></br></br></br></br><b>Downloading is progresss. please wait....<b></div>",
+			
+			"contentCSS": "  ",
+			"iconSVGCode": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><title>download</title><path d=\"M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z\" /></svg>"
+		},
+        		{
+			"displayOrder": "1",
+			"displayState": "Show",
+			"loadingState": "Page Load",
+			"showInMenu": "Yes",
+			"menuLable": "Make Payment",
+			"externalLink": "",
+			"displayDevice": "mobile, tablet, desktop",
+			"displayType": "Only Portal",
+			"displayFromDate": "01/01/2024",
+			"displayToDate": "31/01/2024",
+			"title": "Make Payment through Stripe",
+			"width": "500",
+			"height": "400",
+            "contentHTML": "<iframe src=\"https://widget-06b88d401e9648e9bd08eb1a84413e71.elfsig.ht\" width=\"500\" height=\"400\" frameborder=\"0\"></iframe>",
+			"contentCSS": "  ",
+			"iconSVGCode": ""
+		},
+        
 		{
-			"rowDisplayOrder": "2",
-			"columns": [
-				{
-					"displayOrder": "1",
-					"displayState": "Show",
-					"showexpand": "Hide",
-					"expandState": "Yes",
-					"title": "Facebook Widget",
-					"width": "",
-					"height": "400",
-					"contentHTML": "<iframe class=\"w-100\" src=\"https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fayatacommerce&tabs=timeline&width=358&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=295989807818552\" height=\"400\" style=\"width:358px;border:none;overflow:hidden;\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\"></iframe>",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				},
-				{
-					"displayOrder": "2",
-					"displayState": "Show",
-					"showexpand": "Show",
-					"expandState": "No",
-					"title": "Twitter",
-					"width": "",
-					"height": "400",
-					"contentHTML": "<iframe src=\"https://widget-06b88d401e9648e9bd08eb1a84413e71.elfsig.ht\" width=\"340\" height=\"400\" frameborder=\"0\"></iframe>",
-					"contentCSS": "  ",
-					"displayDevice": "tablet, desktop",
-					"displayType": "Only PDF",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				},
-				{
-					"displayOrder": "2",
-					"displayState": "Show",
-					"showexpand": "Hide",
-					"expandState": "Yes",
-					"title": "Sample Text Widget",
-					"width": "",
-					"height": "",
-					"contentHTML": "<div style=\"padding:1em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
-					"contentCSS": "  ",
-					"displayDevice": "desktop",
-					"displayType": "Only PDF",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				}
-			]
+			"displayOrder": "2",
+			"displayState": "Show",
+			"loadingState": "no",
+			"showInMenu": "Yes",
+			"menuLable": "Whatsapp",
+			"externalLink": "",
+			"displayDevice": "tablet, desktop",
+			"displayType": "Only PDF",
+			"displayFromDate": "01/01/2024",
+			"displayToDate": "31/01/2024",
+			"title": "AAANew Year Offer 11222",
+			"width": "1000",
+			"height": "400",
+            "contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/beinghuman/widget-feedback.html\" frameborder=\"0\" style=\"height:400px;width:100%;\"></iframe>",
+			"contentCSS": "  ",
+			"iconSVGCode": ""
 		},
 		{
-			"rowDisplayOrder": "3",
-			"columns": [
-				{
-					"displayOrder": "1",
-					"displayState": "Show",
-					"showexpand": "Show",
-					"expandState": "Hide",
-					"title": "Feedback Survery form - Beinghuman",
-					"width": "",
-					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/beinghuman/widget-feedback.html\" frameborder=\"0\" style=\"height:1560px;width:100%;\"></iframe>",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				}
-			]
+			"displayOrder": "2",
+			"displayState": "Show",
+			"loadingState": "no",
+			"showInMenu": "Yes",
+			"menuLable": "Email",
+			"externalLink": "",
+			"displayDevice": "mobile, tablet, desktop",
+			"displayType": "Only PDF",
+			"displayFromDate": "01/01/2024",
+			"displayToDate": "31/01/2024",
+			"title": "New Year Offer 1",
+			"width": "",
+			"height": "",
+			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
+			"contentCSS": "  ",
+			"iconSVGCode": ""
+		},		{
+			"displayOrder": "2",
+			"displayState": "Show",
+			"loadingState": "no",
+			"showInMenu": "Yes",
+			"menuLable": "Save to drive",
+			"externalLink": "",
+			"displayDevice": "mobile, tablet, desktop",
+			"displayType": "Only PDF",
+			"displayFromDate": "01/01/2024",
+			"displayToDate": "31/01/2024",
+			"title": "New Year Offer 1",
+			"width": "",
+			"height": "",
+			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
+			"contentCSS": "  ",
+			"iconSVGCode": ""
 		},
-		{
-			"rowDisplayOrder": "4",
-			"columns": [
-				{
-					"displayOrder": "1",
-					"displayState": "Show",
-					"showexpand": "Show",
-					"expandState": "Hide",
-					"title": "Your Wish List",
-					"width": "",
-					"height": "",
-					"contentHTML": "1. Product Name </br> 2. Product Name </br> 3. Product Name",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				},
-				{
-					"displayOrder": "2",
-					"displayState": "Show",
-					"showexpand": "Show",
-					"expandState": "No",
-					"title": "Credit Card Offers",
-					"width": "",
-					"height": "",
-					"contentHTML": "10% - HDFC",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				},
-				{
-					"displayOrder": "3",
-					"displayState": "Show",
-					"showexpand": "Show",
-					"expandState": "No",
-					"title": "Royalty Points",
-					"width": "",
-					"height": "",
-					"contentHTML": "1000+",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				}
-			]
+        {
+			"displayOrder": "2",
+			"displayState": "Show",
+			"loadingState": "no",
+			"showInMenu": "Yes",
+			"menuLable": "Feedback",
+			"externalLink": "",
+			"displayDevice": "mobile, tablet, desktop",
+			"displayType": "Only PDF",
+			"displayFromDate": "01/01/2024",
+			"displayToDate": "31/01/2024",
+			"title": "New Year Offer 1",
+			"width": "",
+			"height": "",
+			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
+			"contentCSS": "  ",
+			"iconSVGCode": ""
 		},
-		{
-			"rowDisplayOrder": "5",
-			"columns": [
-				{
-					"displayOrder": "1",
-					"displayState": "Show",
-					"showexpand": "Show",
-					"expandState": "Hide",
-					"title": "AAAA",
-					"width": "",
-					"height": "",
-					"contentHTML": "1. Product Name </br> 2. Product Name </br> 3. Product Name",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				},
-				{
-					"displayOrder": "2",
-					"displayState": "Show",
-					"showexpand": "Show",
-					"expandState": "No",
-					"title": "BBB",
-					"width": "",
-					"height": "",
-					"contentHTML": "10% - HDFC",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				} 
-			]
+        {
+			"displayOrder": "2",
+			"displayState": "Show",
+			"loadingState": "no",
+			"showInMenu": "Yes",
+			"menuLable": "Contact us",
+			"externalLink": "",
+			"displayDevice": "mobile, tablet, desktop",
+			"displayType": "Only PDF",
+			"displayFromDate": "01/01/2024",
+			"displayToDate": "31/01/2024",
+			"title": "New Year Offer 1",
+			"width": "",
+			"height": "",
+			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
+			"contentCSS": "  ",
+			"iconSVGCode": ""
 		},
-		{
-			"rowDisplayOrder": "5",
-			"columns": [
-				{
-					"displayOrder": "1",
-					"displayState": "Show",
-					"showexpand": "Hide",
-					"expandState": "Hide",
-					"title": "",
-					"width": "800",
-					"height": "200",
-					"contentHTML": "Custom Sized Widget - with width 800px ---height 200px",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"
-				}
-			]
+        {
+			"displayOrder": "2",
+			"displayState": "Show",
+			"loadingState": "no",
+			"showInMenu": "Yes",
+			"menuLable": "Chat Now",
+			"externalLink": "",
+			"displayDevice": "mobile, tablet, desktop",
+			"displayType": "Only PDF",
+			"displayFromDate": "01/01/2024",
+			"displayToDate": "31/01/2024",
+			"title": "New Year Offer 1",
+			"width": "",
+			"height": "",
+			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
+			"contentCSS": "  ",
+			"iconSVGCode": ""
 		}
+        
 	]
 }

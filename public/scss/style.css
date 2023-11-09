@@ -584,9 +584,10 @@ body {
   padding: 0 0.5em;
 }
 
-.right-button a {
+.drawer-box .button {
   -webkit-transition: 0.25s;
   transition: 0.25s;
+  cursor: pointer;
   display: block;
   margin-bottom: 0.5em;
   padding: 1em 2em;
@@ -605,13 +606,13 @@ body {
           justify-content: center;
   line-height: normal;
 }
-.right-button a svg {
+.drawer-box .button svg {
   width: 22px;
   height: auto;
   max-width: 22px;
   padding-right: 0.25em;
 }
-.right-button a:hover {
+.drawer-box .button:hover {
   background-color: white;
 }
 
@@ -645,7 +646,7 @@ body {
   display: inline-block;
 }
 
-.t-c, .right-button a {
+.t-c, .drawer-box .button {
   text-align: center;
 }
 
