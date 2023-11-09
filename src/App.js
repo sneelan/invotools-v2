@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Container, Paper, Typography,Box,Grid  } from '@mui/material';
+import './scss/style.css'; // Import the SCSS file
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container maxWidth="xl">
+        <Box padding={2}>
+            <Paper className="invoice-wrap" elevation={3} >
+            <Box padding={2}>
+              <Typography variant="h6" className="widget-title">
+                Widget 1
+              </Typography>
+              </Box>
+            </Paper>
+
+            
+            <div className="invoice-wrap">
+            <Grid container spacing={2}>
+                <Grid item xs={6}>
+                <Paper className="shadow invoice-wrap" elevation={3}>
+                  <Box padding={2} marginTop={2}>
+                  <Typography variant="h6" className="widget-title">
+                    Widget 1
+                  </Typography>
+                  </Box>
+                </Paper>
+                </Grid>
+                <Grid item xs={6}>
+                <Paper className="shadow invoice-wrap" elevation={3}>
+                <Box padding={2} marginTop={2}>
+                  <Typography variant="h6" className="widget-title">
+                    Widget 2
+                  </Typography>
+                  </Box>
+                  </Paper>
+                </Grid>
+              </Grid>
+              </div>
+            
+
+
+        </Box>
+      </Container>
   );
-}
+} 
 
 export default App;

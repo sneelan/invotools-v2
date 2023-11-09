@@ -1,0 +1,56 @@
+//My Theme Colors
+
+$page-bg:#FFCC76;
+
+$theme-primary-verylight:  #FFF0D6;
+$theme-primary-light:  #FFC25A;
+$theme-primary:  #FFA100;
+
+$theme-secondary:  #1E1E1E; 
+$theme-secondary-light:  #A7A6A6; 
+$theme-secondary-verylight:  #E9E9E9; 
+
+$theme-accent:#FFC500;
+$theme-accent-light:#FFD95C;
+$theme-accent-verylight:#FFEEB5;
+
+.bg-theme-primary{background-color:$theme-primary;}
+.bg-theme-primary-light{background-color:$theme-primary-light;}
+.bg-theme-primary-verylight{background-color:$theme-primary-verylight;}
+.bg-theme-secondary{background-color:$theme-secondary;}
+
+.bg-theme-accent{background-color:$theme-accent;}
+.bg-theme-accent-light{background-color:$theme-accent-light;}
+.bg-theme-accent-verylight{background-color:$theme-accent-verylight;}
+
+.text-theme-primary{color:$theme-primary;}
+.text-theme-primary-light{color:$theme-primary-light;} 
+.text-theme-secondary{color:$theme-secondary;}
+.text-theme-med{font-size: 14px;}
+
+.anchor-dark{color: $theme-primary-light; &:hover{color: white;}}
+
+.hover-bg-primary:hover{ background-color: $theme-primary;}
+.hover-bg-primary-light:hover{ background-color: $theme-primary-light;}
+.hover-bg-primary-verylight:hover{ background-color: $theme-primary-verylight;}
+.hover-bg-accent:hover{ background-color: $theme-accent;}
+.hover-bg-accent-light:hover{ background-color: $theme-accent-light;}
+.hover-bg-accent-verylight:hover{ background-color: $theme-accent-verylight;}
+
+.border-theme-primary{border-color:$theme-primary!important;}
+.border-theme-accent{border-color:$theme-accent!important;}
+
+.hover-underline:hover{text-decoration: underline;color: black;}
+
+.hover:hover .img-hover-zoom{@include zoom(1.1); @include transition(1.5);}
+.hover .img-hover-zoom{@include zoom(1);@include transition(1.5);}
+
+.border-red{border-color:$theme-secondary!important;border-width:2px!important;}
+//by Mixin
+.opacity-75{@include opacity(0.75);}
+.opacity-50{@include opacity(0.5);}
+.opacity-25{ @include opacity(0.25);}
+.opacity-hover-100{@include opacity-hover(1);}
+.opacity-hover-75{@include opacity-hover(0.75);}
+.opacity-hover-50{@include opacity-hover(0.5);}
+.opacity-hover-25{ @include opacity-hover(0.25);} 

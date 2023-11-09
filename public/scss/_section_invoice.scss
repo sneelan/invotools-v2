@@ -1,0 +1,146 @@
+body{  
+    background-color: $page-bg!important;
+    //@include media-breakpoint-min(1100px) {background-color: $page-bg !important;}
+    overflow: auto!important;
+}
+*{transition: 0.5s;}
+.shadow{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)!important;
+    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)!important;
+    -moz-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)!important;
+}
+.invoice-wrap{ 
+    @include media-breakpoint-min(992px) {
+        max-width:1100px; 
+        //max-width:980px;  
+        margin:0 auto;  
+    }
+    @include media-breakpoint-max(700px) {
+        //max-width:666px; 
+        margin:0 auto;  
+    } 
+    @include media-breakpoint-max(968px) {
+        
+        padding:0 0.5em;  
+    } 
+ 
+}
+.widget-row:not(:first-child){margin-top: 1em;}
+.widget{
+    //padding:1em;  
+    padding:0;
+    background-color: white;  
+    @extend .shadow; 
+    border-radius: 0.25em;
+    overflow-y: hidden;
+    line-height: 150%;
+    @include media-breakpoint-min(568px) {height: 100%;}
+    @include media-breakpoint-max(568px) { 
+        padding:0.5em;
+    }
+}
+.widget-title{
+    padding:0.75em 0;
+    display: block;}
+.MuiButtonBase-root, .widget-title-border{
+    border-bottom: 1px solid rgb(230, 230, 230)!important;
+}
+.MuiButtonBase-root{
+    min-height: 50px!important;
+}
+.collapsed-accordion {
+    min-height:unset;
+  }
+.expanded-accordion {
+    @include media-breakpoint-min(568px) {min-height: 100%;}
+  }
+  .make-column-height-same{
+    @include media-breakpoint-min(568px) {min-Height:100%;background-color:white;}
+}
+ @include media-breakpoint-max(967px) {
+    .invo-3-col iframe{margin:0 auto;}
+    .set-custom-width{width: 100%!important;}
+ }
+
+ @include media-breakpoint-max(568px) { .mob-hide{display: none !important;}} 
+ @media only screen and (max-width: 967px) and (min-width: 569px) { .tab-hide{display:none!important;}}
+ @include media-breakpoint-min(968px) { .des-hide{display:none!important;}}
+
+
+ /* popuppopuppopuppopup */
+#burger-menu, #burger-close, #burger-static{ 
+    display: block!important; 
+    height: 38px!important; width: 38px!important; 
+    background-repeat: no-repeat; background-position: center;
+    border-radius: 0!important; 
+    border: none!important;     
+    position: fixed; 
+    top:5px; right:5px; 
+    cursor: pointer;
+}
+#burger-menu, #burger-static{ 
+    background-image: url('../img/burger.png');
+    &:hover{background-image: url('../img/burger-hover.png');
+        background-color: transparent!important;}
+}
+#burger-close{ 
+    background-image: url('../img/close.png');     
+    &:hover{background-image: url('../img/close-hover.png');}
+}
+#burger-static{
+    position:unset!important; 
+    top:unset!important; right:unset!important; 
+    display: inline-block!important; margin-left: 0.5em;
+    
+}
+#burger-menu{
+    @include media-breakpoint-max(1182px) {display:none!important;} 
+}
+.mobile-menu{@include media-breakpoint-min(1181px) {display:none!important;}}
+
+.MuiDrawer-paper{ background-color:$theme-secondary!important;}
+.drawer-wrap {padding:0 0.5em;}
+.right-button a{ transition: 0.25s;;
+    display: block; 
+    margin-bottom: 0.5em; 
+    padding:1em 2em;
+    font-size: 13px; @extend .t-c;
+    background-color: $theme-primary;
+    border-radius: 0.5em;font-weight:500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height:normal;
+    svg{width:22px; height:auto; max-width:22px; padding-right:0.25em;}
+    &:hover{background-color:white;} 
+}
+#mypopup {    
+    .MuiPaper-root{   
+        overflow-y: unset!important;        
+        @include media-breakpoint-min(968px) { min-width:400px!important;}
+        margin:0!important;
+        h2{ border-radius: 0.25em 0.25em 0 0; 
+            padding: 0.5em 1em;                        
+            margin:0; 
+            font-size:15px;font-weight:600;
+            height:50px; 
+            background-color: $theme-secondary;
+            color:white;
+            span{flex-grow: 1;}
+            
+        }
+    }
+}
+
+
+ /* Common CSS */
+ .d-inline-block{display: inline-block;}
+.t-c{text-align: center;}
+.t-r{text-align: right!important;}
+.p-0{padding:0!important;}
+.m-0{margin:0!important;}
+.p-1{padding:1em;}
+.w-100{width:100%;} 
+.flex-center{display: flex; align-items: center; justify-content: center;}
+.line-height-normal{line-height: 100%;}
+.cursor-pointer{cursor: pointer;}
