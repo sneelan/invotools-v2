@@ -67,18 +67,20 @@ body{
  @include media-breakpoint-min(968px) { .des-hide{display:none!important;}}
 
 
- /* popuppopuppopuppopup */
-#burger-menu, #burger-close, #burger-static{ 
-    display: block!important; 
+ /* popup------------- */
+#burger-menu, #burger-close1, #burger-static{ 
+    /* display: block!important; 
     height: 38px!important; width: 38px!important; 
     background-repeat: no-repeat; background-position: center;
     border-radius: 0!important; 
-    border: none!important;     
+    border: none!important;   
+    cursor: pointer; */
     position: fixed; 
     top:5px; right:5px; 
-    cursor: pointer;
+    
 }
-#burger-menu, #burger-static{ 
+
+/* #burger-menu, #burger-static{ 
     background-image: url('../img/burger.png');
     &:hover{background-image: url('../img/burger-hover.png');
         background-color: transparent!important;}
@@ -92,12 +94,46 @@ body{
     top:unset!important; right:unset!important; 
     display: inline-block!important; margin-left: 0.5em;
     
+} */
+.box-button{ 
+    transition: 0.25s;
+    cursor: pointer;
+    display: block;     
+    font-size: 13px; @extend .t-c;    
+    font-weight:500; 
+    background-color: $theme-primary;
+    border-radius: 0.3em;   
+    line-height:normal; 
+    width:38px; height: 38px; 
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    @extend .flex-center;
+    svg{width:28px; height: 28px;  }
+    &:hover{
+        background-color:white;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        svg{color:$theme-secondary;}
+    }
+    
+ }
+#burger-menu{
+    background-color: $theme-secondary;     
+    border: 2px solid rgba(0, 0, 0, 0.575)!important;    
+    svg{color:rgba(255, 255, 255, 0.7);}
+    &:hover{
+        background-color:black; 
+        svg{color:white;}
+        border: 2px solid rgba(0, 0, 0); 
+    } 
 }
 #burger-menu{
     @include media-breakpoint-max(1182px) {display:none!important;} 
 }
-.mobile-menu{@include media-breakpoint-min(1181px) {display:none!important;}}
-
+.mobile-menu{
+    @include media-breakpoint-min(1181px) {display:none!important;}
+    padding:0 .5em;
+     
+}
+#burger-close{ width:100px;}
 .MuiDrawer-paper{ background-color:$theme-secondary!important;}
 .drawer-wrap {padding:0 0.5em;}
 .drawer-box .button{ 
@@ -116,9 +152,11 @@ body{
     svg{width:22px; height:auto; max-width:22px; padding-right:0.25em;}
     &:hover{background-color:white;} 
 }
+
+
 #mypopup {    
     .MuiPaper-root{   
-        overflow-y: unset!important;        
+        //overflow-y: unset!important;        
         @include media-breakpoint-min(968px) { min-width:400px!important;}
         margin:0!important;
         h2{ border-radius: 0.25em 0.25em 0 0; 
@@ -128,22 +166,29 @@ body{
             height:50px; 
             background-color: $theme-secondary;
             color:white;
-            span{flex-grow: 1;}
+            span{flex-grow: 1;} 
+            
             
         }
     }
 }
+.MuiDrawer-root{width:0px; }
 
 
 /* Footer */
-.footer{
-    border-top:1px solid $theme-primary-dark;
-    font-size:12px;
-    background-color: rgba(0, 0, 0, 0.212);
+footer{
+    font-size:13px; 
+    background-color:$theme-secondary;
+    p, a{color:rgba(255, 255, 255, 0.7);font-size:13px; }
+    a{ 
+        &:hover{color:$theme-primary-light;transition: 0s;}
+    }
+    padding:0.75em 0;
 }
 
  /* Common CSS */
  .d-inline-block{display: inline-block;}
+ .d-none{display: none !important;;}
 .t-c{text-align: center;}
 .t-r{text-align: right!important;}
 .p-0{padding:0!important;}
@@ -153,3 +198,21 @@ body{
 .flex-center{display: flex; align-items: center; justify-content: center;}
 .line-height-normal{line-height: 100%;}
 .cursor-pointer{cursor: pointer;}
+.me-1{margin-right:1em;}
+.ms-1{margin-left:1em;}
+.mt-1{margin-top:1em;}
+.mb-1{margin-bottom:1em;}
+
+/* Dark mode */
+
+.dark-mode{
+    background-color: black!important;
+    .container-xl{background-color:#ffc25a!important;}
+    .bg-theme-accent{background-color: rgb(0, 0, 0)!important; color:white;}
+    .border-theme-accent{border-color: rgb(0, 0, 0)!important;}
+    .bg-theme-primary-verylight{background-color:#fdb435!important;}
+    .bg-theme-primary{background-color:#2c2c2c!important;color:white;}
+    footer .bg-theme-primary{background-color:#ffa200!important; color:Black!important;}
+    .border-white{border-color: #2c2c2c33!important;}
+    .MuiAccordion-root, .make-column-height-same, .widget{background: #ffc25a!important;}
+}

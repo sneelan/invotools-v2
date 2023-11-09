@@ -1,48 +1,39 @@
 import React from 'react';
-import { Container, Paper, Typography,Box,Grid  } from '@mui/material';
-import './scss/style.css'; // Import the SCSS file
-
-function App() {
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import DynamicWidget from './dynamicwidget';
+import MobilePreview from './MobilePreview';
+import TabletPreview from './TabletPreview';
+const App = () => {
   return (
-      <Container maxWidth="xl">
-        <Box padding={2}>
-            <Paper className="invoice-wrap" elevation={3} >
-            <Box padding={2}>
-              <Typography variant="h6" className="widget-title">
-                Widget 1
-              </Typography>
-              </Box>
-            </Paper>
+    <Router>
+      <div>
+      <nav className='d-none'>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/invoice">Invoice</Link>
+            </li>
+            <li>
+              <Link to="/mobile">Mobile</Link>              
+            </li>
+            <li>
+            <Link to="/tablet">Tablet</Link>             
+            </li>
 
-            
-            <div className="invoice-wrap">
-            <Grid container spacing={2}>
-                <Grid item xs={6}>
-                <Paper className="shadow invoice-wrap" elevation={3}>
-                  <Box padding={2} marginTop={2}>
-                  <Typography variant="h6" className="widget-title">
-                    Widget 1
-                  </Typography>
-                  </Box>
-                </Paper>
-                </Grid>
-                <Grid item xs={6}>
-                <Paper className="shadow invoice-wrap" elevation={3}>
-                <Box padding={2} marginTop={2}>
-                  <Typography variant="h6" className="widget-title">
-                    Widget 2
-                  </Typography>
-                  </Box>
-                  </Paper>
-                </Grid>
-              </Grid>
-              </div>
-            
-
-
-        </Box>
-      </Container>
+          </ul>
+        </nav>
+      </div>
+     <Routes>
+     <Route path="/" element={<DynamicWidget />} />
+        <Route path="/invoice" element={<DynamicWidget/>} />
+        <Route path="/mobile" element={<MobilePreview />} />
+        <Route path="/tablet" element={<TabletPreview />} />
+      </Routes>
+    </Router>
   );
-} 
+};
 
 export default App;

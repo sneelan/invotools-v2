@@ -1,5 +1,6 @@
-import PopUp from './popup';
+import PopupPage from './popup';
 import React, { useState, useEffect } from 'react';
+import DeviceButtons from './DeviceButtons';
 import {  
   Grid,
   Accordion,
@@ -11,7 +12,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the Expan
 
 function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
   const [expanded, setExpanded] = useState(false); //accordion 
-
+ 
   if (column.displayState === 'Hide') {
     return null; // Hide the column
   }
@@ -97,21 +98,20 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
 
 }
 
-const InvoiceTemplate='<iframe src="https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template.html" style="width:100%;" height="1165" frameborder="0"></iframe>';
 
-
-function App() {
+function DynamicWidget() {
+  
   const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
+       const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
        //const response = await fetch('/customer-portal-widget1.json');
         const data = await response.json();
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching json data:', error);
       }
     };
 
@@ -124,8 +124,8 @@ function App() {
 
   return (
     <>
-    <PopUp/>
-    <div className='t-c' dangerouslySetInnerHTML={{ __html: InvoiceTemplate }} /> 
+     
+    <PopupPage/>    
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}
@@ -164,11 +164,12 @@ function App() {
                 )))          
         ))}
     </div>
+    <DeviceButtons/>
     <footer className='t-c'>
-      <p>&copy; {new Date().getFullYear()} Invotools. All rights reserved by <a href="https://www.invotools.io" target="_blank" rel="noopener noreferrer">Invotools.io</a></p>
+      <p>&copy; {new Date().getFullYear()}, All rights reserved by <a href="https://www.invotools.io" target="_blank" rel="noopener noreferrer"><u>www.Invotools.io</u></a></p>
     </footer>
     </>
   );
 }
 
-export default App;
+export default DynamicWidget;

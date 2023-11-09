@@ -1,7 +1,7 @@
 //My Theme Colors
 
 $page-bg:#FFCC76;
-
+$theme-primary-dark:  #cf983a;
 $theme-primary-verylight:  #FFF0D6;
 $theme-primary-light:  #FFC25A;
 $theme-primary:  #FFA100;
@@ -26,6 +26,7 @@ $theme-accent-verylight:#FFEEB5;
 .text-theme-primary{color:$theme-primary;}
 .text-theme-primary-light{color:$theme-primary-light;} 
 .text-theme-secondary{color:$theme-secondary;}
+.text-white{color:white;} 
 .text-theme-med{font-size: 14px;}
 
 .anchor-dark{color: $theme-primary-light; &:hover{color: white;}}

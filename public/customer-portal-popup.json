@@ -7,7 +7,7 @@
 		{
 			"displayOrder": "1",
 			"displayState": "Show",
-			"loadingState": "Page Load",
+			"loadingState": "Page LoadXXX",
 			"showInMenu": "Yes",
 			"menuLable": "Download",
 			"externalLink": "",
@@ -26,7 +26,7 @@
         		{
 			"displayOrder": "1",
 			"displayState": "Show",
-			"loadingState": "Page Load",
+			"loadingState": "Page LoadXXX",
 			"showInMenu": "Yes",
 			"menuLable": "Make Payment",
 			"externalLink": "",
