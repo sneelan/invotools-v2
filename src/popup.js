@@ -8,17 +8,28 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
-import jsonData from './customer-portal-popup.json';
+//import jsonData from './customer-portal-popup.json';
+//import jsonData from 'https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json';
 
 function MyComponent() {
   const [data, setData] = useState(null);
-  useEffect(() => {
-    setData(jsonData);
-  }, []);
-
   const [open, setOpen] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
   const [selectedPopup, setSelectedPopup] = useState({}); // Initialize with an empty object
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json');
+        //const response = await fetch('/customer-portal-popup.json'); 
+        const data = await response.json(); 
+        setData(data); // Corrected to use setData instead of setJsonData
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const toggleDrawer = () => {
     setOpen(!open);

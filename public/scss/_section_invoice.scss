@@ -135,6 +135,13 @@ body{
 }
 
 
+/* Footer */
+.footer{
+    border-top:1px solid $theme-primary-dark;
+    font-size:12px;
+    background-color: rgba(0, 0, 0, 0.212);
+}
+
  /* Common CSS */
  .d-inline-block{display: inline-block;}
 .t-c{text-align: center;}

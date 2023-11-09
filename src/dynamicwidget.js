@@ -6,7 +6,7 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from '@mui/material';
-import jsonData from './customer-portal-widget.json';
+//import jsonData from './customer-portal-widget.json';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the ExpandMore icon
 
 function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
@@ -104,8 +104,18 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    // You can access the JSON data from the imported 'jsonData' variable.
-    setData(jsonData);
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
+       //const response = await fetch('/customer-portal-widget1.json');
+        const data = await response.json();
+        setData(data); // Corrected to use setData instead of setJsonData
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   if (!data) {
@@ -154,6 +164,9 @@ function App() {
                 )))          
         ))}
     </div>
+    <footer className='t-c'>
+      <p>&copy; {new Date().getFullYear()} Invotools. All rights reserved by <a href="https://www.invotools.io" target="_blank" rel="noopener noreferrer">Invotools.io</a></p>
+    </footer>
     </>
   );
 }
