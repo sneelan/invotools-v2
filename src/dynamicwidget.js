@@ -6,7 +6,7 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from '@mui/material';
-import jsonData from './CustomerPortal_Widgets_json.json';
+import jsonData from './customer-portal-widget.json';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the ExpandMore icon
 
 function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {

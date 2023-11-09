@@ -190,7 +190,7 @@
 					"title": "",
 					"width": "800",
 					"height": "200",
-					"contentHTML": "1Custom Sized Widget - with width 800px ---height 200px",
+					"contentHTML": "Custom Sized Widget - with width 800px ---height 200px",
 					"contentCSS": "  ",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
