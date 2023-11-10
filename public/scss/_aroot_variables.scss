@@ -9,12 +9,14 @@ $theme-primary:  #FFA100;
 $theme-secondary:  #1E1E1E; 
 $theme-secondary-light:  #A7A6A6; 
 $theme-secondary-verylight:  #E9E9E9; 
+$theme-secondary-dark:black;
 
 $theme-accent:#FFC500;
 $theme-accent-light:#FFD95C;
 $theme-accent-verylight:#FFEEB5;
 
 .bg-theme-primary{background-color:$theme-primary;}
+.bg-theme-primary-dark{background-color:$theme-primary;}
 .bg-theme-primary-light{background-color:$theme-primary-light;}
 .bg-theme-primary-verylight{background-color:$theme-primary-verylight;}
 .bg-theme-secondary{background-color:$theme-secondary;}

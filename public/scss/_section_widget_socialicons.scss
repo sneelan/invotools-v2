@@ -1,0 +1,17 @@
+.social-links {
+    a {
+        margin-right:0.25em;
+        display: inline-block;        
+        &:hover{          
+
+            svg{margin-top:0; margin-bottom:0.2em; transition: 0.25s;}
+        }
+        svg {
+            margin:0.1em; 
+            transition: 0.25s;
+            width:35px;
+            height:auto;
+        }
+    }
+}
+        

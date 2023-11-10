@@ -7,8 +7,9 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from '@mui/material';
-//import jsonData from './customer-portal-widget.json';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the ExpandMore icon
+import WidgetSocialmedia from './WidgetSocialmedia';
+import WidgetPlainText from './WidgetPlainText';
 
 function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
   const [expanded, setExpanded] = useState(false); //accordion 
@@ -43,8 +44,10 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
   
   const InnerContent = (   
     <>
-    {column.contentHTML && ( <div className='t-c' dangerouslySetInnerHTML={{ __html: column.contentHTML }} style={{overflow: 'hidden'}} />  )}
+    {column.contentHTML && ( <div className='t-c h-100' dangerouslySetInnerHTML={{ __html: column.contentHTML }} style={{overflow: 'hidden'}} />  )}
     {column.contentCSS && ( <style className='t-c' dangerouslySetInnerHTML={{ __html: column.contentCSS }} />  )}
+    {column.customWidget && column.customWidget==='socialicons' && ( <WidgetSocialmedia data={column.customWidgetData} /> )}
+    {column.customWidget && column.customWidget==='plaintext' && ( <WidgetPlainText data={column.customWidgetData} /> )}
     </>
     );
   
@@ -99,15 +102,15 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
 }
 
 
-function DynamicWidget() {
+function WidgetAll() {
   
   const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-       const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
-       //const response = await fetch('/customer-portal-widget1.json');
+       //const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
+       const response = await fetch('/customer-portal-widget.json');
         const data = await response.json();
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
@@ -172,4 +175,4 @@ function DynamicWidget() {
   );
 }
 
-export default DynamicWidget;
+export default WidgetAll;

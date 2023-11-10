@@ -50,15 +50,18 @@
   .tablet {
     position: relative;
     margin: auto;
-    width: 600px;
-    height: 917px;
+    width: 631px;
+    height: 1060px;
     margin: auto;
     border: 16px black solid;
     border-top-width: 60px;
     border-bottom-width: 60px;
     border-radius: 36px;
   }
-  
+  .tablet1{    
+    width: 991px!important;
+    height: 710px!important;
+  }
   /* The horizontal line on the top of the device */
   .tablet:before {
     content: '';
@@ -77,7 +80,7 @@
   .tablet:after {
     content: '';
     display: block;
-    width: 35px;
+    width: 35px; 
     height: 35px;
     position: absolute;
     left: 50%;
@@ -89,8 +92,14 @@
   
   /* The screen (or content) of the device */
   .tablet .content {
-    width: 570px;
-    height: 798px; 
+    width: 600px;
+    height: 960px; 
+    background: white;
+    margin: -1px;
+  }
+  .tablet1 .content{
+    width: 960px!important; 
+    height: 600px!important; 
     background: white;
     margin: -1px;
   }

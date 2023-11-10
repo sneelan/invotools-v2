@@ -1,36 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { Switch } from 'react-router-dom';
-import DynamicWidget from './dynamicwidget';
+import WidgetAll from './WidgetAll';
 import MobilePreview from './MobilePreview';
 import TabletPreview from './TabletPreview';
+import TabletPreviewLands from './TabletPreviewLands';
 const App = () => {
   return (
     <Router>
-      <div>
-      <nav className='d-none'>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/invoice">Invoice</Link>
-            </li>
-            <li>
-              <Link to="/mobile">Mobile</Link>              
-            </li>
-            <li>
-            <Link to="/tablet">Tablet</Link>             
-            </li>
-
-          </ul>
-        </nav>
-      </div>
      <Routes>
-     <Route path="/" element={<DynamicWidget />} />
-        <Route path="/invoice" element={<DynamicWidget/>} />
+     <Route path="/" element={<WidgetAll />} />
+        <Route path="/invoice" element={<WidgetAll/>} />
+        <Route path="/demo" element={<WidgetAll/>} />
         <Route path="/mobile" element={<MobilePreview />} />
         <Route path="/tablet" element={<TabletPreview />} />
+        <Route path="/tablet-landscape" element={<TabletPreviewLands />} />
       </Routes>
     </Router>
   );

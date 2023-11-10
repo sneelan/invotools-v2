@@ -29,8 +29,8 @@ function PopupPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json');
-        //const response = await fetch('/customer-portal-popup.json'); 
+        //const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json');
+        const response = await fetch('/customer-portal-popup.json'); 
         const data = await response.json(); 
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
@@ -75,7 +75,7 @@ function PopupPage() {
       }
 
     if (showInitialDrawer) {      
-      setOpen(true); // Show the drawer initially - true / false
+      setOpen(false); // Show the drawer initially - true / false
       
         // Check if you want to enable the timer
         const enableTimer = false;
