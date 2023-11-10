@@ -109,8 +109,8 @@ function WidgetAll() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-       //const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
-       const response = await fetch('/customer-portal-widget.json');
+       const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
+       //const response = await fetch('/customer-portal-widget.json');
         const data = await response.json();
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
