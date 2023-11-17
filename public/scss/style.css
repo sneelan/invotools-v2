@@ -459,6 +459,10 @@ body {
   }
 }
 
+.widget-row {
+  line-height: 150%;
+}
+
 .widget-row:not(:first-child) {
   margin-top: 1em;
 }
@@ -725,6 +729,14 @@ footer a:hover {
 
 .t-r {
   text-align: right !important;
+}
+
+.t-s {
+  text-align: left !important;
+}
+
+.t-j {
+  text-align: justify !important;
 }
 
 .p-0 {

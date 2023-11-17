@@ -11,14 +11,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the Expan
 import WidgetSocialmedia from './WidgetSocialmedia';
 import WidgetPlainText from './WidgetPlainText';
 
-function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
-  const [expanded, setExpanded] = useState(false); //accordion 
+function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) { 
+  const [expanded, setExpanded] = useState(column.toggleExpand === 'yes');
+  //const [expanded, setExpanded] = useState(false); //accordion 
+  //const isExpanded = column.toggleExpand === 'yes'; // Check the toggleExpand property
+  //const [Expanded, setExpanded] = useState(column.toggleExpand === 'yes');
  
   if (column.displayStatus === 'inactive') {
     return null; // Hide the column
   }
 
-  const isExpanded = column.toggleExpand === 'yes'; // Check the toggleExpand property
+  
+
   
   const widgetStyle = {};
   let addClassFixedwidth='';
@@ -59,8 +63,8 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
 
   const AccordionComponent = (      
         <>
-          {column.toggleStatus === 'active' ? (                   
-            <Accordion expanded={expanded} onChange={handleChange} defaultExpanded={isExpanded} 
+          {column.toggleStatus === 'active' ? (    
+            <Accordion expanded={expanded} onChange={handleChange} 
             classes={{ content: 'p-0 m-0', root: expanded ? 'expanded-accordion' : 'collapsed-accordion' }}>
               <AccordionSummary  expandIcon={<ExpandMoreIcon />} classes={{ content: 'p-0 m-0' }}>  
               <h6 class="widget-title">{column.title}</h6>
@@ -109,8 +113,8 @@ function WidgetAll() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-       const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
-       //const response = await fetch('/customer-portal-widget.json');
+       //const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
+       const response = await fetch('/customer-portal-widget.json');
         const data = await response.json();
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {

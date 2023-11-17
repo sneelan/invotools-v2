@@ -25,6 +25,7 @@ body{
     } 
  
 }
+.widget-row{line-height: 150%;}
 .widget-row:not(:first-child){margin-top: 1em;}
 .widget{
     //padding:1em;  
@@ -192,6 +193,8 @@ footer{
  .d-none{display: none !important;;}
 .t-c{text-align: center;}
 .t-r{text-align: right!important;}
+.t-s{text-align: left!important;}
+.t-j{text-align: justify!important;}
 .p-0{padding:0!important;}
 .m-0{margin:0!important;}
 .p-1{padding:1em;}

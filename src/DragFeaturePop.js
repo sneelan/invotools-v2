@@ -15,7 +15,8 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/customer-portal-popup.json');
+        const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json');
+        //const response = await fetch('/customer-portal-popup.json');
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {

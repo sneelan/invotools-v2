@@ -28,8 +28,8 @@ function PopupPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json');
-        //const response = await fetch('/customer-portal-popup.json'); 
+        //const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json');
+        const response = await fetch('/customer-portal-popup.json'); 
         const data = await response.json(); 
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
@@ -173,7 +173,7 @@ function PopupPage() {
             
                 </style>
               </div>
-              <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1165" frameBorder="0" title="invoice"></iframe>
+              <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice"></iframe>
 
     </div>
   );
