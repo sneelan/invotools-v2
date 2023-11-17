@@ -48,7 +48,7 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
   
   const InnerContent = (   
     <>
-    {column.contentHTML && ( <div className='t-c h-100' dangerouslySetInnerHTML={{ __html: column.contentHTML }} style={{overflow: 'hidden'}} />  )}
+    {column.contentHTML && ( <div className='t-c h-100' dangerouslySetInnerHTML={{ __html: column.contentHTML }} style={{overflow: 'hidden', xlineHeight:'50%'}} />  )}
     {column.contentCSS && ( <style className='t-c' dangerouslySetInnerHTML={{ __html: column.contentCSS }} />  )}
     {column.customWidget && column.customWidget==='socialicons' && ( <WidgetSocialmedia data={column.customWidgetData} /> )}
     {column.customWidget && column.customWidget==='plaintext' && ( <WidgetPlainText data={column.customWidgetData} /> )}

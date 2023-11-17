@@ -174,14 +174,14 @@ body{
     }
 }
 .MuiDrawer-root{width:0px; }
-
+.MuiAccordionDetails-root{padding:0!important;}
 
 /* Footer */
 footer{
     font-size:13px; 
     background-color:$theme-secondary;
     p, a{color:rgba(255, 255, 255, 0.7);font-size:13px; }
-    a{ 
+    a{  
         &:hover{color:$theme-primary-light;transition: 0s;}
     }
     padding:0.75em 0;

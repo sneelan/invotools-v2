@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -23,8 +23,7 @@ function PopupPage() {
   const [popupOpen, setPopupOpen] = useState(false);
   const [selectedPopup, setSelectedPopup] = useState({}); // Initialize with an empty object
   const [showInitialDrawer, setShowInitialDrawer] = useState(true); // New state
-
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -90,6 +89,8 @@ function PopupPage() {
       }
   }
   }, [data]);
+
+  
 
   return (
     <div>        
@@ -173,7 +174,8 @@ function PopupPage() {
             
                 </style>
               </div>
-              <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice"></iframe>
+              <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe>
+              
 
     </div>
   );
