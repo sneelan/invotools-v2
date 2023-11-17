@@ -252,7 +252,7 @@
 					"toggleStatus": "active",
 					"toggleExpand": "no",
 					"title": "Most Bought Products List!",
-					"width": "M",
+					"width": "",
 					"height": "",
 					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-wishlist.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "  ",
@@ -270,6 +270,26 @@
 					"width": "",
 					"height": "",
 					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-wishlist.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentCSS": "  ",
+					"displayDevice": "mobile, tablet, desktop",
+					"displayType": "Only Portal",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024"
+				}
+			]
+		} ,
+		{
+			"rowNumber": "5",
+			"columns": [
+				{
+					"displayOrder": "1",
+					"displayStatus": "active",
+					"toggleStatus": "inactive",
+					"toggleExpand": "no",
+					"title": "",
+					"width": "",
+					"height": "",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-carousel.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "  ",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
