@@ -188,6 +188,7 @@ footer{
 
  /* Common CSS-----as bootstrap */
  .d-inline-block{display: inline-block;}
+ .d-block{display: block;}
  .d-none{display: none !important;;}
 .t-c{text-align: center;}
 .t-r{text-align: right!important;}
@@ -212,17 +213,4 @@ footer{
 .btn-secondary{
     background-color: $theme-secondary; color: rgba(255, 255, 255, 0.658);
     &:hover{background-color: $theme-secondary-dark;color:white;}
-}
-/* Dark mode */
-
-.dark-mode{ 
-    background-color: black!important;
-    .container-xl{background-color:#ffc25a!important;}
-    .bg-theme-accent{background-color: rgb(0, 0, 0)!important; color:white;}
-    .border-theme-accent{border-color: rgb(0, 0, 0)!important;}
-    .bg-theme-primary-verylight{background-color:#fdb435!important;}
-    .bg-theme-primary{background-color:#2c2c2c!important;color:white;}
-    footer .bg-theme-primary{background-color:#ffa200!important; color:Black!important;}
-    .border-white{border-color: #2c2c2c33!important;}
-    .MuiAccordion-root, .make-column-height-same, .widget{background: #ffc25a!important;}
 }

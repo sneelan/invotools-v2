@@ -14,7 +14,7 @@ import WidgetPlainText from './WidgetPlainText';
 function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
   const [expanded, setExpanded] = useState(false); //accordion 
  
-  if (column.displayState === 'Hide') {
+  if (column.displayStatus === 'inactive') {
     return null; // Hide the column
   }
 
@@ -85,7 +85,7 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
     return (
       <Grid item xs={12} sm={sm} md={md} lg={lg} className={widgetClassName}>{columnclass}{AccordionComponent}</Grid>
     )
-  }else if (column.showexpand === 'Hide' || (column.displayState === 'Show' && column.showexpand === 'Show')) {
+  }else if (column.showexpand === 'Hide' || (column.displayStatus === 'active' && column.showexpand === 'Show')) {
     return (<
       div className='widget-row'>   
         {AccordionComponent}
@@ -109,8 +109,8 @@ function WidgetAll() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-       const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
-       //const response = await fetch('/customer-portal-widget.json');
+       //const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
+       const response = await fetch('/customer-portal-widget.json');
         const data = await response.json();
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
@@ -136,30 +136,30 @@ function WidgetAll() {
     <div className='invoice-wrap' style={{ marginBottom:'1em'}}>
       {data &&
         data.rows.map((row, rowIndex) => (
-          row.columns.filter((column) => column.displayState === 'Show').length === 2 ? (
-              // If it's the first row and there are exactly two columns with "displayState": "Show," use a grid
+          row.columns.filter((column) => column.displayStatus === 'active').length === 2 ? (
+              // If it's the first row and there are exactly two columns with "displayStatus": "active," use a grid
               <div className='widget-row'>
               <Grid container spacing={2} className={'invo-2-col'}>
                 {row.columns
-                  .filter((column) => column.displayState === 'Show')
+                  .filter((column) => column.displayStatus === 'active')
                   .map((column, columnIndex) => (
                     <ColumnComponent key={column.displayOrder} column={column} grid={'Show'} sm={6} md={6} lg={6} length={row.columns.length} />
                   ))}
                 </Grid></div>
-            ) : row.columns.filter((column) => column.displayState === 'Show').length === 3 ? (
-              // If it's the first row and there are exactly two columns with "displayState": "Show," use a grid
+            ) : row.columns.filter((column) => column.displayStatus === 'active').length === 3 ? (
+              // If it's the first row and there are exactly two columns with "displayStatus": "active," use a grid
               <div className='widget-row'>
                 <Grid container spacing={2} className={'invo-3-col'}>
                 {row.columns
-                  .filter((column) => column.displayState === 'Show')
+                  .filter((column) => column.displayStatus === 'active')
                   .map((column, columnIndex) => (
                     <ColumnComponent key={column.displayOrder} column={column} grid={'Show'} md={4} lg={4} length={row.columns.length} />
                   ))}
                 </Grid></div>
             ) : (
-              // For other rows or when there are multiple columns with "displayState": "Show," use ColumnComponent directly
+              // For other rows or when there are multiple columns with "displayStatus": "active," use ColumnComponent directly
               row.columns
-                .filter((column) => column.displayState === 'Show')
+                .filter((column) => column.displayStatus === 'active')
                 .map((column, columnIndex) => (
                   <>
                   <ColumnComponent key={column.displayOrder} column={column} /> 

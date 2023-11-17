@@ -25,12 +25,11 @@ function PopupPage() {
   const [showInitialDrawer, setShowInitialDrawer] = useState(true); // New state
 
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json');
-        //const response = await fetch('/customer-portal-popup.json'); 
+        //const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json');
+        const response = await fetch('/customer-portal-popup.json'); 
         const data = await response.json(); 
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
@@ -68,7 +67,7 @@ function PopupPage() {
     setOpen(true);
 
     if (data && data.popups) {
-      const pageLoadPopup = data.popups.find((popup) => popup.loadingState === 'Page Load');
+      const pageLoadPopup = data.popups.find((popup) => popup.displayOnPageLoad === 'yes');
       if (pageLoadPopup) {
         setSelectedPopup(pageLoadPopup);
         setPopupOpen(true);
@@ -126,7 +125,7 @@ function PopupPage() {
                           if (!popup.displayDevice.includes('tablet')) widgetClassName += ' tab-hide';
                           if (!popup.displayDevice.includes('desktop')) widgetClassName += ' des-hide';
 
-                          return popup.displayState === 'Show' && popup.showInMenu === 'Yes' && (
+                          return popup.displayStatus === 'active' && popup.showInMenu === 'yes' && ( 
                             <span
                               key={index}
                               onClick={() => openPopup(popup)}
@@ -135,7 +134,7 @@ function PopupPage() {
                               {popup.iconSVGCode && (
                                 <span dangerouslySetInnerHTML={{ __html: popup.iconSVGCode }}></span>
                               )}
-                              <span>{popup.menuLable}</span>
+                              <span>{popup.menuLabel}</span>
                             </span>
                           );
                         })}
@@ -149,7 +148,7 @@ function PopupPage() {
                   <style dangerouslySetInnerHTML={{ __html: selectedPopup.contentHTML  }} style={{overflow: 'hidden'}} />
                   <h2 id="popup-title" className='flex-center'>
                     <span style={{paddingRight:'1em'}}>{selectedPopup.title}</span>
-                    <a onClick={closePopup} aria-label="close" className='d-inline-block line-height-normal cursor-pointer'>
+                    <a onClick={closePopup} aria-label="close" className='d-inline-block line-height-normal cursor-pointer' href="#">
                       <CloseIcon style={{color:'white'}}/>
                     </a>           
                   </h2>
@@ -174,7 +173,7 @@ function PopupPage() {
             
                 </style>
               </div>
-              <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1165" frameBorder="0"></iframe>
+              <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1165" frameBorder="0" title="invoice"></iframe>
 
     </div>
   );

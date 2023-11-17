@@ -4,6 +4,7 @@ import WidgetAll from './WidgetAll';
 import MobilePreview from './MobilePreview';
 import TabletPreview from './TabletPreview';
 import TabletPreviewLands from './TabletPreviewLands';
+import DragFeature from './DragFeature';
 const App = () => {
   return (
     <Router>
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/mobile" element={<MobilePreview />} />
         <Route path="/tablet" element={<TabletPreview />} />
         <Route path="/tablet-landscape" element={<TabletPreviewLands />} />
+        <Route path="/drag" element={<DragFeature />} />
       </Routes>
     </Router>
   );
