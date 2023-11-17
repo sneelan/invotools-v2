@@ -75,7 +75,7 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
             </Accordion>                     
           ) : (
             // Display without Accordion when toggleStatus is 'inactive'
-            <div className={`widget make-column-height-same ${widgetClassName} ${addClassFixedwidth} ${column.toggleStatus === 'inactive' ? 'bg-none shadow-none' : ''} `} style={widgetStyle}>
+            <div className={`widget make-column-height-same ${widgetClassName} ${addClassFixedwidth} ${column.whitebox === 'no' ? 'bg-none shadow-none' : ''} `} style={widgetStyle}>
               {column.title && (<div className='widget-title-border'>
                 <h6 class="widget-title " style={{margin:'0 1em'}}>{column.title}</h6>
                 </div>)}              
