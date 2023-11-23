@@ -17,31 +17,54 @@ $theme-accent-verylight:#FFEEB5;
 
 
 $theme-yellow:#FFC500;
-$theme-blue:#55d2ff;
-$theme-green:#80CC20;
 $theme-yellow-light:#FFC25A;
-$theme-blue-light:#a8e6fd;
-$theme-green-light:#a8dd67;
-
 $theme-yellow-verylight:#FFF0D6;
-$theme-blue-verylight:#a8e6fd;
-$theme-green-verylight:#daf0bf;
+$theme-yellow-page-bg:#FFCC76;
+$theme-yellow-dark-page-bg:#241d11;
 
-.theme-yellow{
-    background-color: #FFCC76;
-}
-.theme-blue{
-    background-color: #8292a0;
-}
-.theme-green{
-    background-color: #768366;
-}
-.theme-yellow.dark-mode{
-    background-color: #241d11!important;
-}
-.theme-blue.dark-mode{
-    background-color: #1e2124!important;
-}
-.theme-green.dark-mode{
-    background-color: #32382a!important;
-} 
+$theme-blue:#55d2ff;
+$theme-blue-light:#a8e6fd;
+$theme-blue-verylight:#a8e6fd;
+$theme-blue-page-bg:#8292a0;
+$theme-blue-dark-page-bg:#1e2124;
+
+$theme-green:#80CC20;
+$theme-green-light:#a8dd67;
+$theme-green-verylight:#daf0bf;
+$theme-green-page-bg:#768366;
+$theme-green-dark-page-bg:#32382a;
+
+
+$theme-black:#9e9e9e;
+$theme-black-light:#dadada;
+$theme-black-verylight:#ebebeb;
+$theme-black-page-bg:#999999;
+$theme-black-dark-page-bg:#000000;
+
+$theme-red:#fd4a53;
+$theme-red-light:#ff9298;
+$theme-red-verylight:#ffcfd1;
+$theme-red-page-bg:#9b5b5e;
+$theme-red-dark-page-bg:#110404;
+
+$theme-maroon:#ff476b;
+$theme-maroon-light:#ff98ad;
+$theme-maroon-verylight:#fdcdd6;
+$theme-maroon-page-bg:#85686e;
+$theme-maroon-dark-page-bg:#250b11;
+
+
+
+.theme-yellow{    background-color: $theme-yellow-page-bg;}
+.theme-blue{    background-color:$theme-blue-page-bg;}
+.theme-green{    background-color:$theme-green-page-bg;}
+.theme-black{    background-color: $theme-black-page-bg;}
+.theme-red{    background-color:$theme-red-page-bg;}
+.theme-maroon{    background-color:$theme-maroon-page-bg;}
+
+.theme-yellow.dark-mode{    background-color: $theme-yellow-dark-page-bg!important;}
+.theme-blue.dark-mode{    background-color: $theme-blue-dark-page-bg!important;}
+.theme-green.dark-mode{    background-color: $theme-green-dark-page-bg!important;} 
+.theme-black.dark-mode{    background-color: $theme-black-dark-page-bg!important;} 
+.theme-red.dark-mode{    background-color: $theme-red-dark-page-bg!important;} 
+.theme-maroon.dark-mode{    background-color: $theme-maroon-dark-page-bg!important;} 

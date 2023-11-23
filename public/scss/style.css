@@ -11,6 +11,18 @@
   background-color: #768366;
 }
 
+.theme-black {
+  background-color: #999999;
+}
+
+.theme-red {
+  background-color: #9b5b5e;
+}
+
+.theme-maroon {
+  background-color: #85686e;
+}
+
 .theme-yellow.dark-mode {
   background-color: #241d11 !important;
 }
@@ -21,6 +33,18 @@
 
 .theme-green.dark-mode {
   background-color: #32382a !important;
+}
+
+.theme-black.dark-mode {
+  background-color: #000000 !important;
+}
+
+.theme-red.dark-mode {
+  background-color: #110404 !important;
+}
+
+.theme-maroon.dark-mode {
+  background-color: #250b11 !important;
 }
 
 .bg-theme-primary {
@@ -707,6 +731,27 @@ body {
   background-color: #a8e6fd;
 }
 
+.theme-maroon .drawer-box .button, .theme-maroon .box-button {
+  background-color: #ff476b;
+}
+.theme-maroon .drawer-box .button:hover, .theme-maroon .box-button:hover {
+  background-color: #fdcdd6;
+}
+
+.theme-red .drawer-box .button, .theme-red .box-button {
+  background-color: #fd4a53;
+}
+.theme-red .drawer-box .button:hover, .theme-red .box-button:hover {
+  background-color: #ffcfd1;
+}
+
+.theme-black .drawer-box .button, .theme-black .box-button {
+  background-color: #9e9e9e;
+}
+.theme-black .drawer-box .button:hover, .theme-black .box-button:hover {
+  background-color: #ebebeb;
+}
+
 #mypopup .MuiPaper-root {
   margin: 0 !important;
 }
@@ -742,6 +787,7 @@ body {
 /* Footer */
 footer {
   font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   background-color: #1E1E1E;
   padding: 0.75em 0;
 }
@@ -1056,7 +1102,7 @@ footer a:hover {
   background-color: #1E1E1E !important;
   color: white !important;
 }
-.dark-mode .theme-blue, .dark-mode .theme-green {
+.dark-mode .theme-blue, .dark-mode .theme-green, .dark-mode .theme-yellow, .dark-mode .theme-red, .dark-mode .theme-maroon, .dark-mode .theme-black {
   background-color: transparent !important;
 }
 

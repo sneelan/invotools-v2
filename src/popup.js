@@ -203,7 +203,7 @@ function PopupPage({ activeTheme }) {
             
                 </style>
               </div>   
-              <div className='text-white t-c p-2'>---{darkMode ? 'dark' : 'light'}---{activeTheme}</div>
+              {/* <div className='text-white t-c p-2'>---{darkMode ? 'dark' : 'light'}---{activeTheme}</div> */}
               <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe>
               
 

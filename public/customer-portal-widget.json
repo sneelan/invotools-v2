@@ -281,9 +281,9 @@
 				{
 					"displayOrder": "1",
 					"displayStatus": "active",
-					"toggleStatus": "inactive",
+					"toggleStatus": "active",
 					"toggleExpand": "no",
-					"title": "",
+					"title": "Recent Products - Image Slideshow",
 					"width": "",
 					"height": "",
 					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-carousel.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
