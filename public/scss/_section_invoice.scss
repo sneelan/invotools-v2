@@ -1,7 +1,6 @@
-body{  
-    background-color: $page-bg!important;
-    //@include media-breakpoint-min(1100px) {background-color: $page-bg !important;}
+body{     
     overflow: auto!important;
+    //background-color: $page-bg;
 }
 *{transition: 0.5s;}
 .shadow{
@@ -9,6 +8,7 @@ body{
     -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)!important;
     -moz-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)!important;
 }
+.wrapper{min-height:calc(100vh - 50px);}
 .invoice-wrap{ 
     @include media-breakpoint-min(992px) {
         max-width:1100px; 
@@ -153,7 +153,22 @@ body{
     svg{width:22px; height:auto; max-width:22px; padding-right:0.25em;}
     &:hover{background-color:white;} 
 }
-
+.theme-green {
+    .drawer-box .button, .box-button{
+        background-color: $theme-green;
+    }
+    .drawer-box .button:hover, .box-button:hover{
+        background-color: $theme-green-verylight;
+    }
+}
+.theme-blue {
+    .drawer-box .button, .box-button{
+        background-color: $theme-blue;
+    }
+    .drawer-box .button:hover, .box-button:hover{
+        background-color: $theme-blue-verylight;
+    }
+}
 
 #mypopup {    
     .MuiPaper-root{   
@@ -223,3 +238,6 @@ footer{
     background-color: $theme-secondary; color: rgba(255, 255, 255, 0.658);
     &:hover{background-color: $theme-secondary-dark;color:white;}
 }
+
+.theme-btn{width:25px;height: 25px; display: inline-block; margin-left: 0.5em; @extend .shadow; @extend .rounded;  border: 2px solid rgba(255, 255, 255, 0.8);}
+.theme-btn.active{border: 2px solid rgba(0, 0, 0, 0.8);}

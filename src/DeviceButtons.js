@@ -3,11 +3,20 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import RotateIcon from '@mui/icons-material/Cached';
 
-const DeviceButtons = () => {
+const DeviceButtons = ({ onButtonClick }) =>  {
   const location = useLocation();
   const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState('');
   const hideIT = 1;
+
+
+  //theme change
+  const [activeTheme, setActiveTheme] = useState('yellow');
+  const handleButtonClick = (theme) => {
+    setActiveTheme(theme);
+    onButtonClick(theme);
+  };
+
 
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
@@ -58,15 +67,24 @@ const DeviceButtons = () => {
     <>
       {(location.pathname === '/' || location.pathname === '/demo' || location.pathname === '/mobile' || location.pathname === '/tablet' || location.pathname === '/tablet-landscape') && (
         <>
-          <div className='invoice-wrap bg-whiteX rounded p-1'>
-            <div className='t-c'>
+          <div className='rounded p-1'>
+            <div className='t-c flex-center'>
               <select value={selectedOption} onChange={handleSelectChange} style={{ padding: '0.5em', borderRadius: '0' }}>
                 <option value="">Select Device</option>
                 <option value="mobile">Mobile</option>
                 <option value="tablet">Tablet Portrait</option>
                 <option value="tablet-landscape">Tablet Landscape </option>
-                <option value="desktop">Desktop</option>
+                <option value="desktop">Desktop</option>                
               </select>
+              <div class='flex-center ms-1'>
+                  <span>Theme:</span>
+                  <span>
+                    <span className={`theme-btn ${activeTheme === 'yellow' ? 'active' : ''}`} style={{backgroundColor:'#FFA100'}} onClick={() => handleButtonClick('yellow')}></span>
+                    <span className={`theme-btn ${activeTheme === 'blue' ? 'active' : ''}`} style={{backgroundColor:'#55d2ff'}} onClick={() => handleButtonClick('blue')}></span>
+                    <span className={`theme-btn ${activeTheme === 'green' ? 'active' : ''}`} style={{backgroundColor:'#80CC20'}} onClick={() => handleButtonClick('green')}></span>
+                  </span>                 
+              </div>
+              
             </div>
             {hideIT === 0 && (
               <div className='t-c drawer-box p-1 flex-center' style={{ marginBottom: '1em' }}>

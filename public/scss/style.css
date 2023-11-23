@@ -1,4 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Roboto:wght@400;700&display=swap");
+.theme-yellow {
+  background-color: #FFCC76;
+}
+
+.theme-blue {
+  background-color: #8292a0;
+}
+
+.theme-green {
+  background-color: #768366;
+}
+
+.theme-yellow.dark-mode {
+  background-color: #241d11 !important;
+}
+
+.theme-blue.dark-mode {
+  background-color: #1e2124 !important;
+}
+
+.theme-green.dark-mode {
+  background-color: #32382a !important;
+}
+
 .bg-theme-primary {
   background-color: #FFA100;
 }
@@ -427,7 +451,6 @@ body {
 }
 
 body {
-  background-color: #FFCC76 !important;
   overflow: auto !important;
 }
 
@@ -436,10 +459,14 @@ body {
   transition: 0.5s;
 }
 
-.shadow, .widget {
+.shadow, .theme-btn, .widget {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
   -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
   -moz-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.wrapper {
+  min-height: calc(100vh - 50px);
 }
 
 @media screen and (min-width: 992px) {
@@ -666,6 +693,20 @@ body {
   background-color: white;
 }
 
+.theme-green .drawer-box .button, .theme-green .box-button {
+  background-color: #80CC20;
+}
+.theme-green .drawer-box .button:hover, .theme-green .box-button:hover {
+  background-color: #daf0bf;
+}
+
+.theme-blue .drawer-box .button, .theme-blue .box-button {
+  background-color: #55d2ff;
+}
+.theme-blue .drawer-box .button:hover, .theme-blue .box-button:hover {
+  background-color: #a8e6fd;
+}
+
 #mypopup .MuiPaper-root {
   margin: 0 !important;
 }
@@ -809,7 +850,7 @@ footer a:hover {
   margin-bottom: 1em;
 }
 
-.rounded {
+.rounded, .theme-btn {
   border-radius: 0.25em;
 }
 
@@ -833,6 +874,18 @@ footer a:hover {
 .btn-secondary:hover {
   background-color: black;
   color: white;
+}
+
+.theme-btn {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-left: 0.5em;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.theme-btn.active {
+  border: 2px solid rgba(0, 0, 0, 0.8);
 }
 
 /* The device with borders */
@@ -965,8 +1018,8 @@ footer a:hover {
 }
 
 /* Dark mode */
-.dark-mode {
-  background-color: black !important;
+.dark-mode #root {
+  background-color: transparent;
 }
 .dark-mode .container-xl {
   background-color: #ffc25a !important;
@@ -1002,4 +1055,21 @@ footer a:hover {
 .dark-mode .mob-product-row .title {
   background-color: #1E1E1E !important;
   color: white !important;
+}
+.dark-mode .theme-blue, .dark-mode .theme-green {
+  background-color: transparent !important;
+}
+
+.theme-blue .MuiAccordion-root, .theme-blue .make-column-height-same, .theme-blue .widget {
+  background: #a8e6fd !important;
+}
+.theme-blue .MuiButtonBase-root, .theme-blue .widget-title-border {
+  border-bottom: 0px solid rgb(230, 230, 230) !important;
+}
+
+.theme-green .MuiAccordion-root, .theme-green .make-column-height-same, .theme-green .widget {
+  background: #a8dd67 !important;
+}
+.theme-green .MuiButtonBase-root, .theme-green .widget-title-border {
+  border-bottom: 0px solid rgb(230, 230, 230) !important;
 }/*# sourceMappingURL=style.css.map */

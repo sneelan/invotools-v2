@@ -11,17 +11,20 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the Expan
 import WidgetSocialmedia from './WidgetSocialmedia';
 import WidgetPlainText from './WidgetPlainText';
 
-function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) { 
+function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowIndex, columnIndex}) { 
+
   const [expanded, setExpanded] = useState(column.toggleExpand === 'yes');
   //const [expanded, setExpanded] = useState(false); //accordion 
   //const isExpanded = column.toggleExpand === 'yes'; // Check the toggleExpand property
   //const [Expanded, setExpanded] = useState(column.toggleExpand === 'yes');
+
+  // Generate a unique widget ID based on rowIndex and columnIndex
+  const widgetId = `client-widget-en-${rowIndex}-${columnIndex}`;
  
   if (column.displayStatus === 'inactive') {
     return null; // Hide the column
   }
 
-  
 
   
   const widgetStyle = {};
@@ -75,9 +78,9 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
             </Accordion>                     
           ) : (
             // Display without Accordion when toggleStatus is 'inactive'
-            <div className={`widget make-column-height-same ${widgetClassName} ${addClassFixedwidth} ${column.whitebox === 'no' ? 'bg-none shadow-none' : ''} `} style={widgetStyle}>
+            <div className={`widget make-column-height-same ${widgetClassName} ${addClassFixedwidth} `} style={widgetStyle} id={widgetId}>
               {column.title && (<div className='widget-title-border'>
-                <h6 class="widget-title " style={{margin:'0 1em'}}>{column.title}</h6>
+                <h6 class="widget-title " style={{margin:'0 1em'}}>{column.title} {rowIndex}</h6>
                 </div>)}              
               {InnerContent}
               {/* Display a white box without any content */}
@@ -106,9 +109,12 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass}) {
 }
 
 
-function WidgetAll() {
-  
+function WidgetAll  ({ activeTheme}) {
+ 
+  //const theme = activeTheme || 'yellow';
+  if(!activeTheme){activeTheme='yellow';}
   const [data, setData] = useState(null);
+  document.body.classList.add(`theme-${activeTheme}`);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -130,14 +136,13 @@ function WidgetAll() {
   }
 
   return (
-    <>
-     
-    <PopupPage/>    
+    <>     
+    <PopupPage activeTheme={activeTheme} />    
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}
-
-    <div className='invoice-wrap' style={{ marginBottom:'1em'}}>
+<div className={`theme-${activeTheme}`}>
+<div className='invoice-wrap' style={{ paddingBottom:'1em'}}>
       {data &&
         data.rows.map((row, rowIndex) => (
           row.columns.filter((column) => column.displayStatus === 'active').length === 2 ? (
@@ -147,7 +152,7 @@ function WidgetAll() {
                 {row.columns
                   .filter((column) => column.displayStatus === 'active')
                   .map((column, columnIndex) => (
-                    <ColumnComponent key={column.displayOrder} column={column} grid={'Show'} sm={12} md={6} lg={6} length={row.columns.length} />
+                    <ColumnComponent key={column.displayOrder} column={column} grid={'Show'} sm={12} md={6} lg={6} length={row.columns.length} rowIndex={rowIndex} columnIndex={columnIndex}/>
                   ))}
                 </Grid></div>
             ) : row.columns.filter((column) => column.displayStatus === 'active').length === 3 ? (
@@ -157,7 +162,7 @@ function WidgetAll() {
                 {row.columns
                   .filter((column) => column.displayStatus === 'active')
                   .map((column, columnIndex) => (
-                    <ColumnComponent key={column.displayOrder} column={column} grid={'Show'} md={4} lg={4} length={row.columns.length} />
+                    <ColumnComponent key={column.displayOrder} column={column} grid={'Show'} md={4} lg={4} length={row.columns.length} rowIndex={rowIndex} columnIndex={columnIndex} />
                   ))}
                 </Grid></div>
             ) : (
@@ -166,15 +171,16 @@ function WidgetAll() {
                 .filter((column) => column.displayStatus === 'active')
                 .map((column, columnIndex) => (
                   <>
-                  <ColumnComponent key={column.displayOrder} column={column} /> 
+                  <ColumnComponent key={column.displayOrder} column={column} rowIndex={rowIndex} columnIndex={columnIndex} /> 
                   </>
                 )))          
         ))}
-    </div>
-    <DeviceButtons/>
-    <footer className='t-c'>
-      <p>&copy; {new Date().getFullYear()}, All rights reserved by <a href="https://www.invotools.io" target="_blank" rel="noopener noreferrer"><u>www.Invotools.io</u></a></p>
-    </footer>
+       {/*  <DeviceButtons onButtonClick={handleButtonClick} /> */}
+
+
+    </div>     
+    </div>     
+
     </>
   );
 }

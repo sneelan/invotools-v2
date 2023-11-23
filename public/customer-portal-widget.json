@@ -7,22 +7,21 @@
 			"rowNumber": "2",
 			"columns": [
 				
-				{
-					"displayOrder": "2",
-					"displayStatus": "active",
-					"toggleStatus": "inactive",
-					"toggleExpand": "yes",
+				{					
 					"title": "Buy Products from your Wishlist",
 					"width": "",
 					"height": "",
 					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
-					"contentCSS": "  ",
+					"contentCSS": "",
+
+					"displayOrder": "2",
+					"displayStatus": "active",					
 					"displayDevice": "tablet, desktop",
-					"displayType": "Only PDF",
+					"displayType": "pdf, portal",
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
-
+					"toggleStatus": "inactive",
+					"toggleExpand": "yes"
 				}
 			]
 		},
@@ -43,8 +42,7 @@
 					"displayDevice": "tablet, desktop",
 					"displayType": "Only PDF",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"
 				},
 				{
 					"displayOrder": "2",
@@ -59,8 +57,8 @@
 					"displayDevice": "desktop",
 					"displayType": "Only PDF",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"
+					
 				},{
 					"displayOrder": "3",
 					"displayStatus": "active",
@@ -74,8 +72,8 @@
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"
+					
 				}
 			]
 		},
@@ -95,8 +93,8 @@
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"
+					
 				} 
 			]
 		},
@@ -116,8 +114,8 @@
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"
+					
 				}
 			]
 		},
@@ -137,8 +135,8 @@
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"
+					
 				}
 			]
 		},
@@ -158,16 +156,15 @@
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"				
 				}
 			]
-		},
+		},		
 		{
 			"rowNumber": "1",
 			"columns": [
 				{
-					"title": "Customer Survey Form",
+					"title": "Feedback Form",
 					"width": "",
 					"height": "",
 					"contentHTML": "<iframe src=\"https://form.jotform.com/233200506424442\" frameborder=\"0\" style=\"height:1020px;width:100%;\"></iframe>",
@@ -179,8 +176,8 @@
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024",
 					"toggleStatus": "active",
-					"toggleExpand": "no",
-					"whitebox": "yes"					
+					"toggleExpand": "no"
+					
 				}
 			]
 		},
@@ -200,8 +197,8 @@
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024",
 					"toggleStatus": "active",
-					"toggleExpand": "no",
-					"whitebox": "yes"					
+					"toggleExpand": "no"
+					
 				}
 			]
 		},
@@ -221,8 +218,8 @@
 					"displayDevice": "mobile, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"
+					
 				},{
 					"displayOrder": "1",
 					"displayStatus": "active",
@@ -236,8 +233,8 @@
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"
+					
 				},
 				{
 					"displayOrder": "2",
@@ -252,48 +249,32 @@
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"displayToDate": "31/01/2024"
+					
 				}
 			]
 		},
 		{
-			"rowNumber": "5",
+			"rowNumber": "1",
 			"columns": [
 				{
+					"title": "Customer Service Survey Form",
+					"width": "",
+					"height": "",
+					"contentHTML": "<iframe src=\"https://form.jotform.com/233231420979456\" frameborder=\"0\" style=\"height:550px;width:100%;\"></iframe>",
+					"contentCSS": "#client-widget-en-6-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
 					"displayOrder": "1",
 					"displayStatus": "active",
-					"toggleStatus": "active",
-					"toggleExpand": "no",
-					"title": "Most Bought Products List!",
-					"width": "",
-					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-wishlist.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
+					"displayDevice": "desktop",
+					"displayType": "pdf",
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
-				},
-				{
-					"displayOrder": "2",
-					"displayStatus": "active",
 					"toggleStatus": "active",
-					"toggleExpand": "no",
-					"title": "Our Recommended Products",
-					"width": "",
-					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-wishlist.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "yes"
+					"toggleExpand": "no"
+										
 				}
 			]
-		} ,
+		},
 		{
 			"rowNumber": "5",
 			"columns": [
@@ -306,14 +287,15 @@
 					"width": "",
 					"height": "",
 					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-carousel.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
-					"contentCSS": "  ",
+					"contentCSS": "#client-widget-en-10-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"whitebox": "no"
+					"displayToDate": "31/01/2024"
+					
 				}
 			]
-		} 
+		}
+		
 	]
 }

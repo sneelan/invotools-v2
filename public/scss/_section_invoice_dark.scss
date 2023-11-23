@@ -1,7 +1,7 @@
 /* Dark mode */
 
 .dark-mode{ 
-    background-color: black!important;
+    #root{background-color: transparent;}
     .container-xl{background-color:#ffc25a!important;}
     .bg-theme-accent{background-color: rgb(0, 0, 0)!important; color:white;}
     .border-theme-accent{border-color: rgb(0, 0, 0)!important;}
@@ -14,4 +14,20 @@
         border-color: $theme-secondary!important; background-color:#ffcd77!important; 
         .title{background-color:$theme-secondary!important; color:white!important;}
     } 
+    .theme-blue, .theme-green{
+        background-color:transparent!important; 
+    }
 }
+.theme-blue{
+    .MuiAccordion-root, .make-column-height-same, .widget{background:$theme-blue-light!important;}
+    .MuiButtonBase-root, .widget-title-border{
+        border-bottom: 0px solid rgb(230, 230, 230)!important;
+    }
+}
+.theme-green{
+    .MuiAccordion-root, .make-column-height-same, .widget{background:$theme-green-light!important;}
+    .MuiButtonBase-root, .widget-title-border{
+        border-bottom: 0px solid rgb(230, 230, 230)!important;
+    }
+}
+.theme-accent-dark{}

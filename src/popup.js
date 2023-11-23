@@ -17,13 +17,21 @@ import { useLocation } from 'react-router-dom';
 
 import MenuIcon from '@mui/icons-material/Menu';
 
-function PopupPage() {
+function PopupPage({ activeTheme }) {
+ 
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
   const [selectedPopup, setSelectedPopup] = useState({}); // Initialize with an empty object
   const [showInitialDrawer, setShowInitialDrawer] = useState(true); // New state
-  
+  const [darkMode, setDarkMode] = useState(false);
+  const [invoiceTemplate, setInvoiceTemplate] = useState('');
+
+
+  //const [invoiceTemplate, setInvoiceTemplate] = useState('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template.html');  
+ 
+  //const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -52,15 +60,25 @@ function PopupPage() {
     setPopupOpen(false);
   };
   
-
-  const [darkMode, setDarkMode] = useState(false); // New state for dark mode
-  const [invoiceTemplate, setInvoiceTemplate] = useState('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template.html');  
   const toggleDarkMode = () => {
-      setDarkMode(!darkMode);
-      setInvoiceTemplate(darkMode ? 'https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template.html' : 'https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template-dark.html');      
-      document.body.classList.toggle('dark-mode', !darkMode);
-  };      
-  
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  };
+ 
+  useEffect(() => {
+    const modeSuffix = darkMode ? 'dark' : 'light';
+    const colorSuffix = activeTheme ? `-${activeTheme}` : '';
+    const templateName = `template${colorSuffix}-${modeSuffix}.html`;
+    setInvoiceTemplate(`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`);
+  }, [activeTheme, darkMode]);
+
+/*   const updateInvoiceTemplate = () => {
+    const modeSuffix = darkMode ? 'dark' : 'light';
+    const colorSuffix = activeTheme ? `-${activeTheme}` : '';
+    const templateName = `template${colorSuffix}-${modeSuffix}.html`;
+    setInvoiceTemplate(`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  }; */
 
   useEffect(() => {
     setOpen(true);
@@ -90,16 +108,26 @@ function PopupPage() {
   }
   }, [data]);
 
-  
+
+/* 
+   useEffect(() => {
+    const modeSuffix = darkMode ? 'dark' : 'light';
+    const colorSuffix = activeTheme ? `-${activeTheme}` : '';
+    const templateName = `template${colorSuffix}-${modeSuffix}.html`;
+    setInvoiceTemplate(`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  }, [activeTheme, darkMode]);  */
+
 
   return (
-    <div>        
+    <div>      
               <div className=' mobile-menu bg-theme-secondary'>
                   <div style={{padding:'0.25em', justifyContent:'end'}} className='invoice-wrap flex-center'>
                     
                   <b style={{color:'gray'}} className='me-1'>Menu </b>
                     
                     <span onClick={toggleDrawer} className='box-button'> <MenuIcon /></span>
+                    
                     <span className='box-button ms-1 d-none' onClick={toggleDarkMode}>{darkMode ?  <LightModeIcon/>: <ModeNightIcon />}</span>
                     </div>
                     
@@ -119,6 +147,7 @@ function PopupPage() {
                       </div>
                     <div style={{ minWidth: '150px' }} className='drawer-wrap'>
                     <div className='drawer-box'>
+                    {/* <span class='bg-white d-block p-2'>bb{invoiceTemplate}aaa{activeTheme}</span> */}
                         {data && data.popups && data.popups.map((popup, index) => {
                           // adding widgetClassName based on displayDevice
                           let widgetClassName = '';
@@ -173,7 +202,8 @@ function PopupPage() {
                     `}
             
                 </style>
-              </div>
+              </div>   
+              <div className='text-white t-c p-2'>---{darkMode ? 'dark' : 'light'}---{activeTheme}</div>
               <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe>
               
 
