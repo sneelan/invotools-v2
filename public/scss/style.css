@@ -664,6 +664,10 @@ body {
   }
 }
 
+.dark-mode #burger-menu {
+  border: 2px solid rgba(255, 255, 255, 0.575) !important;
+}
+
 .mobile-menu {
   padding: 0 0.5em;
 }
@@ -678,7 +682,8 @@ body {
 }
 
 .MuiDrawer-paper {
-  background-color: #1E1E1E !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .drawer-wrap {
@@ -1064,6 +1069,10 @@ footer a:hover {
 }
 
 /* Dark mode */
+.MuiButtonBase-root, .widget-title-border {
+  border-bottom: 0px solid rgb(230, 230, 230) !important;
+}
+
 .dark-mode #root {
   background-color: transparent;
 }
@@ -1109,13 +1118,19 @@ footer a:hover {
 .theme-blue .MuiAccordion-root, .theme-blue .make-column-height-same, .theme-blue .widget {
   background: #a8e6fd !important;
 }
-.theme-blue .MuiButtonBase-root, .theme-blue .widget-title-border {
-  border-bottom: 0px solid rgb(230, 230, 230) !important;
-}
 
 .theme-green .MuiAccordion-root, .theme-green .make-column-height-same, .theme-green .widget {
   background: #a8dd67 !important;
 }
-.theme-green .MuiButtonBase-root, .theme-green .widget-title-border {
-  border-bottom: 0px solid rgb(230, 230, 230) !important;
+
+.theme-black .MuiAccordion-root, .theme-black .make-column-height-same, .theme-black .widget {
+  background: #dadada !important;
+}
+
+.theme-red .MuiAccordion-root, .theme-red .make-column-height-same, .theme-red .widget {
+  background: #ff9298 !important;
+}
+
+.theme-maroon .MuiAccordion-root, .theme-maroon .make-column-height-same, .theme-maroon .widget {
+  background: #ff98ad !important;
 }/*# sourceMappingURL=style.css.map */

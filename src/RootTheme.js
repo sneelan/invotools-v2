@@ -12,6 +12,7 @@ const RootTheme = () => {
     document.body.classList.remove(`theme-${activeTheme}`);
     setActiveTheme(theme);
     document.body.classList.add(`theme-${theme}`);
+    //console.log(`Clicked on ${theme} button`);
   };
 
   
@@ -23,13 +24,13 @@ const RootTheme = () => {
 const renderSelectedComponent = () => {
   switch (selectedOption) {
     case 'mobile':
-      return <MobilePreview key={`mobile-${activeTheme}`} activeTheme={activeTheme} />;
+      return <MobilePreview activeTheme={activeTheme} />;
     case 'tablet':
-      return <TabletPreview key={`tablet-${activeTheme}`} activeTheme={activeTheme} />;
+      return <TabletPreview  activeTheme={activeTheme} />;
     case 'tablet-landscape':
-      return <TabletPreviewLands key={`tablet-landscape-${activeTheme}`} activeTheme={activeTheme} />;
+      return <TabletPreviewLands activeTheme={activeTheme} />;
     case 'desktop':
-      return <WidgetAll key={`desktop-${activeTheme}`} activeTheme={activeTheme} />;
+      return <WidgetAll  activeTheme={activeTheme} />;
     default:
       return null;
   }

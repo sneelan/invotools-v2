@@ -1,5 +1,6 @@
 /* Dark mode */
 
+.MuiButtonBase-root, .widget-title-border{border-bottom: 0px solid rgb(230, 230, 230)!important;}
 .dark-mode{ 
     #root{background-color: transparent;}
     .container-xl{background-color:#ffc25a!important;}
@@ -16,18 +17,11 @@
     } 
     .theme-blue, .theme-green, .theme-yellow, .theme-red, .theme-maroon, .theme-black{
         background-color:transparent!important; 
+    }    
     }
-}
-.theme-blue{
-    .MuiAccordion-root, .make-column-height-same, .widget{background:$theme-blue-light!important;}
-    .MuiButtonBase-root, .widget-title-border{
-        border-bottom: 0px solid rgb(230, 230, 230)!important;
-    }
-}
-.theme-green{
-    .MuiAccordion-root, .make-column-height-same, .widget{background:$theme-green-light!important;}
-    .MuiButtonBase-root, .widget-title-border{
-        border-bottom: 0px solid rgb(230, 230, 230)!important;
-    }
-}
-.theme-accent-dark{}
+
+.theme-blue{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-blue-light!important;}}
+.theme-green{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-green-light!important;}}
+.theme-black{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-black-light!important;}}
+.theme-red{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-red-light!important;}}
+.theme-maroon{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-maroon-light!important;}}

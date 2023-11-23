@@ -129,14 +129,16 @@ body{
 #burger-menu{
     @include media-breakpoint-max(1182px) {display:none!important;} 
 }
+.dark-mode #burger-menu{border: 2px solid rgba(255, 255, 255, 0.575)!important;}
 .mobile-menu{
     @include media-breakpoint-min(1181px) {display:none!important;}
     padding:0 .5em;
      
 }
 #burger-close{ width:100px;}
-.MuiDrawer-paper{ background-color:$theme-secondary!important;}
+.MuiDrawer-paper{ background-color:rgba(0, 0, 0, 0.9)!important;border-left: 1px solid rgba(255, 255, 255, 0.2);}
 .drawer-wrap {padding:0 0.5em;}
+
 .drawer-box .button{ 
     transition: 0.25s;
     cursor: pointer;

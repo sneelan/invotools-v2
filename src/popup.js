@@ -61,7 +61,7 @@ function PopupPage({ activeTheme }) {
   };
   
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(!darkMode);    
     document.body.classList.toggle('dark-mode', !darkMode);
   };
  
@@ -69,7 +69,9 @@ function PopupPage({ activeTheme }) {
     const modeSuffix = darkMode ? 'dark' : 'light';
     const colorSuffix = activeTheme ? `-${activeTheme}` : '';
     const templateName = `template${colorSuffix}-${modeSuffix}.html`;
-    setInvoiceTemplate(`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`);
+    const templateURL=`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;   
+    setInvoiceTemplate(templateURL);
+
   }, [activeTheme, darkMode]);
 
 /*   const updateInvoiceTemplate = () => {
@@ -203,7 +205,7 @@ function PopupPage({ activeTheme }) {
             
                 </style>
               </div>   
-              {/* <div className='text-white t-c p-2'>---{darkMode ? 'dark' : 'light'}---{activeTheme}</div> */}
+              {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
               <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe>
               
 
