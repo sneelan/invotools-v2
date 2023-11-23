@@ -140,6 +140,7 @@ body{
 .drawer-wrap {padding:0 0.5em;}
 
 .drawer-box .button{ 
+    color: black;
     transition: 0.25s;
     cursor: pointer;
     display: block; 
@@ -155,46 +156,7 @@ body{
     svg{width:22px; height:auto; max-width:22px; padding-right:0.25em;}
     &:hover{background-color:white;} 
 }
-.theme-green {
-    .drawer-box .button, .box-button{
-        background-color: $theme-green;
-    }
-    .drawer-box .button:hover, .box-button:hover{
-        background-color: $theme-green-verylight;
-    }
-}
-.theme-blue {
-    .drawer-box .button, .box-button{
-        background-color: $theme-blue;
-    }
-    .drawer-box .button:hover, .box-button:hover{
-        background-color: $theme-blue-verylight;
-    }
-}
-.theme-maroon {
-    .drawer-box .button, .box-button{
-        background-color: $theme-maroon;
-    }
-    .drawer-box .button:hover, .box-button:hover{
-        background-color: $theme-maroon-verylight;
-    }
-}
-.theme-red {
-    .drawer-box .button, .box-button{
-        background-color: $theme-red;
-    }
-    .drawer-box .button:hover, .box-button:hover{
-        background-color: $theme-red-verylight;
-    }
-}
-.theme-black {
-    .drawer-box .button, .box-button{
-        background-color: $theme-black;
-    }
-    .drawer-box .button:hover, .box-button:hover{
-        background-color: $theme-black-verylight;
-    }
-}
+
 
 #mypopup {    
     .MuiPaper-root{   

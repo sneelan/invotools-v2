@@ -1,0 +1,42 @@
+.theme-green {
+    .drawer-box .button, .box-button{
+        background-color: $theme-green;
+    }
+    .drawer-box .button:hover, .box-button:hover{
+        background-color: $theme-green-verylight;
+    }
+}
+.theme-blue {
+    .drawer-box .button, .box-button{background-color: $theme-blue;}
+    .drawer-box .button:hover, .box-button:hover{background-color: $theme-blue-verylight;}
+}
+.theme-maroon {
+    .drawer-box .button, .box-button{
+        background-color: $theme-maroon;
+    }
+    .drawer-box .button:hover, .box-button:hover{
+        background-color: $theme-maroon-verylight;
+    }
+} 
+.theme-red {
+    .drawer-box .button, .box-button{
+        background-color: $theme-red;
+    }
+    .drawer-box .button:hover, .box-button:hover{
+        background-color: $theme-red-verylight;
+    }
+}
+.theme-black {
+    .drawer-box .button, .box-button,.dark-mode #burger-menu{
+        background-color: $theme-black;
+    }
+    .drawer-box .button:hover, .box-button:hover{
+        background-color: $theme-black-verylight;
+    }
+}
+.theme-yellow.dark-mode #burger-menu{background-color: $theme-yellow;svg{color:unset;}}
+.theme-blue.dark-mode #burger-menu{background-color: $theme-blue;svg{color:unset;}}
+.theme-green.dark-mode #burger-menu{background-color: $theme-green;svg{color:unset;}}
+.theme-red.dark-mode #burger-menu{background-color: $theme-red;svg{color:unset;}}
+.theme-black.dark-mode #burger-menu{background-color: $theme-black;svg{color:unset;}}
+.theme-maroon.dark-mode #burger-menu{background-color: $theme-maroon;svg{color:unset;}}
