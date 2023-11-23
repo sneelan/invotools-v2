@@ -1115,22 +1115,8 @@ footer a:hover {
   background-color: transparent !important;
 }
 
-.theme-blue .MuiAccordion-root, .theme-blue .make-column-height-same, .theme-blue .widget {
-  background: #a8e6fd !important;
-}
-
-.theme-green .MuiAccordion-root, .theme-green .make-column-height-same, .theme-green .widget {
-  background: #a8dd67 !important;
-}
-
-.theme-black .MuiAccordion-root, .theme-black .make-column-height-same, .theme-black .widget {
-  background: #dadada !important;
-}
-
-.theme-red .MuiAccordion-root, .theme-red .make-column-height-same, .theme-red .widget {
-  background: #ff9298 !important;
-}
-
-.theme-maroon .MuiAccordion-root, .theme-maroon .make-column-height-same, .theme-maroon .widget {
-  background: #ff98ad !important;
-}/*# sourceMappingURL=style.css.map */
+/* .theme-blue{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-blue-verylight!important;}}
+.theme-green{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-green-verylight!important;}}
+.theme-black{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-black-verylight!important;}}
+.theme-red{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-red-verylight!important;}}
+.theme-maroon{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-maroon-verylight!important;}} *//*# sourceMappingURL=style.css.map */
