@@ -146,14 +146,15 @@ body{
     display: block; 
     margin-bottom: 0.5em; 
     padding:1em 2em;
-    font-size: 13px; @extend .t-c;
+    font-size: 13px; 
     background-color: $theme-primary;
     border-radius: 0.5em;font-weight:500;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     line-height:normal; 
-    svg{width:22px; height:auto; max-width:22px; padding-right:0.25em;}
+    text-align: left!important;
+    svg{width:26px; height:auto; max-width:26px; padding-right:0.5em;fill:black;margin-bottom: -3px;}
     &:hover{background-color:white;} 
 }
 
@@ -161,7 +162,7 @@ body{
 #mypopup {    
     .MuiPaper-root{   
         //overflow-y: unset!important;        
-        @include media-breakpoint-min(968px) { min-width:400px!important;}
+        @include media-breakpoint-min(968px) { min-width:350px!important;}
         margin:0!important;
         h2{ border-radius: 0.25em 0.25em 0 0; 
             padding: 0.5em 1em;                        
@@ -194,7 +195,13 @@ footer{
  /* Common CSS-----as bootstrap */
  .d-inline-block{display: inline-block;}
  .d-block{display: block;}
- .d-none{display: none !important;;}
+ .d-none{display: none;}
+ .d-md-none{@include media-breakpoint-min(768px) { display: none;}}
+ .d-sm-none{@include media-breakpoint-min(564px) { display: none;}}
+ .d-lg-none{@include media-breakpoint-min(968px) { display: none;}}
+ .d-md-block{@include media-breakpoint-min(768px) { display: block;}}
+ .d-sm-block{@include media-breakpoint-min(564px) { display: block;}}
+ .d-lg-block{@include media-breakpoint-min(968px) { display: block;}}
 .t-c{text-align: center;}
 .t-r{text-align: right!important;}
 .t-s{text-align: left!important;}
@@ -202,6 +209,8 @@ footer{
 .p-0{padding:0!important;}
 .m-0{margin:0!important;}
 .p-1{padding:1em;}
+.py-1{padding:1em 0;}
+.img-fluid{max-width: 100%;}
 .w-100{width:100%;} 
 .h-100{height: 100%;}
 .flex-center{display: flex; align-items: center; justify-content: center;}

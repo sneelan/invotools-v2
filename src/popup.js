@@ -14,10 +14,9 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 
 import { useLocation } from 'react-router-dom';
-
 import MenuIcon from '@mui/icons-material/Menu';
 
-function PopupPage({ activeTheme }) {
+function PopupPage({ activeTheme, clientid }) {
  
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
@@ -27,16 +26,24 @@ function PopupPage({ activeTheme }) {
   const [darkMode, setDarkMode] = useState(false);
   const [invoiceTemplate, setInvoiceTemplate] = useState('');
 
-
   //const [invoiceTemplate, setInvoiceTemplate] = useState('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template.html');  
  
   //const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
 
+  //checking client id
+  if(clientid){const clientidHypen = clientid + '-';}
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        //const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json');
-        const response = await fetch('/customer-portal-popup.json'); 
+        let response;
+       if (clientid) {
+              //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-${clientidHypen}popup.json`);
+              response = await fetch('/customer-portal-popup.json');
+        } else {
+              //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json`);
+              response = await fetch('/customer-portal-popup.json');
+        }
         const data = await response.json(); 
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
@@ -64,15 +71,19 @@ function PopupPage({ activeTheme }) {
     setDarkMode(!darkMode);    
     document.body.classList.toggle('dark-mode', !darkMode);
   };
- 
+  
+  //checking client id
+  let clientidfolder=clientid ? 'demo/'+clientid : 'modern-v1';
+
   useEffect(() => {
     const modeSuffix = darkMode ? 'dark' : 'light';
     const colorSuffix = activeTheme ? `-${activeTheme}` : '';
-    const templateName = `template${colorSuffix}-${modeSuffix}.html`;
-    const templateURL=`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;   
+    const templateName =  clientid ? `template-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;
+    
+    const templateURL=`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/${clientidfolder}/${templateName}`;   
     setInvoiceTemplate(templateURL);
 
-  }, [activeTheme, darkMode]);
+  }, [activeTheme, darkMode, clientid]);
 
 /*   const updateInvoiceTemplate = () => {
     const modeSuffix = darkMode ? 'dark' : 'light';
@@ -83,18 +94,14 @@ function PopupPage({ activeTheme }) {
   }; */
 
   useEffect(() => {
-    setOpen(true);
-
     if (data && data.popups) {
       const pageLoadPopup = data.popups.find((popup) => popup.displayOnPageLoad === 'yes');
       if (pageLoadPopup) {
         setSelectedPopup(pageLoadPopup);
         setPopupOpen(true);
       }
-
-    if (showInitialDrawer) {      
-      setOpen(false); // Show the drawer initially - true / false
-      
+  
+      if (showInitialDrawer) {
         // Check if you want to enable the timer
         const enableTimer = false;
         if (enableTimer) {
@@ -102,13 +109,16 @@ function PopupPage({ activeTheme }) {
           const timer = setTimeout(() => {
             setOpen(false);
           }, 5000);
-
+  
           // Clear the timer if the user manually closes the drawer
           return () => clearTimeout(timer);
+        } else {
+          // If no timer is enabled, close the drawer
+          setOpen(true);
         }
       }
-  }
-  }, [data]);
+    }
+  }, [data, showInitialDrawer]);
 
 
 /* 
@@ -122,7 +132,7 @@ function PopupPage({ activeTheme }) {
 
 
   return (
-    <div>      
+    <div> 
               <div className=' mobile-menu bg-theme-secondary'>
                   <div style={{padding:'0.25em', justifyContent:'end'}} className='invoice-wrap flex-center'>
                     
@@ -151,25 +161,38 @@ function PopupPage({ activeTheme }) {
                     <div className='drawer-box'>
                     {/* <span class='bg-white d-block p-2'>bb{invoiceTemplate}aaa{activeTheme}</span> */}
                         {data && data.popups && data.popups.map((popup, index) => {
+                         
+                          
+
                           // adding widgetClassName based on displayDevice
                           let widgetClassName = '';
                           if (!popup.displayDevice.includes('mobile')) widgetClassName += ' mob-hide';
                           if (!popup.displayDevice.includes('tablet')) widgetClassName += ' tab-hide';
                           if (!popup.displayDevice.includes('desktop')) widgetClassName += ' des-hide';
 
-                          return popup.displayStatus === 'active' && popup.showInMenu === 'yes' && ( 
-                            <span
-                              key={index}
-                              onClick={() => openPopup(popup)}
-                              className={'button'+widgetClassName} // Add widgetClassName to the anchor
-                            >
-                              {popup.iconSVGCode && (
-                                <span dangerouslySetInnerHTML={{ __html: popup.iconSVGCode }}></span>
-                              )}
-                              <span>{popup.menuLabel}</span>
-                            </span>
+                          // Check if the popup has an externalLink
+                          const isExternalLink = popup.externalLink && popup.externalLink.trim() !== '';                          
+                          
+                          // Check if it's a PDF file
+                          const isPDFFile = isExternalLink && popup.externalLink.toLowerCase().endsWith('.pdf');
+
+                          return popup.displayStatus === 'active' && popup.showInMenu === 'yes' && (
+                            <a
+                            key={index}
+                            className={`button ${widgetClassName}`}
+                            // Check if it's an external link, add href, otherwise add onClick
+                            {...(isExternalLink ? (
+                              isPDFFile ? { href: popup.externalLink, target: '_blank'} : { href: popup.externalLink, target: '_blank', rel: 'noopener noreferrer' }
+                            ) : { onClick: () => openPopup(popup) })}
+                          >
+                            {popup.iconSVGCode && (
+                              <span dangerouslySetInnerHTML={{ __html: popup.iconSVGCode }}></span>
+                            )}
+                            <span>{popup.menuLabel}</span>
+                          </a>
                           );
                         })}
+                         
                         
                   </div>
                     </div>
@@ -207,6 +230,7 @@ function PopupPage({ activeTheme }) {
               </div>   
               {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
               <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe>
+              
               
 
     </div>

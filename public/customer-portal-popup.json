@@ -1,32 +1,33 @@
 {
 	"retailerId": "1001",
 	"locale": "en_GB",
-	"menuPanelCSS": "  ",
+	"menuPanelCSS": "",
 	"popups": [
 		{
 			"title": "Downloading PDF file now",
 			"width": "500",
 			"height": "200",
 			"contentHTML": "<div style=\"padding:2em ;\"></br></br></br></br></br><b>Downloading is progresss. please wait....<b></div>",
-			"contentCSS": "  ",
+			"contentCSS": "",
 			"displayOrder": "1",
 			"displayStatus": "active",
-			"displayDevice": "desktop",
+			"displayDevice": "desktop, mobile, tablet",
 			"displayType": "pdf",
 			"displayFromDate": "01/01/2024",
 			"displayToDate": "31/01/2024",
 			"displayOnPageLoad": "no",
 			"showInMenu": "yes",
 			"menuLabel": "Download",
-			"externalLink": "",
+			"externalLink": "https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/Invoice-Michael-27-Nov-2023-3861-Rs.pdf",
 			"iconSVGCode": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><title>download</title><path d=\"M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z\" /></svg>"
 		},
 		{
 			"title": "Make Payment through Stripe",
-			"width": "500",
-			"height": "400",
-			"contentHTML": "<iframe src=\"https://widget-06b88d401e9648e9bd08eb1a84413e71.elfsig.ht\" width=\"500\" height=\"400\" frameborder=\"0\"></iframe>",
-			"contentCSS": "  ",
+			"width": "",
+			"height": "",
+			"contentHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/payment-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/payment-desk.png\"></a><div/>",
+			"contentCSS": "",
+
 			"displayOrder": "1",
 			"displayStatus": "active",
 			"displayOnPageLoad": "no",
@@ -37,7 +38,8 @@
 			"displayType": "portal",
 			"displayFromDate": "01/01/2024",
 			"displayToDate": "31/01/2024",
-			"iconSVGCode": ""
+			"iconSVGCode": "<svg width=\"19\" height=\"16\" viewBox=\"0 0 19 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M17.1 3.8H1.9V1.9H17.1M17.1 13.3H1.9V7.6H17.1M17.1 0H1.9C0.8455 0 0 0.8455 0 1.9V13.3C0 13.8039 0.200178 14.2872 0.556497 14.6435C0.912816 14.9998 1.39609 15.2 1.9 15.2H17.1C17.6039 15.2 18.0872 14.9998 18.4435 14.6435C18.7998 14.2872 19 13.8039 19 13.3V1.9C19 0.8455 18.145 0 17.1 0Z\"/></svg>"
+
 		},
 		{
 			"displayOrder": "2",
@@ -50,12 +52,12 @@
 			"displayType": "Only PDF",
 			"displayFromDate": "01/01/2024",
 			"displayToDate": "31/01/2024",
-			"title": "AAANew Year Offer 11222",
-			"width": "1000",
-			"height": "400",
-			"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/beinghuman/widget-feedback.html\" frameborder=\"0\" style=\"height:400px;width:100%;\"></iframe>",
-			"contentCSS": "  ",
-			"iconSVGCode": ""
+			"title": "Send to Friend by Whatsapp",
+			"width": "",
+			"height": "",
+			"contentHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/whatsapp-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/whatsapp-desk.png\"></a> <div class=\"t-c p-1\" style=\"background-color:#009318;font-size:13px;color:#ffffff;\"><a style=\" color:#ffffff;\" class=\"w-100 text-white\" target=\"_blank\" href=\"https://web.whatsapp.com/\">Share through Whatsapp App</></div><div/>",
+			"contentCSS": "",
+			"iconSVGCode": "<svg width=\"19\" height=\"19\" viewBox=\"0 0 19 19\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M9.08598 0C4.14729 0 0.122167 4.02513 0.122167 8.96382C0.122167 10.5467 0.538247 12.0844 1.31614 13.4412L0.0498047 18.0905L4.79855 16.8422C6.11011 17.5568 7.58448 17.9367 9.08598 17.9367C14.0247 17.9367 18.0498 13.9116 18.0498 8.97286C18.0498 6.57588 17.1181 4.32362 15.4267 2.63216C13.7352 0.931658 11.483 0 9.08598 0ZM9.09503 1.51055C11.085 1.51055 12.9483 2.28844 14.3594 3.6995C15.7614 5.11055 16.5393 6.98291 16.5393 8.97286C16.5393 13.0794 13.1925 16.4171 9.08598 16.4171C7.74729 16.4171 6.43573 16.0643 5.29604 15.3769L5.02468 15.2231L2.20257 15.9648L2.95332 13.2151L2.77242 12.9256C2.03071 11.7588 1.63272 10.3749 1.63272 8.96382C1.64176 4.85729 4.97945 1.51055 9.09503 1.51055ZM5.91111 4.82111C5.76639 4.82111 5.52217 4.87538 5.31413 5.10151C5.11513 5.32764 4.52719 5.8794 4.52719 6.97387C4.52719 8.07739 5.33222 9.13568 5.43171 9.28945C5.55835 9.44322 7.02367 11.7045 9.27593 12.6633C9.8096 12.9075 10.2257 13.0432 10.5513 13.1427C11.085 13.3146 11.5734 13.2874 11.9624 13.2332C12.3965 13.1698 13.283 12.6905 13.4729 12.1658C13.6629 11.6412 13.6629 11.198 13.6086 11.0985C13.5453 11.008 13.4006 10.9538 13.1744 10.8543C12.9483 10.7276 11.8448 10.1849 11.6458 10.1126C11.4377 10.0402 11.3111 10.004 11.1393 10.2211C10.9945 10.4472 10.5604 10.9538 10.4337 11.0985C10.298 11.2523 10.1714 11.2704 9.95433 11.1618C9.71915 11.0442 8.99553 10.809 8.14528 10.0492C7.47593 9.45226 7.03272 8.7196 6.89704 8.49347C6.7885 8.27638 6.88799 8.1407 6.99654 8.04121C7.09603 7.94171 7.24076 7.77889 7.33121 7.64322C7.4488 7.51658 7.48498 7.41708 7.55734 7.27236C7.6297 7.11859 7.59352 6.99196 7.53925 6.88342C7.48498 6.78392 7.03272 5.66231 6.84277 5.2191C6.66186 4.78492 6.48096 4.8392 6.33624 4.83015C6.2096 4.83015 6.06488 4.82111 5.91111 4.82111Z\" /></svg>"
 		},
 		{
 			"displayOrder": "2",
@@ -68,12 +70,12 @@
 			"displayType": "Only PDF",
 			"displayFromDate": "01/01/2024",
 			"displayToDate": "31/01/2024",
-			"title": "New Year Offer 1",
+			"title": "Send by Email",
 			"width": "",
 			"height": "",
-			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
-			"contentCSS": "  ",
-			"iconSVGCode": ""
+			"contentHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/email-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/email-desk.png\"></a><div/>",
+			"contentCSS": "",
+			"iconSVGCode": "<svg width=\"18\" height=\"15\" viewBox=\"0 0 18 15\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16.2 3.6L9 8.1L1.8 3.6V1.8L9 6.3L16.2 1.8M16.2 0H1.8C0.801 0 0 0.801 0 1.8V12.6C0 13.0774 0.189642 13.5352 0.527208 13.8728C0.864773 14.2104 1.32261 14.4 1.8 14.4H16.2C16.6774 14.4 17.1352 14.2104 17.4728 13.8728C17.8104 13.5352 18 13.0774 18 12.6V1.8C18 0.801 17.19 0 16.2 0Z\" /></svg>"
 		},
 		{
 			"displayOrder": "2",
@@ -86,12 +88,12 @@
 			"displayType": "Only PDF",
 			"displayFromDate": "01/01/2024",
 			"displayToDate": "31/01/2024",
-			"title": "New Year Offer 1",
+			"title": "Save to drive",
 			"width": "",
 			"height": "",
-			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
-			"contentCSS": "  ",
-			"iconSVGCode": ""
+			"contentHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/save-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/save-desk.png\"></a><div/>",
+			"contentCSS": "",
+			"iconSVGCode": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10.6667 5.33333H1.77778V1.77778H10.6667M8 14.2222C7.29276 14.2222 6.61448 13.9413 6.11438 13.4412C5.61428 12.9411 5.33333 12.2628 5.33333 11.5556C5.33333 10.8483 5.61428 10.17 6.11438 9.66994C6.61448 9.16984 7.29276 8.88889 8 8.88889C8.70724 8.88889 9.38552 9.16984 9.88562 9.66994C10.3857 10.17 10.6667 10.8483 10.6667 11.5556C10.6667 12.2628 10.3857 12.9411 9.88562 13.4412C9.38552 13.9413 8.70724 14.2222 8 14.2222ZM12.4444 0H1.77778C0.791111 0 0 0.8 0 1.77778V14.2222C0 14.6937 0.187301 15.1459 0.520699 15.4793C0.854097 15.8127 1.30628 16 1.77778 16H14.2222C14.6937 16 15.1459 15.8127 15.4793 15.4793C15.8127 15.1459 16 14.6937 16 14.2222V3.55556L12.4444 0Z\" /></svg>"
 		},
 		{
 			"displayOrder": "2",
@@ -104,12 +106,12 @@
 			"displayType": "Only PDF",
 			"displayFromDate": "01/01/2024",
 			"displayToDate": "31/01/2024",
-			"title": "New Year Offer 1",
+			"title": "Feedback",
 			"width": "",
 			"height": "",
-			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
-			"contentCSS": "  ",
-			"iconSVGCode": ""
+			"contentHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/feedback-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/feedback-desk.png\"></a><div/>",
+			"contentCSS": "",
+			"iconSVGCode": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M6.3 18C6.06131 18 5.83239 17.9052 5.6636 17.7364C5.49482 17.5676 5.4 17.3387 5.4 17.1V14.4H1.8C1.32261 14.4 0.864773 14.2104 0.527208 13.8728C0.189642 13.5352 0 13.0774 0 12.6V1.8C0 0.801 0.81 0 1.8 0H16.2C16.6774 0 17.1352 0.189642 17.4728 0.527208C17.8104 0.864773 18 1.32261 18 1.8V12.6C18 13.0774 17.8104 13.5352 17.4728 13.8728C17.1352 14.2104 16.6774 14.4 16.2 14.4H10.71L7.38 17.739C7.2 17.91 6.975 18 6.75 18H6.3ZM13.5 8.1V6.3H11.7V8.1H13.5ZM9.9 8.1V6.3H8.1V8.1H9.9ZM6.3 8.1V6.3H4.5V8.1H6.3Z\" /></svg>"
 		},
 		{
 			"displayOrder": "2",
@@ -122,12 +124,12 @@
 			"displayType": "Only PDF",
 			"displayFromDate": "01/01/2024",
 			"displayToDate": "31/01/2024",
-			"title": "New Year Offer 1",
+			"title": "Contact us",
 			"width": "",
 			"height": "",
-			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
-			"contentCSS": "  ",
-			"iconSVGCode": ""
+			"1contentHTML": "<div class=\"\"><a href=\"#\" target\"_blank\"><img class=\"py-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/contact.png\"><a/><div/>",
+			"contentCSS": "",
+			"iconSVGCode": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M3.21778 6.92444C4.49778 9.44 6.56 11.5022 9.07556 12.7822L11.0311 10.8267C11.28 10.5778 11.6267 10.5067 11.9378 10.6044C12.9333 10.9333 14 11.1111 15.1111 11.1111C15.3469 11.1111 15.573 11.2048 15.7397 11.3715C15.9064 11.5382 16 11.7643 16 12V15.1111C16 15.3469 15.9064 15.573 15.7397 15.7397C15.573 15.9064 15.3469 16 15.1111 16C11.1034 16 7.25983 14.4079 4.42594 11.5741C1.59206 8.74017 0 4.89661 0 0.888889C0 0.653141 0.0936505 0.427048 0.260349 0.260349C0.427048 0.0936505 0.653141 0 0.888889 0H4C4.23575 0 4.46184 0.0936505 4.62854 0.260349C4.79524 0.427048 4.88889 0.653141 4.88889 0.888889C4.88889 2 5.06667 3.06667 5.39556 4.06222C5.49333 4.37333 5.42222 4.72 5.17333 4.96889L3.21778 6.92444Z\" /></svg>"
 		},
 		{
 			"displayOrder": "2",
@@ -140,12 +142,12 @@
 			"displayType": "Only PDF",
 			"displayFromDate": "01/01/2024",
 			"displayToDate": "31/01/2024",
-			"title": "New Year Offer 1",
+			"title": "Chat Now",
 			"width": "",
-			"height": "",
-			"contentHTML": "<div style=\"padding:2em ;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ullamcorper dolor. Vivamus at dapibus mi. Nullam dignissim, odio in suscipit eleifend, velit neque congue odio, id lacinia risus ipsum non sapien. Nullam quis ex sit amet purus bibendum tincidunt. Mauris sodales erat vel leo aliquam, vel malesuada turpis viverra.</div>",
-			"contentCSS": "  ",
-			"iconSVGCode": ""
+			"height": "",			
+			"1contentHTML": "<div class=\"p-0\"><img class=\"img-fluid\" style=\"background-color: #eaeef3;\"src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/chat2.png\"> <div class=\"d-none d-lg-block\" style=\"background-color: #eaeef3;\"></br></br></br></br></br></br></div> </div><form id=\"myForm\">\n  <textarea placeholder=\"Enter your message and press enter.\" type=\"text\" ></textarea>\n  <div class=\"arrow-icon flex-center h-100\" id=\"sendButton\">&#10132;</div>\n</form> <div class=\"t-c p-1\" style=\"background-color:#6a6a6a;font-size:12px;color:#d9d9d9;\">Powered by chatbot</div>    <style>\n #myForm{\n  background-color: #1e1e1e; padding:0;display: flex;\n  align-items: center;\n  width: 100%;\n  padding: 0;height:60px;\n}\n\n #myForm textarea {\n  flex: 1;\n  width: 100%; height: 60px;padding: 8px;\n  border: 1px solid #ccc;\n  border-radius: 0px;\n  outline: none;\n}\n\n #myForm input::placeholder {\n  color: #aaa;\n}\n\n #myForm .arrow-icon {\n  padding: 8px; color:white;cursor: pointer; } #myForm .arrow-icon:hover {transition:0s;background-color:#0066ff;} #mypopup{top:unset;left:unset;} #mypopup .popup-body{} </style>",
+			"contentCSS": "",
+			"iconSVGCode": "<svg width=\"21\" height=\"21\" viewBox=\"0 0 21 21\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M18.1665 0.916504H2.83317C2.32484 0.916504 1.83733 1.11844 1.47788 1.47788C1.11844 1.83733 0.916504 2.32484 0.916504 2.83317V20.0832L4.74984 16.2498H18.1665C18.6748 16.2498 19.1623 16.0479 19.5218 15.6885C19.8812 15.329 20.0832 14.8415 20.0832 14.3332V2.83317C20.0832 2.32484 19.8812 1.83733 19.5218 1.47788C19.1623 1.11844 18.6748 0.916504 18.1665 0.916504ZM4.74984 7.62484H16.2498V9.5415H4.74984M12.4165 12.4165H4.74984V10.4998H12.4165M16.2498 6.6665H4.74984V4.74984H16.2498\" /></svg>"
 		}
 	]
 }

@@ -8,8 +8,9 @@ import {
   AccordionDetails,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the ExpandMore icon
-import WidgetSocialmedia from './WidgetSocialmedia';
-import WidgetPlainText from './WidgetPlainText';
+
+
+import ReactDOM from 'react-dom';
 
 function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowIndex, columnIndex}) { 
 
@@ -53,8 +54,6 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
     <>
     {column.contentHTML && ( <div className='t-c h-100' dangerouslySetInnerHTML={{ __html: column.contentHTML }} style={{overflow: 'hidden', xlineHeight:'50%'}} />  )}
     {column.contentCSS && ( <style className='t-c' dangerouslySetInnerHTML={{ __html: column.contentCSS }} />  )}
-    {column.customWidget && column.customWidget==='socialicons' && ( <WidgetSocialmedia data={column.customWidgetData} /> )}
-    {column.customWidget && column.customWidget==='plaintext' && ( <WidgetPlainText data={column.customWidgetData} /> )}
     </>
     );
   
@@ -109,18 +108,28 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
 }
 
 
-function WidgetAll  ({ activeTheme}) {
+function WidgetAll  ({ activeTheme, clientid}) {
  
   //const theme = activeTheme || 'yellow';
   if(!activeTheme){activeTheme='yellow';}
   const [data, setData] = useState(null);
   document.body.classList.add(`theme-${activeTheme}`);
 
+  //for different client demo
+  if(clientid){const clientidHypen = clientid + '-';}
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-       //const response = await fetch('https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json');
-       const response = await fetch('/customer-portal-widget.json');
+        let response;
+
+       if (clientid) {
+              //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-${clientidHypen}widget.json`);
+              response = await fetch('/customer-portal-widget.json');
+        } else {
+              //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json`);
+              response = await fetch('/customer-portal-widget.json');
+        }
         const data = await response.json();
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
@@ -136,8 +145,8 @@ function WidgetAll  ({ activeTheme}) {
   }
 
   return (
-    <>     
-    <PopupPage activeTheme={activeTheme} />    
+    <>    
+    <PopupPage activeTheme={activeTheme} clientid={clientid}/>    
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}

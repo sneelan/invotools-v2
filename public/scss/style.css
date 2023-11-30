@@ -785,16 +785,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   line-height: normal;
+  text-align: left !important;
 }
 .drawer-box .button svg {
-  width: 22px;
+  width: 26px;
   height: auto;
-  max-width: 22px;
-  padding-right: 0.25em;
+  max-width: 26px;
+  padding-right: 0.5em;
+  fill: black;
+  margin-bottom: -3px;
 }
 .drawer-box .button:hover {
   background-color: white;
@@ -805,7 +808,7 @@ body {
 }
 @media screen and (min-width: 968px) {
   #mypopup .MuiPaper-root {
-    min-width: 400px !important;
+    min-width: 350px !important;
   }
 }
 #mypopup .MuiPaper-root h2 {
@@ -859,10 +862,46 @@ footer a:hover {
 }
 
 .d-none {
-  display: none !important;
+  display: none;
 }
 
-.t-c, .box-button, .drawer-box .button {
+@media screen and (min-width: 768px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 564px) {
+  .d-sm-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .d-lg-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-block {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 564px) {
+  .d-sm-block {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .d-lg-block {
+    display: block;
+  }
+}
+
+.t-c, .box-button {
   text-align: center;
 }
 
@@ -888,6 +927,14 @@ footer a:hover {
 
 .p-1 {
   padding: 1em;
+}
+
+.py-1 {
+  padding: 1em 0;
+}
+
+.img-fluid {
+  max-width: 100%;
 }
 
 .w-100 {
