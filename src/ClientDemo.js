@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import WidgetAll from './WidgetAll';
+import RootTheme from './RootTheme';
 
 function ClientDemo() {
   const { id } = useParams();  
@@ -8,7 +9,8 @@ function ClientDemo() {
 
   return (
     <div> 
-     <WidgetAll clientid={clientid}/>
+     {/* <WidgetAll clientid={clientid}/> */}
+     {<RootTheme clientid={clientid}/>}
     </div>
   );
 }

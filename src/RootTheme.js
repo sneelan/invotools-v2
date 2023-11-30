@@ -3,8 +3,13 @@ import WidgetAll from './WidgetAll';
 import MobilePreview from './MobilePreview';
 import TabletPreview from './TabletPreview';
 import TabletPreviewLands from './TabletPreviewLands';
+import { useLocation } from 'react-router-dom';
 
-const RootTheme = () => {
+
+function RootTheme({ clientid}){
+  const location = useLocation();
+  const pathArgument = location.pathname.split('/'); // Split the path into parts
+
   const [activeTheme, setActiveTheme] = useState('yellow');
   document.body.classList.add(`theme-${activeTheme}`);
 
@@ -30,7 +35,7 @@ const renderSelectedComponent = () => {
     case 'tablet-landscape':
       return <TabletPreviewLands activeTheme={activeTheme} />;
     case 'desktop':
-      return <WidgetAll  activeTheme={activeTheme} />;
+      return <WidgetAll  activeTheme={activeTheme} clientid={clientid} />;
     default:
       return null;
   }
@@ -49,18 +54,21 @@ const renderSelectedComponent = () => {
                         <option value="tablet-landscape">Tablet Landscape</option>
                         <option value="mobile">Mobile</option>
                         
-                  </select>
-                  <div class='flex-center ms-1 bg-white rounded ' style={{backgroundColor:'#ffffff91', padding:'0.5em 1.5em'}}>
-                      <span>Theme:</span>
-                      <span>
-                        <span className={`theme-btn ${activeTheme === 'yellow' ? 'active' : ''}`} style={{backgroundColor:'#FFA100'}} onClick={() => handleButtonClick('yellow')}></span>
-                        <span className={`theme-btn ${activeTheme === 'blue' ? 'active' : ''}`} style={{backgroundColor:'#55d2ff'}} onClick={() => handleButtonClick('blue')}></span>
-                        <span className={`theme-btn ${activeTheme === 'green' ? 'active' : ''}`} style={{backgroundColor:'#80CC20'}} onClick={() => handleButtonClick('green')}></span>
-                        <span className={`theme-btn ${activeTheme === 'maroon' ? 'active' : ''}`} style={{backgroundColor:'#a61d3b'}} onClick={() => handleButtonClick('maroon')}></span>
-                        <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
-                        <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
-                      </span>                 
-                  </div>
+                  </select> 
+                  
+                  {pathArgument[2] == '' && (                 
+                      <div class='flex-center ms-1 bg-white rounded ' style={{backgroundColor:'#ffffff91', padding:'0.5em 1.5em'}}>
+                          <span>Theme:</span>
+                          <span>
+                            <span className={`theme-btn ${activeTheme === 'yellow' ? 'active' : ''}`} style={{backgroundColor:'#FFA100'}} onClick={() => handleButtonClick('yellow')}></span>
+                            <span className={`theme-btn ${activeTheme === 'blue' ? 'active' : ''}`} style={{backgroundColor:'#55d2ff'}} onClick={() => handleButtonClick('blue')}></span>
+                            <span className={`theme-btn ${activeTheme === 'green' ? 'active' : ''}`} style={{backgroundColor:'#80CC20'}} onClick={() => handleButtonClick('green')}></span>
+                            <span className={`theme-btn ${activeTheme === 'maroon' ? 'active' : ''}`} style={{backgroundColor:'#a61d3b'}} onClick={() => handleButtonClick('maroon')}></span>
+                            <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
+                            <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
+                          </span>                 
+                      </div>
+                  )}
               </div>
               </div>
           

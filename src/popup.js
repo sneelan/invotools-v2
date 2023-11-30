@@ -229,7 +229,8 @@ function PopupPage({ activeTheme, clientid }) {
                 </style>
               </div>   
               {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
-              <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe>
+              <div className='bg-white text-black t-c p-1'>{clientid}-----{clientidfolder}---{invoiceTemplate}</div>
+              {/* <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe> */}
               
               
 
