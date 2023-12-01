@@ -16,7 +16,7 @@ import ModeNightIcon from '@mui/icons-material/ModeNight';
 import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 
-function PopupPage({ activeTheme, clientid }) {
+function PopupPage({ activeTheme, clientid, invoiceid }) {
  
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
@@ -73,14 +73,15 @@ function PopupPage({ activeTheme, clientid }) {
   };
   
   //checking client id
-  let clientidfolder=clientid ? 'demo/'+clientid : 'modern-v1';
+  //let clientidfolder=clientid ? 'demo/'+clientid : 'modern-v1';
+  //https://customer.invotools.io/view/d78abae8-d265-4438-95be-6a267157612f
 
   useEffect(() => {
     const modeSuffix = darkMode ? 'dark' : 'light';
     const colorSuffix = activeTheme ? `-${activeTheme}` : '';
-    const templateName =  clientid ? `template-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;
-    
-    const templateURL=`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/${clientidfolder}/${templateName}`;   
+    const templateName =  clientid ? `template-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;    
+    //const templateURL=`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;   
+    const templateURL=invoiceid ? 'https://dev-invodocz.invotools.io/api/v1/invoice/view/'+invoiceid : `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;
     setInvoiceTemplate(templateURL);
 
   }, [activeTheme, darkMode, clientid]);
@@ -229,8 +230,8 @@ function PopupPage({ activeTheme, clientid }) {
                 </style>
               </div>   
               {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
-              <div className='bg-white text-black t-c p-1'>{clientid}-----{clientidfolder}---{invoiceTemplate}</div>
-              {/* <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe> */}
+              {/* <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid}</div> */}
+              <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe>
               
               
 

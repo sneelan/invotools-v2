@@ -127,13 +127,31 @@
 			"title": "Contact us",
 			"width": "",
 			"height": "",
-			"1contentHTML": "<div class=\"\"><a href=\"#\" target\"_blank\"><img class=\"py-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/contact.png\"><a/><div/>",
+			"contentHTML": "<div class=\"\"><a href=\"#\" target\"_blank\"><img class=\"py-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/contact.png\"><a/><div/>",
 			"contentCSS": "",
 			"iconSVGCode": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M3.21778 6.92444C4.49778 9.44 6.56 11.5022 9.07556 12.7822L11.0311 10.8267C11.28 10.5778 11.6267 10.5067 11.9378 10.6044C12.9333 10.9333 14 11.1111 15.1111 11.1111C15.3469 11.1111 15.573 11.2048 15.7397 11.3715C15.9064 11.5382 16 11.7643 16 12V15.1111C16 15.3469 15.9064 15.573 15.7397 15.7397C15.573 15.9064 15.3469 16 15.1111 16C11.1034 16 7.25983 14.4079 4.42594 11.5741C1.59206 8.74017 0 4.89661 0 0.888889C0 0.653141 0.0936505 0.427048 0.260349 0.260349C0.427048 0.0936505 0.653141 0 0.888889 0H4C4.23575 0 4.46184 0.0936505 4.62854 0.260349C4.79524 0.427048 4.88889 0.653141 4.88889 0.888889C4.88889 2 5.06667 3.06667 5.39556 4.06222C5.49333 4.37333 5.42222 4.72 5.17333 4.96889L3.21778 6.92444Z\" /></svg>"
 		},
 		{
 			"displayOrder": "2",
 			"displayStatus": "active",
+			"displayOnPageLoad": "no",
+			"showInMenu": "yes",
+			"menuLabel": "Visit Webstore",
+			"externalLink": "https://ayatacommerce.com",
+			"displayDevice": "mobile, tablet, desktop",
+			"displayType": "Only PDF",
+			"displayFromDate": "01/01/2024",
+			"displayToDate": "31/01/2024",
+			"title": "",
+			"width": "",
+			"height": "",			
+			"contentHTML": "",
+			"contentCSS": "",
+			"iconSVGCode": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16 10V16C16 16.5304 15.7893 17.0391 15.4142 17.4142C15.0391 17.7893 14.5304 18 14 18H2C1.46957 18 0.960859 17.7893 0.585786 17.4142C0.210714 17.0391 0 16.5304 0 16V4C0 3.46957 0.210714 2.96086 0.585786 2.58579C0.960859 2.21071 1.46957 2 2 2H8V4H2V16H14V10H16ZM10 0V2H14.586L6.793 9.793L8.207 11.207L16 3.414V8H18V0H10Z\" fill=\"black\"/></svg>"
+		},
+		{
+			"displayOrder": "2",
+			"displayStatus": "inactive",
 			"displayOnPageLoad": "no",
 			"showInMenu": "yes",
 			"menuLabel": "Chat Now",
@@ -145,7 +163,7 @@
 			"title": "Chat Now",
 			"width": "",
 			"height": "",			
-			"1contentHTML": "<div class=\"p-0\"><img class=\"img-fluid\" style=\"background-color: #eaeef3;\"src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/chat2.png\"> <div class=\"d-none d-lg-block\" style=\"background-color: #eaeef3;\"></br></br></br></br></br></br></div> </div><form id=\"myForm\">\n  <textarea placeholder=\"Enter your message and press enter.\" type=\"text\" ></textarea>\n  <div class=\"arrow-icon flex-center h-100\" id=\"sendButton\">&#10132;</div>\n</form> <div class=\"t-c p-1\" style=\"background-color:#6a6a6a;font-size:12px;color:#d9d9d9;\">Powered by chatbot</div>    <style>\n #myForm{\n  background-color: #1e1e1e; padding:0;display: flex;\n  align-items: center;\n  width: 100%;\n  padding: 0;height:60px;\n}\n\n #myForm textarea {\n  flex: 1;\n  width: 100%; height: 60px;padding: 8px;\n  border: 1px solid #ccc;\n  border-radius: 0px;\n  outline: none;\n}\n\n #myForm input::placeholder {\n  color: #aaa;\n}\n\n #myForm .arrow-icon {\n  padding: 8px; color:white;cursor: pointer; } #myForm .arrow-icon:hover {transition:0s;background-color:#0066ff;} #mypopup{top:unset;left:unset;} #mypopup .popup-body{} </style>",
+			"contentHTML": "<div class=\"p-0\"><img class=\"img-fluid\" style=\"background-color: #eaeef3;\"src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/chat2.png\"> <div class=\"d-none d-lg-block\" style=\"background-color: #eaeef3;\"></br></br></br></br></br></br></div> </div><form id=\"myForm\">\n  <textarea placeholder=\"Enter your message and press enter.\" type=\"text\" ></textarea>\n  <div class=\"arrow-icon flex-center h-100\" id=\"sendButton\">&#10132;</div>\n</form> <div class=\"t-c p-1\" style=\"background-color:#6a6a6a;font-size:12px;color:#d9d9d9;\">Powered by chatbot</div>    <style>\n #myForm{\n  background-color: #1e1e1e; padding:0;display: flex;\n  align-items: center;\n  width: 100%;\n  padding: 0;height:60px;\n}\n\n #myForm textarea {\n  flex: 1;\n  width: 100%; height: 60px;padding: 8px;\n  border: 1px solid #ccc;\n  border-radius: 0px;\n  outline: none;\n}\n\n #myForm input::placeholder {\n  color: #aaa;\n}\n\n #myForm .arrow-icon {\n  padding: 8px; color:white;cursor: pointer; } #myForm .arrow-icon:hover {transition:0s;background-color:#0066ff;} #mypopup{top:unset;left:unset;} #mypopup .popup-body{} </style>",
 			"contentCSS": "",
 			"iconSVGCode": "<svg width=\"21\" height=\"21\" viewBox=\"0 0 21 21\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M18.1665 0.916504H2.83317C2.32484 0.916504 1.83733 1.11844 1.47788 1.47788C1.11844 1.83733 0.916504 2.32484 0.916504 2.83317V20.0832L4.74984 16.2498H18.1665C18.6748 16.2498 19.1623 16.0479 19.5218 15.6885C19.8812 15.329 20.0832 14.8415 20.0832 14.3332V2.83317C20.0832 2.32484 19.8812 1.83733 19.5218 1.47788C19.1623 1.11844 18.6748 0.916504 18.1665 0.916504ZM4.74984 7.62484H16.2498V9.5415H4.74984M12.4165 12.4165H4.74984V10.4998H12.4165M16.2498 6.6665H4.74984V4.74984H16.2498\" /></svg>"
 		}

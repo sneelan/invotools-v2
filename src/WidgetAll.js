@@ -108,7 +108,7 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
 }
 
 
-function WidgetAll  ({ activeTheme, clientid}) {
+function WidgetAll  ({ activeTheme, clientid, invoiceid}) {
  
   //const theme = activeTheme || 'yellow';
   if(!activeTheme){activeTheme='yellow';}
@@ -147,7 +147,7 @@ function WidgetAll  ({ activeTheme, clientid}) {
   return (
     <> 
      
-   <PopupPage activeTheme={activeTheme} clientid={clientid}/>
+   <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} />
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}

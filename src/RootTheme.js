@@ -6,11 +6,14 @@ import TabletPreviewLands from './TabletPreviewLands';
 import { useLocation } from 'react-router-dom';
 
 
-function RootTheme({ clientid}){
+function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid}){
   const location = useLocation();
   const pathArgument = location.pathname.split('/'); // Split the path into parts
+  // Check if pathArgument[2] is not available or empty
+  //const isPathArgumentEmpty = !pathArgument[2] || pathArgument[2].trim() === '';
+  const isPathArgumentEmpty = 'show';
 
-  const [activeTheme, setActiveTheme] = useState('yellow');
+  const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
   document.body.classList.add(`theme-${activeTheme}`);
 
   const handleButtonClick = (theme) => {
@@ -35,7 +38,7 @@ const renderSelectedComponent = () => {
     case 'tablet-landscape':
       return <TabletPreviewLands activeTheme={activeTheme} />;
     case 'desktop':
-      return <WidgetAll  activeTheme={activeTheme} clientid={clientid} />;
+      return <WidgetAll  activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid}/>;
     default:
       return null;
   }
@@ -56,7 +59,7 @@ const renderSelectedComponent = () => {
                         
                   </select> 
                   
-                  {pathArgument[2] == '' && (                 
+                  {isPathArgumentEmpty &&(                 
                       <div class='flex-center ms-1 bg-white rounded ' style={{backgroundColor:'#ffffff91', padding:'0.5em 1.5em'}}>
                           <span>Theme:</span>
                           <span>
