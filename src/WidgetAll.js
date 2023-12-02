@@ -146,7 +146,7 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid}) {
 
   return (
     <> 
-     
+     {/* xxxxxxxx{clientid}yyyyyy */}
    <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} />
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>

@@ -1,6 +1,6 @@
 import React from 'react';
 import DeviceButtons from './DeviceButtons';
-const TabletPreviewLands = ({activeTheme}) => {
+const TabletPreviewLands = ({activeTheme, clientid, invoiceid}) => {
   return (
     <>
             <div class="mt-1" st>

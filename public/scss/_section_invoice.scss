@@ -199,6 +199,7 @@ footer{
  .d-sm-none{@include media-breakpoint-min(564px) { display: none;}}
  .d-lg-none{@include media-breakpoint-min(968px) { display: none;}}
  .d-md-block{@include media-breakpoint-min(768px) { display: block;}}
+ .d-md-inline-block{@include media-breakpoint-min(768px) { display: inline-block;}}
  .d-sm-block{@include media-breakpoint-min(564px) { display: block;}}
  .d-lg-block{@include media-breakpoint-min(968px) { display: block;}}
 .t-c{text-align: center;}

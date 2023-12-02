@@ -1,9 +1,10 @@
 import React from 'react';
-import DeviceButtons from './DeviceButtons';
+//import DeviceButtons from './DeviceButtons';
 
-const MobilePreview = ({activeTheme}) => {
+const MobilePreview = ({activeTheme, clientid, invoiceid}) => {
   return (
     <>
+{/*     mmmm{activeTheme}-----mmmm{clientid}-----mmmm{invoiceid}----- */}
             <div class="mt-1" >
               <div class="smartphone mt-1" id="mydevice">
                 <div class="content"> 

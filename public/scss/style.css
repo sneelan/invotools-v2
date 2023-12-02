@@ -776,7 +776,7 @@ body {
   margin-bottom: 0.5em;
   padding: 1em 2em;
   font-size: 13px;
-  background-color: #FFA100;
+  background-color: #FFC25A;
   border-radius: 0.5em;
   font-weight: 500;
   display: -webkit-box;
@@ -886,6 +886,12 @@ footer a:hover {
 @media screen and (min-width: 768px) {
   .d-md-block {
     display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .d-md-inline-block {
+    display: inline-block;
   }
 }
 

@@ -25,7 +25,7 @@ function PopupPage({ activeTheme, clientid, invoiceid }) {
   const [showInitialDrawer, setShowInitialDrawer] = useState(true); // New state
   const [darkMode, setDarkMode] = useState(false);
   const [invoiceTemplate, setInvoiceTemplate] = useState('');
-
+  const [apiHtml, setApiHtml] = useState('');
   //const [invoiceTemplate, setInvoiceTemplate] = useState('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template.html');  
  
   //const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
@@ -93,6 +93,21 @@ function PopupPage({ activeTheme, clientid, invoiceid }) {
     setInvoiceTemplate(`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`);
     document.body.classList.toggle('dark-mode', !darkMode);
   }; */
+  const fetchApiHtml = async () => {
+    try {
+      const response = await fetch(invoiceTemplate);
+      const data = await response.text();
+
+      // Sanitize the HTML content using DOMPurify
+      //const sanitizedHtml = DOMPurify.sanitize(data);
+
+      setApiHtml(data);
+    } catch (error) {
+      console.error('Error fetching API data:', error);
+    }
+  };
+
+
 
   useEffect(() => {
     if (data && data.popups) {
@@ -104,12 +119,12 @@ function PopupPage({ activeTheme, clientid, invoiceid }) {
   
       if (showInitialDrawer) {
         // Check if you want to enable the timer
-        const enableTimer = false;
+        const enableTimer = true;
         if (enableTimer) {
           // Start a timer to close the drawer after 5 seconds
           const timer = setTimeout(() => {
             setOpen(false);
-          }, 5000);
+          }, 1000);
   
           // Clear the timer if the user manually closes the drawer
           return () => clearTimeout(timer);
@@ -119,7 +134,16 @@ function PopupPage({ activeTheme, clientid, invoiceid }) {
         }
       }
     }
+
+
+  fetchApiHtml();
+
+
   }, [data, showInitialDrawer]);
+
+
+
+
 
 
 /* 
@@ -231,7 +255,15 @@ function PopupPage({ activeTheme, clientid, invoiceid }) {
               </div>   
               {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
               {/* <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid}</div> */}
-              <iframe src={invoiceTemplate} style={{ width: '100%' }} height="1220" frameBorder="0" title="invoice" ></iframe>
+
+              {(invoiceid?              
+                
+                <iframe                    
+                    srcDoc={apiHtml}
+                    style={{ width: '100%'}}  height="1000"  frameBorder="0" title="invoice"
+                  />              
+              : <iframe src={invoiceTemplate} style={{ width: '100%'}} height="1220" frameBorder="0" title="invoice" ></iframe>
+              )}
               
               
 

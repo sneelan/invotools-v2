@@ -32,11 +32,11 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid}){
 const renderSelectedComponent = () => {
   switch (selectedOption) {
     case 'mobile':
-      return <MobilePreview activeTheme={activeTheme} />;
+      return <MobilePreview activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid}/>;
     case 'tablet':
-      return <TabletPreview  activeTheme={activeTheme} />;
+      return <TabletPreview  activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} />;
     case 'tablet-landscape':
-      return <TabletPreviewLands activeTheme={activeTheme} />;
+      return <TabletPreviewLands activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} />;
     case 'desktop':
       return <WidgetAll  activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid}/>;
     default:
@@ -50,16 +50,20 @@ const renderSelectedComponent = () => {
               
               {renderSelectedComponent()}
               <div className='invoice-wrap'>
-              <div className='rounded t-c p-1 flex-center'>
-                  <select value={selectedOption} onChange={handleSelectChange} style={{ padding: '0.5em', borderRadius: '0' }}>                        
+              <div className='rounded t-c p-1 flex-center1'>
+                <div className='d-block d-md-inline-block'>
+                <select value={selectedOption} onChange={handleSelectChange} style={{ padding: '0.5em', borderRadius: '0' }}>                        
                         <option value="desktop">Desktop</option>
                         <option value="tablet">Tablet Portrait</option>
                         <option value="tablet-landscape">Tablet Landscape</option>
                         <option value="mobile">Mobile</option>
                         
                   </select> 
+                </div>
+                <div className='d-block d-md-none'><br/></div>
                   
                   {isPathArgumentEmpty &&(                 
+                      <div className='d-block d-md-inline-block'>
                       <div class='flex-center ms-1 bg-white rounded ' style={{backgroundColor:'#ffffff91', padding:'0.5em 1.5em'}}>
                           <span>Theme:</span>
                           <span>
@@ -69,7 +73,13 @@ const renderSelectedComponent = () => {
                             <span className={`theme-btn ${activeTheme === 'maroon' ? 'active' : ''}`} style={{backgroundColor:'#a61d3b'}} onClick={() => handleButtonClick('maroon')}></span>
                             <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
                             <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
+                            
+                            <img src='/img/icon-xmas.png'className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} onClick={() => handleButtonClick('christmas')} />
+                            <img src='/img/icon-diwali.png'className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} onClick={() => handleButtonClick('diwali')} />
+                            <img src='/img/icon-thanks.png'className={`theme-btn ${activeTheme === 'thanksgiving' ? 'active' : ''}`} onClick={() => handleButtonClick('thanksgiving')} />
+                            
                           </span>                 
+                      </div>
                       </div>
                   )}
               </div>
