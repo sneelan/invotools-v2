@@ -441,9 +441,10 @@ body.theme-thanks .theme-thanks {
 }
 
 body.theme-christmas {
-  background-image: url("https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/bg-bot-christmas.png"), url("https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/bg-top-christmas.png");
-  background-position: bottom left, top left;
-  background-repeat: no-repeat, repeat-x;
+  background-color: #3ea3eb;
+  background-image: url("https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/bg-top-christmas.png"), url("https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/bg-bot-christmas.png");
+  background-position: top left, bottom left;
+  background-repeat: repeat-x, no-repeat;
   background-attachment: fixed, fixed;
   background-size: unset, unset;
 }
