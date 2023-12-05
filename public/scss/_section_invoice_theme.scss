@@ -99,7 +99,6 @@ body.theme-thanks{
     background-size: unset;
     .theme-thanks{background-color: unset!important;}
 }
-
 body.theme-christmas{
     background-color: #3ea3eb;
     background-image: url('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/bg-top-christmas.png'),
@@ -129,4 +128,9 @@ body.theme-ads{
     background-repeat: no-repeat, no-repeat, repeat-y;
     background-attachment: fixed, fixed, fixed;   
     .theme-ads{background-color: unset!important;}
+}
+body{
+    @include media-breakpoint-max(992px) {
+        background-image: unset!important;
+    }
 }

@@ -474,6 +474,12 @@ body.theme-ads .theme-ads {
   background-color: unset !important;
 }
 
+@media screen and (max-width: 992px) {
+  body {
+    background-image: unset !important;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

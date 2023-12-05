@@ -13,6 +13,7 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid}){
   //const isPathArgumentEmpty = !pathArgument[2] || pathArgument[2].trim() === '';
   const isPathArgumentEmpty = 'show';
 
+ 
   const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
   document.body.classList.add(`theme-${activeTheme}`);
 
@@ -43,6 +44,9 @@ const renderSelectedComponent = () => {
       return null;
   }
 };
+
+// Define styles based on the condition
+const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' || selectedOption === 'tablet-landscape'? `body {background-color: gray !important;background-image: unset !important;}`: '';
 
   return (
     <div>
@@ -90,6 +94,10 @@ const renderSelectedComponent = () => {
       <footer className='t-c'>
             <p>&copy; {new Date().getFullYear()}, All rights reserved by <a href="https://www.invotools.io" target="_blank" rel="noopener noreferrer"><u>www.Invotools.io</u></a></p>
       </footer>
+      {/* Custom styles */}
+      {customStyles && (
+        <style dangerouslySetInnerHTML={{ __html: customStyles }} />
+      )}
     </div>
   );
 };

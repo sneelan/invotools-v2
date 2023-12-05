@@ -33,7 +33,12 @@ const App = () => {
         <Route path="/yellow" element={<WidgetAll activeTheme='yellow' />} />
         <Route path="/black" element={<WidgetAll activeTheme='black' />} />
         <Route path="/red" element={<WidgetAll activeTheme='red' />} />
-        <Route path="/maroon" element={<WidgetAll activeTheme='maroon' />} />        
+        <Route path="/maroon" element={<WidgetAll activeTheme='maroon' />} />   
+
+        <Route path="/diwali" element={<WidgetAll activeTheme='diwali' />} />        
+        <Route path="/christmas" element={<WidgetAll activeTheme='christmas' />} />        
+        <Route path="/thanks" element={<WidgetAll activeTheme='thanks' />} />        
+        <Route path="/ads" element={<WidgetAll activeTheme='ads' />} />        
 
         <Route path="/mobile" element={<MobilePreview />} />
         <Route path="/tablet" element={<TabletPreview />} />
