@@ -14,16 +14,6 @@
         border-color: $theme-secondary!important; background-color:#ffcd77!important; 
         .title{background-color:$theme-secondary!important; color:white!important;}
     } 
-    .theme-blue, .theme-green, .theme-yellow, .theme-red, .theme-maroon, .theme-black{
-        background-color:transparent!important; 
-    }    
-    .theme-yellow{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-yellow-verylight!important;}}
-    .theme-blue{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-blue-verylight!important;}}
-    .theme-green{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-green-verylight!important;}}
-    .theme-black{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-black-verylight!important;}}
-    .theme-red{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-red-verylight!important;}}
-    .theme-maroon{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-maroon-verylight!important;}}
-
 }
 
 
