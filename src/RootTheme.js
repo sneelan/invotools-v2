@@ -76,7 +76,7 @@ const renderSelectedComponent = () => {
                             
                             <img src='/img/icon-xmas.png'className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} onClick={() => handleButtonClick('christmas')} />
                             <img src='/img/icon-diwali.png'className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} onClick={() => handleButtonClick('diwali')} />
-                            <img src='/img/icon-thanks.png'className={`theme-btn ${activeTheme === 'thanksgiving' ? 'active' : ''}`} onClick={() => handleButtonClick('thanksgiving')} />
+                            <img src='/img/icon-thanks.png'className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} onClick={() => handleButtonClick('thanks')} />
                             
                           </span>                 
                       </div>
