@@ -11,47 +11,47 @@
 /* --------------- */
 .theme-yellow {
     background-color: $theme-yellow-page-bg;
-    .drawer-box .button, .box-button{background-color: $theme-yellow;}
-    .drawer-box .button:hover, .box-button:hover{background-color: $theme-yellow-verylight;}
+    //.drawer-box .button, .box-button{background-color: $theme-yellow;}
+    //.drawer-box .button:hover, .box-button:hover{background-color: $theme-yellow-verylight;}
 }
 .theme-green {
     background-color: $theme-green-page-bg;
-    .drawer-box .button, .box-button{background-color: $theme-green;}
+    .drawer-box .button, .box-button{background-color: $theme-green-light;}
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-green-verylight;}
 }
 .theme-blue {
     background-color: $theme-blue-page-bg;
-    .drawer-box .button, .box-button{background-color: $theme-blue;}
+    .drawer-box .button, .box-button{background-color: $theme-blue-light;}
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-blue-verylight;}
 }
 .theme-maroon {
     background-color: $theme-maroon-page-bg;
-    .drawer-box .button, .box-button{background-color: $theme-maroon;}
+    .drawer-box .button, .box-button{background-color: $theme-maroon-light;}
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-maroon-verylight;}
 } 
 .theme-red {
     background-color: $theme-red-page-bg;
-    .drawer-box .button, .box-button{background-color: $theme-red;}
+    .drawer-box .button, .box-button{background-color: $theme-red-light;}
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-red-verylight;}
 }
 .theme-black {
     background-color: $theme-black-page-bg;
-    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-black;}
+    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-black-light;}
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-black-verylight;}
 }
 .theme-christmas {
     background-color: $theme-christmas-page-bg;
-    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-christmas;}
+    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-christmas-light;}
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-christmas-verylight;}
 }
 .theme-diwali {
     background-color: $theme-diwali-page-bg;
-    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-diwali;}
+    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-diwali-light;}
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-diwali-verylight;}
 }
 .theme-thanks {
     background-color: $theme-thanks-page-bg;
-    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-thanks;}
+    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-thanks-light;}
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-thanks-verylight;}
 }
 /* ---------------------------- */
