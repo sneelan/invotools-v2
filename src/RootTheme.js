@@ -65,8 +65,8 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                   </select> 
                 </div>
 
-                <div className={`d-block d-md-inline-block`} style={{ opacityX: selectedLanguage !== 'english' ? '.1' : '' }}>
-                <select value={selectedOption} onChange={handleSelectChange} style={{ padding: '0.5em', borderRadius: '0' }}>                        
+                <div className={`d-block d-md-inline-block`}>
+                <select value={selectedOption} onChange={handleSelectChange} style={{ padding: '0.5em', borderRadius: '0' }} disabledx={selectedLanguage !== 'english'}>                        
                         <option value="desktop">Desktop</option>
                         <option value="tablet">Tablet Portrait</option>
                         <option value="tablet-landscape">Tablet Landscape</option>
@@ -93,7 +93,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                             <img src='/img/icon-diwali.png'className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} onClick={() => handleButtonClick('diwali')} />
                             <img src='/img/icon-thanks.png'className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} onClick={() => handleButtonClick('thanks')} />
                             <img src='/img/icon-ads.png'className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} onClick={() => handleButtonClick('ads')} />
-                            <img src='/img/icon-printer.png'className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} onClick={() => handleButtonClick('printer')} />                            
+                            <img src='/img/icon-printer.png'className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} onClick={() => handleButtonClick('printer')} style={{ display: selectedLanguage !== 'english' ? 'none' : '' }} />                            
                           </span>                 
                       </div>
                       </div>

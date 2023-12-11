@@ -1,6 +1,7 @@
 import PopupPage from './popup';
 import React, { useState, useEffect } from 'react';
 import DeviceButtons from './DeviceButtons';
+import { useParams } from 'react-router-dom';
 import {  
   Grid,
   Accordion,
@@ -19,6 +20,8 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
   //const isExpanded = column.toggleExpand === 'yes'; // Check the toggleExpand property
   //const [Expanded, setExpanded] = useState(column.toggleExpand === 'yes');
 
+ 
+  
   // Generate a unique widget ID based on rowIndex and columnIndex
   const widgetId = `client-widget-en-${rowIndex}-${columnIndex}`;
  
@@ -109,6 +112,9 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
 
 
 function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveTheme}) {
+
+  const { colorForLanguagePage } = useParams();
+  if(colorForLanguagePage && !activeTheme){activeTheme=colorForLanguagePage;}
  
   //const theme = activeTheme || 'yellow';
   if(!activeTheme){activeTheme='yellow';}
@@ -146,7 +152,6 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveThem
 
   return (
     <> 
-     {/* xxxxxxxx{clientid}yyyyyy */}
    <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={language} setActiveTheme={setActiveTheme}/>
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>

@@ -14,7 +14,7 @@ import ErrorNotFound from './ErrorNotFound';
 
 const App = () => {
   // Use the useParams hook to get the values of id1 and id2
-  const { activeTheme, clientid,invoiceid } = useParams();
+  const { activeTheme, clientid,invoiceid, colorForLanguagePage } = useParams();
  
 
   return (
@@ -27,17 +27,22 @@ const App = () => {
 
         <Route path="/invoice" element={<WidgetAll activeTheme={activeTheme}/>} />
 
-        <Route path="/blue" element={<WidgetAll activeTheme='blue' />} />
-        <Route path="/green" element={<WidgetAll activeTheme='green' />} />
-        <Route path="/yellow" element={<WidgetAll activeTheme='yellow' />} />
-        <Route path="/black" element={<WidgetAll activeTheme='black' />} />
-        <Route path="/red" element={<WidgetAll activeTheme='red' />} />
-        <Route path="/maroon" element={<WidgetAll activeTheme='maroon' />} />   
+        <Route path="/hindi/:colorForLanguagePage" element={<WidgetAll language='hindi' colorForLanguagePage={colorForLanguagePage}/>} />
 
-        <Route path="/diwali" element={<WidgetAll activeTheme='diwali' />} />        
-        <Route path="/christmas" element={<WidgetAll activeTheme='christmas' />} />        
-        <Route path="/thanks" element={<WidgetAll activeTheme='thanks' />} />        
-        <Route path="/ads" element={<WidgetAll activeTheme='ads' />} />        
+        <Route path="/blue" element={<WidgetAll activeTheme='blue' language='english'/>} />
+        <Route path="/green" element={<WidgetAll activeTheme='green' language='english'/>} />
+        <Route path="/yellow" element={<WidgetAll activeTheme='yellow' language='english'/>} />
+        <Route path="/black" element={<WidgetAll activeTheme='black' language='english'/>} />
+        <Route path="/red" element={<WidgetAll activeTheme='red' language='english'/>} />
+        <Route path="/maroon" element={<WidgetAll activeTheme='maroon' language='english'/>} />   
+
+        <Route path="/diwali" element={<WidgetAll activeTheme='diwali' language='english'/>} />        
+        <Route path="/christmas" element={<WidgetAll activeTheme='christmas' language='english'/>} />        
+        <Route path="/thanks" element={<WidgetAll activeTheme='thanks' language='english'/>} />        
+        <Route path="/ads" element={<WidgetAll activeTheme='ads' language='english'/>} />        
+
+        <Route path="/gray" element={<WidgetAll activeTheme='ads' language='english'/>} />        
+        <Route path="/printer" element={<WidgetAll activeTheme='ads' language='english'/>} />        
 
         <Route path="/mobile" element={<MobilePreview />} />
         <Route path="/tablet" element={<TabletPreview />} />

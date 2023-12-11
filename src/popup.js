@@ -98,9 +98,9 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
     }
 
     if(language!=='english'){
-      templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template-yellow-light-${language}.html`;
-      setDarkMode(false);
-      document.body.classList.remove('dark-mode');
+      templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template-yellow-${modeSuffix}-${language}.html`;
+      //setDarkMode(false);
+      //document.body.classList.remove('dark-mode');
       //setActiveTheme('yellow');
     }
     
