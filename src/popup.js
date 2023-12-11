@@ -16,7 +16,7 @@ import ModeNightIcon from '@mui/icons-material/ModeNight';
 import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 
-function PopupPage({ activeTheme, clientid, invoiceid }) {
+function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }) {
  
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
@@ -26,6 +26,14 @@ function PopupPage({ activeTheme, clientid, invoiceid }) {
   const [darkMode, setDarkMode] = useState(false);
   const [invoiceTemplate, setInvoiceTemplate] = useState('');
   const [apiHtml, setApiHtml] = useState('');
+  
+  //searching extra parameter in the url ?included=printer....
+  const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const demoIncludedThemes = params.get('included');
+
+
+
   //const [invoiceTemplate, setInvoiceTemplate] = useState('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template.html');  
  
   //const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
@@ -81,10 +89,24 @@ function PopupPage({ activeTheme, clientid, invoiceid }) {
     const colorSuffix = activeTheme ? `-${activeTheme}` : '';
     const templateName =  clientid ? `template-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;    
     //const templateURL=`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;   
-    const templateURL=invoiceid ? 'https://dev-invodocz.invotools.io/api/v1/invoice/view/'+invoiceid : `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;
+    let templateURL= invoiceid === 'default' ? `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/${templateName}`
+    : invoiceid && invoiceid !== 'default'? 'https://dev-invodocz.invotools.io/api/v1/invoice/view/'+invoiceid 
+    : `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;
+
+    if (demoIncludedThemes && demoIncludedThemes.split(',').includes(activeTheme)) {
+      templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/template-${activeTheme}.html`;
+    }
+
+    if(language!=='english'){
+      templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template-yellow-light-${language}.html`;
+      setDarkMode(false);
+      document.body.classList.remove('dark-mode');
+      //setActiveTheme('yellow');
+    }
+    
     setInvoiceTemplate(templateURL);
 
-  }, [activeTheme, darkMode, clientid]);
+  }, [activeTheme, darkMode, clientid, invoiceid, demoIncludedThemes, language]);
 
 /*   const updateInvoiceTemplate = () => {
     const modeSuffix = darkMode ? 'dark' : 'light';
@@ -254,7 +276,7 @@ function PopupPage({ activeTheme, clientid, invoiceid }) {
                 </style>
               </div>   
               {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
-              {/* <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid}</div> */}
+              <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid} {language} {setDarkMode} {activeTheme}</div>
 
               {(invoiceid?              
                 

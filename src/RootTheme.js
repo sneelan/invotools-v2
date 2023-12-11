@@ -26,24 +26,26 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid}){
 
   
   const [selectedOption, setSelectedOption] = useState('desktop');
-  const handleSelectChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+  const handleSelectChange = (event) => {setSelectedOption(event.target.value);};
 
 const renderSelectedComponent = () => {
   switch (selectedOption) {
     case 'mobile':
-      return <MobilePreview activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid}/>;
+      return <MobilePreview activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} />;
     case 'tablet':
-      return <TabletPreview  activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} />;
+      return <TabletPreview  activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}  />;
     case 'tablet-landscape':
-      return <TabletPreviewLands activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} />;
+      return <TabletPreviewLands activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}  />;
     case 'desktop':
-      return <WidgetAll  activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid}/>;
+      return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} setActiveTheme={setActiveTheme}/>;
     default:
       return null;
   }
 };
+
+const [selectedLanguage, setSelectedLanguage] = useState('english');
+const handleSelectLanguage = (event) => {setSelectedLanguage(event.target.value); };
+
 
 // Define styles based on the condition
 const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' || selectedOption === 'tablet-landscape'? `body {background-color: gray !important;background-image: unset !important;}`: '';
@@ -55,7 +57,15 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
               {renderSelectedComponent()}
               <div className='invoice-wrap'>
               <div className='rounded t-c p-1 flex-center1'>
-                <div className='d-block d-md-inline-block'>
+
+              <div className='d-block d-md-inline-block me-1'>
+                <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' }}>                        
+                        <option value="english">English</option>                        
+                        <option value="hindi">Hindi</option>                        
+                  </select> 
+                </div>
+
+                <div className={`d-block d-md-inline-block`} style={{ opacityX: selectedLanguage !== 'english' ? '.1' : '' }}>
                 <select value={selectedOption} onChange={handleSelectChange} style={{ padding: '0.5em', borderRadius: '0' }}>                        
                         <option value="desktop">Desktop</option>
                         <option value="tablet">Tablet Portrait</option>
@@ -67,7 +77,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                 <div className='d-block d-md-none'><br/></div>
                   
                   {isPathArgumentEmpty &&(                 
-                      <div className='d-block d-md-inline-block'>
+                      <div className='d-block d-md-inline-block' style={{ opacityX: selectedLanguage !== 'english' ? '.1' : '' }}>
                       <div class='flex-center ms-1 bg-white rounded ' style={{backgroundColor:'#ffffff91', padding:'0.5em 1.5em'}}>
                           <span>Theme:</span>
                           <span>
@@ -83,8 +93,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                             <img src='/img/icon-diwali.png'className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} onClick={() => handleButtonClick('diwali')} />
                             <img src='/img/icon-thanks.png'className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} onClick={() => handleButtonClick('thanks')} />
                             <img src='/img/icon-ads.png'className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} onClick={() => handleButtonClick('ads')} />
-                            <img src='/img/icon-printer.png'className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} onClick={() => handleButtonClick('printer')} />
-                            
+                            <img src='/img/icon-printer.png'className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} onClick={() => handleButtonClick('printer')} />                            
                           </span>                 
                       </div>
                       </div>
