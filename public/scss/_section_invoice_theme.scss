@@ -2,12 +2,15 @@
 .theme-yellow.dark-mode{    background-color: $theme-yellow-dark-page-bg!important;}
 .theme-blue.dark-mode{    background-color: $theme-blue-dark-page-bg!important;}
 .theme-green.dark-mode{    background-color: $theme-green-dark-page-bg!important;} 
-.theme-black.dark-mode, .theme-ads.dark-mode{    background-color: $theme-black-dark-page-bg!important;} 
+.theme-black.dark-mode{    background-color: $theme-black-dark-page-bg!important;} 
+.theme-ads.dark-mode{    background-color: #707070!important;} 
 .theme-red.dark-mode{    background-color: $theme-red-dark-page-bg!important;} 
 .theme-maroon.dark-mode{    background-color: $theme-maroon-dark-page-bg!important;} 
 .theme-christmas.dark-mode{    background-color: $theme-christmas-dark-page-bg!important;} 
 .theme-diwali.dark-mode{    background-color: $theme-diwali-dark-page-bg!important;} 
 .theme-thanks.dark-mode{    background-color: $theme-thanks-dark-page-bg!important;} 
+.theme-gray.dark-mode{    background-color: $theme-gray-dark-page-bg!important;} 
+.theme-printer.dark-mode{    background-color: $theme-printer-dark-page-bg!important;} 
 
 /* --------------- */
 .theme-yellow {
@@ -60,31 +63,47 @@
     .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-thanks-light;}
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-thanks-verylight;}
 }
+.theme-gray {
+    background-color: $theme-gray-page-bg;
+    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-gray-light;}
+    .drawer-box .button:hover, .box-button:hover{background-color: $theme-gray-verylight;}
+}
+.theme-printer {
+    background-color: $theme-printer-page-bg;
+    .drawer-box .button, .box-button,.dark-mode #burger-menu{background-color: $theme-printer-light;}
+    .drawer-box .button:hover, .box-button:hover{background-color: $theme-printer-verylight;}
+}
 /* ---------------------------- */
 .theme-yellow.dark-mode #burger-menu{background-color: $theme-yellow;svg{color:unset;}}
 .theme-blue.dark-mode #burger-menu{background-color: $theme-blue;svg{color:unset;}}
 .theme-green.dark-mode #burger-menu{background-color: $theme-green;svg{color:unset;}}
 .theme-red.dark-mode #burger-menu{background-color: $theme-red;svg{color:unset;}}
-.theme-black.dark-mode #burger-menu, .theme-ads.dark-mode #burger-menu{background-color: $theme-black;svg{color:unset;}}
+.theme-black.dark-mode #burger-menu.theme-ads.dark-mode #burger-menu{background-color: $theme-black;svg{color:unset;}}
 .theme-maroon.dark-mode #burger-menu{background-color: $theme-maroon;svg{color:unset;}}
 .theme-christmas.dark-mode #burger-menu{background-color: $theme-christmas;svg{color:unset;}}
 .theme-diwali.dark-mode #burger-menu{background-color: $theme-diwali;svg{color:unset;}}
 .theme-thanks.dark-mode #burger-menu{background-color: $theme-thanks;svg{color:unset;}}
+.theme-gray.dark-mode #burger-menu{background-color: $theme-gray;svg{color:unset;}}
+.theme-printer.dark-mode #burger-menu{background-color: $theme-printer;svg{color:unset;}}
 
 
 /* ---------------------------- */
 .dark-mode{
-    .theme-blue, .theme-green, .theme-yellow, .theme-red, .theme-maroon, .theme-black, .theme-christmas, .theme-diwali, .theme-thanks{background-color:transparent!important;}  
+    .theme-blue, .theme-green, .theme-yellow, .theme-red, .theme-maroon, .theme-black, .theme-christmas, .theme-diwali, .theme-thanks, .theme-gray, .theme-printer
+    {background-color:transparent!important;}  
 
     .theme-yellow{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-yellow-verylight!important;}}
     .theme-blue{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-blue-verylight!important;}}
-    .theme-green{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-green-verylight!important;}}
+    .theme-green{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-green-verylight!important;}}    
     .theme-black, .theme-ads{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-black-verylight!important;}}
     .theme-red{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-red-verylight!important;}}
     .theme-maroon{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-maroon-verylight!important;}}
     .theme-christmas{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-christmas-verylight!important;}}
     .theme-diwali{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-diwali-verylight!important;}}
     .theme-thanks{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-thanks-verylight!important;}}
+    
+    .theme-gray{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-gray-verylight!important;}}
+    .theme-printer{.MuiAccordion-root, .make-column-height-same, .widget{background:$theme-printer-verylight!important;}}
 }
 /* ---------------------------- */
 

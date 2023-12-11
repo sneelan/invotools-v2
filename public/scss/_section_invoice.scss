@@ -17,10 +17,10 @@ body{
     }
     @include media-breakpoint-max(700px) {
         //max-width:666px; 
-        margin:0 auto;  
+        margin:0 auto;
     } 
     @include media-breakpoint-max(968px) {        
-        padding:0 0.5em;  
+        padding:0 0.5em;
     } 
  
 }

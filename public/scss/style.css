@@ -208,8 +208,12 @@
   background-color: #000000 !important;
 }
 
-.theme-black.dark-mode, .theme-ads.dark-mode {
+.theme-black.dark-mode {
   background-color: #000000 !important;
+}
+
+.theme-ads.dark-mode {
+  background-color: #707070 !important;
 }
 
 .theme-red.dark-mode {
@@ -230,6 +234,14 @@
 
 .theme-thanks.dark-mode {
   background-color: #150b04 !important;
+}
+
+.theme-gray.dark-mode {
+  background-color: #000000 !important;
+}
+
+.theme-printer.dark-mode {
+  background-color: #000000 !important;
 }
 
 /* --------------- */
@@ -327,6 +339,26 @@
   background-color: #FFF0D6;
 }
 
+.theme-gray {
+  background-color: #e4e4e4;
+}
+.theme-gray .drawer-box .button, .theme-gray .box-button, .theme-gray .dark-mode #burger-menu {
+  background-color: #ececec;
+}
+.theme-gray .drawer-box .button:hover, .theme-gray .box-button:hover {
+  background-color: #f7f7f7;
+}
+
+.theme-printer {
+  background-color: #e4e4e4;
+}
+.theme-printer .drawer-box .button, .theme-printer .box-button, .theme-printer .dark-mode #burger-menu {
+  background-color: #ececec;
+}
+.theme-printer .drawer-box .button:hover, .theme-printer .box-button:hover {
+  background-color: #f7f7f7;
+}
+
 /* ---------------------------- */
 .theme-yellow.dark-mode #burger-menu {
   background-color: #FFC500;
@@ -356,10 +388,10 @@
   color: unset;
 }
 
-.theme-black.dark-mode #burger-menu, .theme-ads.dark-mode #burger-menu {
+.theme-black.dark-mode #burger-menu.theme-ads.dark-mode #burger-menu {
   background-color: #000000;
 }
-.theme-black.dark-mode #burger-menu svg, .theme-ads.dark-mode #burger-menu svg {
+.theme-black.dark-mode #burger-menu.theme-ads.dark-mode #burger-menu svg {
   color: unset;
 }
 
@@ -391,8 +423,22 @@
   color: unset;
 }
 
+.theme-gray.dark-mode #burger-menu {
+  background-color: #757575;
+}
+.theme-gray.dark-mode #burger-menu svg {
+  color: unset;
+}
+
+.theme-printer.dark-mode #burger-menu {
+  background-color: #757575;
+}
+.theme-printer.dark-mode #burger-menu svg {
+  color: unset;
+}
+
 /* ---------------------------- */
-.dark-mode .theme-blue, .dark-mode .theme-green, .dark-mode .theme-yellow, .dark-mode .theme-red, .dark-mode .theme-maroon, .dark-mode .theme-black, .dark-mode .theme-christmas, .dark-mode .theme-diwali, .dark-mode .theme-thanks {
+.dark-mode .theme-blue, .dark-mode .theme-green, .dark-mode .theme-yellow, .dark-mode .theme-red, .dark-mode .theme-maroon, .dark-mode .theme-black, .dark-mode .theme-christmas, .dark-mode .theme-diwali, .dark-mode .theme-thanks, .dark-mode .theme-gray, .dark-mode .theme-printer {
   background-color: transparent !important;
 }
 .dark-mode .theme-yellow .MuiAccordion-root, .dark-mode .theme-yellow .make-column-height-same, .dark-mode .theme-yellow .widget {
@@ -421,6 +467,12 @@
 }
 .dark-mode .theme-thanks .MuiAccordion-root, .dark-mode .theme-thanks .make-column-height-same, .dark-mode .theme-thanks .widget {
   background: #FFF0D6 !important;
+}
+.dark-mode .theme-gray .MuiAccordion-root, .dark-mode .theme-gray .make-column-height-same, .dark-mode .theme-gray .widget {
+  background: #f7f7f7 !important;
+}
+.dark-mode .theme-printer .MuiAccordion-root, .dark-mode .theme-printer .make-column-height-same, .dark-mode .theme-printer .widget {
+  background: #f7f7f7 !important;
 }
 
 /* ---------------------------- */

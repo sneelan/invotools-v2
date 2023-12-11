@@ -77,11 +77,13 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                             <span className={`theme-btn ${activeTheme === 'maroon' ? 'active' : ''}`} style={{backgroundColor:'#88004A'}} onClick={() => handleButtonClick('maroon')}></span>
                             <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
                             <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
+                            <span className={`theme-btn ${activeTheme === 'gray' ? 'active' : ''}`} style={{backgroundColor:'#bbbbbb'}} onClick={() => handleButtonClick('gray')}></span>
                             
                             <img src='/img/icon-xmas.png'className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} onClick={() => handleButtonClick('christmas')} />
                             <img src='/img/icon-diwali.png'className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} onClick={() => handleButtonClick('diwali')} />
                             <img src='/img/icon-thanks.png'className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} onClick={() => handleButtonClick('thanks')} />
                             <img src='/img/icon-ads.png'className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} onClick={() => handleButtonClick('ads')} />
+                            <img src='/img/icon-printer.png'className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} onClick={() => handleButtonClick('printer')} />
                             
                           </span>                 
                       </div>

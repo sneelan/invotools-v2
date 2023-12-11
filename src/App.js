@@ -9,8 +9,7 @@ import RootTheme from './RootTheme';
 import DemoPage from './DemoPage';
 import { useParams } from 'react-router-dom';
 import ErrorNotFound from './ErrorNotFound';
-import HomePageDouble from './doublediamond/home';
-import Splash from './doublediamond/splash';
+
 
 
 const App = () => {
@@ -45,8 +44,7 @@ const App = () => {
         <Route path="/tablet-landscape" element={<TabletPreviewLands />} />   
         <Route path="/drag" element={<DragFeature />} />
         
-        <Route path="/dd" element={<Splash />} />
-        <Route path="/dd/home" element={<HomePageDouble />} />
+
 
         {/* Wildcard route to match any other paths */}
         <Route path="*" element={<ErrorNotFound />} />

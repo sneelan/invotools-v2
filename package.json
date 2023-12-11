@@ -12,7 +12,7 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.18.0",
+    "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.69.5",
@@ -46,7 +46,7 @@
     ]
   },
   "devDependencies": {
-    "@emotion/react": "^11.11.0",    
+    "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "gh-pages": "^6.0.0"
   }

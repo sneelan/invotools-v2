@@ -1,7 +1,7 @@
 //Theme Changing
 @import "install_mixin";
-@import "_aroot_colors";
-@import "_aroot_variables";
+@import "aroot_colors";
+@import "aroot_variables";
 @import "section_invoice_theme";
 
 @import "install_grid";
@@ -12,7 +12,7 @@
 @import "layout"; 
 @import "layout_header"; 
 @import "layout_footer"; 
-@import "layout_nav"; 
+@import "layout_nav";  
 
 @import "section_common"; 
 @import "section_invoice"; 
