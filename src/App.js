@@ -9,12 +9,13 @@ import RootTheme from './RootTheme';
 import DemoPage from './DemoPage';
 import { useParams } from 'react-router-dom';
 import ErrorNotFound from './ErrorNotFound';
+import ARootInvoice from './Invoice/ARootInvoice'; 
 
 
 
 const App = () => {
   // Use the useParams hook to get the values of id1 and id2
-  const { activeTheme, clientid,invoiceid, colorForLanguagePage } = useParams();
+  const { activeTheme, clientid,invoiceid, colorForLanguagePage, urlMode, urlColor, urlLanguage } = useParams();
  
 
   return (
@@ -28,6 +29,9 @@ const App = () => {
         <Route path="/invoice" element={<WidgetAll activeTheme={activeTheme}/>} />
 
         <Route path="/hindi/:colorForLanguagePage" element={<WidgetAll language='hindi' colorForLanguagePage={colorForLanguagePage}/>} />
+        <Route path="/spanish/:colorForLanguagePage" element={<WidgetAll language='spanish' colorForLanguagePage={colorForLanguagePage}/>} />
+        <Route path="/arabic/:colorForLanguagePage" element={<WidgetAll language='arabic' colorForLanguagePage={colorForLanguagePage}/>} />
+        <Route path="/french/:colorForLanguagePage" element={<WidgetAll language='french' colorForLanguagePage={colorForLanguagePage}/>} />
 
         <Route path="/blue" element={<WidgetAll activeTheme='blue' language='english'/>} />
         <Route path="/green" element={<WidgetAll activeTheme='green' language='english'/>} />
@@ -49,6 +53,8 @@ const App = () => {
         <Route path="/tablet-landscape" element={<TabletPreviewLands />} />   
         <Route path="/drag" element={<DragFeature />} />
         
+
+        <Route path="/template/:urlLanguage/:urlColor/:urlMode" element={<ARootInvoice urlLanguage={urlLanguage} urlColor={urlColor} urlMode={urlMode} />}  />
 
 
         {/* Wildcard route to match any other paths */}

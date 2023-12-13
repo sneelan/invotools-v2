@@ -1,0 +1,5 @@
+.container-xl{ transition:0s!important; opacity: 1 !important;} 
+
+*, .container-xl *{transition: 0s!important;}
+
+html, body{background-color: transparent!important;}

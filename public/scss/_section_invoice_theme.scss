@@ -74,17 +74,18 @@
     .drawer-box .button:hover, .box-button:hover{background-color: $theme-printer-verylight;}
 }
 /* ---------------------------- */
-.theme-yellow.dark-mode #burger-menu{background-color: $theme-yellow;svg{color:unset;}}
-.theme-blue.dark-mode #burger-menu{background-color: $theme-blue;svg{color:unset;}}
-.theme-green.dark-mode #burger-menu{background-color: $theme-green;svg{color:unset;}}
-.theme-red.dark-mode #burger-menu{background-color: $theme-red;svg{color:unset;}}
-.theme-black.dark-mode #burger-menu.theme-ads.dark-mode #burger-menu{background-color: $theme-black;svg{color:unset;}}
-.theme-maroon.dark-mode #burger-menu{background-color: $theme-maroon;svg{color:unset;}}
-.theme-christmas.dark-mode #burger-menu{background-color: $theme-christmas;svg{color:unset;}}
-.theme-diwali.dark-mode #burger-menu{background-color: $theme-diwali;svg{color:unset;}}
-.theme-thanks.dark-mode #burger-menu{background-color: $theme-thanks;svg{color:unset;}}
-.theme-gray.dark-mode #burger-menu{background-color: $theme-gray;svg{color:unset;}}
-.theme-printer.dark-mode #burger-menu{background-color: $theme-printer;svg{color:unset;}}
+.theme-yellow.dark-mode #burger-menu{background-color: $theme-yellow;svg{color: unset !important;}}
+.theme-blue.dark-mode #burger-menu{background-color: $theme-blue;svg{color:white !important;}}
+.theme-green.dark-mode #burger-menu{background-color: $theme-green;svg{color:white !important;}}
+.theme-red.dark-mode #burger-menu{background-color: $theme-red;svg{color:white !important;}}
+.theme-black.dark-mode #burger-menu.theme-ads.dark-mode #burger-menu{background-color: $theme-black;svg{color:white !important;}}
+.theme-maroon.dark-mode #burger-menu{background-color: $theme-maroon;svg{color:white !important;}}
+.theme-christmas.dark-mode #burger-menu{background-color: $theme-christmas;svg{color:white !important;}}
+.theme-diwali #burger-menu{background-color: white;svg{color:$theme-diwali !important;}}
+.theme-diwali.dark-mode #burger-menu{background-color: $theme-diwali;svg{color:white !important;}}
+//.theme-thanks.dark-mode #burger-menu{background-color: $theme-thanks;svg{color:white !important;}}
+.theme-gray.dark-mode #burger-menu{background-color: $theme-gray;svg{color:white !important;}}
+.theme-printer.dark-mode #burger-menu{background-color: $theme-printer;svg{color:white !important;}}
 
 
 /* ---------------------------- */

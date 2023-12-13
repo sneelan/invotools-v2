@@ -15,6 +15,7 @@ import ModeNightIcon from '@mui/icons-material/ModeNight';
 
 import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
+import ARootInvoice from './Invoice/ARootInvoice';
 
 function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }) {
  
@@ -50,7 +51,8 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
               response = await fetch('/customer-portal-popup.json');
         } else {
               //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json`);
-              response = await fetch('/customer-portal-popup.json');
+              //response = await fetch('/customer-portal-popup.json');
+              response = await fetch(`/customer-portal-popup-${language}.json`);
         }
         const data = await response.json(); 
         setData(data); // Corrected to use setData instead of setJsonData
@@ -60,7 +62,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
     };
 
     fetchData();
-  }, []);
+  }, [language]);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -76,32 +78,38 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
   };
   
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);    
-    document.body.classList.toggle('dark-mode', !darkMode);
+      setDarkMode(!darkMode);    
+      document.body.classList.toggle('dark-mode', !darkMode); 
   };
   
   //checking client id
   //let clientidfolder=clientid ? 'demo/'+clientid : 'modern-v1';
   //https://customer.invotools.io/view/d78abae8-d265-4438-95be-6a267157612f
+  //: `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;
 
   useEffect(() => {
     const modeSuffix = darkMode ? 'dark' : 'light';
     const colorSuffix = activeTheme ? `-${activeTheme}` : '';
     const templateName =  clientid ? `template-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;    
+
+    //temporary-neelan-testing
+    if(language==='hindi'){activeTheme='yellow';}
+
     //const templateURL=`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;   
+
     let templateURL= invoiceid === 'default' ? `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/${templateName}`
     : invoiceid && invoiceid !== 'default'? 'https://dev-invodocz.invotools.io/api/v1/invoice/view/'+invoiceid 
-    : `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;
+    : `/template/${language}/${activeTheme}/${modeSuffix}`;
 
-    if (demoIncludedThemes && demoIncludedThemes.split(',').includes(activeTheme)) {
-      templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/template-${activeTheme}.html`;
-    }
-
-    if(language!=='english'){
+/*     if(language!=='english'){
       templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template-yellow-${modeSuffix}-${language}.html`;
       //setDarkMode(false);
       //document.body.classList.remove('dark-mode');
       //setActiveTheme('yellow');
+    } */
+
+    if (demoIncludedThemes && demoIncludedThemes.split(',').includes(activeTheme)) {
+      templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/template-${activeTheme}.html`;
     }
     
     setInvoiceTemplate(templateURL);
@@ -180,7 +188,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
 
   return (
     <div> 
-              <div className=' mobile-menu bg-theme-secondary'>
+              <div className='mobile-menu bg-theme-secondary'>
                   <div style={{padding:'0.25em', justifyContent:'end'}} className='invoice-wrap flex-center'>
                     
                   <b style={{color:'gray'}} className='me-1'>Menu </b>
@@ -196,7 +204,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
                 <span onClick={toggleDrawer} className='box-button' aria-label="menu" id='burger-menu'> <MenuIcon /></span>
 
                 <Drawer anchor="right" open={open} onClose={toggleDrawer} hideBackdrop>
-                  <div className='drawer-wrap'>
+                  <div className={`drawer-wrap ${language === 'arabic'?'arabic':''}`}  dir={language === 'arabic'?'rtl':''}>
                     <div>
                       <div id='burger-close' class="flex-center" style={{justifyContent:'space-between', padding:'7px', width:'100%', alignItems:'start'}}>                
                         <div className='box-button' onClick={toggleDarkMode}>{darkMode ?  <LightModeIcon/>: <ModeNightIcon />}</div>
@@ -246,7 +254,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
                   </div>
                 </Drawer>
 
-                <Dialog id="mypopup" open={popupOpen} onClose={closePopup} aria-labelledby="popup-title">
+                <Dialog id="mypopup" open={popupOpen} onClose={closePopup} aria-labelledby="popup-title" dir={language === 'arabic'?'rtl':''}>
                   <style dangerouslySetInnerHTML={{ __html: selectedPopup.contentHTML  }} style={{overflow: 'hidden'}} />
                   <h2 id="popup-title" className='flex-center'>
                     <span style={{paddingRight:'1em'}}>{selectedPopup.title}</span>
@@ -277,15 +285,18 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
               </div>   
               {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
              {/*  <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid} {language} {setDarkMode} {activeTheme}</div> */}
+             {/* <div className='bg-white text-black t-c p-1'>{invoiceTemplate}</div>*/}              
+            {/* <ARootInvoice language={language} activeTheme={activeTheme} lightMode={darkMode ? 'dark' : 'light'}/> */}
 
-              {(invoiceid?              
-                
+            <iframe src={invoiceTemplate} style={{ width: '100%'}} height="1220" frameBorder="0" title="invoice" ></iframe>
+              
+{/*               {(invoiceid?             
                 <iframe                    
                     srcDoc={apiHtml}
                     style={{ width: '100%'}}  height="1000"  frameBorder="0" title="invoice"
                   />              
               : <iframe src={invoiceTemplate} style={{ width: '100%'}} height="1220" frameBorder="0" title="invoice" ></iframe>
-              )}
+              )} */}
               
               
 

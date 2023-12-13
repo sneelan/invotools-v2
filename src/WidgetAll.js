@@ -156,7 +156,7 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveThem
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}
-<div className={`theme-${activeTheme}`}>
+<div className={`theme-${activeTheme}`} dir={language === 'arabic'?'rtl':''}>
 <div className='invoice-wrap' style={{ paddingBottom:'1em'}}>
       {data &&
         data.rows.map((row, rowIndex) => (

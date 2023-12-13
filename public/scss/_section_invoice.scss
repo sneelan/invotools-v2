@@ -2,7 +2,7 @@ body{
     overflow: auto!important;
     //background-color: $page-bg;
 }
-*{transition: 0.5s;}
+*{transition: 0s;}
 .shadow{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)!important;
     -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)!important;
@@ -156,7 +156,7 @@ body{
     svg{width:26px; height:auto; max-width:26px; padding-right:0.5em;fill:black;margin-bottom: -3px;}
     &:hover{background-color:white;} 
 }
-
+.arabic .drawer-box .button svg{ margin-left:10px;}
 
 #mypopup {    
     .MuiPaper-root{   
@@ -191,17 +191,43 @@ footer{
     padding:0.75em 0;
 }
 
- /* Common CSS-----as bootstrap */
- .d-inline-block{display: inline-block;}
- .d-block{display: block;}
- .d-none{display: none;}
- .d-md-none{@include media-breakpoint-min(768px) { display: none;}}
- .d-sm-none{@include media-breakpoint-min(564px) { display: none;}}
- .d-lg-none{@include media-breakpoint-min(968px) { display: none;}}
- .d-md-block{@include media-breakpoint-min(768px) { display: block;}}
- .d-md-inline-block{@include media-breakpoint-min(768px) { display: inline-block;}}
- .d-sm-block{@include media-breakpoint-min(564px) { display: block;}}
- .d-lg-block{@include media-breakpoint-min(968px) { display: block;}}
+#setting-btn{ display: none;}
+@include media-breakpoint-min(1200px) { 
+    #setting-btn{
+        display: block;
+        position: fixed;bottom:0; left:0; 
+        padding:0.28em;        
+        background-color: rgba(255, 255, 255, 0.7);     
+        svg{width: 38px;}  
+    }
+    .setting-sticky{
+        transition: 0.5s!important;
+        position: fixed;bottom:0; left:-100vw; width: 100vw;
+        background-color:$theme-secondary;    
+        padding: 0.25em!important;      
+    }
+    .setting-sticky.open{    
+         
+        left:0px;         
+        svg{fill:white;}
+        #setting-btn{background-color: unset!important;}
+        
+    }    
+}
+
+
+
+/* few common classes as bootstrap */
+.d-inline-block{display: inline-block;}
+.d-block{display: block;}
+.d-none{display: none;}
+.d-md-none{@include media-breakpoint-min(768px) { display: none;}}
+.d-sm-none{@include media-breakpoint-min(564px) { display: none;}}
+.d-lg-none{@include media-breakpoint-min(968px) { display: none;}}
+.d-md-block{@include media-breakpoint-min(768px) { display: block;}}
+.d-md-inline-block{@include media-breakpoint-min(768px) { display: inline-block;}}
+.d-sm-block{@include media-breakpoint-min(564px) { display: block;}}
+.d-lg-block{@include media-breakpoint-min(968px) { display: block;}}
 .t-c{text-align: center;}
 .t-r{text-align: right!important;}
 .t-s{text-align: left!important;}
@@ -217,9 +243,9 @@ footer{
 .line-height-normal{line-height: 100%;}
 .cursor-pointer{cursor: pointer;}
 .shadow-none{    
-    box-shadow:none!important;
-    -webkit-box-shadow:none!important;
-    -moz-box-shadow:none!important;
+box-shadow:none!important;
+-webkit-box-shadow:none!important;
+-moz-box-shadow:none!important;
 }
 .bg-none{background-color: transparent!important;}
 .me-1{margin-right:1em;}
@@ -229,13 +255,25 @@ footer{
 .rounded{border-radius: 0.25em;}
 .bg-white{background-color: white;}
 .btn{ display: block;
-    padding:0.5em .75em; background-color: $theme-primary; 
-    &:hover{background-color: $theme-primary-dark;}
+padding:0.5em .75em; background-color: $theme-primary; 
+&:hover{background-color: $theme-primary-dark;}
 }
 .btn-secondary{
-    background-color: $theme-secondary; color: rgba(255, 255, 255, 0.658);
-    &:hover{background-color: $theme-secondary-dark;color:white;}
+background-color: $theme-secondary; color: rgba(255, 255, 255, 0.658);
+&:hover{background-color: $theme-secondary-dark;color:white;}
 }
 
 .theme-btn{width:25px;height: 25px; display: inline-block; margin-left: 0.5em; @extend .shadow; @extend .rounded;  border: 2px solid rgba(255, 255, 255, 0.8);}
-.theme-btn.active{border: 2px solid rgba(0, 0, 0, 0.8);}
+.theme-btn img{width:22px;height: 22px;}
+.theme-btn.active{
+    border: 2px solid rgb(0, 0, 0);
+    position: relative;}
+.theme-btn.active::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -2px;
+    width: 24px;
+    border-top: 6px solid $theme-secondary;
+    margin: auto;
+  }

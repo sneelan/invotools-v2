@@ -18,13 +18,15 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid}){
   document.body.classList.add(`theme-${activeTheme}`);
 
   const handleButtonClick = (theme) => {
-    document.body.classList.remove(`theme-${activeTheme}`);
-    setActiveTheme(theme);
-    document.body.classList.add(`theme-${theme}`);
-    //console.log(`Clicked on ${theme} button`);
+      document.body.classList.remove(`theme-${activeTheme}`);
+      setActiveTheme(theme);
+      document.body.classList.add(`theme-${theme}`);
+      //console.log(`Clicked on ${theme} button`);
   };
 
-  
+  const [isSettingOpen, setIsSettingOpen] = useState(false);
+  const toggleSetting = () => {setIsSettingOpen(!isSettingOpen);};
+
   const [selectedOption, setSelectedOption] = useState('desktop');
   const handleSelectChange = (event) => {setSelectedOption(event.target.value);};
 
@@ -44,7 +46,17 @@ const renderSelectedComponent = () => {
 };
 
 const [selectedLanguage, setSelectedLanguage] = useState('english');
-const handleSelectLanguage = (event) => {setSelectedLanguage(event.target.value); };
+const handleSelectLanguage = (event) => {
+  setSelectedLanguage(event.target.value); 
+
+  //temporary-neelan-testing
+  if(event.target.value==='hindi'){
+      document.body.classList.remove(`theme-${activeTheme}`);
+      setActiveTheme('yellow');
+      document.body.classList.add('theme-yellow');
+  }
+
+};
 
 
 // Define styles based on the condition
@@ -52,16 +64,26 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
 
   return (
     <div>
-        <div className='wrapper'>    
-              
+        <div className='wrapper'>
               {renderSelectedComponent()}
-              <div className='invoice-wrap'>
-              <div className='rounded t-c p-1 flex-center1'>
-
+              <div id="setting" className={`setting-sticky invoice-wrap1 t-c p-1 ${isSettingOpen ? 'open' : ''}`}>
+              <div>                  
+                  <span id='setting-btn' onClick={toggleSetting}>
+                        <span className={`${isSettingOpen ? 'd-none' : ''}`}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" /></svg>
+                        </span>
+                        <span className={`${isSettingOpen ? '' : 'd-none'}`}>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M15.4,16.6L10.8,12L15.4,7.4L14,6L8,12L14,18L15.4,16.6Z" /></svg>
+                        </span>
+                  </span>
               <div className='d-block d-md-inline-block me-1'>
                 <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' }}>                        
                         <option value="english">English</option>                        
                         <option value="hindi">Hindi</option>                        
+                        {/* //temporary-neelan-testing
+                        <option value="spanish">Spanish</option>                        
+                        <option value="arabic">Arabic</option>                        
+                        <option value="french">French</option> */}                        
                   </select> 
                 </div>
 
@@ -77,8 +99,9 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                 <div className='d-block d-md-none'><br/></div>
                   
                   {isPathArgumentEmpty &&(                 
-                      <div className='d-block d-md-inline-block' style={{ opacityX: selectedLanguage !== 'english' ? '.1' : '' }}>
-                      <div class='flex-center ms-1 bg-white rounded ' style={{backgroundColor:'#ffffff91', padding:'0.5em 1.5em'}}>
+                      //temporary-neelan-testing
+                      <div className='d-block d-md-inline-block' style={{ display: selectedLanguage !== 'english' ? 'none' : '' }}>
+                      <div class='flex-center ms-1 bg-white rounded' style={{backgroundColor:'#ffffff', padding:'0.5em 1.5em'}}>
                           <span>Theme:</span>
                           <span>
                             <span className={`theme-btn ${activeTheme === 'yellow' ? 'active' : ''}`} style={{backgroundColor:'#FFA100'}} onClick={() => handleButtonClick('yellow')}></span>
@@ -89,12 +112,13 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                             <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
                             <span className={`theme-btn ${activeTheme === 'gray' ? 'active' : ''}`} style={{backgroundColor:'#bbbbbb'}} onClick={() => handleButtonClick('gray')}></span>
                             
-                            <img src='/img/icon-xmas.png'className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} onClick={() => handleButtonClick('christmas')} />
-                            <img src='/img/icon-diwali.png'className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} onClick={() => handleButtonClick('diwali')} />
-                            <img src='/img/icon-thanks.png'className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} onClick={() => handleButtonClick('thanks')} />
-                            <img src='/img/icon-ads.png'className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} onClick={() => handleButtonClick('ads')} />
-                            <img src='/img/icon-printer.png'className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} onClick={() => handleButtonClick('printer')} style={{ display: selectedLanguage !== 'english' ? 'none' : '' }} />                            
-                          </span>                 
+                            <span className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-xmas.png' onClick={() => handleButtonClick('christmas')}   /></span>
+                            <span className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-diwali.png' onClick={() => handleButtonClick('diwali')}   /></span>
+                            <span className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-thanks.png' onClick={() => handleButtonClick('thanks')}   /></span>
+                            <span className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} ><img src='/img/icon-ads.png' onClick={() => handleButtonClick('ads')} /></span>
+                            <span className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} ><img src='/img/icon-printer.png' onClick={() => handleButtonClick('printer')}  /></span>
+                          </span>   
+                          <span className='d-inline-block ms-1' style={{minWidth:'100px',textTransform:'capitalize', fontWeight:'bold'}}>{activeTheme==='ads'?'Advertising' : activeTheme==='thanks'?'Thanks Giving' : activeTheme==='printer'?'Printer Friendly':activeTheme}  </span>            
                       </div>
                       </div>
                   )}

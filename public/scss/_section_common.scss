@@ -1,6 +1,4 @@
-
-
-//by Mixin
+/* by Mixin */
 .opacity-75{@include opacity(0.75);}
 .opacity-50{@include opacity(0.5);}
 .opacity-25{ @include opacity(0.25);}
@@ -8,4 +6,3 @@
 .opacity-hover-75{@include opacity-hover(0.75);}
 .opacity-hover-50{@include opacity-hover(0.5);}
 .opacity-hover-25{ @include opacity-hover(0.25);} 
-

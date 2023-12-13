@@ -364,77 +364,77 @@
   background-color: #FFC500;
 }
 .theme-yellow.dark-mode #burger-menu svg {
-  color: unset;
+  color: unset !important;
 }
 
 .theme-blue.dark-mode #burger-menu {
   background-color: #005E80;
 }
 .theme-blue.dark-mode #burger-menu svg {
-  color: unset;
+  color: white !important;
 }
 
 .theme-green.dark-mode #burger-menu {
   background-color: #437B00;
 }
 .theme-green.dark-mode #burger-menu svg {
-  color: unset;
+  color: white !important;
 }
 
 .theme-red.dark-mode #burger-menu {
   background-color: #bd0009;
 }
 .theme-red.dark-mode #burger-menu svg {
-  color: unset;
+  color: white !important;
 }
 
 .theme-black.dark-mode #burger-menu.theme-ads.dark-mode #burger-menu {
   background-color: #000000;
 }
 .theme-black.dark-mode #burger-menu.theme-ads.dark-mode #burger-menu svg {
-  color: unset;
+  color: white !important;
 }
 
 .theme-maroon.dark-mode #burger-menu {
   background-color: #88004A;
 }
 .theme-maroon.dark-mode #burger-menu svg {
-  color: unset;
+  color: white !important;
 }
 
 .theme-christmas.dark-mode #burger-menu {
   background-color: #005E80;
 }
 .theme-christmas.dark-mode #burger-menu svg {
-  color: unset;
+  color: white !important;
+}
+
+.theme-diwali #burger-menu {
+  background-color: white;
+}
+.theme-diwali #burger-menu svg {
+  color: #88004A !important;
 }
 
 .theme-diwali.dark-mode #burger-menu {
   background-color: #88004A;
 }
 .theme-diwali.dark-mode #burger-menu svg {
-  color: unset;
-}
-
-.theme-thanks.dark-mode #burger-menu {
-  background-color: #FFC500;
-}
-.theme-thanks.dark-mode #burger-menu svg {
-  color: unset;
+  color: white !important;
 }
 
 .theme-gray.dark-mode #burger-menu {
   background-color: #757575;
 }
 .theme-gray.dark-mode #burger-menu svg {
-  color: unset;
+  color: white !important;
 }
 
 .theme-printer.dark-mode #burger-menu {
   background-color: #757575;
 }
 .theme-printer.dark-mode #burger-menu svg {
-  color: unset;
+  color: white !important;
 }
 
 /* ---------------------------- */
@@ -686,6 +686,7 @@ body {
   }
 }
 
+/* by Mixin */
 .opacity-75 {
   opacity: 0.75;
   filter: alpha(opacity=75);
@@ -768,8 +769,8 @@ body {
 }
 
 * {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0s;
+  transition: 0s;
 }
 
 .shadow, .theme-btn, .widget {
@@ -1015,6 +1016,10 @@ body {
   background-color: white;
 }
 
+.arabic .drawer-box .button svg {
+  margin-left: 10px;
+}
+
 #mypopup .MuiPaper-root {
   margin: 0 !important;
 }
@@ -1064,7 +1069,43 @@ footer a:hover {
   transition: 0s;
 }
 
-/* Common CSS-----as bootstrap */
+#setting-btn {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  #setting-btn {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0.28em;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  #setting-btn svg {
+    width: 38px;
+  }
+  .setting-sticky {
+    -webkit-transition: 0.5s !important;
+    transition: 0.5s !important;
+    position: fixed;
+    bottom: 0;
+    left: -100vw;
+    width: 100vw;
+    background-color: #1E1E1E;
+    padding: 0.25em !important;
+  }
+  .setting-sticky.open {
+    left: 0px;
+  }
+  .setting-sticky.open svg {
+    fill: white;
+  }
+  .setting-sticky.open #setting-btn {
+    background-color: unset !important;
+  }
+}
+/* few common classes as bootstrap */
 .d-inline-block {
   display: inline-block;
 }
@@ -1243,8 +1284,24 @@ footer a:hover {
   border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
+.theme-btn img {
+  width: 22px;
+  height: 22px;
+}
+
 .theme-btn.active {
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: 2px solid rgb(0, 0, 0);
+  position: relative;
+}
+
+.theme-btn.active::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -2px;
+  width: 24px;
+  border-top: 6px solid #1E1E1E;
+  margin: auto;
 }
 
 /* The device with borders */
