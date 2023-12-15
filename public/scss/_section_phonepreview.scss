@@ -1,5 +1,5 @@
 /* The device with borders */
-.smartphone {
+.mobile {
     position: relative;
     width: 360px;
     height: 640px;
@@ -11,7 +11,7 @@
   }
   
   /* The horizontal line on the top of the device */
-  .smartphone:before {
+  .mobile:before {
     content: '';
     display: block;
     width: 60px;
@@ -25,7 +25,7 @@
   }
   
   /* The circle on the bottom of the device */
-  .smartphone:after {
+  .mobile:after {
     content: '';
     display: block;
     width: 35px;
@@ -39,7 +39,7 @@
   }
   
   /* The screen (or content) of the device */
-  .smartphone .content {
+  .mobile .content {
     width: 330px;
     height: 540px;
     background: white;
@@ -58,7 +58,7 @@
     border-bottom-width: 60px;
     border-radius: 36px;
   }
-  .tablet1{    
+  .tablet-landscape{    
     width: 991px!important;
     height: 710px!important;
   }
@@ -97,7 +97,7 @@
     background: white;
     margin: -1px;
   }
-  .tablet1 .content{
+  .tablet-landscape .content{
     width: 960px!important; 
     height: 600px!important; 
     background: white;

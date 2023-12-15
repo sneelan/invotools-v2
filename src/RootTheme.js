@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import WidgetAll from './WidgetAll';
-import MobilePreview from './MobilePreview';
-import TabletPreview from './TabletPreview';
-import TabletPreviewLands from './TabletPreviewLands';
+//import MobilePreview from './MobilePreview';
+//import TabletPreview from './TabletPreview';
+//import TabletPreviewLands from './TabletPreviewLands';
+import DeviceView from './DeviceView';
 import { useLocation } from 'react-router-dom';
 
 
-function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid}){
+function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTemplate}){
   const location = useLocation();
+  const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const demoIncludedLang = params.get('language');
+
   const pathArgument = location.pathname.split('/'); // Split the path into parts
   // Check if pathArgument[2] is not available or empty
   //const isPathArgumentEmpty = !pathArgument[2] || pathArgument[2].trim() === '';
@@ -30,20 +35,20 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid}){
   const [selectedOption, setSelectedOption] = useState('desktop');
   const handleSelectChange = (event) => {setSelectedOption(event.target.value);};
 
-const renderSelectedComponent = () => {
-  switch (selectedOption) {
-    case 'mobile':
-      return <MobilePreview activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} />;
-    case 'tablet':
-      return <TabletPreview  activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}  />;
-    case 'tablet-landscape':
-      return <TabletPreviewLands activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}  />;
-    case 'desktop':
-      return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} setActiveTheme={setActiveTheme}/>;
-    default:
-      return null;
-  }
-};
+  const renderSelectedComponent = () => {
+    switch (selectedOption) {
+      case 'mobile':
+        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}/>;
+      case 'tablet':
+        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}  />;
+      case 'tablet-landscape':
+        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}  />;
+      case 'desktop':
+        return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} setActiveTheme={setActiveTheme}/>;
+      default:
+        return null;
+    }
+  };
 
 const [selectedLanguage, setSelectedLanguage] = useState('english');
 const handleSelectLanguage = (event) => {
@@ -77,13 +82,23 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                         </span>
                   </span>
               <div className='d-block d-md-inline-block me-1'>
-                <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' }}>                        
-                        <option value="english">English</option>                        
-                        <option value="hindi">Hindi</option>                        
-                        {/* //temporary-neelan-testing
-                        <option value="spanish">Spanish</option>                        
-                        <option value="arabic">Arabic</option>                        
-                        <option value="french">French</option> */}                        
+                <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' }}>   
+                    {demoIncludedLang ? (
+                        demoIncludedLang.split(',').map((lang) => (
+                          <option key={lang.toLowerCase()} value={lang.toLowerCase()}>
+                            {lang}
+                          </option>
+                        ))
+                      ) : (
+                          <>
+                          <option value="english">English</option>                        
+                          <option value="hindi">Hindi</option>                        
+                          {/* //temporary-neelan-testing
+                          <option value="spanish">Spanish</option>                        
+                          <option value="arabic">Arabic</option>                        
+                          <option value="french">French</option> */}    
+                          </>
+                      )}                    
                   </select> 
                 </div>
 
@@ -118,7 +133,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                             <span className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} ><img src='/img/icon-ads.png' onClick={() => handleButtonClick('ads')} /></span>
                             <span className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} ><img src='/img/icon-printer.png' onClick={() => handleButtonClick('printer')}  /></span>
                           </span>   
-                          <span className='d-inline-block ms-1' style={{minWidth:'100px',textTransform:'capitalize', fontWeight:'bold'}}>{activeTheme==='ads'?'Advertising' : activeTheme==='thanks'?'Thanks Giving' : activeTheme==='printer'?'Printer Friendly':activeTheme}  </span>            
+                          <span className='d-inline-block ms-1' style={{minWidth:'100px',textTransform:'capitalize', fontWeight:'bold'}}>{activeTheme==='maroon'?'Magenta' : activeTheme==='ads'?'Advertising' :activeTheme==='thanks'?'Thanks Giving' : activeTheme==='printer'?'Printer Friendly':activeTheme}  </span>            
                       </div>
                       </div>
                   )}

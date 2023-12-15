@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect,useState  } from 'react';
+import { useEffect,useState,useRef   } from 'react';
 import { useParams } from 'react-router-dom';
 import InvoiceEnglish from './InvoiceEnglish.js';
 import InvoiceHindi from './InvoiceHindi.js';
@@ -9,35 +9,60 @@ import InvoiceFrench from './InvoiceFrench.js';
 
 const ARootInvoice = () => {
   const { urlLanguage, urlColor, urlMode } = useParams();
-  const [initialCssAdded, setInitialCssAdded] = useState(false);
+  
+
+ // Create Bootstrap and fadein.css links only once when the component mounts
+ useEffect(() => {
+  const oldStyle = document.getElementById('theme-stylesheet');
+  if (oldStyle) {oldStyle.remove();}  
+
+  if (!document.getElementById('theme-bootstrap')) {
+    const bootstrapLink = document.createElement('link');
+    bootstrapLink.id = 'theme-bootstrap';
+    bootstrapLink.rel = 'stylesheet';
+    bootstrapLink.href = '/invoice-css/bootstrap52.css';
+    document.head.appendChild(bootstrapLink);
+  }
+
+  let colorLink = document.getElementById('theme-change');    
+    if (!colorLink) {
+      colorLink = document.createElement('link');
+      colorLink.id = 'theme-change';
+      colorLink.rel = 'stylesheet';
+      document.head.appendChild(colorLink);
+    }
+    // Update the href attribute
+    colorLink.href = `/invoice-css/${urlColor}.css`;
+
+
+    if (!document.getElementById('theme-fadein')) {
+      const fadeinLink = document.createElement('link');
+      fadeinLink.id = 'theme-fadein';
+      fadeinLink.rel = 'stylesheet';
+      fadeinLink.href = '/invoice-css/a_fadein.css';
+      document.head.appendChild(fadeinLink);
+    }
+
+}, [urlColor]); 
 
 
 
 
 
-
-
-  useEffect(() => {      
+  
+//  const [initialCssAdded, setInitialCssAdded] = useState(false);
+  useEffect(() => { 
+    /*      
     if (!initialCssAdded) {
       const bootstrapLink = document.createElement('link');
       bootstrapLink.id = 'theme-bootstrap';
       bootstrapLink.rel = 'stylesheet';
       bootstrapLink.href = '/invoice-css/bootstrap52.css';
       document.head.appendChild(bootstrapLink);
-  
-  
-      const fadeinLink = document.createElement('link');
-      fadeinLink.id = 'theme-fadein';
-      fadeinLink.rel = 'stylesheet';
-      fadeinLink.href = '/invoice-css/a_fadein.css';
-      document.head.appendChild(fadeinLink);
-      setInitialCssAdded(true);
     }
     
     const existingThemeLink = document.getElementById('theme-stylesheet');
-    if (existingThemeLink) {
-      existingThemeLink.remove();      
-    }
+    if (existingThemeLink) {existingThemeLink.remove(); }
 
     // Add new theme CSS file
     const themeLink = document.createElement('link');
@@ -46,6 +71,12 @@ const ARootInvoice = () => {
     themeLink.href = `/invoice-css/${urlColor}.css`;
     document.head.appendChild(themeLink); 
    
+    const fadeinLink = document.createElement('link');
+    fadeinLink.id = 'theme-fadein';
+    fadeinLink.rel = 'stylesheet';
+    fadeinLink.href = '/invoice-css/a_fadein.css';
+    document.head.appendChild(fadeinLink);
+    setInitialCssAdded(true);
 
 
     if (urlLanguage === 'arabic') {
@@ -54,9 +85,7 @@ const ARootInvoice = () => {
       themeLink.rel = 'stylesheet';
       themeLink.href = `/invoice-css/arabic.css`;
       document.head.appendChild(themeLink);
-    } else {
-  
-    }
+    } else {} */
 
 
         // Add 'dark-mode' class to the body if urlMode is 'dark'
@@ -76,14 +105,14 @@ const ARootInvoice = () => {
     
     // Clean up when component unmounts
     return () => {
-      // Remove both links if needed
+/*       // Remove both links if needed
       const bootstrapLink = document.getElementById('theme-bootstrap');
       const fadeinLink = document.getElementById('theme-fadein');
-      if (bootstrapLink) {bootstrapLink.remove();} 
-      if (fadeinLink) {fadeinLink.remove();} 
+      if (bootstrapLink) {bootstrapLink.remove();}       
       if (themeLink) {themeLink.remove(); }
+      if (fadeinLink) {fadeinLink.remove();}  */
     };
-  }, [urlColor, urlLanguage, urlMode]);
+  }, [urlColor, urlLanguage, urlMode]); 
 
   return (
     <>

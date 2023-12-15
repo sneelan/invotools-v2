@@ -340,7 +340,7 @@
 }
 
 .theme-gray {
-  background-color: #e4e4e4;
+  background-color: #fafafa;
 }
 .theme-gray .drawer-box .button, .theme-gray .box-button, .theme-gray .dark-mode #burger-menu {
   background-color: #ececec;
@@ -1305,7 +1305,7 @@ footer a:hover {
 }
 
 /* The device with borders */
-.smartphone {
+.mobile {
   position: relative;
   width: 360px;
   height: 640px;
@@ -1317,7 +1317,7 @@ footer a:hover {
 }
 
 /* The horizontal line on the top of the device */
-.smartphone:before {
+.mobile:before {
   content: "";
   display: block;
   width: 60px;
@@ -1332,7 +1332,7 @@ footer a:hover {
 }
 
 /* The circle on the bottom of the device */
-.smartphone:after {
+.mobile:after {
   content: "";
   display: block;
   width: 35px;
@@ -1347,7 +1347,7 @@ footer a:hover {
 }
 
 /* The screen (or content) of the device */
-.smartphone .content {
+.mobile .content {
   width: 330px;
   height: 540px;
   background: white;
@@ -1365,7 +1365,7 @@ footer a:hover {
   border-radius: 36px;
 }
 
-.tablet1 {
+.tablet-landscape {
   width: 991px !important;
   height: 710px !important;
 }
@@ -1408,7 +1408,7 @@ footer a:hover {
   margin: -1px;
 }
 
-.tablet1 .content {
+.tablet-landscape .content {
   width: 960px !important;
   height: 600px !important;
   background: white;

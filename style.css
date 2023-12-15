@@ -1303,7 +1303,7 @@ footer a:hover {
 }
 
 /* The device with borders */
-.smartphone {
+.mobile {
   position: relative;
   width: 360px;
   height: 640px;
@@ -1315,7 +1315,7 @@ footer a:hover {
 }
 
 /* The horizontal line on the top of the device */
-.smartphone:before {
+.mobile:before {
   content: "";
   display: block;
   width: 60px;
@@ -1330,7 +1330,7 @@ footer a:hover {
 }
 
 /* The circle on the bottom of the device */
-.smartphone:after {
+.mobile:after {
   content: "";
   display: block;
   width: 35px;
@@ -1345,7 +1345,7 @@ footer a:hover {
 }
 
 /* The screen (or content) of the device */
-.smartphone .content {
+.mobile .content {
   width: 330px;
   height: 540px;
   background: white;

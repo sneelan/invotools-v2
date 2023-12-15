@@ -40,19 +40,18 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
   //const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
 
   //checking client id
-  if(clientid){const clientidHypen = clientid + '-';}
-
+  //if(clientid){const clientidHypen = clientid + '-';}
   useEffect(() => {
     const fetchData = async () => {
       try {
         let response;
        if (clientid) {
               //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-${clientidHypen}popup.json`);
-              response = await fetch('/customer-portal-popup.json');
+              response = await fetch(`/json/client/customer-portal-popup-${clientid}-${language}.json`);
         } else {
               //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json`);
               //response = await fetch('/customer-portal-popup.json');
-              response = await fetch(`/customer-portal-popup-${language}.json`);
+              response = await fetch(`/json/customer-portal-popup-${language}.json`);
         }
         const data = await response.json(); 
         setData(data); // Corrected to use setData instead of setJsonData
@@ -90,7 +89,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
   useEffect(() => {
     const modeSuffix = darkMode ? 'dark' : 'light';
     const colorSuffix = activeTheme ? `-${activeTheme}` : '';
-    const templateName =  clientid ? `template-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;    
+    const templateName =  clientid ? `template-${language}-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;    
 
     //temporary-neelan-testing
     if(language==='hindi'){activeTheme='yellow';}
@@ -109,7 +108,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
     } */
 
     if (demoIncludedThemes && demoIncludedThemes.split(',').includes(activeTheme)) {
-      templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/template-${activeTheme}.html`;
+      templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/template-${activeTheme}-${modeSuffix}.html`;
     }
     
     setInvoiceTemplate(templateURL);
@@ -189,7 +188,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
   return (
     <div> 
               <div className='mobile-menu bg-theme-secondary'>
-                  <div style={{padding:'0.25em', justifyContent:'end'}} className='invoice-wrap flex-center'>
+                  <div style={{padding:'0.25em', justifyContent:'end'}} className='invoice-wrap flex-center' >
                     
                   <b style={{color:'gray'}} className='me-1'>Menu </b>
                     
@@ -284,11 +283,11 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
                 </style>
               </div>   
               {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
-             {/*  <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid} {language} {setDarkMode} {activeTheme}</div> */}
-             {/* <div className='bg-white text-black t-c p-1'>{invoiceTemplate}</div>*/}              
-            {/* <ARootInvoice language={language} activeTheme={activeTheme} lightMode={darkMode ? 'dark' : 'light'}/> */}
-
-            <iframe src={invoiceTemplate} style={{ width: '100%'}} height="1220" frameBorder="0" title="invoice" ></iframe>
+             {/*  <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid} {language} {setDarkMode} {activeTheme}</div> */}             
+            {/* <ARootInvoice language={language} activeTheme={activeTheme} lightMode={darkMode ? 'dark' : 'light'}/> */} 
+            {/* <div className='bg-white text-black t-c p-1'>{invoiceTemplate} --{invoiceid}</div> */}    
+            {/* {<div className='bg-white text-black t-c p-1'>{invoiceTemplate} --{invoiceid}--{activeTheme}</div>  }    */}
+           <iframe src={invoiceTemplate} style={{ width: '100%'}} height="1220" frameBorder="0" title="invoice" ></iframe>
               
 {/*               {(invoiceid?             
                 <iframe                    

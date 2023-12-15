@@ -1,6 +1,6 @@
 import PopupPage from './popup';
 import React, { useState, useEffect } from 'react';
-import DeviceButtons from './DeviceButtons';
+import DeviceButtons from './delete-old/DeviceButtons';
 import { useParams } from 'react-router-dom';
 import {  
   Grid,
@@ -9,9 +9,10 @@ import {
   AccordionDetails,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the ExpandMore icon
-
-
 import ReactDOM from 'react-dom';
+
+
+
 
 function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowIndex, columnIndex}) { 
 
@@ -131,10 +132,10 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveThem
 
        if (clientid) {
               //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-${clientidHypen}widget.json`);
-              response = await fetch('/customer-portal-widget.json');
+              response = await fetch(`/json/client/customer-portal-widget-${clientid}-${language}.json`);
         } else {
               //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json`);
-              response = await fetch('/customer-portal-widget.json');
+              response = await fetch('/json/customer-portal-widget.json');
         }
         const data = await response.json();
         setData(data); // Corrected to use setData instead of setJsonData
@@ -152,7 +153,7 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveThem
 
   return (
     <> 
-   <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={language} setActiveTheme={setActiveTheme}/>
+   <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={language} setActiveTheme={setActiveTheme} />
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}

@@ -5,7 +5,7 @@ const InvoiceHindi = () => {
 
   return (
     <>
-<div className="container-xl shadow p-0 bg-white rounded invoice-wrap overflow-hidden ">
+<div className="container-xl shadow p-0 bg-white rounded invoice-wrap overflow-hidden" style={{ opacity:'0'}}>
         <header className="px-2 px-lg-2 hover">
             <div className="xd-sm-flex xalign-items-center xjustify-content-between row m-0 p-0">
                 <div id="header-left" className="text-center col-sm-6 col-md-4 col-lg-4 d-flex align-items-center justify-content-center p-0 ps-md-3">

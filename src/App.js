@@ -1,22 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Switch } from 'react-router-dom';
 import WidgetAll from './WidgetAll';
-import MobilePreview from './MobilePreview';
-import TabletPreview from './TabletPreview';
-import TabletPreviewLands from './TabletPreviewLands';
-import DragFeature from './DragFeature';
+import DeviceView from './DeviceView';
+ import DragFeature from './DragFeature';
 import RootTheme from './RootTheme';
 import DemoPage from './DemoPage';
 import { useParams } from 'react-router-dom';
 import ErrorNotFound from './ErrorNotFound';
 import ARootInvoice from './Invoice/ARootInvoice'; 
+import ClientPage from './ClientPage';
 
 
 
 const App = () => {
   // Use the useParams hook to get the values of id1 and id2
   const { activeTheme, clientid,invoiceid, colorForLanguagePage, urlMode, urlColor, urlLanguage } = useParams();
- 
+  
 
   return (
     <>   
@@ -33,6 +32,8 @@ const App = () => {
         <Route path="/arabic/:colorForLanguagePage" element={<WidgetAll language='arabic' colorForLanguagePage={colorForLanguagePage}/>} />
         <Route path="/french/:colorForLanguagePage" element={<WidgetAll language='french' colorForLanguagePage={colorForLanguagePage}/>} />
 
+        <Route path="/client/:clientid/:activeTheme/:invoiceid" element={<ClientPage/>} />
+        
         <Route path="/blue" element={<WidgetAll activeTheme='blue' language='english'/>} />
         <Route path="/green" element={<WidgetAll activeTheme='green' language='english'/>} />
         <Route path="/yellow" element={<WidgetAll activeTheme='yellow' language='english'/>} />
@@ -48,9 +49,9 @@ const App = () => {
         <Route path="/gray" element={<WidgetAll activeTheme='ads' language='english'/>} />        
         <Route path="/printer" element={<WidgetAll activeTheme='ads' language='english'/>} />        
 
-        <Route path="/mobile" element={<MobilePreview />} />
-        <Route path="/tablet" element={<TabletPreview />} />
-        <Route path="/tablet-landscape" element={<TabletPreviewLands />} />   
+        <Route path="/mobile" element={<DeviceView />} />
+        <Route path="/tablet" element={<DeviceView />} />
+        <Route path="/tablet-landscape" element={<DeviceView />} />   
         <Route path="/drag" element={<DragFeature />} />
         
 
