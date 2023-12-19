@@ -36,19 +36,19 @@ const InvoiceHindi = () => {
         <div class="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom my-row-2">
             <div class="col-sm-4 ps-lg-4 ">
                 <span class="d-block "><h4 class="text-uppercase d-inline-block ">N° DE FACTURE: </h4>
-                <p class="d-inline-block ps-2 ps-sm-0">#FADZZ</p>
+                <p class="d-inline-block ps-2 ps-sm-1">#FADZZ</p>
                 </span>
                 <h4 class="clear text-uppercase d-inline-block ">Date : </h4>
-                <p class="d-inline-block ps-2 ps-sm-0">vendredi 9 août 2023</p>
+                <p class="d-inline-block ps-2 ps-sm-1">vendredi 9 août 2023</p>
             </div>
             <div class="col-sm-4 d-sm-flex align-items-center justify-content-center xpy-2 pt-sm-0">
                 <img src="/invoice-css/assets/images/bar-code.png" class="img-fluid" alt="bar code"/>
             </div>
             <div class="col-sm-4">
-                <h4 class="text-uppercase d-inline-block ">NUMÉRO DE COMMANDE : </h4>
-                <p class="d-inline-block ps-2 ps-sm-0">OD56522</p>                        
+            <span class="d-block "><h4 class="text-uppercase d-inline-block ">NUMÉRO DE COMMANDE : </h4>
+                <p class="d-inline-block ps-2 ps-sm-1">OD56522</p></span>                        
                 <h4 class="clear text-uppercase d-inline-block  ">Date : </h4>
-                <p class="d-inline-block  ps-2 ps-sm-0">vendredi 9 août 2023</p>
+                <p class="d-inline-block  ps-2 ps-sm-1">vendredi 9 août 2023</p>
             </div>
         </div>
         <div class="row m-0 p-sm-2 p-lg-3 text-center text-sm-start my-row-3 ">

@@ -5,6 +5,7 @@ import WidgetAll from './WidgetAll';
 //import TabletPreviewLands from './TabletPreviewLands';
 import DeviceView from './DeviceView';
 import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTemplate}){
@@ -12,6 +13,7 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const demoIncludedLang = params.get('language');
+  const {simpleClient, simpleTheme} = useParams();  
 
   const pathArgument = location.pathname.split('/'); // Split the path into parts
   // Check if pathArgument[2] is not available or empty
@@ -20,6 +22,7 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
 
  
   const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
+  
   document.body.classList.add(`theme-${activeTheme}`);
 
   const handleButtonClick = (theme) => {
@@ -35,16 +38,17 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
   const [selectedOption, setSelectedOption] = useState('desktop');
   const handleSelectChange = (event) => {setSelectedOption(event.target.value);};
 
+ 
   const renderSelectedComponent = () => {
     switch (selectedOption) {
       case 'mobile':
-        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}/>;
+        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} />;
       case 'tablet':
-        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}  />;
+        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} />;
       case 'tablet-landscape':
-        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage}  />;
+        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme}/>;
       case 'desktop':
-        return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} setActiveTheme={setActiveTheme}/>;
+        return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} setActiveTheme={setActiveTheme} simpleClient={simpleClient} simpleTheme={simpleTheme}/>;
       default:
         return null;
     }
@@ -55,11 +59,11 @@ const handleSelectLanguage = (event) => {
   setSelectedLanguage(event.target.value); 
 
   //temporary-neelan-testing
-  if(event.target.value==='hindi'){
+/*   if(event.target.value==='hindi'){
       document.body.classList.remove(`theme-${activeTheme}`);
       setActiveTheme('yellow');
       document.body.classList.add('theme-yellow');
-  }
+  } */
 
 };
 
@@ -70,6 +74,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
   return (
     <div>
         <div className='wrapper'>
+          {/* {simpleClient}+++{simpleTheme}+++ */}
               {renderSelectedComponent()}
               <div id="setting" className={`setting-sticky invoice-wrap1 t-c p-1 ${isSettingOpen ? 'open' : ''}`}>
               <div>                  
@@ -92,10 +97,10 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                       ) : (
                           <>
                           <option value="english">English</option>                        
-                          <option value="hindi">Hindi</option>                        
-                          {/* //temporary-neelan-testing
+                          <option value="hindi">Hindi</option>                      
                           <option value="spanish">Spanish</option>                        
-                          <option value="arabic">Arabic</option>                        
+                          <option value="arabic">Arabic</option>
+                          {/* //temporary-neelan-testing                       
                           <option value="french">French</option> */}    
                           </>
                       )}                    
@@ -115,7 +120,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                   
                   {isPathArgumentEmpty &&(                 
                       //temporary-neelan-testing
-                      <div className='d-block d-md-inline-block' style={{ display: selectedLanguage !== 'english' ? 'none' : '' }}>
+                      <div className='d-block d-md-inline-block' style={{ display: selectedLanguage !== 'english' ? 'nonex' : '' }}>
                       <div class='flex-center ms-1 bg-white rounded' style={{backgroundColor:'#ffffff', padding:'0.5em 1.5em'}}>
                           <span>Theme:</span>
                           <span>

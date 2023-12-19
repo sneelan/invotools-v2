@@ -8,8 +8,7 @@ import InvoiceArabic from './InvoiceArabic.js';
 import InvoiceFrench from './InvoiceFrench.js';
 
 const ARootInvoice = () => {
-  const { urlLanguage, urlColor, urlMode } = useParams();
-  
+  const { urlLanguage, urlColor, urlMode, activeTheme, simpleClient } = useParams();  
 
  // Create Bootstrap and fadein.css links only once when the component mounts
  useEffect(() => {
@@ -23,7 +22,7 @@ const ARootInvoice = () => {
     bootstrapLink.href = '/invoice-css/bootstrap52.css';
     document.head.appendChild(bootstrapLink);
   }
-
+ 
   let colorLink = document.getElementById('theme-change');    
     if (!colorLink) {
       colorLink = document.createElement('link');
@@ -92,8 +91,8 @@ const ARootInvoice = () => {
         document.body.classList.add('py-xl-2');
 
        //temporary-neelan-testing
-       //if (urlMode === 'dark' && urlColor!=='printer') {
-        if (urlMode === 'dark' && urlColor==='yellow') {
+       if (urlMode === 'dark' && urlColor!=='printer') {
+       // if (urlMode === 'dark' && urlColor==='yellow') {
           document.body.classList.add('dark-mode');
         } else {
           // Remove 'dark-mode' class if urlMode is not 'dark'
@@ -116,14 +115,18 @@ const ARootInvoice = () => {
 
   return (
     <>
+    
       {/* <div className='bg-white text-black p-1 text-center'>{urlLanguage}----{urlColor}----{urlMode}</div> */}
       {/* /template/:urlLanguage/:urlColor/:urlMode */}
-      
+      {/* ----{simpleClient} */}
        {urlLanguage=='english' ? <InvoiceEnglish />
       :urlLanguage=='hindi'?<InvoiceHindi/>
       :urlLanguage=='spanish'?<InvoiceSpanish/>
       :urlLanguage=='arabic'?<InvoiceArabic/>
       :urlLanguage=='french'?<InvoiceFrench/>
+       :''}
+       {simpleClient!=='undefined'?
+             <style>{`.logo{background-image: url('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/simpledemo/${simpleClient}.png')!important; background-size: auto;}`}</style>
        :''}
 
     </>

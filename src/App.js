@@ -14,7 +14,7 @@ import ClientPage from './ClientPage';
 
 const App = () => {
   // Use the useParams hook to get the values of id1 and id2
-  const { activeTheme, clientid,invoiceid, colorForLanguagePage, urlMode, urlColor, urlLanguage } = useParams();
+  const { activeTheme, clientid,invoiceid, colorForLanguagePage, urlMode, urlColor, urlLanguage, simpleClient, simpleTheme } = useParams();
   
 
   return (
@@ -23,14 +23,16 @@ const App = () => {
      <Routes>
      <Route path="/" element={<RootTheme />} />
      {/* <Route path="/" element={<WidgetAll />} /> */}
-        <Route path="/demo/:clientid/:activeTheme/:invoiceid" element={<DemoPage />} />    
+
+        <Route path="/simpledemo/:simpleClient/:simpleTheme" element={<RootTheme/>} />     
+        <Route path="/demo/:clientid/:activeTheme/:invoiceid" element={<DemoPage />} />
 
         <Route path="/invoice" element={<WidgetAll activeTheme={activeTheme}/>} />
 
-        <Route path="/hindi/:colorForLanguagePage" element={<WidgetAll language='hindi' colorForLanguagePage={colorForLanguagePage}/>} />
-        <Route path="/spanish/:colorForLanguagePage" element={<WidgetAll language='spanish' colorForLanguagePage={colorForLanguagePage}/>} />
-        <Route path="/arabic/:colorForLanguagePage" element={<WidgetAll language='arabic' colorForLanguagePage={colorForLanguagePage}/>} />
-        <Route path="/french/:colorForLanguagePage" element={<WidgetAll language='french' colorForLanguagePage={colorForLanguagePage}/>} />
+        <Route path="/hindi/:colorForLanguagePage" element={<WidgetAll language='hindi' colorForLanguagePage={colorForLanguagePage} />} />
+        <Route path="/spanish/:colorForLanguagePage" element={<WidgetAll language='spanish' colorForLanguagePage={colorForLanguagePage} />} />
+        <Route path="/arabic/:colorForLanguagePage" element={<WidgetAll language='arabic' colorForLanguagePage={colorForLanguagePage} />} />
+        <Route path="/french/:colorForLanguagePage" element={<WidgetAll language='french' colorForLanguagePage={colorForLanguagePage} />} />
 
         <Route path="/client/:clientid/:activeTheme/:invoiceid" element={<ClientPage/>} />
         
@@ -55,7 +57,7 @@ const App = () => {
         <Route path="/drag" element={<DragFeature />} />
         
 
-        <Route path="/template/:urlLanguage/:urlColor/:urlMode" element={<ARootInvoice urlLanguage={urlLanguage} urlColor={urlColor} urlMode={urlMode} />}  />
+        <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient" element={<ARootInvoice urlLanguage={urlLanguage} urlColor={urlColor} urlMode={urlMode} />}  />
 
 
         {/* Wildcard route to match any other paths */}

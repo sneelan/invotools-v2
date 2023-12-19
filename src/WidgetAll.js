@@ -1,6 +1,7 @@
 import PopupPage from './popup';
 import React, { useState, useEffect } from 'react';
 import DeviceButtons from './delete-old/DeviceButtons';
+import { useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import {  
   Grid,
@@ -15,6 +16,7 @@ import ReactDOM from 'react-dom';
 
 
 function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowIndex, columnIndex}) { 
+
 
   const [expanded, setExpanded] = useState(column.toggleExpand === 'yes');
   //const [expanded, setExpanded] = useState(false); //accordion 
@@ -112,13 +114,24 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
 }
 
 
-function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveTheme}) {
+function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveTheme, simpleClient, simpleTheme}) {
+  
+  const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const queryclientforlanguage = params.get('simpleClient');
+  if(queryclientforlanguage){simpleClient=queryclientforlanguage;}
 
-  const { colorForLanguagePage } = useParams();
+  
+  const { colorForLanguagePage } = useParams();  
   if(colorForLanguagePage && !activeTheme){activeTheme=colorForLanguagePage;}
+  //if(simpleTheme){activeTheme=simpleTheme;}
  
+  //if(simpleTheme){setActiveTheme(simpleTheme);}
+
   //const theme = activeTheme || 'yellow';
   if(!activeTheme){activeTheme='yellow';}
+
+
   const [data, setData] = useState(null);
   document.body.classList.add(`theme-${activeTheme}`);
 
@@ -152,8 +165,8 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveThem
   }
 
   return (
-    <> 
-   <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={language} setActiveTheme={setActiveTheme} />
+    <>
+   <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={language} setActiveTheme={setActiveTheme} simpleTheme={simpleTheme} simpleClient={simpleClient} />
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}

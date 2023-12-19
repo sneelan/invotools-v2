@@ -17,7 +17,7 @@ import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ARootInvoice from './Invoice/ARootInvoice';
 
-function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }) {
+function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, simpleClient, simpleTheme }) {
  
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
@@ -86,19 +86,21 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
   //https://customer.invotools.io/view/d78abae8-d265-4438-95be-6a267157612f
   //: `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;
 
+ 
   useEffect(() => {
+    
     const modeSuffix = darkMode ? 'dark' : 'light';
     const colorSuffix = activeTheme ? `-${activeTheme}` : '';
     const templateName =  clientid ? `template-${language}-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;    
 
     //temporary-neelan-testing
-    if(language==='hindi'){activeTheme='yellow';}
+    //if(language==='hindi'){activeTheme='yellow';}
 
     //const templateURL=`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;   
 
     let templateURL= invoiceid === 'default' ? `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/${templateName}`
     : invoiceid && invoiceid !== 'default'? 'https://dev-invodocz.invotools.io/api/v1/invoice/view/'+invoiceid 
-    : `/template/${language}/${activeTheme}/${modeSuffix}`;
+    : `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}`;
 
 /*     if(language!=='english'){
       templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template-yellow-${modeSuffix}-${language}.html`;
@@ -188,35 +190,27 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
   return (
     <div> 
               <div className='mobile-menu bg-theme-secondary'>
-                  <div style={{padding:'0.25em', justifyContent:'end'}} className='invoice-wrap flex-center' >
-                    
-                  <b style={{color:'gray'}} className='me-1'>Menu </b>
-                    
-                    <span onClick={toggleDrawer} className='box-button'> <MenuIcon /></span>
-                    
+                  <div style={{padding:'0.25em', justifyContent:'end'}} className='invoice-wrap flex-center' >                    
+                  <b style={{color:'gray'}} className='me-1 mobile-menu-label'>Menu </b>                    
+                    <span onClick={toggleDrawer} className='box-button'> <MenuIcon /></span>                    
                     <span className='box-button ms-1 d-none' onClick={toggleDarkMode}>{darkMode ?  <LightModeIcon/>: <ModeNightIcon />}</span>
-                    </div>
-                    
+                    </div>                    
               </div>
               {data && data.menuPanelCSS && (<style dangerouslySetInnerHTML={{ __html: data.menuPanelCSS }}></style>)}
               <div>   
                 <span onClick={toggleDrawer} className='box-button' aria-label="menu" id='burger-menu'> <MenuIcon /></span>
-
                 <Drawer anchor="right" open={open} onClose={toggleDrawer} hideBackdrop>
                   <div className={`drawer-wrap ${language === 'arabic'?'arabic':''}`}  dir={language === 'arabic'?'rtl':''}>
                     <div>
                       <div id='burger-close' class="flex-center" style={{justifyContent:'space-between', padding:'7px', width:'100%', alignItems:'start'}}>                
                         <div className='box-button' onClick={toggleDarkMode}>{darkMode ?  <LightModeIcon/>: <ModeNightIcon />}</div>
                         <div onClick={toggleDrawer} className='box-button' aria-label="menu" id=''> <CloseIcon /></div>
-                      </div>            
-                      
+                      </div>           
                       </div>
                     <div style={{ minWidth: '150px' }} className='drawer-wrap'>
                     <div className='drawer-box'>
                     {/* <span class='bg-white d-block p-2'>bb{invoiceTemplate}aaa{activeTheme}</span> */}
-                        {data && data.popups && data.popups.map((popup, index) => {
-                         
-                          
+                        {data && data.popups && data.popups.map((popup, index) => {                       
 
                           // adding widgetClassName based on displayDevice
                           let widgetClassName = '';
@@ -247,7 +241,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
                           );
                         })}
                          
-                        
+                  {language==='arabic'?<link rel="stylesheet" type="text/css" href="/invoice-css/arabic-font.css" />:''}
                   </div>
                     </div>
                   </div>
@@ -286,7 +280,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme }
              {/*  <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid} {language} {setDarkMode} {activeTheme}</div> */}             
             {/* <ARootInvoice language={language} activeTheme={activeTheme} lightMode={darkMode ? 'dark' : 'light'}/> */} 
             {/* <div className='bg-white text-black t-c p-1'>{invoiceTemplate} --{invoiceid}</div> */}    
-            {/* {<div className='bg-white text-black t-c p-1'>{invoiceTemplate} --{invoiceid}--{activeTheme}</div>  }    */}
+           {/*  {<div className='bg-white text-black t-c p-1'>{simpleTheme}---{invoiceTemplate} --{invoiceid}--{activeTheme}</div>  } */}
            <iframe src={invoiceTemplate} style={{ width: '100%'}} height="1220" frameBorder="0" title="invoice" ></iframe>
               
 {/*               {(invoiceid?             

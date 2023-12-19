@@ -1,10 +1,10 @@
 import React from 'react';
-
 const InvoiceHindi = () => {
   
 
   return (
     <>
+    <link rel="stylesheet" type="text/css" href="/invoice-css/arabic-font.css" />
 <div className="container-xl shadow p-0 bg-white rounded invoice-wrap overflow-hidden" style={{ opacity:'0'}}>
         <header className="px-2 px-lg-2 hover">
             <div className="xd-sm-flex xalign-items-center xjustify-content-between row m-0 p-0">
@@ -23,8 +23,8 @@ const InvoiceHindi = () => {
                             لندن، المملكة المتحدة، الرمز البريدي: nE61PWt<br/>
                             <a className="hover-underline" href="tel:919995473245" target="_blank">+91 9995473245</a>, '
                             <a className="hover-underline" href="mailto:info@ayatacommerce.com" target="_blank">info@ayatacommerce.com</a><br/>
-                            <b>ضريبة السلع والخدمات:</b> 29AAICB4842N1Z4,  <b>PAN:</b> AAICB4842N</p>
-                            ضريبة السلع والخدمات: 29AAICB4842N1Z4، PAN: AAICB4842N
+                            <span>29AAICB4842N1Z4 <b> : GST</b> </span>
+                            <span>,AAICB4842N</span><b> : PAN</b></p>                            
                     </div>
                 </div>
             </div>
@@ -35,21 +35,21 @@ const InvoiceHindi = () => {
         </div>
         <section className="border-4 border-top border-theme-accent" id="sec-details">
             <div className="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom my-row-2">
-                <div className="col-sm-4 ps-lg-4 ">
+                <div className="col-sm-4 ps-lg-4 text-end">
                     <span className="d-block "><h4 className="text-uppercase d-inline-block ">رقم الفاتورة : </h4>
-                    <p className="d-inline-block ps-2 ps-sm-0">#FADZZ</p>
+                    <p className="d-inline-block pe-2 pe-sm-1">#FADZZ</p>
                     </span>
                     <h4 className="clear text-uppercase d-inline-block ">تاريخ : </h4>
-                    <p className="d-inline-block ps-2 ps-sm-0">الجمعة 9 أغسطس2023</p>
+                    <p className="d-inline-block pe-2 pe-sm-1">الجمعة 9 أغسطس2023</p>
                 </div>
                 <div className="col-sm-4 d-sm-flex align-items-center justify-content-center xpy-2 pt-sm-0">
                     <img src="/invoice-css/assets/images/bar-code.png" className="img-fluid" alt="bar code"/>
                 </div>
-                <div className="col-sm-4">
-                    <h4 className="text-uppercase d-inline-block ">رقم الأمر : </h4>
-                    <p className="d-inline-block ps-2 ps-sm-0">OD56522</p>  <br/>                      
+                <div className="col-sm-4 ">
+                <span className="d-block "><h4 className="text-uppercase d-inline-block ">رقم الأمر : </h4>
+                    <p className="d-inline-block pe-2 pe-sm-1">OD56522</p></span>                      
                     <h4 className="clear text-uppercase d-inline-block  ">تاريخ  : </h4>
-                    <p className="d-inline-block  ps-2 ps-sm-0">الجمعة 9 أغسطس2023</p>
+                    <p className="d-inline-block  pe-2 pe-sm-1">الجمعة 9 أغسطس2023</p>
                 </div>
             </div>
             <div className="row m-0 p-sm-2 p-lg-3 text-center text-sm-start my-row-3 ">
@@ -64,8 +64,8 @@ const InvoiceHindi = () => {
                     <h4>تفاصيل الشحن</h4>
                     <p>
                         أوليفيا ويلسون <br/>
-                        123 Anywhere St<br/>
-                        Any City, ST 12345<br/>
+                        123 الشارع الذهبي<br/>
+                        مدينة الذهب الجديدة, ST 12345<br/>
                         <b>الهاتف  :</b> 0987329382<br/>
                         <b>البريد الإلكتروني :</b> olivia@gmail.com<br/>
                         <b>ضريبة السلع والخدمات للعملاء :</b> #######123###
@@ -76,8 +76,8 @@ const InvoiceHindi = () => {
                 <div className="col-sm-4 mb-4 mb-sm-0">
                     <h4>تفاصيل الفاتورة</h4>
                     <p>توماس ويلسون<br/>
-                        123 Anywhere St<br/>
-                        Any City, ST 12345<br/>
+                        123 الشارع الذهبي<br/>
+                        مدينة الذهب الجديدة, ST 12345<br/>
                         <b>الهاتف  :</b> 09327329382<br/>
                         <b>البريد الإلكتروني :</b> thomas@gmail.com<br/></p>
 
@@ -344,20 +344,20 @@ const InvoiceHindi = () => {
                         <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.3075 9.6786C12.3507 9.6786 11.4321 9.52551 10.5748 9.24229C10.3069 9.15809 10.0084 9.21933 9.79409 9.426L8.11011 11.11C5.9439 10.0077 4.16807 8.23955 3.06583 6.06567L4.74981 4.37403C4.96413 4.17501 5.02537 3.87649 4.94117 3.60858C4.65796 2.75128 4.50487 1.83274 4.50487 0.875924C4.50487 0.454926 4.16042 0.110474 3.73942 0.110474H1.06037C0.639372 0.110474 0.294922 0.454926 0.294922 0.875924C0.294922 8.0635 6.11996 13.8886 13.3075 13.8886C13.7285 13.8886 14.0729 13.5441 14.0729 13.1231V10.444C14.0729 10.0231 13.7285 9.6786 13.3075 9.6786ZM12.542 6.99952H14.0729C14.0729 3.19524 10.9882 0.110474 7.18392 0.110474V1.64137C10.1462 1.64137 12.542 4.03723 12.542 6.99952ZM9.48026 6.99952H11.0111C11.0111 4.88688 9.29655 3.17227 7.18392 3.17227V4.70317C8.45456 4.70317 9.48026 5.72888 9.48026 6.99952Z" />
                             </svg>                            
-                        <span className="ps-1">+91 9995473245</span></a>
+                        <span className="pe-2">+91 9995473245</span></a>
                    <a href="mailto:info@ayatacommerce.com" target="_blank">
                     <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14.3073 0.877075H2.06019C1.2182 0.877075 0.536951 1.56598 0.536951 2.40798L0.529297 11.5934C0.529297 12.4354 1.2182 13.1243 2.06019 13.1243H14.3073C15.1493 13.1243 15.8382 12.4354 15.8382 11.5934V2.40798C15.8382 1.56598 15.1493 0.877075 14.3073 0.877075ZM14.3073 3.93888L8.18374 7.76613L2.06019 3.93888V2.40798L8.18374 6.23523L14.3073 2.40798V3.93888Z" />
                         </svg>
                         
-                    <span className="ps-1"> info@ayatacommerce.com</span>
+                    <span className="pe-2"> info@ayatacommerce.com</span>
                 </a> 
                    <a href="https://ayatacommerce.com" target="_blank">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.5211 9.53025C11.5823 9.02505 11.6282 8.51985 11.6282 7.99935C11.6282 7.47884 11.5823 6.97365 11.5211 6.46845H14.1083C14.2308 6.95834 14.3073 7.47119 14.3073 7.99935C14.3073 8.52751 14.2308 9.04036 14.1083 9.53025M10.1662 13.7861C10.6255 12.9365 10.9776 12.018 11.2226 11.0611H13.4806C12.7458 12.3241 11.5747 13.3039 10.1662 13.7861ZM9.97488 9.53025H6.3926C6.31606 9.02505 6.27013 8.51985 6.27013 7.99935C6.27013 7.47884 6.31606 6.96599 6.3926 6.46845H9.97488C10.0438 6.96599 10.0974 7.47884 10.0974 7.99935C10.0974 8.51985 10.0438 9.02505 9.97488 9.53025ZM8.18374 14.0923C7.54843 13.1738 7.03558 12.1557 6.72175 11.0611H9.64574C9.33191 12.1557 8.81906 13.1738 8.18374 14.0923ZM5.12197 4.93755H2.88687C3.61404 3.6669 4.79282 2.68713 6.19359 2.21255C5.73432 3.0622 5.38987 3.98074 5.12197 4.93755ZM2.88687 11.0611H5.12197C5.38987 12.018 5.73432 12.9365 6.19359 13.7861C4.79282 13.3039 3.61404 12.3241 2.88687 11.0611ZM2.2592 9.53025C2.13673 9.04036 2.06019 8.52751 2.06019 7.99935C2.06019 7.47119 2.13673 6.95834 2.2592 6.46845H4.84641C4.78517 6.97365 4.73924 7.47884 4.73924 7.99935C4.73924 8.51985 4.78517 9.02505 4.84641 9.53025M8.18374 1.89871C8.81906 2.81725 9.33191 3.84296 9.64574 4.93755H6.72175C7.03558 3.84296 7.54843 2.81725 8.18374 1.89871ZM13.4806 4.93755H11.2226C10.9776 3.98074 10.6255 3.0622 10.1662 2.21255C11.5747 2.69478 12.7458 3.6669 13.4806 4.93755ZM8.18374 0.344849C3.95083 0.344849 0.529297 3.78937 0.529297 7.99935C0.529297 10.0294 1.33575 11.9764 2.77123 13.4119C3.48201 14.1227 4.32583 14.6865 5.25451 15.0712C6.18319 15.4559 7.17855 15.6538 8.18374 15.6538C10.2138 15.6538 12.1608 14.8474 13.5963 13.4119C15.0317 11.9764 15.8382 10.0294 15.8382 7.99935C15.8382 6.99415 15.6402 5.99878 15.2555 5.0701C14.8709 4.14141 14.307 3.29759 13.5963 2.5868C12.8855 1.87601 12.0417 1.31219 11.113 0.927513C10.1843 0.542838 9.18894 0.344849 8.18374 0.344849Z"/>
                         </svg>
                         
-                    <span className="ps-1">www.ayatacommerce.com</span></a> 
+                    <span className="pe-2">www.ayatacommerce.com</span></a> 
                 </div>
             </div>
             <div className="col-sm-7 col-lg-9 align-self-stretch footer-right pb-lg-1">

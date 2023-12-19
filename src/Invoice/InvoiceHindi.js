@@ -36,19 +36,20 @@ const InvoiceHindi = () => {
             <div className="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom my-row-2">
                 <div className="col-sm-4 ps-lg-4 ">
                     <span className="d-block "><h4 className="text-uppercase d-inline-block ">चालान नंबर : </h4>
-                    <p className="d-inline-block ps-2 ps-sm-0">#FADZZ</p>
+                    <p className="d-inline-block ps-2 ps-sm-1">#FADZZ</p>
                     </span>
                     <h4 className="clear text-uppercase d-inline-block ">तारीख  : </h4>
-                    <p className="d-inline-block ps-2 ps-sm-0">शुक्रवार 9 अगस्त 2023</p>
+                    <p className="d-inline-block ps-2 ps-sm-1">शुक्रवार 9 अगस्त 2023</p>
                 </div>
                 <div className="col-sm-4 d-sm-flex align-items-center justify-content-center xpy-2 pt-sm-0">
                     <img src="/invoice-css/assets/images/bar-code.png" className="img-fluid" alt="bar code"/>
                 </div>
                 <div className="col-sm-4">
-                    <h4 className="text-uppercase d-inline-block ">क्रम संख्या  : </h4>
-                    <p className="d-inline-block ps-2 ps-sm-0">OD56522</p>                        
+                <span class="d-block "><h4 className="text-uppercase d-inline-block ">क्रम संख्या  : </h4>
+                    <p className="d-inline-block ps-2 ps-sm-1">OD56522</p>             
+                    </span>           
                     <h4 className="clear text-uppercase d-inline-block  ">तारीख : </h4>
-                    <p className="d-inline-block  ps-2 ps-sm-0">शुक्रवार 9 अगस्त 2023</p>
+                    <p className="d-inline-block  ps-2 ps-sm-1">शुक्रवार 9 अगस्त 2023</p>
                 </div>
             </div>
             <div className="row m-0 p-sm-2 p-lg-3 text-center text-sm-start my-row-3 ">

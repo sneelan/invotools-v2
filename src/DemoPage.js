@@ -4,9 +4,7 @@ import WidgetAll from './WidgetAll';
 import RootTheme from './RootTheme';
 
 function DemoPage() {  
-  const { activeTheme } = useParams();  
-  const { clientid } = useParams();  
-  const { invoiceid } = useParams();   
+  const { activeTheme , clientid, invoiceid } = useParams();     
 
   return (
     <div> 
