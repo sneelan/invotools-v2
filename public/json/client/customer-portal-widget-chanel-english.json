@@ -11,7 +11,7 @@
 					"title": "Buy Products from your Wishlist",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/dusminute/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 
 					"displayOrder": "2",
@@ -145,7 +145,7 @@
 			"columns": [
 				{
 					"displayOrder": "1",
-					"displayStatus": "active",
+					"displayStatus": "inactive",
 					"toggleStatus": "active",
 					"toggleExpand": "no",
 					"title": "Recommended Products for you - 25% Off",
@@ -264,7 +264,7 @@
 					"contentHTML": "<iframe src=\"https://form.jotform.com/233231420979456\" frameborder=\"0\" style=\"height:550px;width:100%;\"></iframe>",
 					"contentCSS": "#client-widget-en-6-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
 					"displayOrder": "1",
-					"displayStatus": "active",
+					"displayStatus": "inactive",
 					"displayDevice": "desktop",
 					"displayType": "pdf",
 					"displayFromDate": "01/01/2024",
