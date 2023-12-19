@@ -34,7 +34,7 @@ if (invoiceid) {
                 <div className={deviceName}>
                 <div className="content">
                   {/* <div className='bg-white text-black p-1'>----{clientid}---{language}----<br/>templateURL:{templateURL}<br/>---{invoiceTemplate}--{invoiceid}--{demoIncludedThemes}</div> */}
-                  <div className='bg-white text-black p-1'>----{templateURL}</div>
+                  {/* <div className='bg-white text-black p-1'>----{templateURL}</div> */}
 
                   <iframe src={`${templateURL}`}  width={deviceWidth} height={deviceHeight} frameBorder="0" />
                 </div>
