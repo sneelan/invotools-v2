@@ -10,6 +10,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+
+
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 
@@ -27,7 +30,10 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
   const [darkMode, setDarkMode] = useState(false);
   const [invoiceTemplate, setInvoiceTemplate] = useState('');
   const [apiHtml, setApiHtml] = useState('');
-  
+
+  //show Notifications
+  const [showNotifications, setShowNotifications] = useState(false);
+
   //searching extra parameter in the url ?included=printer....
   const { search } = useLocation();
   const params = new URLSearchParams(search);
@@ -66,7 +72,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
   const toggleDrawer = () => {
     setOpen(!open);
   };
-
+  const toggleNotification = () => {setShowNotifications(!showNotifications);};
   const openPopup = (popup) => {
     setSelectedPopup(popup);
     setPopupOpen(true);
@@ -111,6 +117,8 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
 
     if (demoIncludedThemes && demoIncludedThemes.split(',').includes(activeTheme)) {
       templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/template-${activeTheme}-${modeSuffix}.html`;
+    }else{
+      
     }
     
     setInvoiceTemplate(templateURL);
@@ -199,6 +207,29 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
               {data && data.menuPanelCSS && (<style dangerouslySetInnerHTML={{ __html: data.menuPanelCSS }}></style>)}
               <div>   
                 <span onClick={toggleDrawer} className='box-button' aria-label="menu" id='burger-menu'> <MenuIcon /></span>
+                <span onClick={toggleNotification} className='box-button notification' aria-label="menu" id='burger-menu'> <NotificationsActiveIcon />
+                <span>3</span>
+                </span>
+
+                {showNotifications && (
+                <div className="notification-container">
+                <div className="notif-messages bg-white shadow p-2 rounded ">
+                  <div className="notif-header flex-center p-1 bg-theme-secondary text-white w-100" style={{justifyContent:'space-between', padding:'1em 2em'}}>
+                      <h4 className='fw-bold me-1 pe-1'>Recent Notifications</h4>
+                      <div onClick={toggleNotification} className='p-0 h4 fw-bold text-white ' style={{cursor:'pointer'}}>X</div>
+                  </div>
+
+                  <ul className=''>
+                    <li className='p-1 h4 fw-normal hover-bg-primary-verylight'>1. Please upload your Id Proof and Address documents. <a href="#" className='fw-bold' style={{color:'blue'}}>Click</a></li>
+                    <hr className='opacity-25 m-0'></hr>
+                    <li className='p-1  h4 fw-normal hover-bg-primary-verylight'><b style={{color:'maroon'}}>2. You missed it!</b> Enjoy a Special breakfast on us during your stay! <a href="#" className='fw-bold' style={{color:'blue'}}>Register here</a></li>
+                    <hr className='opacity-25 m-0'></hr>
+                    <li className='p-1  h4 fw-normal hover-bg-primary-verylight '><b style={{color:'maroon'}}>3. Unlock relaxation!</b> Pay just ₹500 and indulge in a ₹2500 Spa Massage for two!! <a href="#" className='fw-bold' style={{color:'blue'}}>Pay Now!</a></li>
+                  </ul>
+                </div>
+                </div>
+                 )}
+                 
                 <Drawer anchor="right" open={open} onClose={toggleDrawer} hideBackdrop>
                   <div className={`drawer-wrap ${language === 'arabic'?'arabic':''}`}  dir={language === 'arabic'?'rtl':''}>
                     <div>

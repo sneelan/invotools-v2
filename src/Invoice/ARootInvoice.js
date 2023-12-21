@@ -113,6 +113,11 @@ const ARootInvoice = () => {
     };
   }, [urlColor, urlLanguage, urlMode]); 
 
+
+    //const imagePath='https://uxdemo.ayatacommerce.com/invotools/invoice-templates/simpledemo/';
+    const imagePath='/img/clients/';
+
+
   return (
     <>
     
@@ -124,9 +129,9 @@ const ARootInvoice = () => {
       :urlLanguage=='spanish'?<InvoiceSpanish/>
       :urlLanguage=='arabic'?<InvoiceArabic/>
       :urlLanguage=='french'?<InvoiceFrench/>
-       :''}
+       :''}       
        {simpleClient!=='undefined'?
-             <style>{`.logo{background-image: url('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/simpledemo/${simpleClient}.png')!important; background-size: auto;}`}</style>
+             <style>{`.logo{background-image: url('${imagePath}${simpleClient}.png')!important; background-size: auto;}`}</style>
        :''}
 
     </>

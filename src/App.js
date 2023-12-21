@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 import ErrorNotFound from './ErrorNotFound';
 import ARootInvoice from './Invoice/ARootInvoice'; 
 import ClientPage from './ClientPage';
+import NeelanPage from './NeelanPage';
 
 
 
@@ -58,6 +59,7 @@ const App = () => {
         
 
         <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient" element={<ARootInvoice urlLanguage={urlLanguage} urlColor={urlColor} urlMode={urlMode} />}  />
+        <Route path="/neelan" element={<NeelanPage />} />
 
 
         {/* Wildcard route to match any other paths */}

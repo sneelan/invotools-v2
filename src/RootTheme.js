@@ -154,6 +154,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
         <style dangerouslySetInnerHTML={{ __html: customStyles }} />
       )}
     </div>
+    
   );
 };
 

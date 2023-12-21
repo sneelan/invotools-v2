@@ -11,7 +11,7 @@
 					"title": "Buy Products from your Wishlist",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/dusminute/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/oliveliving/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 
 					"displayOrder": "2",
@@ -85,10 +85,10 @@
 					"displayStatus": "active",
 					"toggleStatus": "inactive",
 					"toggleExpand": "no",
-					"title": "Our 15% Festival Off Promotion Video",
+					"title": "Hotel Tour - Watch Video",
 					"width": "",
 					"height": "",
-					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-videobig1.html\" height=\"405\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/oliveliving/widget-videobig1.html\" height=\"405\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
@@ -140,26 +140,7 @@
 				}
 			]
 		},
-		{
-			"rowNumber": "3",
-			"columns": [
-				{
-					"displayOrder": "1",
-					"displayStatus": "inactive",
-					"toggleStatus": "active",
-					"toggleExpand": "no",
-					"title": "Recommended Products for you - 25% Off",
-					"width": "",
-					"height": "",
-					"contentHTML": "<iframe src=\"https://form.jotform.com/233201080100431\" frameborder=\"0\" style=\"height:2460px;width:100%;\"></iframe>",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"				
-				}
-			]
-		},		
+	
 		{
 			"rowNumber": "1",
 			"columns": [
@@ -167,7 +148,7 @@
 					"title": "Feedback Form",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"xxxxhttps://form.jotform.com/232951550781459?userId=\" frameborder=\"0\" style=\"height:1020px;width:100%;\"></iframe>",
+					"contentHTML": "<iframe src=\"https://form.jotform.com/232951550781459?userId=\" frameborder=\"0\" style=\"height:1020px;width:100%;\"></iframe>",
 					"contentCSS": "  ",
 					"displayOrder": "1",
 					"displayStatus": "active",
@@ -254,27 +235,7 @@
 				}
 			]
 		},
-		{
-			"rowNumber": "1",
-			"columns": [
-				{
-					"title": "Customer Service Survey Form",
-					"width": "",
-					"height": "",
-					"contentHTML": "<iframe src=\"https://form.jotform.com/233231420979456\" frameborder=\"0\" style=\"height:550px;width:100%;\"></iframe>",
-					"contentCSS": "#client-widget-en-6-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
-					"displayOrder": "1",
-					"displayStatus": "inactive",
-					"displayDevice": "desktop",
-					"displayType": "pdf",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"toggleStatus": "active",
-					"toggleExpand": "no"
-										
-				}
-			]
-		},
+		
 		{
 			"rowNumber": "5",
 			"columns": [
@@ -286,7 +247,7 @@
 					"titlex": "Recent Products - Image Slideshow",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-carousel.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-carousel-hotel.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "#client-widget-en-10-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",

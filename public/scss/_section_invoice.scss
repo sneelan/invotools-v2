@@ -68,7 +68,7 @@ body{
 
 
  /* popup------------- */
-#burger-menu, #burger-close1, #burger-static{ 
+#burger-menu, #burger-close1, #burger-static, #noti{ 
     /* display: block!important; 
     height: 38px!important; width: 38px!important; 
     background-repeat: no-repeat; background-position: center;
@@ -78,6 +78,22 @@ body{
     position: fixed; 
     top:5px; right:5px; 
     
+}
+.notification-container {position: relative;}
+.notification { right:55px!important;     
+    span{font-weight: bold; font-size: 13px; background-color: #e30000; padding:3px 7px; display: inline-block; border-radius: 100%;
+    position: absolute;left:-20px;color:white; border: 1px solid white;
+}}
+.notif-messages{
+    position: absolute;
+    right:0;
+    transform: translateY(-100%);
+    animation: slideIn 0.5s ease-in-out forwards;
+    .notif-header{}
+}
+@keyframes slideIn {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0%);}
 }
 
 /* #burger-menu, #burger-static{ 
@@ -232,6 +248,7 @@ footer{
 .t-r{text-align: right!important;}
 .t-s{text-align: left!important;}
 .t-j{text-align: justify!important;}
+.fw-bold{font-weight: bold;}.fw-normal{font-weight:normal;}
 .p-0{padding:0!important;}
 .m-0{margin:0!important;}
 .p-1{padding:1em;}

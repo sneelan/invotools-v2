@@ -880,7 +880,7 @@ body {
   }
 }
 /* popup------------- */
-#burger-menu, #burger-close1, #burger-static {
+#burger-menu, #burger-close1, #burger-static, #noti {
   /* display: block!important; 
   height: 38px!important; width: 38px!important; 
   background-repeat: no-repeat; background-position: center;
@@ -892,6 +892,54 @@ body {
   right: 5px;
 }
 
+.notification-container {
+  position: relative;
+}
+
+.notification {
+  right: 55px !important;
+}
+.notification span {
+  font-weight: bold;
+  font-size: 13px;
+  background-color: #e30000;
+  padding: 3px 7px;
+  display: inline-block;
+  border-radius: 100%;
+  position: absolute;
+  left: -20px;
+  color: white;
+  border: 1px solid white;
+}
+
+.notif-messages {
+  position: absolute;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-animation: slideIn 0.5s ease-in-out forwards;
+          animation: slideIn 0.5s ease-in-out forwards;
+}
+@-webkit-keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
 /* #burger-menu, #burger-static{ 
     background-image: url('../img/burger.png');
     &:hover{background-image: url('../img/burger-hover.png');
@@ -1174,6 +1222,14 @@ footer a:hover {
 
 .t-j {
   text-align: justify !important;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.fw-normal {
+  font-weight: normal;
 }
 
 .p-0 {
