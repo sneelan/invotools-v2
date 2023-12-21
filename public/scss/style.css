@@ -1306,6 +1306,10 @@ footer a:hover {
   margin-bottom: 1em;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .rounded, .theme-btn {
   border-radius: 0.25em;
 }

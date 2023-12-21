@@ -29,6 +29,50 @@
 			"rowNumber": "2",
 			"columns": [
 				
+				{					
+					"title": "View Restaurant Menu",
+					"width": "",
+					"height": "",
+					"contentHTML": "<div class=\"text-center t-c\" style=\"text-align:center;\"><img class=\"d-md-none m-auto\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/oliveliving/assets/images/widget/menu_mobile.png\" ><img class=\"d-none d-md-block m-auto\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/oliveliving/assets/images/widget/menu_desktop.png\" ></div>",
+					"contentCSS": "",
+
+					"displayOrder": "2",
+					"displayStatus": "active",					
+					"displayDevice": "tablet, desktop",
+					"displayType": "pdf, portal",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024",
+					"toggleStatus": "active",
+					"toggleExpand": "no"
+				}
+			]
+		},
+		{
+			"rowNumber": "2",
+			"columns": [
+				
+				{					
+					"title": "Upload Documents and Complete your KYC",
+					"width": "",
+					"height": "",
+					"contentHTML": "<div class=\"text-center t-c\" style=\"text-align:center;\"><img class=\"d-md-none m-auto\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/oliveliving/assets/images/widget/kycform_mobile.png\" ><img class=\"d-none d-md-block m-auto\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/oliveliving/assets/images/widget/kycform_desktop.png\" ></div>",
+					"contentCSS": "",
+
+					"displayOrder": "2",
+					"displayStatus": "active",					
+					"displayDevice": "tablet, desktop",
+					"displayType": "pdf, portal",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024",
+					"toggleStatus": "active",
+					"toggleExpand": "no"
+				}
+			]
+		},
+		{
+			"rowNumber": "2",
+			"columns": [
+				
 				{
 					"displayOrder": "2",
 					"displayStatus": "active",
