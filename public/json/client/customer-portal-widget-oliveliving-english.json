@@ -130,7 +130,7 @@
 					"title": "",
 					"width": "",
 					"height": "",
-					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-image.html\" height=\"440\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/oliveliving/widget-image.html\" height=\"440\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
