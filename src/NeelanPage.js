@@ -26,11 +26,15 @@ function NeelanPage() {
      <div className='border p-3'>
       <h4 className='fw-bold'>Custom Html Demo</h4>
       <p>https://invotools-customer.vercel.app/demo/clientname/COLOR/default?included=...themenames....&language=..filepathname...</p>
+
+      <br/>
+      <h5>Oliveliving Hotel</h5>
       <p className='h5 fw-normal '><a href='https://invotools-customer.vercel.app/demo/oliveliving/maroon/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/oliveliving/maroon/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
+      <p className='h5 fw-normal '><a href='https://invotools-customer.vercel.app/demo/oliveliving/gray/default?included=yellow,blue,green,maroon,red,black,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/oliveliving/maroon/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
+      <br/>
       <p className='h5 fw-normal '><a href='https://invotools-customer.vercel.app/demo/dusminute/green/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/dusminute/green/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
 
      </div>
-
     </div>
     </div>
   );
