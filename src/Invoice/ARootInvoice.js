@@ -45,6 +45,20 @@ if(invoLayout!='featured'){
     LayoutCSS.href = `/invoice-css/${invoLayout}.css`;
   }
 
+  if(invoLayout!='featured'){
+    if(urlColor=='diwali' || urlColor=='christmas' || urlColor=='thanks'){
+    let LayoutCSS = document.getElementById('layout-change1');    
+      if (!LayoutCSS) {
+        LayoutCSS = document.createElement('link');
+        LayoutCSS.id = 'layout-change1';
+        LayoutCSS.rel = 'stylesheet';
+        document.head.appendChild(LayoutCSS);
+        LayoutCSS.href = `/invoice-css/layout-festival-fix.css`;
+      }     
+    }
+    }
+
+
     if (!document.getElementById('theme-fadein')) {
       const fadeinLink = document.createElement('link');
       fadeinLink.id = 'theme-fadein';
