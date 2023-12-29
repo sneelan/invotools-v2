@@ -12,7 +12,7 @@ header .col-md-4:nth-child(2){justify-content: end!important;padding: 0!importan
 .Xmy-row-3, footer{display: none!important;} 
 #sec-notes .align-self-stretch .my-notes,.Xsec-sign-left{opacity:0!important;} 
 main{padding-top:4px;}
-.container-xl{max-width: 900px!important;}
+.container-xl{max-width: 850px!important;}
 .product th:nth-child(3), .product td:nth-child(3), .product th:nth-child(1), .product td:nth-child(1){display: none!important;} 
 .product th, .product td{padding: 0.75em!important;}
 .sec-sign-left,.sec-sign-right{padding: 0!important;}

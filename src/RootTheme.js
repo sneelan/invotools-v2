@@ -123,7 +123,8 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                     <select value={selectedLayout} onChange={handleLayoutChange} style={{ padding: '0.5em', borderRadius: '0' }} >                        
                         <option value="featured">Featured</option>
                         <option value="simple">Simple</option>
-                        <option value="bill">Bill</option>                      
+                        <option value="bill">Small</option>                      
+                        <option value="tiny">Bill</option>                      
                     </select>                   
                 </div>
 

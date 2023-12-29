@@ -311,7 +311,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
             {/* <div className='bg-white text-black t-c p-1'>{invoiceTemplate} --{invoiceid}</div> */}    
            {/* {<div className='bg-white text-black t-c p-1'>{simpleTheme}---{invoiceTemplate} --{invoiceid}--{activeTheme}---{selectedLayout}</div>  } */}
             
-           <iframe src={invoiceTemplate} style={{ width: '100%', height: selectedLayout === 'simple' ? '850px' : selectedLayout === 'bill' ? '720px' : '1220px' }}  frameBorder="0" title="invoice" ></iframe>
+           <iframe src={invoiceTemplate} style={{ width: '100%', height: selectedLayout === 'simple' ? '850px' : selectedLayout === 'bill' ? '720px' : selectedLayout === 'tiny' ? '560px' : '1220px' }}  frameBorder="0" title="invoice" ></iframe>
               
 {/*               {(invoiceid?             
                 <iframe                    
