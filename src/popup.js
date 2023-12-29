@@ -20,7 +20,7 @@ import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ARootInvoice from './Invoice/ARootInvoice';
 
-function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, simpleClient, simpleTheme }) {
+function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, simpleClient, simpleTheme, selectedLayout }) {
  
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
@@ -38,8 +38,6 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const demoIncludedThemes = params.get('included');
-
-
 
   //const [invoiceTemplate, setInvoiceTemplate] = useState('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template.html');  
  
@@ -92,13 +90,11 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
   //https://customer.invotools.io/view/d78abae8-d265-4438-95be-6a267157612f
   //: `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;
 
- 
-  useEffect(() => {
-    
+  useEffect(() => {    
     const modeSuffix = darkMode ? 'dark' : 'light';
     const colorSuffix = activeTheme ? `-${activeTheme}` : '';
-    const templateName =  clientid ? `template-${language}-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;    
-
+    const templateName =  clientid ? `template-${language}-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;     
+    
     //temporary-neelan-testing
     //if(language==='hindi'){activeTheme='yellow';}
 
@@ -106,7 +102,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
 
     let templateURL= invoiceid === 'default' ? `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/${templateName}`
     : invoiceid && invoiceid !== 'default'? 'https://dev-invodocz.invotools.io/api/v1/invoice/view/'+invoiceid 
-    : `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}`;
+    : `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}`;
 
 /*     if(language!=='english'){
       templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template-yellow-${modeSuffix}-${language}.html`;
@@ -120,10 +116,12 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
     }else{
       
     }
+
+    
     
     setInvoiceTemplate(templateURL);
 
-  }, [activeTheme, darkMode, clientid, invoiceid, demoIncludedThemes, language]);
+  }, [activeTheme, darkMode, clientid, invoiceid, demoIncludedThemes, language, selectedLayout]);
 
 /*   const updateInvoiceTemplate = () => {
     const modeSuffix = darkMode ? 'dark' : 'light';
@@ -311,8 +309,9 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
              {/*  <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid} {language} {setDarkMode} {activeTheme}</div> */}             
             {/* <ARootInvoice language={language} activeTheme={activeTheme} lightMode={darkMode ? 'dark' : 'light'}/> */} 
             {/* <div className='bg-white text-black t-c p-1'>{invoiceTemplate} --{invoiceid}</div> */}    
-           {/*  {<div className='bg-white text-black t-c p-1'>{simpleTheme}---{invoiceTemplate} --{invoiceid}--{activeTheme}</div>  } */}
-           <iframe src={invoiceTemplate} style={{ width: '100%'}} height="1220" frameBorder="0" title="invoice" ></iframe>
+           {/* {<div className='bg-white text-black t-c p-1'>{simpleTheme}---{invoiceTemplate} --{invoiceid}--{activeTheme}---{selectedLayout}</div>  } */}
+            
+           <iframe src={invoiceTemplate} style={{ width: '100%', height: selectedLayout === 'simple' ? '850px' : selectedLayout === 'bill' ? '720px' : '1220px' }}  frameBorder="0" title="invoice" ></iframe>
               
 {/*               {(invoiceid?             
                 <iframe                    

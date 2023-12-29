@@ -8,7 +8,7 @@ import InvoiceArabic from './InvoiceArabic.js';
 import InvoiceFrench from './InvoiceFrench.js';
 
 const ARootInvoice = () => {
-  const { urlLanguage, urlColor, urlMode, activeTheme, simpleClient } = useParams();  
+  const { urlLanguage, urlColor, urlMode, activeTheme, simpleClient, invoLayout } = useParams();  
 
  // Create Bootstrap and fadein.css links only once when the component mounts
  useEffect(() => {
@@ -33,6 +33,17 @@ const ARootInvoice = () => {
     // Update the href attribute
     colorLink.href = `/invoice-css/${urlColor}.css`;
 
+if(invoLayout!='featured'){
+  let LayoutCSS = document.getElementById('layout-change');    
+    if (!LayoutCSS) {
+      LayoutCSS = document.createElement('link');
+      LayoutCSS.id = 'layout-change';
+      LayoutCSS.rel = 'stylesheet';
+      document.head.appendChild(LayoutCSS);
+    }
+    // Update the href attribute
+    LayoutCSS.href = `/invoice-css/${invoLayout}.css`;
+  }
 
     if (!document.getElementById('theme-fadein')) {
       const fadeinLink = document.createElement('link');
@@ -51,42 +62,6 @@ const ARootInvoice = () => {
   
 //  const [initialCssAdded, setInitialCssAdded] = useState(false);
   useEffect(() => { 
-    /*      
-    if (!initialCssAdded) {
-      const bootstrapLink = document.createElement('link');
-      bootstrapLink.id = 'theme-bootstrap';
-      bootstrapLink.rel = 'stylesheet';
-      bootstrapLink.href = '/invoice-css/bootstrap52.css';
-      document.head.appendChild(bootstrapLink);
-    }
-    
-    const existingThemeLink = document.getElementById('theme-stylesheet');
-    if (existingThemeLink) {existingThemeLink.remove(); }
-
-    // Add new theme CSS file
-    const themeLink = document.createElement('link');
-    themeLink.id = 'theme-stylesheet';
-    themeLink.rel = 'stylesheet';
-    themeLink.href = `/invoice-css/${urlColor}.css`;
-    document.head.appendChild(themeLink); 
-   
-    const fadeinLink = document.createElement('link');
-    fadeinLink.id = 'theme-fadein';
-    fadeinLink.rel = 'stylesheet';
-    fadeinLink.href = '/invoice-css/a_fadein.css';
-    document.head.appendChild(fadeinLink);
-    setInitialCssAdded(true);
-
-
-    if (urlLanguage === 'arabic') {
-      const themeLink = document.createElement('link');
-      themeLink.id = 'theme-stylesheet2';
-      themeLink.rel = 'stylesheet';
-      themeLink.href = `/invoice-css/arabic.css`;
-      document.head.appendChild(themeLink);
-    } else {} */
-
-
         // Add 'dark-mode' class to the body if urlMode is 'dark'
         document.body.classList.add('py-xl-2');
 
@@ -119,8 +94,7 @@ const ARootInvoice = () => {
 
 
   return (
-    <>
-    
+    <>    
       {/* <div className='bg-white text-black p-1 text-center'>{urlLanguage}----{urlColor}----{urlMode}</div> */}
       {/* /template/:urlLanguage/:urlColor/:urlMode */}
       {/* ----{simpleClient} */}
@@ -133,6 +107,7 @@ const ARootInvoice = () => {
        {simpleClient!=='undefined'?
              <style>{`.logo{background-image: url('${imagePath}${simpleClient}.png')!important; background-size: auto;}`}</style>
        :''}
+       
 
     </>
   );

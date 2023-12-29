@@ -15,7 +15,7 @@ import NeelanPage from './NeelanPage';
 
 const App = () => {
   // Use the useParams hook to get the values of id1 and id2
-  const { activeTheme, clientid,invoiceid, colorForLanguagePage, urlMode, urlColor, urlLanguage, simpleClient, simpleTheme } = useParams();
+  const { activeTheme, clientid,invoiceid, colorForLanguagePage, urlMode, urlColor, urlLanguage, simpleClient, simpleTheme, invoLayout } = useParams();
   
 
   return (
@@ -58,7 +58,7 @@ const App = () => {
         <Route path="/drag" element={<DragFeature />} />
         
 
-        <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient" element={<ARootInvoice urlLanguage={urlLanguage} urlColor={urlColor} urlMode={urlMode} />}  />
+        <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient/:invoLayout" element={<ARootInvoice urlLanguage={urlLanguage} urlColor={urlColor} urlMode={urlMode} selectedLayout={invoLayout}/>}  />
         <Route path="/neelan" element={<NeelanPage />} />
 
 

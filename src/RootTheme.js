@@ -14,6 +14,7 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
   const params = new URLSearchParams(search);
   const demoIncludedLang = params.get('language');
   const {simpleClient, simpleTheme} = useParams();  
+  const [selectedLayout, setSelectedLayout] = useState('featured');
 
   const pathArgument = location.pathname.split('/'); // Split the path into parts
   // Check if pathArgument[2] is not available or empty
@@ -31,7 +32,7 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
       document.body.classList.add(`theme-${theme}`);
       //console.log(`Clicked on ${theme} button`);
   };
-
+  const handleLayoutChange = (event) => {setSelectedLayout(event.target.value);};
   const [isSettingOpen, setIsSettingOpen] = useState(false);
   const toggleSetting = () => {setIsSettingOpen(!isSettingOpen);};
 
@@ -42,13 +43,13 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
   const renderSelectedComponent = () => {
     switch (selectedOption) {
       case 'mobile':
-        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} />;
+        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       case 'tablet':
-        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} />;
+        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       case 'tablet-landscape':
-        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme}/>;
+        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       case 'desktop':
-        return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} setActiveTheme={setActiveTheme} simpleClient={simpleClient} simpleTheme={simpleTheme}/>;
+        return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} setActiveTheme={setActiveTheme} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       default:
         return null;
     }
@@ -86,6 +87,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M15.4,16.6L10.8,12L15.4,7.4L14,6L8,12L14,18L15.4,16.6Z" /></svg>
                         </span>
                   </span>
+    
               <div className='d-block d-md-inline-block me-1'>
                 <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' }}>   
                     {demoIncludedLang ? (
@@ -107,7 +109,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                   </select> 
                 </div>
 
-                <div className={`d-block d-md-inline-block`}>
+                <div className={`d-block d-md-inline-block me-1`}>
                 <select value={selectedOption} onChange={handleSelectChange} style={{ padding: '0.5em', borderRadius: '0' }} disabledx={selectedLanguage !== 'english'}>                        
                         <option value="desktop">Desktop</option>
                         <option value="tablet">Tablet Portrait</option>
@@ -116,8 +118,16 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                         
                   </select> 
                 </div>
-                <div className='d-block d-md-none'><br/></div>
-                  
+
+                <div className={`d-block d-md-inline-block`}>
+                    <select value={selectedLayout} onChange={handleLayoutChange} style={{ padding: '0.5em', borderRadius: '0' }} >                        
+                        <option value="featured">Featured</option>
+                        <option value="simple">Simple</option>
+                        <option value="bill">Bill</option>                      
+                    </select>                   
+                </div>
+
+                <div className='d-block d-md-none'><br/></div>                  
                   {isPathArgumentEmpty &&(                 
                       //temporary-neelan-testing
                       <div className='d-block d-md-inline-block' style={{ display: selectedLanguage !== 'english' ? 'nonex' : '' }}>
