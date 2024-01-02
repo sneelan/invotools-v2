@@ -21,10 +21,10 @@ const InvoiceHindi = () => {
                         <h4 className="text-center text-sm-end pt-1 pt-sm-0">AyataCommerce الجندي. المحدودة</h4>                    
                         <p className="text-center text-sm-end pb-1 pb-sm-0">7-11 طريق باركينج، إيست هام، <br/>
                             لندن، المملكة المتحدة، الرمز البريدي: nE61PWt<br/>
-                            <a className="hover-underline" href="tel:919995473245" target="_blank">+91 9995473245</a>, '
-                            <a className="hover-underline" href="mailto:info@ayatacommerce.com" target="_blank">info@ayatacommerce.com</a><br/>
-                            <span>29AAICB4842N1Z4 <b> : GST</b> </span>
-                            <span>,AAICB4842N</span><b> : PAN</b></p>                            
+                            <a className="hover-underline" href="tel:919995473245" target="_blank">+91 9995473245</a>, 
+                            <a className="hover-underline" href="mailto:info@ayatacommerce.com" target="_blank"> info@ayatacommerce.com</a><br/>
+                            <span className='tax'><span>29AAICB4842N1Z4 <b> : GST</b> </span>
+                            <span>,AAICB4842N</span><b> : PAN</b></span></p>                            
                     </div>
                 </div>
             </div>

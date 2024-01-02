@@ -33,7 +33,7 @@ const ARootInvoice = () => {
     // Update the href attribute
     colorLink.href = `/invoice-css/${urlColor}.css`;
 
-if(invoLayout!='featured'){
+if(invoLayout!='layout-featured'){
   let LayoutCSS = document.getElementById('layout-change');    
     if (!LayoutCSS) {
       LayoutCSS = document.createElement('link');
@@ -44,19 +44,7 @@ if(invoLayout!='featured'){
     // Update the href attribute
     LayoutCSS.href = `/invoice-css/${invoLayout}.css`;
   }
-  if(invoLayout=='tiny'){
-    if(urlColor=='diwali' || urlColor=='christmas' || urlColor=='thanks'){
-    let LayoutCSS = document.getElementById('layout-change1');    
-      if (!LayoutCSS) {
-        LayoutCSS = document.createElement('link');
-        LayoutCSS.id = 'layout-change1';
-        LayoutCSS.rel = 'stylesheet';
-        document.head.appendChild(LayoutCSS);
-        LayoutCSS.href = `/invoice-css/layout-festival-tiny-fix.css`;
-      }     
-    }
-    }
-  if(invoLayout=='bill'){
+  if(invoLayout=='layout-bill'){
     if(urlColor=='diwali' || urlColor=='christmas' || urlColor=='thanks'){
     let LayoutCSS = document.getElementById('layout-change1');    
       if (!LayoutCSS) {
@@ -68,7 +56,19 @@ if(invoLayout!='featured'){
       }     
     }
     }
-    if(invoLayout=='simple'){
+  if(invoLayout=='layout-small'){
+    if(urlColor=='diwali' || urlColor=='christmas' || urlColor=='thanks'){
+    let LayoutCSS = document.getElementById('layout-change1');    
+      if (!LayoutCSS) {
+        LayoutCSS = document.createElement('link');
+        LayoutCSS.id = 'layout-change1';
+        LayoutCSS.rel = 'stylesheet';
+        document.head.appendChild(LayoutCSS);
+        LayoutCSS.href = `/invoice-css/layout-festival-small-fix.css`;
+      }     
+    }
+    }
+    if(invoLayout=='layout-simple'){
       if(urlColor=='diwali' || urlColor=='christmas' || urlColor=='thanks'){
       let LayoutCSS = document.getElementById('layout-change1');    
         if (!LayoutCSS) {

@@ -14,7 +14,7 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
   const params = new URLSearchParams(search);
   const demoIncludedLang = params.get('language');
   const {simpleClient, simpleTheme} = useParams();  
-  const [selectedLayout, setSelectedLayout] = useState('featured');
+  const [selectedLayout, setSelectedLayout] = useState('layout-featured');
 
   const pathArgument = location.pathname.split('/'); // Split the path into parts
   // Check if pathArgument[2] is not available or empty
@@ -121,10 +121,10 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
 
                 <div className={`d-block d-md-inline-block`}>
                     <select value={selectedLayout} onChange={handleLayoutChange} style={{ padding: '0.5em', borderRadius: '0' }} >                        
-                        <option value="featured">Featured</option>
-                        <option value="simple">Simple</option>
-                        <option value="bill">Small</option>                      
-                        <option value="tiny">Bill</option>                      
+                        <option value="layout-featured">Featured (A4)</option>
+                        <option value="layout-simple">Simple (A4)</option>
+                        <option value="layout-small">Small (A5)</option>                      
+                        <option value="layout-bill">Bill (A6)</option>                      
                     </select>                   
                 </div>
 

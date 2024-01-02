@@ -1,0 +1,112 @@
+#header-right{width: 100%!important; margin: 0!important;padding: 0!important; display: block!important; padding-top: 5px!important; border-top:1px solid #e6e6e6;}
+#header-right *{display:inline!important;text-align: center!important; font-size: 12px!important; margin: 0!important;padding: 0!important;}
+#header-right h4{font-family:unset!important; color:unset; line-height:unset;display:inline!important;}
+#Xheader-right p{display: inline-block!important; text-align: left!important;}
+
+#header-right p, #header-right a{padding-left: 0.25em!important;}
+ 
+#header-right b{ margin-left: 5px!important;}
+#header-right br{display:none!important;width: 0px;}
+#header-right .tax{display: none!important;}
+
+
+
+header .col-md-4:nth-child(2){justify-content: end!important;padding: 0!important;margin-bottom: 0.4em;} 
+.logo{ margin-top: 1em!important;margin-bottom: 1em!important;}
+
+ .my-row-2 .col-sm-4:nth-child(2), .my-row-3 .col-sm-4:nth-child(1),.my-row-3 .col-sm-4:nth-child(3), 
+ .my-row-2 .col-sm-4:nth-child(3) span.d-block, 
+ .my-row-2 .col-sm-4:nth-child(1) h4:nth-child(2)
+ {display: none!important;} 
+
+ .my-row-2 .col-sm-4:nth-child(1) p{display: none!important;} 
+ .my-row-2 .col-sm-4:nth-child(1) span.d-block p {display: inline-block!important; ;} 
+ .my-row-2 .col-sm-4:nth-child(3){ text-align: end;} 
+ .my-row-2 .col-sm-4:nth-child(1){ padding-left: 0.3em!important;} 
+ .my-row-2 p{ padding-left: 0.3em!important;} 
+
+ .my-row-2 .col-sm-4,  .my-row-3 .col-sm-4{width:50%!important;} 
+ .my-row-2{padding:0; }
+ .my-row-2 .col-sm-4:nth-child(1) span.d-block{text-align: start;}
+
+/*  .my-row-3{justify-content: center;} */
+#sec-notes .align-self-stretch{padding:0!important; }
+.product-total{margin-top:0!important;  }
+.product-total tr{  border-top:initial!important;}
+.my-row-3{padding: 0.25em!important;}
+.Xmy-row-3, footer{display: none!important;} 
+#sec-notes .align-self-stretch .my-notes {display: none!important;} 
+main.px-2{padding:0 !important;}
+.container-xl{max-width:300px!important;}
+.product th:nth-child(3), .product td:nth-child(3),
+.product th:nth-child(1), .product td:nth-child(1),
+.product th:nth-child(4), .product td:nth-child(4),
+.product th:nth-child(6), .product td:nth-child(6),
+.product th:nth-child(7), .product td:nth-child(7)
+{display: none!important;} 
+.product{font-size:12px!important;}
+.product td:nth-child(2), .product-total{font-size:12px!important;}
+.product th:nth-child(2), .product td:nth-child(2){padding: 0.5em 0 0.5em 0.5em!important;}
+.product tr td:last-child, .product tr th:last-child, .product-total tr td:last-child{padding-right:0.5em!important ;}
+
+.product tr th{padding:0.25em 0!important ; font-weight: normal!important; font-size: 10px!important;}
+.sec-sign-left,.sec-sign-right{padding: 0!important;}
+.sec-sign-left h4:not(td h4), .sec-sign-left p{display: none!important;} 
+
+.border-4{border-width: 1px!important;}
+
+.sec-sign-right {display: none!important;} 
+#sec-sign .justify-content-between{justify-content: center!important;padding: 0!important;}
+
+#sec-sign .d-sm-flex{display: block!important;}
+#sec-sign{width: 100%!important;padding:0 0.5em !important;}
+
+.logo{height: 40px!important;margin:0.25em 0!important;}
+
+/* mobile */
+@media screen and (max-width:768px) {
+    header .row .col-md-4,#header-left,.my-row-3 .col-sm-4{width:100%!important;}   
+}
+header{padding-right:0!important;}
+header .row .col-md-4{width:50%!important;}
+header .title{ padding: 1em!important;margin-top: 0.4em; height: 100%;}
+header .title span:nth-child(2){display:none!important;}
+header.px-2{padding:0.3em 0.3em 0.3em 0.5em !important;}
+header .title{margin: 0!important; }
+header .col-md-4:nth-child(2){margin: 0!important;}
+
+#header-left{padding-left:0!important;}
+.mob-products .hover-underline,.mob-pro-right tr:first-child{display: none!important;} 
+.mob-products *{font-size:12px!important;}
+.mob-product-row .p-2{padding:0.25em!important;}
+.my-row-3 .mb-4{margin-bottom: 0em!important;}
+
+
+
+
+
+.track-ship td{padding: 0!important;}
+.my-row-3 *, .my-row-2 *{font-size: 12px!important; text-transform: none!important;}
+.my-row-2 *{margin:0!important; padding: 0!important;}
+.my-row-2{padding:0 0.5em!important;}
+
+.my-row-3 br{display: none!important; width:10px; margin-left: 0.5em!important;}
+.my-row-3 b{ margin-left: 0.5em!important;}
+.my-row-3 .col-sm-4{width: 100%!important;}
+
+
+.track-ship, .my-row-3{display: none!important;}
+#sec-sign .d-sm-flex{display: none!important;}
+#sec-sign::after{
+    width: 287px;
+    height: 202.08px;
+    content: "";
+    background-image: url("/invoice-css/assets/images/bill.png");
+    display: block;
+    background-repeat: no-repeat;
+    background-position: right;
+ 
+    margin:3px 0 5px 0;
+    padding-top:8px ;
+    font-weight: bold;
+}

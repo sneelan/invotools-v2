@@ -21,9 +21,9 @@ const InvoiceSpanish = () => {
                         <h4 className="text-center text-sm-end pt-1 pt-sm-0">AyataCommerce Pvt. Limitado</h4>                    
                         <p className="text-center text-sm-end pb-1 pb-sm-0">7-11 Barking Rd, East Ham, <br/>
                             Londres, Reino Unido, código postal: nE61PWt <br/>
-                            <a className="hover-underline" href="tel:919995473245" target="_blank">+91 9995473245</a>, '
-                            <a className="hover-underline" href="mailto:info@ayatacommerce.com" target="_blank">info@ayatacommerce.com</a><br/>
-                            <b>GST:</b> 29AAICB4842N1Z4,  <b>PAN:</b> AAICB4842N</p>
+                            <a className="hover-underline" href="tel:919995473245" target="_blank">+91 9995473245</a>, 
+                            <a className="hover-underline" href="mailto:info@ayatacommerce.com" target="_blank"> info@ayatacommerce.com</a><br/>
+                            <span className='tax'><b>GST:</b> 29AAICB4842N1Z4,  <b>PAN:</b> AAICB4842N</span></p>
                     </div>
                 </div>
             </div>

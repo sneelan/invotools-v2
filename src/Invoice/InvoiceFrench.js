@@ -21,9 +21,9 @@ const InvoiceHindi = () => {
                     <h4 class="text-center text-sm-end pt-1 pt-sm-0">AyataCommerce Pvt. Ltée</h4>                    
                     <p class="text-center text-sm-end pb-1 pb-sm-0">7-11 Barking Rd, East Ham, <br/>
                         Londres, Royaume-Uni, Zip : nE61PWt<br/>
-                        <a class="hover-underline" href="tel:919995473245" target="_blank">+91 9995473245</a>, '
-                        <a class="hover-underline" href="mailto:info@ayatacommerce.com" target="_blank">info@ayatacommerce.com</a><br/>
-                        <b>TPS:</b> 29AAICB4842N1Z4,  <b>PAN:</b> AAICB4842N</p>
+                        <a class="hover-underline" href="tel:919995473245" target="_blank">+91 9995473245</a>, 
+                        <a class="hover-underline" href="mailto:info@ayatacommerce.com" target="_blank"> info@ayatacommerce.com</a><br/>
+                        <span className='tax'><b>TPS:</b> 29AAICB4842N1Z4,  <b>PAN:</b> AAICB4842N</span></p>
                 </div>
             </div>
         </div>

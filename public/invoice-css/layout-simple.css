@@ -10,11 +10,16 @@ header .col-md-4:nth-child(2){justify-content: end!important;padding: 0!importan
  .my-row-2 .col-sm-4,  .my-row-3 .col-sm-4{width:50%!important;} 
 
 .Xmy-row-3, footer{display: none!important;} 
-#sec-notes .align-self-stretch .my-notes,.Xsec-sign-left{opacity:0!important;} 
+#sec-notes .align-self-stretch .my-notesX,.Xsec-sign-left{opacity:0!important;} 
 main{padding-top:4px;}
 .container-xl{max-width: 850px!important;}
-.product th:nth-child(3), .product td:nth-child(3), .product th:nth-child(1), .product td:nth-child(1){display: none!important;} 
-.product th, .product td{padding: 0.75em!important;}
+.product td:nth-child(1) img{width: 25px; }
+.product th:nth-child(3), .product td:nth-child(3),
+.product th:nth-child(4), .product td:nth-child(4),
+.product th:nth-child(6), .product td:nth-child(6),
+.product th:nth-child(7), .product td:nth-child(7)
+{display: none!important;} 
+.product th, .product td{padding: 0.5em 0!important;}
 .sec-sign-left,.sec-sign-right{padding: 0!important;}
 .sec-sign-left h4:not(td h4), .sec-sign-left p{display: none!important;} 
 
@@ -26,4 +31,13 @@ main{padding-top:4px;}
 .mob-products .hover-underline,.mob-pro-right tr:first-child{display: none!important;} 
 .mob-products *{font-size:12px!important;}
 .mob-product-row .p-2{padding:0.25em!important;}
+.my-row-3 {padding: 0 0 0 1em!important;}
+.my-row-3 *{padding: 0em!important;}
 .my-row-3 .mb-4{margin-bottom: 0em!important;}
+
+.my-row-2{padding:0.5em 0.5em 0.5em 1em!important;}
+.my-row-2 *{padding:0!important;}
+.my-row-3 *, .my-row-2 *{ line-height: 150%!important;}
+
+.my-notes *, .product *, .product-total *, .track-ship *, .my-row-3 *, .my-row-2 *{font-size: 14px!important; }
+.sec-sign-right h4{display: none!important;}
