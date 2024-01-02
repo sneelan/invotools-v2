@@ -1,5 +1,5 @@
 .container-xl{ 
-    transition:0.25s!important; opacity: 1 !important;
+    transition:0.3s!important; opacity: 1 !important;
     /* animation: fadeIn 0.25s ease-in-out ; */
 } 
 *, .container-xl *{transition: 0s!important;} 
