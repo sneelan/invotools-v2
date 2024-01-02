@@ -1,9 +1,9 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 //import DeviceButtons from './DeviceButtons';
-const DeviceView = ({activeTheme, clientid, invoiceid, language, invoiceTemplate, deviceName, deviceWidth, deviceHeight, simpleClient, simpleTheme}) => {
+const DeviceView = ({activeTheme, clientid, invoiceid, language, invoiceTemplate, deviceName, deviceWidth, deviceHeight, simpleClient, simpleTheme, }) => {
 
-  let DatasimpleClient;if (simpleClient) {DatasimpleClient = '?simpleClient=' + simpleClient;}
+  let DatasimpleClient; if (simpleClient) {DatasimpleClient = '?simpleClient=' + simpleClient;}else{  DatasimpleClient = " ";}
   //if(simpleTheme){activeTheme=simpleTheme;}
 
   let templateURL = language!=='english' ? '/'+language+'/'+activeTheme+DatasimpleClient : '/'+activeTheme+DatasimpleClient;

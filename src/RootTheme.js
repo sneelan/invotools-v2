@@ -119,7 +119,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                   </select> 
                 </div>
 
-                <div className={`d-block d-md-inline-block`}>
+                <div className={`d-block d-md-inline-block`}  style={{ display: selectedOption !== 'desktop' ? 'none' : '' }}>
                     <select value={selectedLayout} onChange={handleLayoutChange} style={{ padding: '0.5em', borderRadius: '0' }} >                        
                         <option value="layout-featured">Featured (A4)</option>
                         <option value="layout-simple">Simple (A4)</option>

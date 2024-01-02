@@ -310,6 +310,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
             {/* <ARootInvoice language={language} activeTheme={activeTheme} lightMode={darkMode ? 'dark' : 'light'}/> */} 
             {/* <div className='bg-white text-black t-c p-1'>{invoiceTemplate} --{invoiceid}</div> */}    
            {/* {<div className='bg-white text-black t-c p-1'>{simpleTheme}---{invoiceTemplate} --{invoiceid}--{activeTheme}---{selectedLayout}</div>  } */}
+           {/* {<div className='bg-white text-black t-c p-1'> -{invoiceTemplate} </div>  } */}
             
            <iframe src={invoiceTemplate} style={{ width: '100%', height: selectedLayout === 'layout-simple' ? '850px' : selectedLayout === 'layout-small' ? '650px' : selectedLayout === 'layout-bill' ? '704px' : '1220px' }}  frameBorder="0" title="invoice" ></iframe>
               
