@@ -108,7 +108,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                   </select> 
                 </div>
 
-                <div className={`d-block d-md-inline-block me-1`}>
+                <div className={`d-block d-md-inline-block`}>
                 <select value={selectedOption} onChange={handleSelectChange} style={{ padding: '0.5em', borderRadius: '0' }} disabledx={selectedLanguage !== 'english'}>                        
                         <option value="desktop">Desktop</option>
                         <option value="tablet">Tablet Portrait</option>
@@ -118,7 +118,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                   </select> 
                 </div>
 
-                <div className={`d-block d-md-inline-block`}  style={{ display: selectedOption !== 'desktop' ? 'none' : '', display: pathArgument[1] == 'demo' ||  pathArgument[1] == 'simpledemo' ? 'none' : '' }}>
+                <div className={`d-block d-md-inline-block ms-1`}  style={{ display: selectedOption !== 'desktop' ? 'none' : '', display: pathArgument[1] == 'demo' ||  pathArgument[1] == 'simpledemo' ? 'none' : '' }}>
                     <select value={selectedLayout} onChange={handleLayoutChange} style={{ padding: '0.5em', borderRadius: '0' }} >                        
                         <option value="layout-featured">Featured (A4)</option>
                         <option value="layout-simple">Simple (A4)</option>
