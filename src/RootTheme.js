@@ -74,7 +74,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
 
   return (
     <div>
-        <div className='wrapper'>
+        <div className='wrapper'>          
           {/* {simpleClient}+++{simpleTheme}+++ */}
               {renderSelectedComponent()}
               <div id="setting" className={`setting-sticky invoice-wrap1 t-c p-1 ${isSettingOpen ? 'open' : ''}`}>
@@ -100,10 +100,9 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                           <>
                           <option value="english">English</option>                        
                           <option value="hindi">Hindi</option>                      
-                          <option value="spanish">Spanish</option>                        
+                          <option value="spanish">Spanish</option>                                                  
+                          <option value="french">French</option>
                           <option value="arabic">Arabic</option>
-                          {/* //temporary-neelan-testing                       
-                          <option value="french">French</option> */}    
                           </>
                       )}                    
                   </select> 
@@ -119,7 +118,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                   </select> 
                 </div>
 
-                <div className={`d-block d-md-inline-block`}  style={{ display: selectedOption !== 'desktop' ? 'none' : '' }}>
+                <div className={`d-block d-md-inline-block`}  style={{ display: selectedOption !== 'desktop' ? 'none' : '', display: pathArgument[1] == 'demo' ||  pathArgument[1] == 'simpledemo' ? 'none' : '' }}>
                     <select value={selectedLayout} onChange={handleLayoutChange} style={{ padding: '0.5em', borderRadius: '0' }} >                        
                         <option value="layout-featured">Featured (A4)</option>
                         <option value="layout-simple">Simple (A4)</option>
