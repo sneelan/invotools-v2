@@ -27,17 +27,17 @@ function NeelanPage() {
      <h4 className='fw-bold m-0 bg-dark text-white py-2 px-3'>Custom Html Demo</h4>
       <div className='p-1 ps-3'>
             <p className='mt-1'>https://invotools-customer.vercel.app/demo/clientname/COLOR/default?included=...themenames....&language=..filepathname...</p>
-            <hr className='border-bottom border-secondary'/>         
+            <hr className='border-secondary'/>         
             <h5 className='text-danger m-0'><b>Oliveliving</b></h5>      
             <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/oliveliving/maroon/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/oliveliving/maroon/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
             <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/oliveliving/gray/default?included=yellow,blue,green,maroon,red,black,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/oliveliving/maroon/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
-            <hr className='border-bottom border-secondary'/>     
+            <hr className='border-secondary'/>     
             <h5 className='text-danger m-0'><b>Dusminute</b></h5>
             <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/dusminute/green/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/dusminute/green/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
-            <hr className='border-bottom border-secondary'/>     
+            <hr className='border-secondary'/>     
             <h5 className='text-danger m-0'><b>Chanel</b></h5>
             <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/chanel/gray/default?included=printer&language=English-Arabic,English,Arabic' target='_blank'>https://invotools-customer.vercel.app/demo/chanel/gray/default?included=printer&language=English-Arabic,English,Arabic</a></p>
-            <hr className='border-bottom border-secondary'/> 
+            <hr className='border-secondary'/> 
      </div>
      </div>
     </div>
