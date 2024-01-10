@@ -43,7 +43,7 @@ const InvoiceLayout = () => {
               <p className="d-inline-block ps-2 ps-sm-1"> Friday 9, Aug 2023</p>
           </div>
           <div className="col-sm-4 d-sm-flex align-items-center justify-content-center xpy-2 pt-sm-0">
-              <img src="/invoice-css/assets/images/bar-code.png" className="img-fluid" alt="bar code" />
+              <img src="/assets/images/bar-code.png" className="img-fluid" alt="bar code" />
           </div>
           <div className="col-sm-4">
               <span className="d-block ">
@@ -58,7 +58,7 @@ const InvoiceLayout = () => {
           <div className="col-sm-4 my-3 my-sm-0 d-flex align-items-center justify-content-center ">
               <div>
                   <a className="qrcode d-block rounded" title="Use QR code Scanner for the live PDF link" href="https://invotools.io?invoice-directlink=TEST" target="_blank">
-                    <img src="/invoice-css/assets/images/being-qr.svg" width="150" alt="QR code" />                    
+                    <img src="/assets/images/being-qr.svg" width="150" alt="QR code" />                    
                   </a>
                   <span className="small clear text-center d-block pt-1">invotools.io/az50</span>
               </div>
@@ -102,7 +102,7 @@ const InvoiceLayout = () => {
                       <th>Item Total</th>
                       </tr>
                   <tr>
-                      <td><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/invoice-css/assets/images/pro1.png" alt="Being Human" /></a></td>
+                      <td><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/assets/images/pro1.png" alt="Being Human" /></a></td>
                       <td className="text-start"><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"> Fashion Slim Fit Shirts Long Sleeve Navy</a></td>
                       <td>PRSKNU0A1</td>
                       <td>1149</td>
@@ -112,7 +112,7 @@ const InvoiceLayout = () => {
                       <td>1010.22</td>
                   </tr>
                   <tr>
-                      <td><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/invoice-css/assets/images/pro2.png" alt="Being Human"/></a></td>
+                      <td><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/assets/images/pro2.png" alt="Being Human"/></a></td>
                       <td className="text-start"><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank">Fashion Regular Fit Polo Neck Short Slv T-Shirts Rust</a></td>
                       <td>PRSKNU0A2</td>
                       <td>594</td>
@@ -122,7 +122,7 @@ const InvoiceLayout = () => {
                       <td>1282.48</td>
                   </tr>
                   <tr>
-                      <td><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/invoice-css/assets/images/pro3.png" alt="Being Human"/></a></td>
+                      <td><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/assets/images/pro3.png" alt="Being Human"/></a></td>
                       <td className="text-start"><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank">Fashion Relax Fit Womens Crew Neck T-Shirts</a>
                       </td>
                       <td>PRSKNU0A3</td>
@@ -140,7 +140,7 @@ const InvoiceLayout = () => {
           <div className="mob-product-row">
               <div><a className="title h6" href="https://www.ayatacommerce.com/" target="_blank"> Fashion Slim Fit Shirts Long Sleeve Navy</a></div>
               <div className="d-flex align-items-center justify-content-center gap-3 p-2">                    
-                      <div><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/invoice-css/assets/images/pro1.png" alt="Being Human"/></a></div>
+                      <div><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/assets/images/pro1.png" alt="Being Human"/></a></div>
                       <div className="flex-grow-1">                            
                               <div className="mob-pro-right">
                                   <table>
@@ -178,7 +178,7 @@ const InvoiceLayout = () => {
           <div className="mob-product-row">
               <div><a className="title h6" href="https://www.ayatacommerce.com/" target="_blank"> Fashion Regular Fit Polo Neck Short Slv T-Shirts Rust</a></div>
               <div className="d-flex align-items-center justify-content-center gap-3 p-2">                    
-                      <div><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/invoice-css/assets/images/pro2.png" alt="Being Human"/></a></div>
+                      <div><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/assets/images/pro2.png" alt="Being Human"/></a></div>
                       <div className="flex-grow-1">                            
                               <div className="mob-pro-right">
                                   <table>
@@ -216,7 +216,7 @@ const InvoiceLayout = () => {
           <div className="mob-product-row">
               <div><a className="title h6" href="https://www.ayatacommerce.com/" target="_blank">	Fashion Relax Fit Womens Crew Neck T-Shirts</a></div>
               <div className="d-flex align-items-center justify-content-center gap-3 p-2">                    
-                      <div><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/invoice-css/assets/images/pro3.png" alt="Being Human"/></a></div>
+                      <div><a className="hover-underline" href="https://www.ayatacommerce.com/" target="_blank"><img src="/assets/images/pro3.png" alt="Being Human"/></a></div>
                       <div className="flex-grow-1">                            
                               <div className="mob-pro-right">
                                   <table>
@@ -323,8 +323,8 @@ const InvoiceLayout = () => {
                                       </svg>                                                
                                   </span>
                                   Track Shipment </h4></td>                                    
-                              <td className="text-center px-3 border"><a href="https://www.dtdc.in/tracking.asp?id=194978a68" target="_blank"><img src="/invoice-css/assets/images/dtdc.png" /></a></td>
-                              <td className="text-center  px-3 border hover-bg-accent"><a href="https://www.dtdc.in/tracking.asp?id=194978a68" target="_blank" title="Track Link">194978a68<img className="ms-1 opacity-75 " width="13" src="/invoice-css/assets/images/pop.svg" /></a></td>
+                              <td className="text-center px-3 border"><a href="https://www.dtdc.in/tracking.asp?id=194978a68" target="_blank"><img src="/assets/images/dtdc.png" /></a></td>
+                              <td className="text-center  px-3 border hover-bg-accent"><a href="https://www.dtdc.in/tracking.asp?id=194978a68" target="_blank" title="Track Link">194978a68<img className="ms-1 opacity-75 " width="13" src="/assets/images/pop.svg" /></a></td>
                           </tr>
                       </tbody>
                   </table>
@@ -364,7 +364,7 @@ const InvoiceLayout = () => {
       </div>
       <div className="col-sm-7 col-lg-9 align-self-stretch footer-right pb-lg-1">
           <div className="d-flex align-items-center justify-content-center justify-content-sm-between px-3">
-              <img src="/invoice-css/assets/images/thnakyou.png" alt="thnak you"/>
+              <img src="/assets/images/thnakyou.png" alt="thnak you"/>
               <h4 className="opacity-75 text-center w-100 d-none d-sm-block">Follow us</h4>
           </div>
           <div className="d-flex align-items-center justify-content-evenly ">
