@@ -85,7 +85,7 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
             // Display without Accordion when toggleStatus is 'inactive'
             <div className={`widget make-column-height-same ${widgetClassName} ${addClassFixedwidth} `} style={widgetStyle} id={widgetId}>
               {column.title && (<div className='widget-title-border'>
-                <h6 class="widget-title " style={{margin:'0 1em'}}>{column.title} {rowIndex}</h6>
+                <h6 class="widget-title " style={{margin:'0 1em'}}>{column.title}</h6>
                 </div>)}              
               {InnerContent}
               {/* Display a white box without any content */}
