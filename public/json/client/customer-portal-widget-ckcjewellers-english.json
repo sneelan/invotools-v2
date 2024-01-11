@@ -8,7 +8,7 @@
 			"columns": [
 				
 				{					
-					"title": "Buy Products from your Wishlist",
+					"title": "",
 					"width": "",
 					"height": "",
 					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/ckcjewellers/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
