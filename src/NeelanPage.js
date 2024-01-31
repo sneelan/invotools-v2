@@ -29,7 +29,7 @@ function NeelanPage() {
             <p className='mt-1'>https://invotools-customer.vercel.app/demo/clientname/COLOR/default?included=...themenames....&language=..filepathname...</p>
             <hr className='border-secondary'/>         
             <h5 className='text-danger m-0'><b>Breitling</b></h5>      
-            <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,printer,gray&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,printer,gray&language=English</a></p>
+            <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English</a></p>
             
             
             
