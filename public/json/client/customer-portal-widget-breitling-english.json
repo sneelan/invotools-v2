@@ -102,7 +102,7 @@
 					"width": "",
 					"height": "",
 					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/breitling/widget-carousel-jeweller.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
-					"contentCSS": "#client-widget-en-5-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
+					"contentCSS": "#client-widget-en-4-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
