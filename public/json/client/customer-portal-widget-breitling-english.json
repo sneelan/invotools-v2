@@ -11,7 +11,7 @@
 					"title": "",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/breitling/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/breitling/widget-wishlist-short.html\" width=\"340\" height=\"416\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 
 					"displayOrder": "2",
