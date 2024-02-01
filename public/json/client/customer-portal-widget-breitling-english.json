@@ -11,7 +11,7 @@
 					"title": "",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/ckcjewellers/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/breitling/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 
 					"displayOrder": "2",
@@ -25,28 +25,7 @@
 				}
 			]
 		},		
-		{
-			"rowNumber": "2",
-			"columns": [
-				
-				{					
-					"title": "Upload Documents and Complete your KYC",
-					"width": "",
-					"height": "",
-					"contentHTML": "<div class=\"text-center t-c\" style=\"text-align:center;\"><img class=\"d-md-none m-auto\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/oliveliving/assets/images/widget/kycform_mobile.png\" ><img class=\"d-none d-md-block m-auto\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/oliveliving/assets/images/widget/kycform_desktop.png\" ></div>",
-					"contentCSS": "",
-
-					"displayOrder": "2",
-					"displayStatus": "active",					
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "pdf, portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"toggleStatus": "active",
-					"toggleExpand": "no"
-				}
-			]
-		},{
+{
 			"rowNumber": "1",
 			"columns": [
 				{
@@ -97,7 +76,7 @@
 					"title": "Watch Our Promotion Video",
 					"width": "",
 					"height": "",
-					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/ckcjewellers/widget-video.html\" height=\"405\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/breitling/widget-video.html\" height=\"405\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
@@ -122,7 +101,7 @@
 					"titlex": "Recent Products - Image Slideshow",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/ckcjewellers/widget-carousel-jeweller.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/breitling/widget-carousel-jeweller.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "#client-widget-en-5-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
