@@ -1,0 +1,74 @@
+/* -----------color-shades-start--------------*/
+/* bg-black-100, bg-white-100, text-black-100, text-white-100 */
+$white: #fff !default;
+$black: #000 !default;
+@function light-color($color, $amount) {@return mix($white, $color, $amount * 1%);}
+@function dark-color($color, $amount) {@return mix($black, $color, $amount * 1%);}
+
+@mixin generate-light($color, $name, $amount) {
+  .bg-#{$name} {background-color: light-color($color, $amount);}
+  .text-#{$name}, .text-#{$name} *{color: light-color($color, $amount);}
+  .border-#{$name} {border-color: light-color($color, $amount)!important;}
+}
+@mixin generate-dark($color, $name, $amount) {
+  .bg-#{$name} {background-color: dark-color($color, $amount);}
+  .text-#{$name}, .text-#{$name} * {color: dark-color($color, $amount);}
+  .border-#{$name} {border-color: dark-color($color, $amount)!important;}
+}
+/* -------- */
+@for $i from 1 through 9 {
+  @include generate-light($black, black-#{$i}, (10 * (10 - $i)));
+}
+
+@for $i from 1 through 9 {
+  @include generate-light($white, white-#{$i}, (10 * (10 - $i)));
+}
+/* ---------- */
+@for $i from 1 through 9 {
+  @include generate-light($theme-primary, theme-primary-#{$i}, (10 * (10 - $i)));
+}
+@for $i from 11 through 19 {
+  @include generate-dark($theme-primary, theme-primary-#{$i}, (10 * ($i - 10)));
+}
+/* ---------- */
+@for $i from 1 through 9 {
+  @include generate-light($theme-secondary, theme-secondary-#{$i}, (10 * (10 - $i)));
+}
+@for $i from 11 through 19 {
+  @include generate-dark($theme-secondary, theme-secondary-#{$i}, (10 * ($i - 10)));
+}
+/* ---------- */
+@for $i from 1 through 9 {
+  @include generate-light($theme-accent, theme-accent-#{$i}, (10 * (10 - $i)));
+}
+@for $i from 11 through 19 {
+  @include generate-dark($theme-accent, theme-accent-#{$i}, (10 * ($i - 10)));
+}
+/* ---------- */
+@for $i from 1 through 9 {
+  @include generate-light($theme-red, theme-red-#{$i}, (10 * (10 - $i)));
+}
+@for $i from 11 through 19 {
+  @include generate-dark($theme-red, theme-red-#{$i}, (10 * ($i - 10)));
+}
+/* ---------- */
+@for $i from 1 through 9 {
+  @include generate-light($theme-green, theme-green-#{$i}, (10 * (10 - $i)));
+}
+@for $i from 11 through 19 {
+  @include generate-dark($theme-green, theme-green-#{$i}, (10 * ($i - 10)));
+}
+/* ---------- */
+@for $i from 1 through 9 {
+  @include generate-light($theme-blue, theme-blue-#{$i}, (10 * (10 - $i)));
+}
+@for $i from 11 through 19 {
+  @include generate-dark($theme-blue, theme-blue-#{$i}, (10 * ($i - 10)));
+}
+/* ---------- */
+@for $i from 1 through 9 {
+  @include generate-light($theme-orange, theme-orange-#{$i}, (10 * (10 - $i)));
+}
+@for $i from 11 through 19 {
+  @include generate-dark($theme-orange, theme-orange-#{$i}, (10 * ($i - 10)));
+}

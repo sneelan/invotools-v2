@@ -1,0 +1,37 @@
+html, body, p, ul{
+  margin: 0;padding: 0;
+}
+body {
+  line-height: 1;
+}
+section{padding: 2rem 0;}
+ol, ul {
+  list-style: none; 
+}
+blockquote, q {
+  quotes: none; 
+}
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+a{
+  text-decoration:none;
+  transition: 0.5s; 
+  color:$theme-secondary;  
+  &:hover{color: black;}
+} 
+.container-xl{ padding: 0;  
+  @include media-breakpoint-max(1200){
+    padding:1em;
+  }
+}
+//.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm

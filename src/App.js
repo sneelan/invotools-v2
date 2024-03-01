@@ -10,6 +10,7 @@ import ErrorNotFound from './ErrorNotFound';
 import ARootInvoice from './Invoice/ARootInvoice'; 
 import ClientPage from './ClientPage';
 import NeelanPage from './NeelanPage';
+import HomePage from './website/HomePage';
 
 
 
@@ -61,6 +62,7 @@ const App = () => {
         <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient/:invoLayout" element={<ARootInvoice urlLanguage={urlLanguage} urlColor={urlColor} urlMode={urlMode} selectedLayout={invoLayout}/>}  />
         <Route path="/neelan" element={<NeelanPage />} />
 
+        <Route path="/website/*" element={<HomePage/>} />    
 
         {/* Wildcard route to match any other paths */}
         <Route path="*" element={<ErrorNotFound />} />

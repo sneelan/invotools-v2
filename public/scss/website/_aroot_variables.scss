@@ -1,0 +1,41 @@
+@mixin generate-variants($color,$name) {
+    .bg-#{$name} {background-color:$color;}
+    .text-#{$name} {color:$color;}
+    .hover-text-#{$name}:hover{color:$color!important;}
+    .hover-bg-#{$name}:hover{ background-color: $color;}
+    .border-#{$name}{ border-color: $color!important;}
+    .btn-#{$name} {background-color:$color;}    
+}
+@include generate-variants($theme-primary, theme-primary);
+@include generate-variants($theme-primary-light, theme-primary-light);
+@include generate-variants($theme-primary-verylight, theme-primary-verylight);
+@include generate-variants($theme-secondary, theme-secondary);
+@include generate-variants($theme-secondary-light, theme-secondary-light);
+@include generate-variants($theme-secondary-verylight, theme-secondary-verylight);
+@include generate-variants($theme-accent, theme-accent);
+@include generate-variants($theme-accent-light, theme-accent-light);
+@include generate-variants($theme-accent-verylight, theme-accent-verylight);
+
+
+@include generate-variants($theme-red, theme-red);
+@include generate-variants($theme-red-light, theme-red-light);
+@include generate-variants($theme-red-verylight, theme-red-verylight); 
+@include generate-variants($theme-blue, theme-blue);
+@include generate-variants($theme-blue-light, theme-blue-light);
+@include generate-variants($theme-blue-verylight, theme-blue-verylight);
+@include generate-variants($theme-orange, theme-orange);
+@include generate-variants($theme-orange-light, theme-orange-light);
+@include generate-variants($theme-orange-verylight, theme-orange-verylight);
+@include generate-variants($theme-green, theme-green);
+@include generate-variants($theme-green-light, theme-green-light);
+@include generate-variants($theme-green-verylight, theme-green-verylight);
+
+.hover-underline:hover{text-decoration: underline;color: black;}
+
+.hover:hover .img-hover-zoom{@include zoom(1.1); @include transition(1.5);}
+.hover .img-hover-zoom{@include zoom(1);@include transition(1.5);}
+
+.border-red{border-color:$theme-secondary!important;border-width:2px!important;} 
+
+.btn-theme-primary{color:$theme-secondary; &:hover{background-color:$theme-primary-light;color:$theme-secondary-dark;}}
+.btn-theme-accent{color:$theme-secondary; &:hover{background-color:$theme-accent-light;color:$theme-secondary-dark;}}

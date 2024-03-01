@@ -1,0 +1,97 @@
+header{
+    .navbar-brand{
+        display: block;
+        width: 129px; height:100px; text-indent: -500px;overflow: hidden;
+        background-image: url('/img/website/logo.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include media-breakpoint-max(968px){
+            height:75px;
+        }
+    }
+    .navbar {
+    .nav-link{
+        font-size:15px; 
+        color:$theme-secondary;        
+        margin-right:1.25em;
+        border-bottom: 5px solid white;
+        @include media-breakpoint-max(768px){
+            margin-right:0em;
+        }
+/*         @include media-breakpoint-max(992px){
+            border-left: 5px solid white;
+            border-bottom-width: 0;
+            padding-left: 15px;
+        } */
+        //border-radius: 2px;
+        &:hover{
+            border-bottom: 5px solid $theme-accent-verylight;
+            color:$theme-secondary-dark;
+/*             @include media-breakpoint-max(992px){
+                border-left: 5px solid $theme-accent-verylight;
+                border-bottom-width: 0;
+                padding-left: 15px;
+
+            } */
+        }
+
+    }
+    .nav-item:last-child .nav-link{margin-right:0;}
+    .nav-link.active{
+        font-size:15px;
+        @extend .weight-medium;
+        border-bottom: 5px solid $theme-accent;
+        color:$theme-secondary-dark;
+/*         @include media-breakpoint-max(992px){
+            border-left: 5px solid $theme-accent;
+            border-bottom-width: 0;
+            padding-left: 15px;
+        } */
+    }
+    .navbar-toggler {
+        padding:3px;
+        svg{
+            width: 40px;
+            height: 40px;
+            color: $theme-secondary;
+        }
+    }
+    .offcanvas-body{
+        padding-top:0;
+    }
+    
+}
+.nav-item:last-child .dropdown-menu{ right:0;}
+.dropdown{
+    ul.dropdown-menu{
+        padding: 0; 
+        border-width:0;
+        //border-color: $theme-secondary-verylight;
+        //border-top: 1px solid $theme-accent;
+        border-radius: 0 0 3px 3px;
+        @include media-breakpoint-max(798px){
+            border-radius: 0;
+        }
+        @extend .shadow;
+        overflow: hidden;
+    }
+    .nav-link.show{
+        @include media-breakpoint-min(798px){
+            border-bottom: 5px solid $theme-secondary-light;
+        }
+        color:$theme-secondary-dark;
+        //&:hover{border-bottom-color:white ;}
+    }
+    .dropdown-item{
+        padding: 0.6em 0.8em;
+        &:hover{
+            background-color: $theme-accent;
+            color:$theme-secondary-dark;
+        }
+    }
+    .dropdown-item.active, .dropdown-item.active:hover{
+        background-color: $theme-primary;
+            color:$theme-secondary-dark;
+    }
+}
+}

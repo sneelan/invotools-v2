@@ -1,0 +1,93 @@
+$h1 : 3.625rem; //58px    1rem=16px //
+$h2 : 2.375rem; //38px//
+$h3 : 2rem; //28px//
+$h4 : 1.75rem; //20px// 
+$h5 : 1.5rem;  
+$h6 : 1.25rem; 
+$para: 1rem; //13px
+$small: 0.875rem; // 14px
+$xsmall: 0.75rem; //12px//
+
+$size-xs: 0.75rem;
+$size-sm: 0.85rem;
+$size-md: 1rem;
+$size-lg: 1.25rem;
+$size-xl: 1.5rem;
+$table-font:0.95rem; // 15px
+$form-input:0.95rem; // 15px
+$btn-size-lg: 1.15rem; //18px
+$btn-size: 1rem; //16px
+
+//font-family: 'Montserrat', sans-serif;
+//@font-face { font-family: 'Montserrat'; src: url('fonts/Montserrat-Regular.ttf'); } 
+//@font-face { font-family: 'Gilroy-bold'; src: url('font/gilroy/Gilroy-ExtraBold.ttf'); } 
+//@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=Saira+Condensed:wght@100&family=Teko:wght@300;500&family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,500&display=swap');
+
+/* @font-face { font-family: 'Chanel-regular'; src: url('assets/fonts/ABChanel_Corpo-Regular_web.ttf'); } 
+@font-face { font-family: 'Chanel-light'; src: url('assets/fonts/ABChanel_Corpo-Light_web.ttf'); } 
+@font-face { font-family: 'Chanel-extralight'; src: url('assets/ABChanel_Corpo-Extra_Light_web.ttf'); } 
+@font-face { font-family: 'Chanel-bold'; src: url('assets/ABChanel_Corpo-Semi_Bold_web.ttf'); } 
+@font-face { font-family: 'Helvetica'; src: url('assets/fonts/Helvetica-Light.ttf'); } 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@600&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;600;700&display=swap'); */
+
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+//$font-primary : 'Open Sans', sans-serif; 
+//$font-secondary : 'Open Sans', sans-serif;
+
+//@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Roboto:wght@400;700&display=swap');
+//$font-primary : 'Raleway', sans-serif; 
+//$font-secondary : 'Nunito Sans', sans-serif;
+
+//$font-secondary : 'Montserrat', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800&display=swap');
+$font-primary : 'Fira Sans', sans-serif; 
+$font-secondary : 'Fira Sans', sans-serif;
+
+
+
+body {
+    font-family:$font-primary;
+    font-size: $para !important;
+    color: $theme-secondary !important;
+    @include media-breakpoint-min(992px) {font-size:0.85rem!important;   }
+}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:$font-primary;margin: 0; font-weight: bold; margin-bottom:10px;}
+.h1, h1{   
+    font-size:$h1;
+    line-height:150%; margin-bottom:14px;
+}
+.h2, h2{ 
+    font-size:$h2;line-height:145%; margin-bottom:14px;
+}
+.h3, h3{ 
+    font-size:$h3;line-height:140%;     
+}
+.h4{ 
+    font-size:$h4; line-height:135%;    
+}
+.h5, h5{ font-size:$h5;line-height:135%;}
+.h6, h6{ font-size:$h6;line-height:135%;}
+.para, p{font-size:$para; line-height:170%; color:$theme-secondary; margin-bottom:14px;
+}  
+
+.font-primary{font-family:$font-primary;}
+.font-secondary{font-family:$font-secondary;}
+
+.size-xs{ font-size: $size-xs;}
+.size-sm{ font-size: $size-sm;}
+.size-md{ font-size: $size-md;}
+.size-lg{ font-size: $size-lg;}
+.size-xl{ font-size: $size-xl;}
+
+.weight-light {font-weight: 300;}
+.weight-regular {font-weight: 400;}
+.weight-medium {font-weight: 500;}
+.weight-semibold {font-weight: 600;}
+.weight-bold {font-weight: 700;}
+.weight-extrabold {font-weight: 800;}

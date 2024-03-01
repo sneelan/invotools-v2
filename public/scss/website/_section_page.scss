@@ -1,0 +1,12 @@
+body{  
+  background-color: $page-bg;
+  line-height: 125%; 
+}
+.container-fluid{ max-width:1870px;}
+
+#hero{
+  @include media-breakpoint-min(992px){
+    min-height: calc( 100vh - 116px - 53px);
+  }
+
+}
