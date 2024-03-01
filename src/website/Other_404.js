@@ -23,7 +23,7 @@ export default () => (
 
           </div>
           <div className="col-lg-6 p-0 rder-first order-lg-last mt-3 mt-lg-0 text-center ">
-            <img src='/img/website/other_404.png' className='img-fluid' />
+            <img src='/img/website/other-404.png' className='img-fluid' />
           </div>
         </div>
       </main>

@@ -23,7 +23,7 @@ You do not have access to this page.</h3>
 
           </div>
           <div className="col-lg-6 p-0 rder-first order-lg-last mt-3 mt-lg-0 text-center ">
-            <img src='/img/website/other-403.png' />
+            <img src='/img/website/other-403.png' className='img-fluid' />
           </div>
         </div>
       </main>
