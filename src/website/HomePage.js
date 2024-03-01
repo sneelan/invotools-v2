@@ -34,12 +34,13 @@ const HomePage = () => {
     document.head.appendChild(link);
     return () => {if (link) {link.remove();}if (bootstrapStylesheet) {bootstrapStylesheet.remove();}};
   }, []);
-
-
+ 
   return (
     <>   
+    
      <div className="container-fluid px-2" >
-      <Aroot_Header/>
+      <Aroot_Header/>    
+      {!pathname[2] && <Aroot_Content />}     
       {pathname[2]==='home' && <Aroot_Content />}     
       {pathname[3]==='postlogout' && <Other_Postlogout />}     
       {pathname[3]==='404' && <Other_404 />}     
@@ -47,7 +48,7 @@ const HomePage = () => {
       {pathname[3]==='500' && <Other_500 />}     
       {pathname[3]==='503' && <Other_503 />}     
     </div>
-    {pathname[2] != 'home' && pathname[2] != 'other' && <Inner_Page title={title} path={pathname[2]}/>} 
+    {pathname[2] && pathname[2] != 'home' && pathname[2] != 'other' && <Inner_Page title={title} path={pathname[2]}/>} 
     <Aroot_Footer/>
     </>
   );
