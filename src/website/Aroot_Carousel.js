@@ -5,10 +5,10 @@ import Slider from "react-slick";
 
 export default () => {
     function CustomNextArrow(props) {
-        const { onClick } = props;return (<div className="neelan-next neelan-arrow" onClick={onClick}><img src="/img/website/btn-next-dark.svg" alt="Next" width='30px' /></div>);
+        const { onClick } = props;return (<div className="neelan-next neelan-arrow" onClick={onClick}><img src="/img/website/btn-next-dark.svg" alt="Next" width='38px' /></div>);
       }
       function CustomPrevArrow(props) {
-        const { onClick } = props;return (<div className="neelan-prev neelan-arrow" onClick={onClick}><img src="/img/website/btn-prev-dark.svg" alt="Next" width='30px' /></div>);
+        const { onClick } = props;return (<div className="neelan-prev neelan-arrow" onClick={onClick}><img src="/img/website/btn-prev-dark.svg" alt="Next" width='38px' /></div>);
       }
     const settings = {
         dots: true,

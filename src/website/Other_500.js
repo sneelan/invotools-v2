@@ -2,7 +2,10 @@ import React  from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import Aroot_Carousel from './Aroot_Carousel';
 import { NavLink } from 'react-router-dom';
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import HomeIcon from '@mui/icons-material/Home';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import Snippet_ErrorLinks from './Snippet_ErrorLinks';
 export default () => (
     <>       
       <main>
@@ -18,9 +21,7 @@ Looks like  server failed to load your request.</h2>
               </span>              
             </p>
             <div>
-            <NavLink className="me-3 btn btn-primary" onClick={() => window.history.back()}>Go Back</NavLink>
-              <NavLink className="me-3 btn btn-primary" to="/website/home">Home</NavLink>
-              <NavLink className=" btn btn-primary" to="/website/help">Help</NavLink>
+            <Snippet_ErrorLinks/>
             </div>
 
           </div>
