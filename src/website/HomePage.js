@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import Aroot_Header from './Aroot_Header';
+import Aroot_Header from './Aroot_Header.js'; 
 import Aroot_Content from './Aroot_Content';
 import Aroot_Footer from './Aroot_Footer';
 import { useLocation } from 'react-router-dom';
@@ -13,12 +13,12 @@ import Other_403 from './Other_403.js';
 
 const HomePage = () => {
   const location = useLocation();
-  const pathname = location.pathname.split('/');
+  const urlpath = location.pathname.split('/');
   let title;
-  if(pathname[2] === 'faq'){title='Frequently Asked Questions';}
-  if(pathname[2] === 'tutorials'){title='Tutorials';}
-  if(pathname[2] === 'documentation'){title='Documentation';}
-  if(pathname[2] === 'support'){title='Support';}
+  if(urlpath[2] === 'faq'){title='Frequently Asked Questions';}
+  if(urlpath[2] === 'tutorials'){title='Tutorials';}
+  if(urlpath[2] === 'documentation'){title='Documentation';}
+  if(urlpath[2] === 'support'){title='Support';}
 
 
   useEffect(() => {    
@@ -39,16 +39,16 @@ const HomePage = () => {
     <>   
     
      <div className="container-fluid px-2" >
-      <Aroot_Header/>    
-      {!pathname[2] && <Aroot_Content />}     
-      {pathname[2]==='home' && <Aroot_Content />}     
-      {pathname[3]==='postlogout' && <Other_Postlogout />}     
-      {pathname[3]==='404' && <Other_404 />}     
-      {pathname[3]==='403' && <Other_403 />}     
-      {pathname[3]==='500' && <Other_500 />}     
-      {pathname[3]==='503' && <Other_503 />}     
+      <Aroot_Header urlpath2={urlpath[2]}  />    
+      {!urlpath[2] && <Aroot_Content />}     
+      {urlpath[2]==='home' && <Aroot_Content />}     
+      {urlpath[3]==='postlogout' && <Other_Postlogout />}     
+      {urlpath[3]==='404' && <Other_404 />}     
+      {urlpath[3]==='403' && <Other_403 />}     
+      {urlpath[3]==='500' && <Other_500 />}     
+      {urlpath[3]==='503' && <Other_503 />}     
     </div>
-    {pathname[2] && pathname[2] != 'home' && pathname[2] != 'other' && <Inner_Page title={title} path={pathname[2]}/>} 
+    {urlpath[2] && urlpath[2] != 'home' && urlpath[2] != 'other' && <Inner_Page title={title} urlpath={urlpath[2]}/>} 
     <Aroot_Footer/>
     </>
   );

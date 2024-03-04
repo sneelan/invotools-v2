@@ -3,7 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-const Aroot_Header = () => {
+const Aroot_Header = ({urlpath2}) => {
   const [menuState, setMenuState] = useState('');
   const toggleMenu = () => {
     if (menuState === '') {
@@ -98,10 +98,12 @@ const Aroot_Header = () => {
                         <li className="nav-item"><NavLink activeClassName="active" onClick={() => {LinkClicked('Documentation');}} className="nav-link" to="/website/documentation">Documentation</NavLink></li>
                         <li className="nav-item"><NavLink activeClassName="active" onClick={() => {LinkClicked('Support');}} className="nav-link" to="/website/support">Support</NavLink></li>
 
-                        <li className="nav-item dropdown">
-                          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                          </a>
+                        <li className="nav-item dropdown">                        
+                          <Link 
+                          className={`nav-link dropdown-toggle ${urlpath2 === 'other' ? 'active' : ''}`}
+                          role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown
+                          </Link>
                           <ul className="dropdown-menu">
                           
 {/*                         <li><Link className="dropdown-item" onClick={() => {LinkClicked('Logged Out');}} >Post Logout</Link></li>

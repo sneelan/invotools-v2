@@ -2472,7 +2472,7 @@ header .navbar-brand {
   }
 }
 header .navbar .nav-link {
-  font-size: 15px;
+  font-size: 16px;
   color: #1E1E1E;
   margin-right: 1.25em;
   border-bottom: 5px solid white;
@@ -2525,6 +2525,9 @@ header .navbar .offcanvas-body {
 header .nav-item:last-child .dropdown-menu {
   right: 0;
 }
+header .dropdown {
+  font-size: 16px;
+}
 header .dropdown ul.dropdown-menu {
   padding: 0;
   border-width: 0;
@@ -2541,7 +2544,7 @@ header .dropdown .nav-link.show {
 }
 @media screen and (min-width: 798px) {
   header .dropdown .nav-link.show {
-    border-bottom: 5px solid #A7A6A6;
+    border-bottom: 5px solid #1E1E1E;
   }
 }
 header .dropdown .dropdown-item {
@@ -2733,6 +2736,11 @@ header .dropdown .dropdown-item.active, header .dropdown .dropdown-item.active:h
 .btn {
   padding-left: 1.25em;
   padding-right: 1.25em;
+}
+
+.btn-primary:hover {
+  background-color: #FFC500;
+  border-color: #FFC500;
 }
 
 section {
