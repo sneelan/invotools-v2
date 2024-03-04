@@ -8,7 +8,7 @@ export default () => (
       <main>
         <div id="hero" className='row p-0 m-0 align-items-center container-lg m-auto'>
           <div className="col-lg-6 px-5 pe-lg-4 text-center text-lg-start order-last order-lg-first my-3 my-lg-0">
-            <h3>You've Been Successfully Logged Out, See You Next Time!</h3>
+            <h2>You've Been Successfully Logged Out , See You Next Time!</h2>
             <p className=''>Thank you for using our administrative web portal. Your session has been ended. For security purposes, please close your browser window. <br/>
             If you need to re-access your account, please click on login button.
             </p>

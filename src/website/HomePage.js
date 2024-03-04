@@ -16,6 +16,7 @@ const HomePage = () => {
   const urlpath = location.pathname.split('/');
   let title;
   if(urlpath[2] === 'faq'){title='Frequently Asked Questions';}
+  if(urlpath[2] === 'help'){title='Help';}
   if(urlpath[2] === 'tutorials'){title='Tutorials';}
   if(urlpath[2] === 'documentation'){title='Documentation';}
   if(urlpath[2] === 'support'){title='Support';}

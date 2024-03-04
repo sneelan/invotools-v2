@@ -117,6 +117,7 @@ const Aroot_Header = ({urlpath2}) => {
                             <li><NavLink activeClassName="active" onClick={() => {LinkClicked('FAQ');}} className="dropdown-item" to="/website/other/403">Access Denied</NavLink></li>
                             <li><NavLink activeClassName="active" onClick={() => {LinkClicked('FAQ');}} className="dropdown-item" to="/website/other/500">Server Error</NavLink></li>
                             <li><NavLink activeClassName="active" onClick={() => {LinkClicked('FAQ');}} className="dropdown-item" to="/website/other/503">Maintenance</NavLink></li>
+                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('Help');}} className="dropdown-item" to="/website/help">Help</NavLink></li>
                           </ul>
                         </li>
                       </ul>
