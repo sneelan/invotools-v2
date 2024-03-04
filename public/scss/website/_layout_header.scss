@@ -15,8 +15,10 @@ header{
         color:$theme-secondary;        
         margin-right:1.25em;
         border-bottom: 5px solid white;
+          
         @include media-breakpoint-max(768px){
             margin-right:0em;
+            padding:12px 0 4px 0;
         }
 /*         @include media-breakpoint-max(992px){
             border-left: 5px solid white;

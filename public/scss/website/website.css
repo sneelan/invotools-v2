@@ -2485,6 +2485,7 @@ header .navbar .nav-link {
 @media screen and (max-width: 768px) {
   header .navbar .nav-link {
     margin-right: 0em;
+    padding: 12px 0 4px 0;
   }
 }
 header .navbar .nav-link:hover {
