@@ -3,7 +3,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-const Aroot_Header = ({urlpath2}) => {
+import { useLocation } from 'react-router-dom';
+
+const Aroot_Header = ( ) => {
+  const location = useLocation();
+  const urlpath = location.pathname.split('/');
+
   const [menuState, setMenuState] = useState('');
   const toggleMenu = () => {
     if (menuState === '') {
@@ -100,7 +105,7 @@ const Aroot_Header = ({urlpath2}) => {
 
                         <li className="nav-item dropdown">                        
                           <Link 
-                          className={`nav-link dropdown-toggle ${urlpath2 === 'other' ? 'active' : ''}`}
+                          className={`nav-link dropdown-toggle ${urlpath[2] === 'other' ? 'active' : ''}`}
                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Dropdown
                           </Link>

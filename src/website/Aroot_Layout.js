@@ -1,16 +1,8 @@
 import React, { useEffect } from 'react';
- 
 import Aroot_Header from './Aroot_Header.js'; 
- 
 import Aroot_Footer from './Aroot_Footer';
-import { useLocation } from 'react-router-dom';
-import Inner_Page from './Inner_Page_Root.js';
- 
- 
-export default ({ children }) => {
-  const location = useLocation();
-  const urlpath = location.pathname.split('/');
 
+export default ({ children }) => {
   useEffect(() => {    
     const bootstrapStylesheet = document.createElement('link');
     bootstrapStylesheet.rel = 'stylesheet';
@@ -33,12 +25,8 @@ export default ({ children }) => {
 
   return (
     <>
-      <div className="container-fluid px-2" >
-        <Aroot_Header urlpath2={urlpath[2]}  />  
-      </div> 
-      <div className="container-fluid px-2" >
-        {children}
-      </div>
+      <div className="px-2" ><Aroot_Header /></div>      
+      {children}
       <Aroot_Footer/>
     </>
   );
