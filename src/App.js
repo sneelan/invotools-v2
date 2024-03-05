@@ -75,11 +75,11 @@ const App = () => {
         <Route path="/website/" element={<Aroot_Layout><Aroot_Content /></Aroot_Layout>} />    
         <Route path="/website/home" element={<Aroot_Layout><Aroot_Content /></Aroot_Layout>} />    
         
-        <Route path="/website/faq" element={<Aroot_Layout><Inner_Page_Root title={'FAQ'}><Page_Faq /></Inner_Page_Root></Aroot_Layout>} />    
-        <Route path="/website/tutorials" element={<Aroot_Layout><Inner_Page_Root title={'Tutorials'}> </Inner_Page_Root> </Aroot_Layout>} />    
-        <Route path="/website/documentation" element={<Aroot_Layout><Inner_Page_Root title={'Documentation'} ><Page_Documentation/></Inner_Page_Root></Aroot_Layout>} />    
-        <Route path="/website/support" element={<Aroot_Layout><Inner_Page_Root title={'Support'} /></Aroot_Layout>} />    
-        <Route path="/website/help" element={<Aroot_Layout><Inner_Page_Root title={'Help'} /></Aroot_Layout>} />    
+        <Route path="/website/faq" element={<Aroot_Layout bgcolor={'bg-light'}><Inner_Page_Root title={'FAQ'}><Page_Faq /></Inner_Page_Root></Aroot_Layout>} />    
+        <Route path="/website/tutorials" element={<Aroot_Layout bgcolor={'bg-light'}><Inner_Page_Root title={'Tutorials'}> </Inner_Page_Root> </Aroot_Layout>} />    
+        <Route path="/website/documentation" element={<Aroot_Layout bgcolor={'bg-light'}><Inner_Page_Root title={'Documentation'} ><Page_Documentation/></Inner_Page_Root></Aroot_Layout>} />    
+        <Route path="/website/support" element={<Aroot_Layout bgcolor={'bg-light'}><Inner_Page_Root title={'Support'} /></Aroot_Layout>} />    
+        <Route path="/website/help" element={<Aroot_Layout bgcolor={'bg-light'}><Inner_Page_Root title={'Help'} /></Aroot_Layout>} />    
         
         <Route path="/website/other/postlogout" element={<Aroot_Layout><Other_Postlogout/></Aroot_Layout>} />    
         <Route path="/website/other/404" element={<Aroot_Layout><Other_404/></Aroot_Layout>} />    

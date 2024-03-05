@@ -6,7 +6,7 @@ import Aroot_Carousel from './Aroot_Carousel';
 export default () => (
     <>       
       <main>
-        <div id="hero" className='row p-0 m-0 align-items-center'>
+        <div className='row p-0 m-0 align-items-center'>
           <div className="col-lg-5 px-5 pe-lg-4 text-center text-lg-start order-last order-lg-first my-3 my-lg-0">
             <h2>Welcome to the Invoice and Store Management Portal by <span class="curve-line"> InvoTools</span>
             </h2>

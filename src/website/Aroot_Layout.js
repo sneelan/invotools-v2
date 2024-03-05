@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Aroot_Header from './Aroot_Header.js'; 
 import Aroot_Footer from './Aroot_Footer';
 
-export default ({ children }) => {
+export default ({ children, bgcolor }) => {
   useEffect(() => {    
     const bootstrapStylesheet = document.createElement('link');
     bootstrapStylesheet.rel = 'stylesheet';
@@ -26,7 +26,7 @@ export default ({ children }) => {
   return (
     <>
       <div className="px-2" ><Aroot_Header /></div>      
-      {children}
+      <div id="myfill-height" className={bgcolor ? bgcolor : ''}>{children}</div>
       <Aroot_Footer/>
     </>
   );

@@ -2743,7 +2743,7 @@ header .dropdown .dropdown-item.active, header .dropdown .dropdown-item.active:h
   border-color: #FFC500;
 }
 
-section {
+content {
   padding: 0;
 }
 
@@ -2765,7 +2765,7 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-  #hero {
+  #myfill-height {
     min-height: calc(100vh - 116px - 53px);
   }
 }/*# sourceMappingURL=website.css.map */
