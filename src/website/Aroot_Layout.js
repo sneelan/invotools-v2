@@ -26,7 +26,7 @@ export default ({ children, myclass }) => {
   return (
     <>
       <div className="px-2" ><Aroot_Header /></div>      
-      <div id="myfill-height" className={`container-fluid ${myclass}`}>{children}</div>
+      <div id="myfill-height" className={`container-fluid p-0 ${myclass}`}>{children}</div>
       <Aroot_Footer/>
     </>
   );
