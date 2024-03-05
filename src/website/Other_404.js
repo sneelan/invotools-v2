@@ -7,7 +7,7 @@ import Snippet_ErrorLinks from './Snippet_ErrorLinks';
 export default () => (
     <>       
       <main>
-        <div id="hero" className='row p-0 m-0 align-items-center container-lg m-auto'>
+        <div id="hero" className='row p-0 m-0 align-items-center m-auto'>
           <div className="col-lg-6 px-5 pe-lg-4 text-center text-lg-start order-last order-lg-first my-3 my-lg-0">
             <h2>Oops! <br/>We can’t seem to  find the page you’re looking for.</h2>
             <p className=''>Error code: 404
