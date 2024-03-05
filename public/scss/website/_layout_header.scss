@@ -40,7 +40,6 @@ header{
     }
     .nav-item:last-child .nav-link{margin-right:0;}
     .nav-link.active{
-        font-size:15px;
         @extend .weight-medium;
         border-bottom: 5px solid $theme-accent;
         color:$theme-secondary-dark;

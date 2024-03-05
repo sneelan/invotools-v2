@@ -2502,7 +2502,6 @@ header .navbar .nav-item:last-child .nav-link {
   margin-right: 0;
 }
 header .navbar .nav-link.active {
-  font-size: 15px;
   border-bottom: 5px solid #FFC500;
   color: #000000;
   /*         @include media-breakpoint-max(992px){
