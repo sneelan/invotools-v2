@@ -105,18 +105,11 @@ const Aroot_Header = ({urlpath2}) => {
                           Dropdown
                           </Link>
                           <ul className="dropdown-menu">
-                          
-{/*                         <li><Link className="dropdown-item" onClick={() => {LinkClicked('Logged Out');}} >Post Logout</Link></li>
-                            <li><Link className="dropdown-item" onClick={() => {LinkClicked('Not Found');}} >Not Found</Link></li>
-                            <li><Link className="dropdown-item" onClick={() => {LinkClicked('Access Denied');}} >Access Denied</Link></li>
-                            <li><Link className="dropdown-item" onClick={() => {LinkClicked('Server Error');}} >Server Error</Link></li>
-                            <li><Link className="dropdown-item" onClick={() => {LinkClicked('Maintenance');}} >Maintenance</Link></li> */}
-
-                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('FAQ');}} className="dropdown-item" to="/website/other/postlogout">Post Logout</NavLink></li>
-                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('FAQ');}} className="dropdown-item" to="/website/other/404">Not Found</NavLink></li>
-                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('FAQ');}} className="dropdown-item" to="/website/other/403">Access Denied</NavLink></li>
-                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('FAQ');}} className="dropdown-item" to="/website/other/500">Server Error</NavLink></li>
-                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('FAQ');}} className="dropdown-item" to="/website/other/503">Maintenance</NavLink></li>
+                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('Logged Out');}} className="dropdown-item" to="/website/other/postlogout">Post Logout</NavLink></li>
+                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('Not Found');}} className="dropdown-item" to="/website/other/404">Not Found</NavLink></li>
+                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('Access Denied');}} className="dropdown-item" to="/website/other/403">Access Denied</NavLink></li>
+                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('Server Error');}} className="dropdown-item" to="/website/other/500">Server Error</NavLink></li>
+                            <li><NavLink activeClassName="active" onClick={() => {LinkClicked('Maintenance');}} className="dropdown-item" to="/website/other/503">Maintenance</NavLink></li>
                             <li><NavLink activeClassName="active" onClick={() => {LinkClicked('Help');}} className="dropdown-item" to="/website/help">Help</NavLink></li>
                           </ul>
                         </li>

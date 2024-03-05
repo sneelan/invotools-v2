@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import Aroot_Header from './Aroot_Header.js'; 
-import Aroot_Content from './Aroot_Content';
-import Aroot_Footer from './Aroot_Footer';
+import Aroot_Content from './Aroot_Content.js';
+import Aroot_Footer from './Aroot_Footer.js';
 import { useLocation } from 'react-router-dom';
 import Inner_Page from './Inner_Page_Root.js';
 import Other_Postlogout from './Other_Postlogout.js';
@@ -40,14 +40,17 @@ const HomePage = () => {
     <>   
     
      <div className="container-fluid px-2" >
-      <Aroot_Header urlpath2={urlpath[2]}  />    
-      {!urlpath[2] && <Aroot_Content />}     
-      {urlpath[2]==='home' && <Aroot_Content />}     
-      {urlpath[3]==='postlogout' && <Other_Postlogout />}     
-      {urlpath[3]==='404' && <Other_404 />}     
-      {urlpath[3]==='403' && <Other_403 />}     
-      {urlpath[3]==='500' && <Other_500 />}     
-      {urlpath[3]==='503' && <Other_503 />}     
+      <Aroot_Header urlpath2={urlpath[2]}  />  
+      </div> 
+
+      <div className="container-fluid px-2" > 
+          {!urlpath[2] && <Aroot_Content />}     
+          {urlpath[2]==='home' && <Aroot_Content />}     
+          {urlpath[3]==='postlogout' && <Other_Postlogout />}     
+          {urlpath[3]==='404' && <Other_404 />}     
+          {urlpath[3]==='403' && <Other_403 />}     
+          {urlpath[3]==='500' && <Other_500 />}     
+          {urlpath[3]==='503' && <Other_503 />}     
     </div>
     {urlpath[2] && urlpath[2] != 'home' && urlpath[2] != 'other' && <Inner_Page title={title} urlpath={urlpath[2]}/>} 
     <Aroot_Footer/>

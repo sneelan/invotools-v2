@@ -3,7 +3,7 @@ import React  from 'react';
 import Page_Faq from './Page_Faq';
 
 
-export default ({title, urlpath}) => (
+export default ({title, children}) => (
   <>       
     <section className='bg-light py-3'>
         <div className='text-center text-lg-start xbg-theme-secondary-1 text-secondary'>
@@ -13,7 +13,7 @@ export default ({title, urlpath}) => (
         </div>
         
         <div className="container-xl my-3 px-2">
-        {urlpath === 'faq' && <Page_Faq />} 
+        {children} 
       </div>
     </section>
   </>

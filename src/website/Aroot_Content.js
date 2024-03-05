@@ -19,6 +19,9 @@ export default () => (
           </div>
           <div className="col-lg-7 p-0 rder-first order-lg-last mt-3 mt-lg-0">
             <Aroot_Carousel/>
+
+            {/* if one image */}
+            {/* <img src='/img/website/postlogout.png' className='img-fluid' /> */}
           </div>
         </div>
 

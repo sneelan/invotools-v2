@@ -10,7 +10,17 @@ import ErrorNotFound from './ErrorNotFound';
 import ARootInvoice from './Invoice/ARootInvoice'; 
 import ClientPage from './ClientPage';
 import NeelanPage from './NeelanPage';
-import HomePage from './website/HomePage';
+import HomePage from './website/HomePage____OLD';
+import Aroot_Layout from './website/Aroot_Layout';
+import Aroot_Content from './website/Aroot_Content';
+import Page_Faq from './website/Page_Faq';
+import Inner_Page_Root from './website/Inner_Page_Root';
+import Other_Postlogout from './website/Other_Postlogout';
+import Other_500 from './website/Other_500';
+import Other_503 from './website/Other_503';
+import Other_403 from './website/Other_403';
+import Other_404 from './website/Other_404';
+import Page_Documentation from './website/Page_Documentation';
 
 
 
@@ -62,7 +72,25 @@ const App = () => {
         <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient/:invoLayout" element={<ARootInvoice urlLanguage={urlLanguage} urlColor={urlColor} urlMode={urlMode} selectedLayout={invoLayout}/>}  />
         <Route path="/neelan" element={<NeelanPage />} />
 
-        <Route path="/website/*" element={<HomePage/>} />    
+        <Route path="/website/" element={<Aroot_Layout><Aroot_Content /></Aroot_Layout>} />    
+        <Route path="/website/home" element={<Aroot_Layout><Aroot_Content /></Aroot_Layout>} />    
+        
+        <Route path="/website/faq" element={<Aroot_Layout><Inner_Page_Root title={'FAQ'}><Page_Faq /></Inner_Page_Root></Aroot_Layout>} />    
+        <Route path="/website/tutorials" element={<Aroot_Layout><Inner_Page_Root title={'Tutorials'}> </Inner_Page_Root> </Aroot_Layout>} />    
+        <Route path="/website/documentation" element={<Aroot_Layout><Inner_Page_Root title={'Documentation'} ><Page_Documentation/></Inner_Page_Root></Aroot_Layout>} />    
+        <Route path="/website/support" element={<Aroot_Layout><Inner_Page_Root title={'Support'} /></Aroot_Layout>} />    
+        <Route path="/website/help" element={<Aroot_Layout><Inner_Page_Root title={'Help'} /></Aroot_Layout>} />    
+        
+        <Route path="/website/other/postlogout" element={<Aroot_Layout><Other_Postlogout/></Aroot_Layout>} />    
+        <Route path="/website/other/404" element={<Aroot_Layout><Other_404/></Aroot_Layout>} />    
+        <Route path="/website/other/403" element={<Aroot_Layout><Other_403/></Aroot_Layout>} />    
+        <Route path="/website/other/500" element={<Aroot_Layout><Other_500/></Aroot_Layout>} />    
+        <Route path="/website/other/503" element={<Aroot_Layout><Other_503/></Aroot_Layout>} />    
+
+
+
+
+
 
         {/* Wildcard route to match any other paths */}
         <Route path="*" element={<ErrorNotFound />} />
