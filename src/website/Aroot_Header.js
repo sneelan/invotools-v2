@@ -69,7 +69,11 @@ const Aroot_Header = ( ) => {
 
     const LinkClicked = (title) => {
       if (menuState === 'show') {toggleMenu();}
-      document.title = `${title} - Admin Dashboard | Invotools`;
+      if(title){
+        document.title = `${title} - Admin Dashboard | Invotools`;
+      }else{
+        document.title = 'Admin Dashboard | Invotools.io';
+      }
     };
 
     useEffect(() => {    
@@ -84,7 +88,7 @@ const Aroot_Header = ( ) => {
         <header>
             <nav className="navbar navbar-expand-md" >
                 <div className="container-fluid p-0">
-                  <Link className="navbar-brand" to="/website/home">Invotools</Link >
+                  <Link className="navbar-brand" to="/website/home" onClick={() => {LinkClicked();}}>Invotools</Link >
                   <button className="navbar-toggler" onClick={toggleMenu} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
                   <MenuIcon />
                   </button>
@@ -96,7 +100,7 @@ const Aroot_Header = ( ) => {
                     </div>
                     <div className="offcanvas-body">
                       <ul className="navbar-nav justify-content-end flex-grow-1 pe-0">
-                        <li className="nav-item"><NavLink activeClassName="active" onClick={() => {LinkClicked('Home');}} className="nav-link" to="/website/home" >Home</NavLink></li>
+                        <li className="nav-item"><NavLink activeClassName="active" onClick={() => {LinkClicked();}} className="nav-link" to="/website/home" >Home</NavLink></li>
                         <li className="nav-item"><NavLink activeClassName="active" onClick={() => {LinkClicked('FAQ');}} className="nav-link" to="/website/faq">FAQ</NavLink></li>
 
                         <li className="nav-item"><NavLink activeClassName="active" onClick={() => {LinkClicked('Tutorials');}} className="nav-link" to="/website/tutorials">Tutorials</NavLink></li>

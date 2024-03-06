@@ -2558,11 +2558,24 @@ header .dropdown .dropdown-item.active, header .dropdown .dropdown-item.active:h
   color: #000000;
 }
 
+.neel-slider {
+  padding-bottom: 14px;
+}
 .neel-slider .neelan-prev {
   left: 15px;
 }
+@media screen and (max-width: 768px) {
+  .neel-slider .neelan-prev {
+    left: 2px;
+  }
+}
 .neel-slider .neelan-next {
   right: 15px;
+}
+@media screen and (max-width: 768px) {
+  .neel-slider .neelan-next {
+    right: 2px;
+  }
 }
 .neel-slider .slick-list {
   z-index: 100;
@@ -2570,7 +2583,7 @@ header .dropdown .dropdown-item.active, header .dropdown .dropdown-item.active:h
 .neel-slider .neelan-arrow {
   z-index: 101;
   position: absolute;
-  top: 50%;
+  top: 46%;
   cursor: pointer;
 }
 @media screen and (min-width: 968px) {
@@ -2585,7 +2598,12 @@ header .dropdown .dropdown-item.active, header .dropdown .dropdown-item.active:h
 }
 .neel-slider .slick-dots {
   z-index: 102;
-  bottom: 50px;
+  bottom: -10px;
+}
+@media screen and (max-width: 768px) {
+  .neel-slider .slick-dots {
+    bottom: -8px;
+  }
 }
 @media screen and (min-width: 968px) {
   .neel-slider .slick-dots {
@@ -2594,14 +2612,25 @@ header .dropdown .dropdown-item.active, header .dropdown .dropdown-item.active:h
 }
 .neel-slider .slick-dots li button, .neel-slider .slick-dots li {
   width: 35px;
-  height: 10px;
+  height: 8px;
+}
+@media screen and (max-width: 768px) {
+  .neel-slider .slick-dots li button, .neel-slider .slick-dots li {
+    width: 45px;
+    height: 10px;
+  }
 }
 .neel-slider .slick-dots li button:before {
   background-color: #1E1E1E;
   content: "";
   width: 35px;
-  height: 10px;
-  border: 1px solid white;
+  height: 8px;
+}
+@media screen and (max-width: 768px) {
+  .neel-slider .slick-dots li button:before {
+    width: 45px;
+    height: 10px;
+  }
 }
 @media screen and (min-width: 968px) {
   .neel-slider:hover .slick-dots {
