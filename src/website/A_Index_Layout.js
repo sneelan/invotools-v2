@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Aroot_Header from './Aroot_Header.js'; 
-import Aroot_Footer from './Aroot_Footer';
+import Aroot_Footer from './Aroot_Footer.js';
 
 export default ({ children, myclass }) => {
   useEffect(() => {    

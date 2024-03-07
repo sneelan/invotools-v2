@@ -10,8 +10,7 @@ import ErrorNotFound from './ErrorNotFound';
 import ARootInvoice from './Invoice/ARootInvoice'; 
 import ClientPage from './ClientPage';
 import NeelanPage from './NeelanPage';
-import HomePage from './website/HomePage____OLD';
-import Aroot_Layout from './website/Aroot_Layout';
+import A_Index_Layout from './website/A_Index_Layout';
 import Aroot_Content from './website/Aroot_Content';
 import Page_Faq from './website/Page_Faq';
 import Inner_Page_Root from './website/Inner_Page_Root';
@@ -72,20 +71,20 @@ const App = () => {
         <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient/:invoLayout" element={<ARootInvoice urlLanguage={urlLanguage} urlColor={urlColor} urlMode={urlMode} selectedLayout={invoLayout}/>}  />
         <Route path="/neelan" element={<NeelanPage />} />
 
-        <Route path="/website/" element={<Aroot_Layout><Aroot_Content /></Aroot_Layout>} />    
-        <Route path="/website/home" element={<Aroot_Layout><Aroot_Content /></Aroot_Layout>} />    
+        <Route path="/website/" element={<A_Index_Layout><Aroot_Content /></A_Index_Layout>} />    
+        <Route path="/website/home" element={<A_Index_Layout><Aroot_Content /></A_Index_Layout>} />    
         
-        <Route path="/website/faq" element={<Aroot_Layout myclass={'bg-light'}><Inner_Page_Root title={'FAQ'}><Page_Faq /></Inner_Page_Root></Aroot_Layout>} />    
-        <Route path="/website/tutorials" element={<Aroot_Layout myclass={'bg-light'}><Inner_Page_Root title={'Tutorials'}> </Inner_Page_Root> </Aroot_Layout>} />    
-        <Route path="/website/documentation" element={<Aroot_Layout myclass={'bg-light'}><Inner_Page_Root title={'Documentation'} ><Page_Documentation/></Inner_Page_Root></Aroot_Layout>} />    
-        <Route path="/website/support" element={<Aroot_Layout myclass={'bg-light'}><Inner_Page_Root title={'Support'} /></Aroot_Layout>} />    
-        <Route path="/website/help" element={<Aroot_Layout myclass={'bg-light'}><Inner_Page_Root title={'Help'} /></Aroot_Layout>} />    
+        <Route path="/website/faq" element={<A_Index_Layout myclass={'bg-light'}><Inner_Page_Root title={'FAQ'}><Page_Faq /></Inner_Page_Root></A_Index_Layout>} />    
+        <Route path="/website/tutorials" element={<A_Index_Layout myclass={'bg-light'}><Inner_Page_Root title={'Tutorials'}> </Inner_Page_Root> </A_Index_Layout>} />    
+        <Route path="/website/documentation" element={<A_Index_Layout myclass={'bg-light'}><Inner_Page_Root title={'Documentation'} ><Page_Documentation/></Inner_Page_Root></A_Index_Layout>} />    
+        <Route path="/website/support" element={<A_Index_Layout myclass={'bg-light'}><Inner_Page_Root title={'Support'} /></A_Index_Layout>} />    
+        <Route path="/website/help" element={<A_Index_Layout myclass={'bg-light'}><Inner_Page_Root title={'Help'} /></A_Index_Layout>} />    
         
-        <Route path="/website/other/postlogout" element={<Aroot_Layout myclass={'flex-center'}><Other_Postlogout/></Aroot_Layout>} />    
-        <Route path="/website/other/404" element={<Aroot_Layout myclass={'flex-center'}><Other_404/></Aroot_Layout>} />    
-        <Route path="/website/other/403" element={<Aroot_Layout myclass={'flex-center'}><Other_403/></Aroot_Layout>} />    
-        <Route path="/website/other/500" element={<Aroot_Layout myclass={'flex-center'}><Other_500/></Aroot_Layout>} />    
-        <Route path="/website/other/503" element={<Aroot_Layout myclass={'flex-center'}><Other_503/></Aroot_Layout>} />    
+        <Route path="/website/other/postlogout" element={<A_Index_Layout myclass={'flex-center'}><Other_Postlogout/></A_Index_Layout>} />    
+        <Route path="/website/other/404" element={<A_Index_Layout myclass={'flex-center'}><Other_404/></A_Index_Layout>} />    
+        <Route path="/website/other/403" element={<A_Index_Layout myclass={'flex-center'}><Other_403/></A_Index_Layout>} />    
+        <Route path="/website/other/500" element={<A_Index_Layout myclass={'flex-center'}><Other_500/></A_Index_Layout>} />    
+        <Route path="/website/other/503" element={<A_Index_Layout myclass={'flex-center'}><Other_503/></A_Index_Layout>} />    
 
 
 

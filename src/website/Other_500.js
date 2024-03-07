@@ -1,6 +1,6 @@
 import React  from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import Aroot_Carousel from './Aroot_Carousel';
+import Aroot_Carousel from './Snippet_Carousel';
 import { NavLink } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import HomeIcon from '@mui/icons-material/Home';

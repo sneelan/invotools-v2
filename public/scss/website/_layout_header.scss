@@ -10,8 +10,13 @@ header{
         }
     }
     .navbar {
-    .nav-link{
-        font-size:16px; 
+        .nav-link, .dropdown li a{
+            font-size:18px;
+            @include media-breakpoint-max(992px){
+                font-size:16px;
+            }
+        }
+        .nav-link{         
         color:$theme-secondary;        
         margin-right:1.25em;
         border-bottom: 5px solid white;
@@ -64,7 +69,6 @@ header{
 }
 .nav-item:last-child .dropdown-menu{ right:0;}
 .dropdown{ 
-    font-size:16px;
     ul.dropdown-menu{
         padding: 0; 
         border-width:0;

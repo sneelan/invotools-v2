@@ -4,6 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import AOS from 'aos';
 
 const Aroot_Header = ( ) => {
   const location = useLocation();
@@ -74,6 +75,7 @@ const Aroot_Header = ( ) => {
       }else{
         document.title = 'Admin Dashboard | Invotools.io';
       }
+      
     };
 
     useEffect(() => {    

@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800&display=swap");
+.transition-half {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.transition-1 {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
 .bg-theme-primary {
   background-color: #FFA100;
 }
@@ -2471,8 +2481,15 @@ header .navbar-brand {
     height: 75px;
   }
 }
+header .navbar .nav-link, header .navbar .dropdown li a {
+  font-size: 18px;
+}
+@media screen and (max-width: 992px) {
+  header .navbar .nav-link, header .navbar .dropdown li a {
+    font-size: 16px;
+  }
+}
 header .navbar .nav-link {
-  font-size: 16px;
   color: #1E1E1E;
   margin-right: 1.25em;
   border-bottom: 5px solid white;
@@ -2523,9 +2540,6 @@ header .navbar .offcanvas-body {
 }
 header .nav-item:last-child .dropdown-menu {
   right: 0;
-}
-header .dropdown {
-  font-size: 16px;
 }
 header .dropdown ul.dropdown-menu {
   padding: 0;
@@ -2783,6 +2797,10 @@ content {
   padding-bottom: 13px;
 }
 
+/* .bg-light{
+    background-color:#fff8f2!important;
+    //background-color:$theme-primary-verylight!important;
+} */
 body {
   background-color: #ffffff;
   line-height: 125%;

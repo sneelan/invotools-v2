@@ -1,6 +1,6 @@
 import React  from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import Aroot_Carousel from './Aroot_Carousel';
+import Snippet_Carousel from './Snippet_Carousel';
 
 
 export default () => (
@@ -18,7 +18,7 @@ export default () => (
 
           </div>
           <div className="col-lg-7 p-0 rder-first order-lg-last mt-3 mt-lg-0">
-            <Aroot_Carousel/>
+            <Snippet_Carousel/>
 
             {/* if one image */}
             {/* <img src='/img/website/postlogout.png' className='img-fluid' /> */}

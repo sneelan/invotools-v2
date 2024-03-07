@@ -24,6 +24,9 @@
     -o-transition:$value+s;
     transition:$value+s;
 }
+.transition-half{@include transition();}
+.transition-1{@include transition(1);}
+
 @mixin transform($xvalue:0, $yvalue:0) {     
     -webkit-transform: translate($xvalue, $yvalue); 
     -moz-transform: translate($xvalue, $yvalue); 
