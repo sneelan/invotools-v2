@@ -1,0 +1,116 @@
+{
+	"retailerId": "1001",
+	"locale": "en_GB",
+	"widgetAreaCSS": "",
+	"rows": [
+		{
+			"rowNumber": "2",
+			"columns": [
+				
+				{					
+					"title": "",
+					"width": "",
+					"height": "",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/breitling/widget-wishlist-short.html\" width=\"340\" height=\"416\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentCSS": "",
+
+					"displayOrder": "2",
+					"displayStatus": "active",					
+					"displayDevice": "mobile, tablet, desktop",
+					"displayType": "pdf, portal",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024",
+					"toggleStatus": "inactive",
+					"toggleExpand": "yes"
+				}
+			]
+		},		
+{
+			"rowNumber": "1",
+			"columns": [
+				{
+					"title": "Feedback Form",
+					"width": "",
+					"height": "",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-feedback.html\" frameborder=\"0\" style=\"height:1020px;width:100%;\"></iframe>",
+					"contentCSS": "",
+					"displayOrder": "1",
+					"displayStatus": "active",
+					"displayDevice": "mobile, tablet, desktop",
+					"displayType": "pdf",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024",
+					"toggleStatus": "active",
+					"toggleExpand": "no"
+				}
+			]
+		},{
+			"rowNumber": "1",
+			"columns": [
+				{
+					"title": "Terms & Conditions",
+					"width": "",
+					"height": "",
+					"contentHTML": "<div class=\"t-j\" style=\"padding:1em 2em ;\">By making a purchase through this e-commerce platform, you agree to abide by the following terms and conditions. Payment is due upon order placement. We accept [payment methods], and your order will be processed upon successful payment confirmation. All sales are final, and no refunds or exchanges are permitted unless the product is damaged or defective. Shipping costs and delivery times may vary based on your location. We reserve the right to modify or cancel orders at our discretion. For any inquiries or concerns, please contact our customer support at <u>help@ayatacommerce.com</u></br>Thank you for choosing.</br><b>AyataCommerce</b></div>",
+					"contentCSS": "  ",
+					"displayOrder": "1",
+					"displayStatus": "active",
+					"displayDevice": "mobile, tablet, desktop",
+					"displayType": "pdf",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024",
+					"toggleStatus": "active",
+					"toggleExpand": "no"
+					
+				}
+			]
+		},
+		{
+			"rowNumber": "5",
+			"columns": [
+				{
+					"displayOrder": "1",
+					"displayStatus": "active",
+					"toggleStatus": "inactive",
+					"toggleExpand": "no",
+					"title": "Watch Our Promotion Video",
+					"width": "",
+					"height": "",
+					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/breitling/widget-video.html\" height=\"405\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentCSS": "",
+					"displayDevice": "mobile, tablet, desktop",
+					"displayType": "Only Portal",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024"
+					
+				} 
+			]
+		}, 
+	
+		
+		
+		
+		{
+			"rowNumber": "5",
+			"columns": [
+				{
+					"displayOrder": "1",
+					"displayStatus": "active",
+					"toggleStatus": "inactive",
+					"toggleExpand": "no",
+					"titlex": "Recent Products - Image Slideshow",
+					"width": "",
+					"height": "",
+					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/breitling/widget-carousel-jeweller.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentCSS": "#client-widget-en-4-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
+					"displayDevice": "mobile, tablet, desktop",
+					"displayType": "Only Portal",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024"
+					
+				}
+			]
+		}
+		
+	]
+}
