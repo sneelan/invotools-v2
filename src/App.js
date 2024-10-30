@@ -20,7 +20,7 @@ import Other_503 from './website/Other_503';
 import Other_403 from './website/Other_403';
 import Other_404 from './website/Other_404';
 import Page_Documentation from './website/Page_Documentation';
-
+import ViewId from './View_id';
 
 
 const App = () => {
@@ -88,7 +88,7 @@ const App = () => {
 
 
 
-
+       <Route path="/view/508587d1-347c-46c3-9f45-083db8bc4fbb" element={<ViewId src="https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English" />} />
 
 
         {/* Wildcard route to match any other paths */}
