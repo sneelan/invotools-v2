@@ -89,6 +89,7 @@ const App = () => {
 
 
        <Route path="/view/508587d1-347c-46c3-9f45-083db8bc4fbb" element={<ViewId src="https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English" />} />
+       <Route path="/sustainability" element={<WidgetAll activeTheme='yellow' language='english'/>} />
 
 
         {/* Wildcard route to match any other paths */}

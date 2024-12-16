@@ -101,6 +101,7 @@ const DeviceButtons = ({ onButtonClick }) =>  {
               </div>
             )}
           </div>
+
         </>
       )}
     </>

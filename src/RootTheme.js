@@ -6,7 +6,7 @@ import WidgetAll from './WidgetAll';
 import DeviceView from './DeviceView';
 import { useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
+import ForestIcon from '@mui/icons-material/Forest';
 
 function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTemplate}){
   const location = useLocation();
@@ -15,6 +15,7 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
   const demoIncludedLang = params.get('language');
   const {simpleClient, simpleTheme} = useParams();  
   const [selectedLayout, setSelectedLayout] = useState('layout-featured');
+  const [isCarbonActive, setIsCarbonActive] = useState(false);
 
   const pathArgument = location.pathname.split('/'); // Split the path into parts
   // Check if pathArgument[2] is not available or empty
@@ -67,7 +68,13 @@ const handleSelectLanguage = (event) => {
   } */
 
 };
-
+const handleCarbonClick = () => {
+  setIsCarbonActive((prevState) => {
+    const newState = !prevState; 
+    setSelectedLanguage(newState ? 'carbon' : 'english'); 
+    return newState;
+  });
+};
 
 // Define styles based on the condition
 const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' || selectedOption === 'tablet-landscape'? `body {background-color: gray !important;background-image: unset !important;}`: '';
@@ -89,7 +96,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                   </span>
     
               <div className='d-block d-md-inline-block me-1'>
-                <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' }}>   
+                <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' , opacity: isCarbonActive ? '0' : ''}}>   
                     {demoIncludedLang ? (
                         demoIncludedLang.split(',').map((lang) => (
                           <option key={lang.toLowerCase()} value={lang.toLowerCase()}>
@@ -150,8 +157,17 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                           </span>   
                           <span className='d-inline-block ms-1' style={{minWidth:'100px',textTransform:'capitalize', fontWeight:'bold'}}>{activeTheme==='maroon'?'Magenta' : activeTheme==='ads'?'Advertising' :activeTheme==='thanks'?'Thanks Giving' : activeTheme==='printer'?'Printer Friendly':activeTheme}  </span>            
                       </div>
-                      </div>
+                      </div>                     
                   )}
+                 <div className='d-block d-md-inline-block' style={{ display: selectedOption !== 'desktop' ? 'none' : '', paddingTop:''}} onClick={handleCarbonClick}>
+                          <div class='flex-center ms-1 bg-white rounded' style={{padding: '0.5em', background: isCarbonActive ? '#9bfc3f' : ''}}>
+                          <span style={{marginRight:'4px'}}>Co2: </span>
+                          <span style={{width:'25px', height:'25px'}}>
+                            <ForestIcon sx={{ fill: 'green !important' }}/>
+                           
+                            </span>
+                      </div>
+                      </div>
               </div>
               </div>
           

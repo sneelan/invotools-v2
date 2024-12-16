@@ -6,6 +6,7 @@ import InvoiceHindi from './InvoiceHindi.js';
 import InvoiceSpanish from './InvoiceSpanish.js';
 import InvoiceArabic from './InvoiceArabic.js';
 import InvoiceFrench from './InvoiceFrench.js';
+import InvoiceCarbon from './InvoiceCarbon.js';
 
 const ARootInvoice = () => {
   const { urlLanguage, urlColor, urlMode, activeTheme, simpleClient, invoLayout } = useParams();  
@@ -140,6 +141,7 @@ if(invoLayout!='layout-featured'){
       :urlLanguage=='spanish'?<InvoiceSpanish/>
       :urlLanguage=='arabic'?<InvoiceArabic/>
       :urlLanguage=='french'?<InvoiceFrench/>
+      :urlLanguage=='carbon'?<InvoiceCarbon/>
        :''}       
        {simpleClient!=='undefined'?
              <style>{`.logo{background-image: url('${imagePath}${simpleClient}.png')!important; background-size: auto;}`}</style>
