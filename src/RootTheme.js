@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WidgetAll from './WidgetAll';
 //import MobilePreview from './MobilePreview';
 //import TabletPreview from './TabletPreview';
 //import TabletPreviewLands from './TabletPreviewLands';
 import DeviceView from './DeviceView';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import ForestIcon from '@mui/icons-material/Forest';
+
 
 function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTemplate}){
   const location = useLocation();
@@ -16,6 +17,7 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
   const {simpleClient, simpleTheme} = useParams();  
   const [selectedLayout, setSelectedLayout] = useState('layout-featured');
   const [isCarbonActive, setIsCarbonActive] = useState(false);
+  const navigate = useNavigate();
 
   const pathArgument = location.pathname.split('/'); // Split the path into parts
   // Check if pathArgument[2] is not available or empty
@@ -57,23 +59,29 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
   };
 
 const [selectedLanguage, setSelectedLanguage] = useState('english');
+useEffect(() => {
+  if (pathArgument.includes('sustainability')) {
+    setSelectedLanguage('carbon');
+    setIsCarbonActive(true);
+  } else {
+    setSelectedLanguage('english'); // Optional fallback
+  }
+}, [location.pathname]);
 const handleSelectLanguage = (event) => {
   setSelectedLanguage(event.target.value); 
-
-  //temporary-neelan-testing
-/*   if(event.target.value==='hindi'){
-      document.body.classList.remove(`theme-${activeTheme}`);
-      setActiveTheme('yellow');
-      document.body.classList.add('theme-yellow');
-  } */
-
 };
+ 
+
 const handleCarbonClick = () => {
-  setIsCarbonActive((prevState) => {
-    const newState = !prevState; 
-    setSelectedLanguage(newState ? 'carbon' : 'english'); 
-    return newState;
-  });
+  if (isCarbonActive) {
+    // If active, navigate to the root page
+    navigate('/');
+    setIsCarbonActive(false);
+  } else {
+    // If not active, navigate to "sustainability"
+    navigate('/sustainability');
+    setIsCarbonActive(true);
+  }
 };
 
 // Define styles based on the condition
@@ -163,8 +171,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                           <div class='flex-center ms-1 bg-white rounded' style={{padding: '0.5em', background: isCarbonActive ? '#9bfc3f' : ''}}>
                           <span style={{marginRight:'4px'}}>Co2: </span>
                           <span style={{width:'25px', height:'25px'}}>
-                            <ForestIcon sx={{ fill: 'green !important' }}/>
-                           
+                            <ForestIcon sx={{ fill: 'green !important' }}/>                           
                             </span>
                       </div>
                       </div>
