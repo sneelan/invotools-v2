@@ -932,3 +932,18 @@ body:not(body.dark-mode) .product tr:hover td, body:not(body.dark-mode) .product
   color: black;
   background-color: rgb(247, 247, 247);
 }/*# sourceMappingURL=gray.css.map */
+
+.product table tr th.highlight {
+  position: relative;
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+}
+.product td.highlight {
+  position: relative;
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+}
+.product tr:hover td.highlight {
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.04);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.04);
+}

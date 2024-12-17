@@ -100,7 +100,7 @@ const InvoiceLayout = () => {
                       <th>QTY</th>
                       <th>Tax</th>
                       <th>Discount</th>
-                      <th>CO2</th>
+                      <th className='highlight'>CO2</th>
                       <th>Item Total</th>
                       </tr>
                   <tr>
@@ -111,7 +111,7 @@ const InvoiceLayout = () => {
                       <td>1</td>
                       <td>10%</td>
                       <td>20%</td>
-                      <td>0.4 kg</td>
+                      <td className='highlight'>0.4 kg</td>
                       <td>1010.22</td>
                   </tr>
                   <tr>
@@ -122,7 +122,7 @@ const InvoiceLayout = () => {
                       <td>2</td>
                       <td>10%</td>
                       <td>20%</td>
-                      <td>0.35 kg</td>
+                      <td className='highlight'>0.35 kg</td>
                       <td>1282.48</td>
                   </tr>
                   <tr>
@@ -134,7 +134,7 @@ const InvoiceLayout = () => {
                       <td>3</td>
                       <td>10%</td>
                       <td>20%</td>
-                      <td>0.35 kg</td>
+                      <td className='highlight'>0.35 kg</td>
                       <td>2156.80</td>
                   </tr>
               </tbody>

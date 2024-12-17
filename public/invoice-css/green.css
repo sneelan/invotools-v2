@@ -918,3 +918,18 @@ footer .footer-right a:hover {
 .dark-mode .qrcode:hover {
   border-color: #437B00;
 }/*# sourceMappingURL=green.css.map */
+
+.product table tr th.highlight {
+  position: relative;
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+}
+.product td.highlight {
+  position: relative;
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+}
+.product tr:hover td.highlight {
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.04);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.04);
+}

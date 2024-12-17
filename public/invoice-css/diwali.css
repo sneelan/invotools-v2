@@ -1029,3 +1029,18 @@ body.py-xl-2 {
 .dark-mode .footer-left, .dark-mode .footer-right {
   background-color: #120013 !important;
 }/*# sourceMappingURL=diwali.css.map */
+
+.product table tr th.highlight {
+  position: relative;
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+}
+.product td.highlight {
+  position: relative;
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+}
+.product tr:hover td.highlight {
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.04);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.04);
+}

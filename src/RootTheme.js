@@ -167,7 +167,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                       </div>
                       </div>                     
                   )}
-                 <div className='d-block d-md-inline-block' style={{ display: selectedOption !== 'desktop' ? 'none' : '', paddingTop:''}} onClick={handleCarbonClick}>
+                 <div className='d-block d-md-inline-block' style={{ display: selectedOption !== 'desktop' ? 'none' : '', paddingTop:'', display: pathArgument[1] == 'demo' ? 'none' : '' }} onClick={handleCarbonClick}>
                           <div class='flex-center ms-1 bg-white rounded' style={{padding: '0.5em', background: isCarbonActive ? '#9bfc3f' : ''}}>
                           <span style={{marginRight:'4px'}}>Co2: </span>
                           <span style={{width:'25px', height:'25px'}}>
