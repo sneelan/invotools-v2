@@ -4,7 +4,7 @@ const InvoiceHindi = () => {
 
   return (
     <>
-    <link rel="stylesheet" type="text/css" href="/invoice-css/arabic-font.css" />
+    <link rel="stylesheet" type="text/css" href="/root-css/arabic-font.css" />
 <div className="container-xl shadow p-0 bg-white rounded invoice-wrap overflow-hidden" style={{ opacity:'0'}}>
         <header className="px-2 px-lg-2 hover">
             <div className="xd-sm-flex xalign-items-center xjustify-content-between row m-0 p-0">

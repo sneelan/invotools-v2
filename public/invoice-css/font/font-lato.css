@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body.lato .h1, body.lato .h2, body.lato .h3, body.lato .h4, body.lato .h5, body.lato .h6, body.lato h1, body.lato h2, body.lato h3, body.lato h4, body.lato h5, body.lato h6 {
+  margin-bottom: 0;
+  font-family: "Lato";
+  font-weight: bold;
+}
+body.lato .font-primary {
+  font-family: "Lato";
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-primary {
+  font-family: "Lato", sans-serif;
+}
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}

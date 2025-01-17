@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400;1,700&display=swap&family=Roboto:wght@400;700&display=swap");
+body.fira .h1, body.fira .h2, body.fira .h3, body.fira .h4, body.fira .h5, body.fira .h6, body.fira h1, body.fira h2, body.fira h3, body.fira h4, body.fira h5, body.fira h6 {
+  margin-bottom: 0;
+  font-family: "Fira Sans";
+  font-weight: bold;
+}
+body.fira .font-primary {
+  font-family: "Fira Sans";
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-primary {
+  font-family: "Fira Sans", sans-serif;
+}
+
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}

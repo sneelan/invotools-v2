@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body.source .h1, body.source .h2, body.source .h3, body.source .h4, body.source .h5, body.source .h6, body.source h1, body.source h2, body.source h3, body.source h4, body.source h5, body.source h6 {
+  margin-bottom: 0;
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+}
+body.source .font-primary {
+  font-family: "Source Sans Pro";
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-primary {
+  font-family: "Source Sans Pro", sans-serif;
+}
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}

@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body.playfair .h1, body.playfair .h2, body.playfair .h3, body.playfair .h4, body.playfair .h5, body.playfair .h6, body.playfair h1, body.playfair h2, body.playfair h3, body.playfair h4, body.playfair h5, body.playfair h6 {
+  margin-bottom: 0;
+  font-family: "Playfair Display";
+  font-weight: bold;
+}
+body.playfair .font-primary {
+  font-family: "Playfair Display";
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-primary {
+  font-family: "Playfair Display", sans-serif;
+}
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}

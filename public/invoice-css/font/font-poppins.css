@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body.poppins .h1, body.poppins .h2, body.poppins .h3, body.poppins .h4, body.poppins .h5, body.poppins .h6, body.poppins h1, body.poppins h2, body.poppins h3, body.poppins h4, body.poppins h5, body.poppins h6 {
+  margin-bottom: 0;
+  font-family: "Poppins";
+  font-weight: bold;
+}
+body.poppins .font-primary {
+  font-family: "Poppins";
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-primary {
+  font-family: "Poppins", sans-serif;
+}
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}

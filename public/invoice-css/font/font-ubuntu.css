@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body.ubuntu .h1, body.ubuntu .h2, body.ubuntu .h3, body.ubuntu .h4, body.ubuntu .h5, body.ubuntu .h6, body.ubuntu h1, body.ubuntu h2, body.ubuntu h3, body.ubuntu h4, body.ubuntu h5, body.ubuntu h6 {
+  margin-bottom: 0;
+  font-family: "Ubuntu";
+  font-weight: bold;
+}
+body.ubuntu .font-primary {
+  font-family: "Ubuntu";
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-primary {
+  font-family: "Ubuntu", sans-serif;
+}
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}

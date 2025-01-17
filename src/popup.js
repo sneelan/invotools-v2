@@ -20,7 +20,7 @@ import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ARootInvoice from './Invoice/ARootInvoice';
 
-function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, simpleClient, simpleTheme, selectedLayout }) {
+function PopupPage({ activeTheme, font, clientid, invoiceid,language, setActiveTheme, simpleClient, simpleTheme, selectedLayout }) {
  
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
@@ -102,7 +102,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
 
     let templateURL= invoiceid === 'default' ? `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/${templateName}`
     : invoiceid && invoiceid !== 'default'? 'https://dev-invodocz.invotools.io/api/v1/invoice/view/'+invoiceid 
-    : `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}`;
+    : `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}/${font}`;
 
 /*     if(language!=='english'){
       templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template-yellow-${modeSuffix}-${language}.html`;
@@ -121,7 +121,7 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
     
     setInvoiceTemplate(templateURL);
 
-  }, [activeTheme, darkMode, clientid, invoiceid, demoIncludedThemes, language, selectedLayout]);
+  }, [activeTheme, font, darkMode, clientid, invoiceid, demoIncludedThemes, language, selectedLayout]);
 
 /*   const updateInvoiceTemplate = () => {
     const modeSuffix = darkMode ? 'dark' : 'light';
@@ -172,7 +172,6 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
       }
     }
 
-
   fetchApiHtml();
 
 
@@ -194,8 +193,8 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
 
 
   return (
-    <div> 
-              <div className='mobile-menu bg-theme-secondary'>
+    <div>
+              <div className='mobile-menu bg-theme-secondary d-none'>
                   <div style={{padding:'0.25em', justifyContent:'end'}} className='invoice-wrap flex-center' >                    
                   <b style={{color:'gray'}} className='me-1 mobile-menu-label'>Menu </b>                    
                     <span onClick={toggleDrawer} className='box-button'> <MenuIcon /></span>                    
@@ -203,108 +202,112 @@ function PopupPage({ activeTheme, clientid, invoiceid,language, setActiveTheme, 
                     </div>                    
               </div>
               {data && data.menuPanelCSS && (<style dangerouslySetInnerHTML={{ __html: data.menuPanelCSS }}></style>)}
-              <div>   
-                <span onClick={toggleDrawer} className='box-button' aria-label="menu" id='burger-menu'> <MenuIcon /></span>
-                <span onClick={toggleNotification} className='box-button notification' aria-label="menu" id='burger-menu'> <NotificationsActiveIcon />
-                <span>3</span>
-                </span>
+              <div className=' d-none'>   
+                    <span onClick={toggleDrawer} className='box-button' aria-label="menu" id='burger-menu'> <MenuIcon /></span>
+                    <span onClick={toggleNotification} className='box-button notification' aria-label="menu" id='burger-menu'> <NotificationsActiveIcon />
+                    <span>3</span>
+                    </span>
 
-                {showNotifications && (
-                <div className="notification-container">
-                <div className="notif-messages bg-white shadow p-2 rounded ">
-                  <div className="notif-header flex-center p-1 bg-theme-secondary text-white w-100" style={{justifyContent:'space-between', padding:'1em 2em'}}>
-                      <h4 className='fw-bold me-1 pe-1'>Recent Notifications</h4>
-                      <div onClick={toggleNotification} className='p-0 h4 fw-bold text-white ' style={{cursor:'pointer'}}>X</div>
-                  </div>
-
-                  <ul className=''>
-                    <li className='p-1 h4 fw-normal hover-bg-primary-verylight'>1. Please upload your Id Proof and Address documents. <a href="#" className='fw-bold' style={{color:'blue'}}>Click</a></li>
-                    <hr className='opacity-25 m-0'></hr>
-                    <li className='p-1  h4 fw-normal hover-bg-primary-verylight'><b style={{color:'maroon'}}>2. You missed it!</b> Enjoy a Special breakfast on us during your stay! <a href="#" className='fw-bold' style={{color:'blue'}}>Register here</a></li>
-                    <hr className='opacity-25 m-0'></hr>
-                    <li className='p-1  h4 fw-normal hover-bg-primary-verylight '><b style={{color:'maroon'}}>3. Unlock relaxation!</b> Pay just ₹500 and indulge in a ₹2500 Spa Massage for two!! <a href="#" className='fw-bold' style={{color:'blue'}}>Pay Now!</a></li>
-                  </ul>
-                </div>
-                </div>
-                 )}
-                 
-                <Drawer anchor="right" open={open} onClose={toggleDrawer} hideBackdrop>
-                  <div className={`drawer-wrap ${language === 'arabic'?'arabic':''}`}  dir={language === 'arabic'?'rtl':''}>
-                    <div>
-                      <div id='burger-close' class="flex-center" style={{justifyContent:'space-between', padding:'7px', width:'100%', alignItems:'start'}}>                
-                        <div className='box-button' onClick={toggleDarkMode}>{darkMode ?  <LightModeIcon/>: <ModeNightIcon />}</div>
-                        <div onClick={toggleDrawer} className='box-button' aria-label="menu" id=''> <CloseIcon /></div>
-                      </div>           
+                    {showNotifications && (
+                    <div className="notification-container">
+                    <div className="notif-messages bg-white shadow p-2 rounded ">
+                      <div className="notif-header flex-center p-1 bg-theme-secondary text-white w-100" style={{justifyContent:'space-between', padding:'1em 2em'}}>
+                          <h4 className='fw-bold me-1 pe-1'>Recent Notifications</h4>
+                          <div onClick={toggleNotification} className='p-0 h4 fw-bold text-white ' style={{cursor:'pointer'}}>X</div>
                       </div>
-                    <div style={{ minWidth: '150px' }} className='drawer-wrap'>
-                    <div className='drawer-box'>
-                    {/* <span class='bg-white d-block p-2'>bb{invoiceTemplate}aaa{activeTheme}</span> */}
-                        {data && data.popups && data.popups.map((popup, index) => {                       
 
-                          // adding widgetClassName based on displayDevice
-                          let widgetClassName = '';
-                          if (!popup.displayDevice.includes('mobile')) widgetClassName += ' mob-hide';
-                          if (!popup.displayDevice.includes('tablet')) widgetClassName += ' tab-hide';
-                          if (!popup.displayDevice.includes('desktop')) widgetClassName += ' des-hide';
-
-                          // Check if the popup has an externalLink
-                          const isExternalLink = popup.externalLink && popup.externalLink.trim() !== '';                          
-                          
-                          // Check if it's a PDF file
-                          const isPDFFile = isExternalLink && popup.externalLink.toLowerCase().endsWith('.pdf');
-
-                          return popup.displayStatus === 'active' && popup.showInMenu === 'yes' && (
-                            <a
-                            key={index}
-                            className={`button ${widgetClassName}`}
-                            // Check if it's an external link, add href, otherwise add onClick
-                            {...(isExternalLink ? (
-                              isPDFFile ? { href: popup.externalLink, target: '_blank'} : { href: popup.externalLink, target: '_blank', rel: 'noopener noreferrer' }
-                            ) : { onClick: () => openPopup(popup) })}
-                          >
-                            {popup.iconSVGCode && (
-                              <span dangerouslySetInnerHTML={{ __html: popup.iconSVGCode }}></span>
-                            )}
-                            <span>{popup.menuLabel}</span>
-                          </a>
-                          );
-                        })}
-                         
-                  {language==='arabic'?<link rel="stylesheet" type="text/css" href="/invoice-css/arabic-font.css" />:''}
-                  </div>
+                      <ul className=''>
+                        <li className='p-1 h4 fw-normal hover-bg-primary-verylight'>1. Please upload your Id Proof and Address documents. <a href="#" className='fw-bold' style={{color:'blue'}}>Click</a></li>
+                        <hr className='opacity-25 m-0'></hr>
+                        <li className='p-1  h4 fw-normal hover-bg-primary-verylight'><b style={{color:'maroon'}}>2. You missed it!</b> Enjoy a Special breakfast on us during your stay! <a href="#" className='fw-bold' style={{color:'blue'}}>Register here</a></li>
+                        <hr className='opacity-25 m-0'></hr>
+                        <li className='p-1  h4 fw-normal hover-bg-primary-verylight '><b style={{color:'maroon'}}>3. Unlock relaxation!</b> Pay just ₹500 and indulge in a ₹2500 Spa Massage for two!! <a href="#" className='fw-bold' style={{color:'blue'}}>Pay Now!</a></li>
+                      </ul>
                     </div>
-                  </div>
-                </Drawer>
-
-                <Dialog id="mypopup" open={popupOpen} onClose={closePopup} aria-labelledby="popup-title" dir={language === 'arabic'?'rtl':''}>
-                  <style dangerouslySetInnerHTML={{ __html: selectedPopup.contentHTML  }} style={{overflow: 'hidden'}} />
-                  <h2 id="popup-title" className='flex-center'>
-                    <span style={{paddingRight:'1em'}}>{selectedPopup.title}</span>
-                    <a onClick={closePopup} aria-label="close" className='d-inline-block line-height-normal cursor-pointer' href="#">
-                      <CloseIcon style={{color:'white'}}/>
-                    </a>           
-                  </h2>
-                  <div className='popup-body'>              
-                      {selectedPopup.contentHTML && ( <div className='t-c' dangerouslySetInnerHTML={{ __html: selectedPopup.contentHTML  }} style={{overflow: 'hidden'}} />  )}
-                      {selectedPopup.contentCSS && ( <style dangerouslySetInnerHTML={{ __html: selectedPopup.contentCSS }} />  )}
+                    </div>
+                    )}
                     
-                  </div>   
-                </Dialog>
-                <style>
-                    {`
-                      #mypopup .MuiPaper-root{   
-                            @media screen and (min-width: 968px){
-                              min-width: ${selectedPopup.width ? selectedPopup.width + 'px!important;' : 'auto;'};
-                            }         
-                            height: ${selectedPopup.height ? (Number(selectedPopup.height)+55) + 'px!important;' : 'auto;'};
-                      }
-                      #mypopup {   
+                    <Drawer anchor="right" open={open} onClose={toggleDrawer} hideBackdrop>
+                      <div className={`drawer-wrap ${language === 'arabic'?'arabic':''}`}  dir={language === 'arabic'?'rtl':''}>
+                        <div>
+                          <div id='burger-close' class="flex-center" style={{justifyContent:'space-between', padding:'7px', width:'100%', alignItems:'start'}}>                
+                            <div className='box-button' onClick={toggleDarkMode}>{darkMode ?  <LightModeIcon/>: <ModeNightIcon />}</div>
+                            <div onClick={toggleDrawer} className='box-button' aria-label="menu" id=''> <CloseIcon /></div>
+                          </div>           
+                          </div>
+                        <div style={{ minWidth: '150px' }} className='drawer-wrap'>
+                        <div className='drawer-box'>
+                        {/* <span class='bg-white d-block p-2'>bb{invoiceTemplate}aaa{activeTheme}</span> */}
+                            {data && data.popups && data.popups.map((popup, index) => {                       
 
-                      }
-                    `}
-            
-                </style>
+                              // adding widgetClassName based on displayDevice
+                              let widgetClassName = '';
+                              if (!popup.displayDevice.includes('mobile')) widgetClassName += ' mob-hide';
+                              if (!popup.displayDevice.includes('tablet')) widgetClassName += ' tab-hide';
+                              if (!popup.displayDevice.includes('desktop')) widgetClassName += ' des-hide';
+
+                              // Check if the popup has an externalLink
+                              const isExternalLink = popup.externalLink && popup.externalLink.trim() !== '';                          
+                              
+                              // Check if it's a PDF file
+                              const isPDFFile = isExternalLink && popup.externalLink.toLowerCase().endsWith('.pdf');
+
+                              return popup.displayStatus === 'active' && popup.showInMenu === 'yes' && (
+                                <a
+                                key={index}
+                                className={`button ${widgetClassName}`}
+                                // Check if it's an external link, add href, otherwise add onClick
+                                {...(isExternalLink ? (
+                                  isPDFFile ? { href: popup.externalLink, target: '_blank'} : { href: popup.externalLink, target: '_blank', rel: 'noopener noreferrer' }
+                                ) : { onClick: () => openPopup(popup) })}
+                              >
+                                {popup.iconSVGCode && (
+                                  <span dangerouslySetInnerHTML={{ __html: popup.iconSVGCode }}></span>
+                                )}
+                                <span>{popup.menuLabel}</span>
+                              </a>
+                              );
+                            })}
+                            
+                      {language==='arabic'?<link rel="stylesheet" type="text/css" href="/root-css/arabic-font.css" />:''}
+                      </div>
+                        </div>
+                      </div>
+                    </Drawer>
+
+                    <Dialog id="mypopup" open={popupOpen} onClose={closePopup} aria-labelledby="popup-title" dir={language === 'arabic'?'rtl':''}>
+                      <style dangerouslySetInnerHTML={{ __html: selectedPopup.contentHTML  }} style={{overflow: 'hidden'}} />
+                      <h2 id="popup-title" className='flex-center'>
+                        <span style={{paddingRight:'1em'}}>{selectedPopup.title}</span>
+                        <a onClick={closePopup} aria-label="close" className='d-inline-block line-height-normal cursor-pointer' href="#">
+                          <CloseIcon style={{color:'white'}}/>
+                        </a>           
+                      </h2>
+                      <div className='popup-body'>              
+                          {selectedPopup.contentHTML && ( <div className='t-c' dangerouslySetInnerHTML={{ __html: selectedPopup.contentHTML  }} style={{overflow: 'hidden'}} />  )}
+                          {selectedPopup.contentCSS && ( <style dangerouslySetInnerHTML={{ __html: selectedPopup.contentCSS }} />  )}
+                        
+                      </div>   
+                    </Dialog>
+                    <style>
+                        {`
+                          #mypopup .MuiPaper-root{   
+                                @media screen and (min-width: 968px){
+                                  min-width: ${selectedPopup.width ? selectedPopup.width + 'px!important;' : 'auto;'};
+                                }         
+                                height: ${selectedPopup.height ? (Number(selectedPopup.height)+55) + 'px!important;' : 'auto;'};
+                          }
+                          #mypopup {   
+
+                          }
+                        `}
+                
+                    </style>
               </div>   
+
+
+
+
               {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
              {/*  <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid} {language} {setDarkMode} {activeTheme}</div> */}             
             {/* <ARootInvoice language={language} activeTheme={activeTheme} lightMode={darkMode ? 'dark' : 'light'}/> */} 

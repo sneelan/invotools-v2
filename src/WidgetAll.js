@@ -114,7 +114,7 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
 }
 
 
-function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveTheme, simpleClient, simpleTheme,  selectedLayout}) {
+function WidgetAll  ({ activeTheme, clientid, invoiceid, font, language, setActiveTheme, simpleClient, simpleTheme,  selectedLayout}) {
   
   const { search } = useLocation();
   const params = new URLSearchParams(search);
@@ -130,7 +130,6 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveThem
 
   //const theme = activeTheme || 'yellow';
   if(!activeTheme){activeTheme='yellow';}
-
 
   const [data, setData] = useState(null);
   document.body.classList.add(`theme-${activeTheme}`);
@@ -166,7 +165,7 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid, language, setActiveThem
 
   return (
     <>
-   <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={language} setActiveTheme={setActiveTheme} simpleTheme={simpleTheme} simpleClient={simpleClient} selectedLayout={selectedLayout}/>
+   <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={language} font={font} setActiveTheme={setActiveTheme} simpleTheme={simpleTheme} simpleClient={simpleClient} selectedLayout={selectedLayout}/>
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}

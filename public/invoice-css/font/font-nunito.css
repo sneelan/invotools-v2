@@ -1,0 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Roboto:wght@400;700&display=swap');
+
+body.nunito .h1, body.nunito .h2, body.nunito .h3, body.nunito .h4, body.nunito .h5, body.nunito .h6, body.nunito h1, body.nunito h2, body.nunito h3, body.nunito h4, body.nunito h5, body.nunito h6 {
+  margin-bottom: 0;
+  font-family: "Nunito Sans";
+  font-weight: bold;
+}
+body.nunito .font-primary {
+  font-family: "Nunito Sans";
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-primary {
+  font-family: "Nunito Sans", sans-serif;
+}
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}

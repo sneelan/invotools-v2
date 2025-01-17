@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body.raleway .h1, body.raleway .h2, body.raleway .h3, body.raleway .h4, body.raleway .h5, body.raleway .h6, body.raleway h1, body.raleway h2, body.raleway h3, body.raleway h4, body.raleway h5, body.raleway h6 {
+  margin-bottom: 0;
+  font-family: "Raleway";
+  font-weight: bold;
+}
+body.raleway .font-primary {
+  font-family: "Raleway";
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-primary {
+  font-family: "Raleway", sans-serif;
+}
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}

@@ -6,10 +6,9 @@ import InvoiceHindi from './InvoiceHindi.js';
 import InvoiceSpanish from './InvoiceSpanish.js';
 import InvoiceArabic from './InvoiceArabic.js';
 import InvoiceFrench from './InvoiceFrench.js';
-import InvoiceCarbon from './InvoiceCarbon.js';
 
 const ARootInvoice = () => {
-  const { urlLanguage, urlColor, urlMode, activeTheme, simpleClient, invoLayout } = useParams();  
+  const { urlLanguage, urlColor, urlMode, urlFont, activeFont, activeTheme, simpleClient, invoLayout } = useParams();  
 
  // Create Bootstrap and fadein.css links only once when the component mounts
  useEffect(() => {
@@ -20,7 +19,7 @@ const ARootInvoice = () => {
     const bootstrapLink = document.createElement('link');
     bootstrapLink.id = 'theme-bootstrap';
     bootstrapLink.rel = 'stylesheet';
-    bootstrapLink.href = '/invoice-css/bootstrap52.css';
+    bootstrapLink.href = '/root-css/bootstrap53.min.css';
     document.head.appendChild(bootstrapLink);
   }
  
@@ -31,8 +30,16 @@ const ARootInvoice = () => {
       colorLink.rel = 'stylesheet';
       document.head.appendChild(colorLink);
     }
-    // Update the href attribute
-    colorLink.href = `/invoice-css/${urlColor}.css`;
+    colorLink.href = `/invoice-css/${urlColor}.min.css`;
+
+    let fontLink = document.getElementById('font-change');    
+    if (!fontLink) {
+      fontLink = document.createElement('link');
+      fontLink.id = 'font-change';
+      fontLink.rel = 'stylesheet';
+      document.head.appendChild(fontLink);
+    }
+    fontLink.href = `/invoice-css/font/font-${urlFont}.css`;
 
 if(invoLayout!='layout-featured'){
   let LayoutCSS = document.getElementById('layout-change');    
@@ -43,7 +50,7 @@ if(invoLayout!='layout-featured'){
       document.head.appendChild(LayoutCSS);
     }
     // Update the href attribute
-    LayoutCSS.href = `/invoice-css/${invoLayout}.css`;
+    LayoutCSS.href = `/root-css/${invoLayout}.css`;
   }
   if(invoLayout=='layout-bill'){
     if(urlColor=='diwali' || urlColor=='christmas' || urlColor=='thanks'){
@@ -53,7 +60,7 @@ if(invoLayout!='layout-featured'){
         LayoutCSS.id = 'layout-change1';
         LayoutCSS.rel = 'stylesheet';
         document.head.appendChild(LayoutCSS);
-        LayoutCSS.href = `/invoice-css/layout-festival-bill-fix.css`;
+        LayoutCSS.href = `/root-css/layout-festival-bill-fix.css`;
       }     
     }
     }
@@ -65,7 +72,7 @@ if(invoLayout!='layout-featured'){
         LayoutCSS.id = 'layout-change1';
         LayoutCSS.rel = 'stylesheet';
         document.head.appendChild(LayoutCSS);
-        LayoutCSS.href = `/invoice-css/layout-festival-small-fix.css`;
+        LayoutCSS.href = `/root-css/layout-festival-small-fix.css`;
       }     
     }
     }
@@ -77,7 +84,7 @@ if(invoLayout!='layout-featured'){
           LayoutCSS.id = 'layout-change1';
           LayoutCSS.rel = 'stylesheet';
           document.head.appendChild(LayoutCSS);
-          LayoutCSS.href = `/invoice-css/layout-festival-simple-fix.css`;
+          LayoutCSS.href = `/root-css/layout-festival-simple-fix.css`;
         }     
       }
       }
@@ -87,7 +94,7 @@ if(invoLayout!='layout-featured'){
       const fadeinLink = document.createElement('link');
       fadeinLink.id = 'theme-fadein';
       fadeinLink.rel = 'stylesheet';
-      fadeinLink.href = '/invoice-css/a_fadein.css';
+      fadeinLink.href = '/root-css/a_fadein.css';
       document.head.appendChild(fadeinLink);
     }
 
@@ -103,7 +110,7 @@ if(invoLayout!='layout-featured'){
         // Add 'dark-mode' class to the body if urlMode is 'dark'
         document.body.classList.add('py-xl-2');
 
-       //temporary-neelan-testing
+
        if (urlMode === 'dark' && urlColor!=='printer') {
        // if (urlMode === 'dark' && urlColor==='yellow') {
           document.body.classList.add('dark-mode');
@@ -111,9 +118,13 @@ if(invoLayout!='layout-featured'){
           // Remove 'dark-mode' class if urlMode is not 'dark'
           document.body.classList.remove('dark-mode');
         }
-
     // Set HTML dir attribute based on urlLanguage
     document.documentElement.dir = urlLanguage === 'arabic' ? 'rtl' : '';
+    if (urlFont) {      
+      const fontClasses = ['font-fira', 'font-nunito', 'font-open', 'font-lato', 'font-poppins', 'font-montserrat', 'font-raleway', 'font-ubuntu', 'font-playfair', 'font-merriweather', 'font-source'];
+      fontClasses.forEach(fontClass => document.body.classList.remove(fontClass));
+      document.body.classList.add(urlFont);
+  }
     
     // Clean up when component unmounts
     return () => {
@@ -124,7 +135,7 @@ if(invoLayout!='layout-featured'){
       if (themeLink) {themeLink.remove(); }
       if (fadeinLink) {fadeinLink.remove();}  */
     };
-  }, [urlColor, urlLanguage, urlMode]); 
+  }, [urlColor, urlLanguage, urlMode, urlFont]); 
 
 
     //const imagePath='https://uxdemo.ayatacommerce.com/invotools/invoice-templates/simpledemo/';
@@ -132,7 +143,7 @@ if(invoLayout!='layout-featured'){
 
 
   return (
-    <>    
+    <> 
       {/* <div className='bg-white text-black p-1 text-center'>{urlLanguage}----{urlColor}----{urlMode}</div> */}
       {/* /template/:urlLanguage/:urlColor/:urlMode */}
       {/* ----{simpleClient} */}
@@ -141,7 +152,6 @@ if(invoLayout!='layout-featured'){
       :urlLanguage=='spanish'?<InvoiceSpanish/>
       :urlLanguage=='arabic'?<InvoiceArabic/>
       :urlLanguage=='french'?<InvoiceFrench/>
-      :urlLanguage=='carbon'?<InvoiceCarbon/>
        :''}       
        {simpleClient!=='undefined'?
              <style>{`.logo{background-image: url('${imagePath}${simpleClient}.png')!important; background-size: auto;}`}</style>

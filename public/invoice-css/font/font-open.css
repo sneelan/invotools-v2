@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body.open .h1, body.open .h2, body.open .h3, body.open .h4, body.open .h5, body.open .h6, body.open h1, body.open h2, body.open h3, body.open h4, body.open h5, body.open h6 {
+  margin-bottom: 0;
+  font-family: "Open Sans";
+  font-weight: bold;
+}
+body.open .font-primary {
+  font-family: "Open Sans";
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-primary {
+  font-family: "Open Sans", sans-serif;
+}
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}

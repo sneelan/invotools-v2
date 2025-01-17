@@ -9,13 +9,14 @@ import { useParams } from 'react-router-dom';
 import ForestIcon from '@mui/icons-material/Forest';
 
 
-function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTemplate}){
+function RootTheme({activeFont: propActiveFont, activeTheme: propActiveTheme, clientid, invoiceid, invoiceTemplate}){
   const location = useLocation();
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const demoIncludedLang = params.get('language');
+  const demoIncludedFont = params.get('font');
   const {simpleClient, simpleTheme} = useParams();  
-  const [selectedLayout, setSelectedLayout] = useState('layout-featured');
+    const [selectedLayout, setSelectedLayout] = useState('layout-featured');
   const [isCarbonActive, setIsCarbonActive] = useState(false);
   const navigate = useNavigate();
 
@@ -26,6 +27,8 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
 
  
   const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
+
+
   
   document.body.classList.add(`theme-${activeTheme}`);
 
@@ -36,7 +39,7 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
       //console.log(`Clicked on ${theme} button`);
   };
   const handleLayoutChange = (event) => {setSelectedLayout(event.target.value);};
-  const [isSettingOpen, setIsSettingOpen] = useState(false);
+  const [isSettingOpen, setIsSettingOpen] = useState(true);
   const toggleSetting = () => {setIsSettingOpen(!isSettingOpen);};
 
   const [selectedOption, setSelectedOption] = useState('desktop');
@@ -46,43 +49,41 @@ function RootTheme({activeTheme: propActiveTheme, clientid, invoiceid, invoiceTe
   const renderSelectedComponent = () => {
     switch (selectedOption) {
       case 'mobile':
-        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       case 'tablet':
-        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       case 'tablet-landscape':
-        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       case 'desktop':
-        return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedLanguage} setActiveTheme={setActiveTheme} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} setActiveTheme={setActiveTheme} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       default:
         return null;
     }
   };
 
 const [selectedLanguage, setSelectedLanguage] = useState('english');
+const [selectedFont, setSelectedFont] = useState('fira');
+
+
 useEffect(() => {
   if (pathArgument.includes('sustainability')) {
     setSelectedLanguage('carbon');
     setIsCarbonActive(true);
   } else {
-    setSelectedLanguage('english'); // Optional fallback
+    setSelectedLanguage('english'); // Optional fallback    
   }
 }, [location.pathname]);
+
+
 const handleSelectLanguage = (event) => {
   setSelectedLanguage(event.target.value); 
 };
+const handleSelectFont = (event) => {  
+  setSelectedFont(event.target.value);
+}
  
 
-const handleCarbonClick = () => {
-  if (isCarbonActive) {
-    // If active, navigate to the root page
-    navigate('/');
-    setIsCarbonActive(false);
-  } else {
-    // If not active, navigate to "sustainability"
-    navigate('/sustainability');
-    setIsCarbonActive(true);
-  }
-};
+
 
 // Define styles based on the condition
 const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' || selectedOption === 'tablet-landscape'? `body {background-color: gray !important;background-image: unset !important;}`: '';
@@ -102,7 +103,32 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M15.4,16.6L10.8,12L15.4,7.4L14,6L8,12L14,18L15.4,16.6Z" /></svg>
                         </span>
                   </span>
-    
+                  <div className='d-block d-md-inline-block me-1'>
+                <select value={selectedFont} onChange={handleSelectFont} style={{ padding: '0.5em', borderRadius: '0' , opacity: isCarbonActive ? '0' : ''}}>   
+                    {demoIncludedLang ? (
+                        demoIncludedLang.split(',').map((lang) => (
+                          <option key={lang.toLowerCase()} value={lang.toLowerCase()}>
+                            {lang}
+                          </option>
+                        ))
+                      ) : (
+                          <>
+                          <option value="fira">Fira Sans</option>
+                          <option value="nunito">Nunito Sans</option>
+                          <option value="open">Open Sans</option>
+                          <option value="lato">Lato</option>
+                          <option value="poppins">Poppins</option>
+                          <option value="montserrat">Montserrat</option>
+                          <option value="raleway">Raleway</option>
+                          <option value="ubuntu">Ubuntu</option>
+                          <option value="playfair">Playfair Display</option>
+                          <option value="merriweather">Merriweather</option>
+                          <option value="source">Source Sans Pro</option>
+                          </>
+                      )}                    
+                  </select> 
+                </div>
+
               <div className='d-block d-md-inline-block me-1'>
                 <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' , opacity: isCarbonActive ? '0' : ''}}>   
                     {demoIncludedLang ? (
@@ -114,14 +140,15 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                       ) : (
                           <>
                           <option value="english">English</option>                        
-                          <option value="hindi">Hindi</option>                      
+                          {/* <option value="hindi">Hindi</option>                      
                           <option value="spanish">Spanish</option>                                                  
                           <option value="french">French</option>
-                          <option value="arabic">Arabic</option>
+                          <option value="arabic">Arabic</option> */}
                           </>
                       )}                    
                   </select> 
                 </div>
+
 
                 <div className={`d-block d-md-inline-block`}>
                 <select value={selectedOption} onChange={handleSelectChange} style={{ padding: '0.5em', borderRadius: '0' }} disabledx={selectedLanguage !== 'english'}>                        
@@ -149,32 +176,34 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                       <div class='flex-center ms-1 bg-white rounded' style={{backgroundColor:'#ffffff', padding:'0.5em 1.5em'}}>
                           <span>Theme:</span>
                           <span>
-                            <span className={`theme-btn ${activeTheme === 'yellow' ? 'active' : ''}`} style={{backgroundColor:'#FFA100'}} onClick={() => handleButtonClick('yellow')}></span>
-                            <span className={`theme-btn ${activeTheme === 'blue' ? 'active' : ''}`} style={{backgroundColor:'#005E80'}} onClick={() => handleButtonClick('blue')}></span>
-                            <span className={`theme-btn ${activeTheme === 'green' ? 'active' : ''}`} style={{backgroundColor:'#437B00'}} onClick={() => handleButtonClick('green')}></span>
+                            <span className={`theme-btn ${activeTheme === 'yellow' ? 'active' : ''}`} style={{backgroundColor:'#FFA100'}} onClick={() => handleButtonClick('yellow')}></span>                            
+                            {/* <span className={`theme-btn ${activeTheme === 'green' ? 'active' : ''}`} style={{backgroundColor:'#437B00'}} onClick={() => handleButtonClick('green')}></span>
                             <span className={`theme-btn ${activeTheme === 'maroon' ? 'active' : ''}`} style={{backgroundColor:'#88004A'}} onClick={() => handleButtonClick('maroon')}></span>
                             <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
                             <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
-                            <span className={`theme-btn ${activeTheme === 'gray' ? 'active' : ''}`} style={{backgroundColor:'#bbbbbb'}} onClick={() => handleButtonClick('gray')}></span>
+                            <span className={`theme-btn ${activeTheme === 'gray' ? 'active' : ''}`} style={{backgroundColor:'#bbbbbb'}} onClick={() => handleButtonClick('gray')}></span>                             */}                            
+                            {/* <span className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-diwali.png' onClick={() => handleButtonClick('diwali')}   /></span>
+                            <span className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-thanks.png' onClick={() => handleButtonClick('thanks')}   /></span>                             */}
                             
-                            <span className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-xmas.png' onClick={() => handleButtonClick('christmas')}   /></span>
-                            <span className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-diwali.png' onClick={() => handleButtonClick('diwali')}   /></span>
-                            <span className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-thanks.png' onClick={() => handleButtonClick('thanks')}   /></span>
+                           <span className={`theme-btn ${activeTheme === 'blue' ? 'active' : ''}`} style={{backgroundColor:'#005E80'}} onClick={() => handleButtonClick('blue')}></span>
+                             {/* <span className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-xmas.png' onClick={() => handleButtonClick('christmas')}   /></span>
                             <span className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} ><img src='/img/icon-ads.png' onClick={() => handleButtonClick('ads')} /></span>
-                            <span className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} ><img src='/img/icon-printer.png' onClick={() => handleButtonClick('printer')}  /></span>
+                            <span className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} ><img src='/img/icon-printer.png' onClick={() => handleButtonClick('printer')}  /></span> */}
                           </span>   
-                          <span className='d-inline-block ms-1' style={{minWidth:'100px',textTransform:'capitalize', fontWeight:'bold'}}>{activeTheme==='maroon'?'Magenta' : activeTheme==='ads'?'Advertising' :activeTheme==='thanks'?'Thanks Giving' : activeTheme==='printer'?'Printer Friendly':activeTheme}  </span>            
+                          <span className='d-inline-block ms-1' style={{minWidth:'100px',textTransform:'capitalize', fontWeight:'bold'}}>{
+                            activeTheme==='maroon'?'Magenta' : activeTheme==='ads'?'Advertising' :activeTheme==='thanks'?'Thanks Giving' : activeTheme==='printer'?'Printer Friendly':activeTheme}
+                            -{selectedFont}</span>
                       </div>
                       </div>                     
                   )}
-                 <div className='d-block d-md-inline-block' style={{ display: selectedOption !== 'desktop' ? 'none' : '', paddingTop:'', display: pathArgument[1] == 'demo' ? 'none' : '' }} onClick={handleCarbonClick}>
+{/*                  <div className='d-block d-md-inline-block' style={{ display: selectedOption !== 'desktop' ? 'none' : '', paddingTop:'', display: pathArgument[1] == 'demo' ? 'none' : '' }} onClick={handleCarbonClick}>
                           <div class='flex-center ms-1 bg-white rounded' style={{padding: '0.5em', background: isCarbonActive ? '#9bfc3f' : ''}}>
                           <span style={{marginRight:'4px'}}>Co2: </span>
                           <span style={{width:'25px', height:'25px'}}>
                             <ForestIcon sx={{ fill: 'green !important' }}/>                           
                             </span>
                       </div>
-                      </div>
+                      </div> */}
               </div>
               </div>
           

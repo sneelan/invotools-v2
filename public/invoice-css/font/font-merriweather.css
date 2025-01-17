@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body.merriweather .h1, body.merriweather .h2, body.merriweather .h3, body.merriweather .h4, body.merriweather .h5, body.merriweather .h6, body.merriweather h1, body.merriweather h2, body.merriweather h3, body.merriweather h4, body.merriweather h5, body.merriweather h6 {
+  margin-bottom: 0;
+  font-family: "Merriweather";
+  font-weight: bold;
+}
+body.merriweather .font-primary {
+  font-family: "Merriweather";
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.font-primary {
+  font-family: "Merriweather", sans-serif;
+}
+.font-secondary {
+  font-family: "Roboto", sans-serif;
+}
