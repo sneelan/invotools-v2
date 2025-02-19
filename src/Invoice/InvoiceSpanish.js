@@ -32,8 +32,8 @@ const InvoiceSpanish = () => {
             <span className="fs-3 fw-bold text-uppercase">FACTURA</span>
             <span className="clear d-block p small ">(Original para el destinatario)</span>
         </div>
-        <section className="border-4 border-top border-theme-accent" id="sec-details">
-            <div className="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom my-row-2">
+        <section className="border-4 border-top border-theme-accent" id="order-info">
+            <div className="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom order-info-row1">
                 <div className="col-sm-4 ps-lg-4 ">
                     <span className="d-block "><h4 className="text-uppercase d-inline-block ">FACTURA NO :</h4>
                     <p className="d-inline-block ps-2 ps-sm-0">#FADZZ</p>
@@ -51,7 +51,7 @@ const InvoiceSpanish = () => {
                     <p className="d-inline-block  ps-2 ps-sm-0">viernes 9 agosto 2023</p>
                 </div>
             </div>
-            <div className="row m-0 p-sm-2 p-lg-3 text-center text-sm-start my-row-3 ">
+            <div className="row m-0 p-sm-2 p-lg-3 text-center text-sm-start order-info-row2 ">
                 <div className="col-sm-4 my-3 my-sm-0 d-flex align-items-center justify-content-center ">
                     <div>
                         <a className="qrcode d-block rounded" title="Use QR code Scanner for the live PDF link" href="https://invotools.io?invoice-directlink=TEST" target="_blank"><img src="/invoice-css/assets/images/being-qr.svg" width="150" alt="QR code"/>                    

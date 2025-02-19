@@ -1,10 +1,10 @@
 import React from 'react';
-const InvoiceHindi = () => {
+
+const InvoiceLayout = () => {
   
 
   return (
     <>
-    <link rel="stylesheet" type="text/css" href="/root-css/arabic-font.css" />
     <div className="container-xl shadow p-0 bg-white rounded invoice-wrap overflow-hidden">
     <header className="px-2 px-lg-2 hover">
       <div className="xd-sm-flex xalign-items-center xjustify-content-between row m-0 p-0">
@@ -100,6 +100,91 @@ const InvoiceHindi = () => {
       </section>
     </div>
 
+    <section className="border-4 border-top border-theme-accent" id="order-info">
+        <div className="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom order-info-row1">
+            <div className="col-sm-4 ps-lg-4 pb-2 pb-md-0"><span className="d-block ">
+                    <h6 className="d-inline-block fw-bold mb-2">
+                        رقم الفاتورة :
+                    </h6>
+                    <p className="d-inline-block ps-2 ps-sm-0">
+                        &nbsp;#فادز
+                    </p>
+                </span>
+                <h6 className="clear d-inline-block fw-bold">
+                    تاريخ :
+                </h6>
+                <p className="d-inline-block ps-2 ps-sm-0">
+                    &nbsp;الجمعة 9 أغسطس 2023
+                </p>
+            </div>
+            <div className="col-sm-4 d-sm-flex align-items-center justify-content-center xpy-2 pt-sm-0"><img
+                    src="/invoice-css/assets/images/bar-code.png" className="img-fluid" alt="الرمز الشريطي"/></div>
+            <div className="col-sm-4 pt-2 pt-md-0">
+                <h6 className="d-inline-block fw-bold mb-2">
+                    رقم الطلب :
+                </h6>
+                <p className="d-inline-block ps-2 ps-sm-0">
+                    &nbsp;أو دي 56522
+                </p><br/>
+                <h6 className="clear d-inline-block fw-bold">
+                    تاريخ :
+                </h6>
+                <p className="d-inline-block ps-2 ps-sm-0">
+                    &nbsp;الجمعة 9 أغسطس 2023
+                </p>
+            </div>
+        </div>
+        <div className="row m-0 p-sm-2 p-lg-2 text-center text-sm-start order-info-row2 ">
+            <div className="col-sm-4 my-3 my-sm-0 d-flex align-items-center justify-content-center ">
+                <div><a className="qrcode d-block rounded"
+                        title="استخدم ماسح رمز الاستجابة السريعة QR للحصول على رابط PDF المباشر"
+                        href="https://invotools.io?invoice-directlink=TEST" target="_blank"><img
+                            src="/invoice-css/assets/images/being-qr.svg" width="110"
+                            alt="رمز الاستجابة السريعة"/></a><span className="small clear text-center d-block pt-1">
+                        أدوات invotools.io/q/az51
+                    </span></div>
+            </div>
+            <div className="col-sm-4 mb-4 mb-sm-0">
+                <h5>
+                    تفاصيل الشحن
+                </h5>
+                <p>
+                    أوليفيا ويلسون <br/>
+                    123 Anywhere St <br/>
+                    Any City, ST 12345 <br/><b>
+                        الهاتف: 
+                    </b> <a className="hover-underline" href="tel:91987329382" target="_blank">
+                        +91 9873 29382 
+                    </a><br/><b>
+                        البريد الإلكتروني: 
+                    </b> <a className="hover-underline" href="mailto:olivia@gmail.com" target="_blank">
+                        olivia@gmail.com 
+                    </a><br/><b>
+                        ضريبة السلع والخدمات على العملاء:
+                    </b>
+                     AXD785125862
+                </p>
+            </div>
+            <div className="col-sm-4 mb-4 mb-sm-0">
+                <h5>
+                    تفاصيل الفواتير
+                </h5>
+                <p>
+                    توماس ويلسون <br/>
+                    123 شارع أي مكان <br/>
+                    أي مدينة، شارع 12345 <br/><b>
+                        الهاتف: 
+                    </b> <a className="hover-underline" href="tel:91987329777" target="_blank">
+                        +91 9873 29777 
+                    </a><br/><b>
+                        البريد الإلكتروني: 
+                    </b> <a className="hover-underline" href="mailto:thomas@gmail.com" target="_blank">
+                        thomas@gmail.com
+                    </a><br/>
+                </p>
+            </div>
+        </div>
+    </section>
     <main className="px-2">
         <div className="product">
             <table className="w-100">
@@ -108,7 +193,7 @@ const InvoiceHindi = () => {
                         <th>
                             منتج
                         </th>
-                        <th className="p-th-name text-start">
+                        <th className="productname text-start">
                             اسم
                         </th>
                         <th>
@@ -129,14 +214,14 @@ const InvoiceHindi = () => {
                         <th className="highlight">
                             ثاني أكسيد الكربون
                         </th>
-                        <th className='p-h-price'>
+                        <th>
                             مجموع البند
                         </th>
                     </tr>
                     <tr>
                         <td><a className="hover-underline" href="https://www.invotools.io/" target="_blank"><img
                                     src="/invoice-css/assets/images/pro1.png" alt="كونك إنسانًا"/></a></td>
-                        <td className="text-start p-name"><a className="hover-underline" href="https://www.invotools.io/"
+                        <td className="text-start"><a className="hover-underline" href="https://www.invotools.io/"
                                 target="_blank">
                                 قمصان أنيقة ضيقة بأكمام طويلة باللون الأزرق
                                         الداكن
@@ -159,14 +244,14 @@ const InvoiceHindi = () => {
                         <td className="highlight">
                             0.4 كجم
                         </td>
-                        <td className='p-price'>
+                        <td>
                             1010.22
                         </td>
                     </tr>
                     <tr>
                         <td><a className="hover-underline" href="https://www.invotools.io/" target="_blank"><img
                                     src="/invoice-css/assets/images/pro2.png" alt="كونك إنسانًا"/></a></td>
-                        <td className="text-start p-name"><a className="hover-underline" href="https://www.invotools.io/"
+                        <td className="text-start"><a className="hover-underline" href="https://www.invotools.io/"
                                 target="_blank">
                                 تي شيرت بولو قصير الأكمام بقصّة عادية من
                                         فاشون، لون صدئ
@@ -189,14 +274,14 @@ const InvoiceHindi = () => {
                         <td className="highlight">
                             0.35 كجم
                         </td>
-                        <td className='p-price'>
+                        <td>
                             1282.48
                         </td>
                     </tr>
                     <tr>
                         <td><a className="hover-underline invisible" href="https://www.invotools.io/" target="_blank"><img
                                     src="/invoice-css/assets/images/spacer.png"/></a></td>
-                        <td className="text-start p-name"><a className="hover-underline" href="https://www.invotools.io/"
+                        <td className="text-start"><a className="hover-underline" href="https://www.invotools.io/"
                                 target="_blank">
                                 تي شيرت نسائي عصري مريح بياقة دائرية
                             </a></td>
@@ -218,7 +303,7 @@ const InvoiceHindi = () => {
                         <td className="highlight">
                             0.35 كجم
                         </td>
-                        <td className='p-price'>
+                        <td>
                             2156.80
                         </td>
                     </tr>
@@ -283,7 +368,7 @@ const InvoiceHindi = () => {
                                             مجموع البند :
                                         </td>
                                         <td>
-                                            1010.22 د.إ
+                                            1010.22 دولار
                                         </td>
                                     </tr>
                                 </tbody>
@@ -349,7 +434,7 @@ const InvoiceHindi = () => {
                                             مجموع البند :
                                         </td>
                                         <td>
-                                            1010.22 د.إ
+                                            1010.22 دولار
                                         </td>
                                     </tr>
                                 </tbody>
@@ -414,7 +499,7 @@ const InvoiceHindi = () => {
                                             مجموع البند :
                                         </td>
                                         <td>
-                                            1010.22 د.إ
+                                            1010.22 دولار
                                         </td>
                                     </tr>
                                 </tbody>
@@ -433,14 +518,15 @@ const InvoiceHindi = () => {
                                 المجموع الصافي
                             </td>
                             <td>
-                            د.إ 4449.50
+                                4449.50 ر.س
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 إجمالي الخصم
                             </td>
-                            <td> د.إ 100.00
+                            <td>
+                                100.00 ر.س
                             </td>
                         </tr>
                         <tr>
@@ -448,7 +534,7 @@ const InvoiceHindi = () => {
                                 إجمالي الضريبة
                             </td>
                             <td>
-                            د.إ 12.00
+                                12.00 ر.س
                             </td>
                         </tr>
                         <tr>
@@ -456,7 +542,7 @@ const InvoiceHindi = () => {
                                 شحن
                             </td>
                             <td>
-                            د.إ 0.00
+                                0.00 ر.س
                             </td>
                         </tr>
                         <tr>
@@ -464,7 +550,7 @@ const InvoiceHindi = () => {
                                 الدفع مقدما
                             </td>
                             <td>
-                            د.إ 500.50
+                                500.50 ر.س
                             </td>
                         </tr>
                         <tr className="bg-theme-accent fw-bold">
@@ -472,7 +558,7 @@ const InvoiceHindi = () => {
                                 المجموع الإجمالي
                             </td>
                             <td className="h3 fw-bold">
-                            د.إ 3861.00
+                                3861.00 ر.س
                             </td>
                         </tr>
                     </tbody>
@@ -535,7 +621,7 @@ const InvoiceHindi = () => {
                                             <path
                                                 d="M2.45833 0.138306C1.80634 0.138306 1.18106 0.397308 0.720029 0.858335C0.259002 1.31936 0 1.94465 0 2.59664V16.1175H2.45833C2.45833 17.0955 2.84684 18.0334 3.53838 18.7249C4.22992 19.4165 5.16785 19.805 6.14583 19.805C7.12382 19.805 8.06175 19.4165 8.75329 18.7249C9.44483 18.0334 9.83333 17.0955 9.83333 16.1175H17.2083C17.2083 17.0955 17.5968 18.0334 18.2884 18.7249C18.9799 19.4165 19.9178 19.805 20.8958 19.805C21.8738 19.805 22.8118 19.4165 23.5033 18.7249C24.1948 18.0334 24.5833 17.0955 24.5833 16.1175H27.0417V9.97164L23.3542 5.05497H19.6667V0.138306M11.0625 2.59664L15.9792 7.51331L11.0625 12.43V8.74247H3.6875V6.28414H11.0625M19.6667 6.89872H22.7396L25.161 9.97164H19.6667M6.14583 14.2737C6.63483 14.2737 7.10379 14.468 7.44956 14.8137C7.79533 15.1595 7.98958 15.6285 7.98958 16.1175C7.98958 16.6065 7.79533 17.0754 7.44956 17.4212C7.10379 17.767 6.63483 17.9612 6.14583 17.9612C5.65684 17.9612 5.18788 17.767 4.84211 17.4212C4.49634 17.0754 4.30208 16.6065 4.30208 16.1175C4.30208 15.6285 4.49634 15.1595 4.84211 14.8137C5.18788 14.468 5.65684 14.2737 6.14583 14.2737ZM20.8958 14.2737C21.3848 14.2737 21.8538 14.468 22.1996 14.8137C22.5453 15.1595 22.7396 15.6285 22.7396 16.1175C22.7396 16.6065 22.5453 17.0754 22.1996 17.4212C21.8538 17.767 21.3848 17.9612 20.8958 17.9612C20.4068 17.9612 19.9379 17.767 19.5921 17.4212C19.2463 17.0754 19.0521 16.6065 19.0521 16.1175C19.0521 15.6285 19.2463 15.1595 19.5921 14.8137C19.9379 14.468 20.4068 14.2737 20.8958 14.2737Z">
                                             </path>
-                                        </svg></span><span className="text-center text-sm-start m-0 h6 shipment-icon">
+                                        </svg></span><span className="text-center text-sm-start m-0 h6">
                                         
                                             تتبع الشحنة
                                         
@@ -548,7 +634,7 @@ const InvoiceHindi = () => {
                                         title="رابط المسار">
                                         
                                             194978a68
-                                        <img className="ms-1 opacity-75 link-icon" width="13"
+                                        <img className="ms-1 opacity-75 " width="13"
                                             src="/invoice-css/assets/images/pop.svg"/>
                                     </a></td>
                             </tr>
@@ -622,8 +708,8 @@ const InvoiceHindi = () => {
                         </span></a></div>
             </div>
             <div className="col-sm-8 col-lg-9 align-self-stretch footer-right pb-lg-1">
-                <div className="d-flex align-items-center justify-content-center justify-content-between px-3">
-                <div class='footer-thank text-white font-primary fw-bold text-center fs-6'>شكرًا لك</div>
+                <div className="d-flex align-items-center justify-content-center justify-content-sm-between px-3"><img
+                        src="/invoice-css/assets/images/thnakyou.png" alt="شكرا لك"/>
                     <h6 className="opacity-75 text-center w-100 d-none d-sm-block">
                         تابعنا
                     </h6>
@@ -724,4 +810,4 @@ const InvoiceHindi = () => {
   );
 };
 
-export default InvoiceHindi;
+export default InvoiceLayout;

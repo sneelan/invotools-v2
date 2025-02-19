@@ -6,10 +6,10 @@ header .row .col-md-4{width:50%!important;}
 header .col-md-4:nth-child(2){justify-content: end!important;padding: 0!important;margin-bottom: 0.4em;} 
 .logo{ margin-top: 1em!important;margin-bottom: 1em!important;}
 
- .my-row-2 .col-sm-4:nth-child(2),  .my-row-3 .col-sm-4:nth-child(1){display: none!important;} 
- .my-row-2 .col-sm-4,  .my-row-3 .col-sm-4{width:50%!important;} 
+ .order-info-row1 .col-sm-4:nth-child(2),  .order-info-row2 .col-sm-4:nth-child(1){display: none!important;} 
+ .order-info-row1 .col-sm-4,  .order-info-row2 .col-sm-4{width:50%!important;} 
 
-.Xmy-row-3, footer{display: none!important;} 
+.Xorder-info-row2, footer{display: none!important;} 
 #sec-notes .align-self-stretch .my-notesX,.Xsec-sign-left{opacity:0!important;} 
 main{padding-top:4px;}
 .container-xl{max-width: 850px!important;}
@@ -25,19 +25,19 @@ main{padding-top:4px;}
 
 /* mobile */
 @media screen and (max-width:768px) {
-    header .row .col-md-4,#header-left,.my-row-3 .col-sm-4{width:100%!important;}   
+    header .row .col-md-4,#header-left,.order-info-row2 .col-sm-4{width:100%!important;}   
     .my-notes{display: none!important;}
 }
 .mob-products .hover-underline,.mob-pro-right tr:first-child{display: none!important;} 
 .mob-products *{font-size:12px!important;}
 .mob-product-row .p-2{padding:0.25em!important;}
-.my-row-3 {padding: 0 0 0 1em!important;}
-.my-row-3 *{padding: 0em!important;}
-.my-row-3 .mb-4{margin-bottom: 0em!important;}
+.order-info-row2 {padding: 0 0 0 1em!important;}
+.order-info-row2 *{padding: 0em!important;}
+.order-info-row2 .mb-4{margin-bottom: 0em!important;}
 
-.my-row-2{padding:0.5em 0.5em 0.5em 1em!important;}
-.my-row-2 *{padding:0!important;}
-.my-row-3 *, .my-row-2 *{ line-height: 150%!important;}
+.order-info-row1{padding:0.5em 0.5em 0.5em 1em!important;}
+.order-info-row1 *{padding:0!important;}
+.order-info-row2 *, .order-info-row1 *{ line-height: 150%!important;}
 
-.my-notes *, .product *, .product-total *, .track-ship *, .my-row-3 *, .my-row-2 *{font-size: 14px!important; }
+.my-notes *, .product *, .product-total *, .track-ship *, .order-info-row2 *, .order-info-row1 *{font-size: 14px!important; }
 .sec-sign-right h4{display: none!important;}

@@ -32,8 +32,8 @@ const InvoiceHindi = () => {
         <span class="fs-3 fw-bold text-uppercase">FACTURE</span>
         <span class="clear d-block p small ">(Original pour le destinataire)</span>
     </div>
-    <section class="border-4 border-top border-theme-accent" id="sec-details">
-        <div class="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom my-row-2">
+    <section class="border-4 border-top border-theme-accent" id="order-info">
+        <div class="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom order-info-row1">
             <div class="col-sm-4 ps-lg-4 ">
                 <span class="d-block "><h4 class="text-uppercase d-inline-block ">N° DE FACTURE: </h4>
                 <p class="d-inline-block ps-2 ps-sm-1">#FADZZ</p>
@@ -51,7 +51,7 @@ const InvoiceHindi = () => {
                 <p class="d-inline-block  ps-2 ps-sm-1">vendredi 9 août 2023</p>
             </div>
         </div>
-        <div class="row m-0 p-sm-2 p-lg-3 text-center text-sm-start my-row-3 ">
+        <div class="row m-0 p-sm-2 p-lg-3 text-center text-sm-start order-info-row2 ">
             <div class="col-sm-4 my-3 my-sm-0 d-flex align-items-center justify-content-center ">
                 <div>
                     <a class="qrcode d-block rounded" title="Use QR code Scanner for the live PDF link" href="https://invotools.io?invoice-directlink=TEST" target="_blank">

@@ -139,11 +139,12 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                         ))
                       ) : (
                           <>
-                          <option value="english">English</option>                        
+                          <option value="english">English</option> 
+                          <option value="arabic">Arabic</option>                       
                           {/* <option value="hindi">Hindi</option>                      
                           <option value="spanish">Spanish</option>                                                  
                           <option value="french">French</option>
-                          <option value="arabic">Arabic</option> */}
+                           */}
                           </>
                       )}                    
                   </select> 
