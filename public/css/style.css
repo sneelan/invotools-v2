@@ -481,17 +481,6 @@
   background-color: #FFA100;
 }
 
-body.theme-thanks {
-  background-image: url("https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/bg-vertical-thanks.png");
-  background-position: bottom left;
-  background-repeat: repeat-x;
-  background-attachment: fixed;
-  background-size: unset;
-}
-body.theme-thanks .theme-thanks {
-  background-color: unset !important;
-}
-
 body.theme-christmas {
   background-color: #3ea3eb;
   background-image: url("https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/bg-top-christmas.png"), url("https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/bg-bot-christmas.png");
@@ -501,17 +490,6 @@ body.theme-christmas {
   background-size: unset, unset;
 }
 body.theme-christmas .theme-christmas {
-  background-color: unset !important;
-}
-
-body.theme-diwali {
-  background-image: url("https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/diwali-diya1.png"), url("https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/season/bg-vertical-diwali.png");
-  background-position: left bottom, top left;
-  background-repeat: no-repeat, repeat-x;
-  background-attachment: fixed;
-  background-size: unset;
-}
-body.theme-diwali .theme-diwali {
   background-color: unset !important;
 }
 

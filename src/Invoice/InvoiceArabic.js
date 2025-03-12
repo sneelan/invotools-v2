@@ -5,7 +5,7 @@ const InvoiceHindi = () => {
   return (
     <>
     <link rel="stylesheet" type="text/css" href="/root-css/arabic-font.css" />
-    <div className="container-xl shadow p-0 bg-white rounded invoice-wrap overflow-hidden">
+    <div className="container-xl d-none shadow p-0 bg-white rounded invoice-wrap overflow-hidden" style={{display:'none'}}>
     <header className="px-2 px-lg-2 hover">
       <div className="xd-sm-flex xalign-items-center xjustify-content-between row m-0 p-0">
         <div id="header-left" className="text-center col-sm-4 col-md-4 col-lg-4 d-flex align-items-center justify-content-center p-0 ps-md-3">
@@ -563,7 +563,7 @@ const InvoiceHindi = () => {
                 <p><small>
                         المفوض بالتوقيع
                     </small></p>
-                <div className="mt-2">
+                <div className="mt-2 carbon">
                     <p>
                     <h6>
                         إجمالي مكافئ ثاني أكسيد الكربون: <span style={{color:"rgb(35, 159, 0)", fontWeight: "bold"}}>

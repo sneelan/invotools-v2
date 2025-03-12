@@ -17,7 +17,8 @@ main{padding-top:4px;}
 .product th:nth-child(3), .product td:nth-child(3),
 .product th:nth-child(4), .product td:nth-child(4),
 .product th:nth-child(6), .product td:nth-child(6),
-.product th:nth-child(7), .product td:nth-child(7)
+.product th:nth-child(7), .product td:nth-child(7),
+.product th:nth-child(8), .product td:nth-child(8)
 {display: none!important;} 
 .product th, .product td{padding: 0.5em 0!important;}
 .sec-sign-left,.sec-sign-right{padding: 0!important;}
@@ -40,4 +41,4 @@ main{padding-top:4px;}
 .order-info-row2 *, .order-info-row1 *{ line-height: 150%!important;}
 
 .my-notes *, .product *, .product-total *, .track-ship *, .order-info-row2 *, .order-info-row1 *{font-size: 14px!important; }
-.sec-sign-right h4{display: none!important;}
+.sec-sign-right h4,.carbon{display: none!important;}

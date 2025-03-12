@@ -285,6 +285,10 @@ a:hover {
   margin-bottom: 0;
 }
 
+.h4, h4, h5, .h5, .h6 {
+  color: #643f00;
+}
+
 body {
   color: #1E1E1E !important;
 }

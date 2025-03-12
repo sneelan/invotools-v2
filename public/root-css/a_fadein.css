@@ -1,11 +1,4 @@
-.container-xl{ 
-    transition:0.0s!important; opacity: 1 !important;
-    /* animation: fadeIn 0.25s ease-in-out ; */
-} 
-*, .container-xl *{transition: 0s!important;} 
 *{transition: 0s!important;}
-
 html, body{background-color: transparent!important;}
-
-
-table tr:hover td, .container-xl a:hover, table td:hover{transition: 0.8s!important;} 
+table tr:hover td, .container-xl a:hover, table td:hover{transition: 0.3s!important;} 
+.container-xl{ display: block!important;}

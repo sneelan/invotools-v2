@@ -5,7 +5,7 @@ const InvoiceLayout = () => {
 
   return (
     <>
-    <div className="container-xl shadow p-0 bg-white rounded invoice-wrap overflow-hidden">
+    <div className="container-xl shadow p-0 bg-white rounded invoice-wrap overflow-hidden" style={{display:'none'}}>
         <header className="px-2 px-lg-2 hover">
             <div className="xd-sm-flex xalign-items-center xjustify-content-between row m-0 p-0">                
                 <div id="header-left" className="text-center col-sm-4 col-md-4 col-lg-4 d-flex align-items-center justify-content-center p-0 ps-md-3">
@@ -343,7 +343,7 @@ const InvoiceLayout = () => {
                     <h6>Invotools Pvt. Ltd</h6>
                     <span id="sign"></span>
                     <p><small>Authorized Signatory</small></p>
-                    <div className="mt-2"><p><h6>Total CO2e : 
+                    <div className="mt-2 carbon"><p><h6>Total CO2e : 
                         <span style={{ color: "rgb(35, 159, 0)", fontWeight: "bold" }}>&nbsp;1.1 kg CO2e</span> </h6></p>
                         <p>
                         <small>To offset 1.1 kg CO2e, plant <b>1 tree</b> 

@@ -274,6 +274,10 @@ a:hover {
   margin-bottom: 0;
 }
 
+.h4, h4, h5, .h5, .h6 {
+  color: #252525;
+}
+
 body {
   color: #181818 !important;
 }

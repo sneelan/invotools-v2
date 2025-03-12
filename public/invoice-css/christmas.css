@@ -277,6 +277,10 @@ a:hover {
   margin-bottom: 0;
 }
 
+.h4, h4, h5, .h5, .h6 {
+  color: #003d53;
+}
+
 body {
   color: #001a24 !important;
 }
@@ -1187,37 +1191,34 @@ header {
   background-repeat: no-repeat;
   /* padding:1em 0 ; */
 }
-@media screen and (max-width: 768px) {
-  header {
-    background-size: cover;
-  }
-}
 @media screen and (min-width: 769px) {
   header {
     background-size: contain;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 768px) {
   header {
     background-size: cover;
   }
 }
 @media screen and (max-width: 578px) {
   header {
-    background-size: unset;
-    background-position: top left;
+    background: url("assets/images/season/christmas-ball.png"), url("assets/images/season/christmas-ball.png"), url("assets/images/season/mobile-christmas.png");
+    background-position: 0 -147px, 95% -100px, top left;
+    background-repeat: no-repeat;
+    background-size: contain, contain, cover;
   }
 }
 header .bg-theme-accent {
   background-color: #004a80;
   color: white;
 }
-header .logo {
+header .Xlogo {
   opacity: 0;
   height: 138px;
 }
 @media screen and (max-width: 578px) {
-  header .logo {
+  header .Xlogo {
     height: 120px;
     margin-bottom: 5px !important;
   }
