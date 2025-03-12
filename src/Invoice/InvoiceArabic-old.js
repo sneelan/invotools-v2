@@ -391,7 +391,7 @@ const InvoiceHindi = () => {
             </div>
             <div className="text-center small py-2 bg-black text-theme-primary-light"> 
                 <a href="https://www.ayatacommerce.com" target="_blank" className="text-theme-primary-light anchor-dark opacity-75 opacity-hover-100 d-block w-100">                
-                    حقوق النشر © 2023 AyataCommerce. | www.ayatacommerce.com</a></div>
+                    حقوق النشر © 2025 AyataCommerce. | www.ayatacommerce.com</a></div>
         </footer>
     </div>    
     </>

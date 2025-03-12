@@ -126,7 +126,7 @@ const InvoiceHindi = () => {
                         <th>
                             تخفيض
                         </th>
-                        <th className="highlight">
+                        <th className="xhighlight">
                             ثاني أكسيد الكربون
                         </th>
                         <th className='p-h-price'>
@@ -156,7 +156,7 @@ const InvoiceHindi = () => {
                         <td>
                             20%
                         </td>
-                        <td className="highlight">
+                        <td className="xhighlight">
                             0.4 كجم
                         </td>
                         <td className='p-price'>
@@ -186,7 +186,7 @@ const InvoiceHindi = () => {
                         <td>
                             20%
                         </td>
-                        <td className="highlight">
+                        <td className="xhighlight">
                             0.35 كجم
                         </td>
                         <td className='p-price'>
@@ -215,7 +215,7 @@ const InvoiceHindi = () => {
                         <td>
                             20%
                         </td>
-                        <td className="highlight">
+                        <td className="xhighlight">
                             0.35 كجم
                         </td>
                         <td className='p-price'>
@@ -479,8 +479,8 @@ const InvoiceHindi = () => {
                 </table>
             </div>
             <div className="align-self-stretch pt-lg-2 pe-lg-3 colname-2 w-100">
-                <div className="d-flex flex-column-reverse flex-sm-column w-100 h-100 text-start text-sm-start my-notes">
-                    <div className="align-self-stretch flex-grow-1 pt-sm-2 pt-md-0">
+                <div className="d-flex justify-content-evenly flex-column-reverse flex-sm-column w-100 h-100 text-start text-sm-start my-notes">
+                    <div className="xalign-self-stretch xflex-grow-1 pt-sm-2 pt-md-0 mt-2 mt-sm-0">
                         <p><b>
                                 ملاحظة الطلب:
                             </b>
@@ -611,7 +611,7 @@ const InvoiceHindi = () => {
                                 d="M14.3073 0.877075H2.06019C1.2182 0.877075 0.536951 1.56598 0.536951 2.40798L0.529297 11.5934C0.529297 12.4354 1.2182 13.1243 2.06019 13.1243H14.3073C15.1493 13.1243 15.8382 12.4354 15.8382 11.5934V2.40798C15.8382 1.56598 15.1493 0.877075 14.3073 0.877075ZM14.3073 3.93888L8.18374 7.76613L2.06019 3.93888V2.40798L8.18374 6.23523L14.3073 2.40798V3.93888Z">
                             </path>
                         </svg><span className="ps-1">
-                            معلومات@invotools.io
+                            info@invotools.io
                         </span></a><a href="https://invotools.io" target="_blank"><svg width="16" height="16"
                             viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -623,7 +623,7 @@ const InvoiceHindi = () => {
             </div>
             <div className="col-sm-8 col-lg-9 align-self-stretch footer-right pb-lg-1">
                 <div className="d-flex align-items-center justify-content-center justify-content-between px-3">
-                <div class='footer-thank text-white font-primary fw-bold text-center fs-6'>شكرًا لك</div>
+                <div class='footer-thank text-theme-primary-light font-primary fw-bold text-center fs-6'>شكرًا لك</div>
                     <h6 className="opacity-75 text-center w-100 d-none d-sm-block">
                         تابعنا
                     </h6>
@@ -690,35 +690,10 @@ const InvoiceHindi = () => {
         <div className="text-center small py-2 bg-black text-theme-primary-light"><a href="https://www.invotools.io"
                 target="_blank" className="text-theme-primary-light anchor-dark opacity-75 opacity-hover-100 d-block w-100">
                 
-                    جميع الحقوق محفوظة © 2023 www.invotools.io
+                    جميع الحقوق محفوظة © 2025 www.invotools.io
                 
             </a></div>
     </footer>
-    <div className="text-center p-3">
-        
-            للمطورين: 
-        <a className="me-2 link link-primary" target="_blank"
-            href="https://uxdemo.ayatacommerce.com/invotools/invoice-templates/template2/styleguide.html">
-            
-                دليل الأسلوب 
-            
-        </a><a className="me-2 link link-primary" target="_blank"
-            href="https://uxdemo.ayatacommerce.com/invotools/invoice-templates/template2/font-options.html">
-            
-                خيارات الخط 
-            
-        </a><a className="me-2 link link-primary" target="_blank"
-            href="https://uxdemo.ayatacommerce.com/invotools/invoice-templates/template2/font-options_style.html">
-            
-                خيارات الخط - 
-            
-        </a><a className="me-2 link link-primary" target="_blank"
-            href="https://uxdemo.ayatacommerce.com/invotools/invoice-templates/template2/grid-sturcture.html">
-            
-                هيكل الشبكة الأسلوبية
-            
-        </a>
-    </div>
     </div> 
     </>
   );

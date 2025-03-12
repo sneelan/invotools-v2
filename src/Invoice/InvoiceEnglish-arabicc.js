@@ -776,7 +776,7 @@ const InvoiceLayout = () => {
         <div className="text-center small py-2 bg-black text-theme-primary-light"><a href="https://www.invotools.io"
                 target="_blank" className="text-theme-primary-light anchor-dark opacity-75 opacity-hover-100 d-block w-100">
                 
-                    جميع الحقوق محفوظة © 2023 www.invotools.io
+                    جميع الحقوق محفوظة © 2025 www.invotools.io
                 
             </a></div>
     </footer>

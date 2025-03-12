@@ -128,12 +128,12 @@ if(invoLayout!='layout-featured'){
     
     // Clean up when component unmounts
     return () => {
-/*       // Remove both links if needed
-      const bootstrapLink = document.getElementById('theme-bootstrap');
-      const fadeinLink = document.getElementById('theme-fadein');
-      if (bootstrapLink) {bootstrapLink.remove();}       
-      if (themeLink) {themeLink.remove(); }
-      if (fadeinLink) {fadeinLink.remove();}  */
+       // Remove both links if needed
+      //const bootstrapLink = document.getElementById('theme-bootstrap');
+      //const fadeinLink = document.getElementById('theme-fadein');
+      //if (bootstrapLink) {bootstrapLink.remove();}       
+      //if (themeLink) {themeLink.remove(); }
+      //if (fadeinLink) {fadeinLink.remove();} 
     };
   }, [urlColor, urlLanguage, urlMode, urlFont]); 
 

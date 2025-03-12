@@ -194,7 +194,7 @@ function PopupPage({ activeTheme, font, clientid, invoiceid,language, setActiveT
 
   return (
     <div>
-              <div className='mobile-menu bg-theme-secondary d-none'>
+              <div className='mobile-menu bg-theme-secondary'>
                   <div style={{padding:'0.25em', justifyContent:'end'}} className='invoice-wrap flex-center' >                    
                   <b style={{color:'gray'}} className='me-1 mobile-menu-label'>Menu </b>                    
                     <span onClick={toggleDrawer} className='box-button'> <MenuIcon /></span>                    
@@ -202,7 +202,7 @@ function PopupPage({ activeTheme, font, clientid, invoiceid,language, setActiveT
                     </div>                    
               </div>
               {data && data.menuPanelCSS && (<style dangerouslySetInnerHTML={{ __html: data.menuPanelCSS }}></style>)}
-              <div className=' d-none'>   
+              <div className=''>   
                     <span onClick={toggleDrawer} className='box-button' aria-label="menu" id='burger-menu'> <MenuIcon /></span>
                     <span onClick={toggleNotification} className='box-button notification' aria-label="menu" id='burger-menu'> <NotificationsActiveIcon />
                     <span>3</span>

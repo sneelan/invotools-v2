@@ -100,7 +100,7 @@ const InvoiceLayout = () => {
                             <th>QTY</th>
                             <th>Tax</th>
                             <th>Discount</th>
-                            <th className="highlight">CO2</th>
+                            <th className="xhighlight">CO2</th>
                             <th className='p-h-price'>Item Total</th>
                             </tr>
                         <tr>
@@ -111,7 +111,7 @@ const InvoiceLayout = () => {
                             <td>1</td>
                             <td>10%</td>
                             <td>20%</td>
-                            <td className="highlight">0.4 kg</td>
+                            <td className="xhighlight">0.4 kg</td>
                             <td className='p-price'>1010.22</td>
                         </tr>
                         <tr>
@@ -122,7 +122,7 @@ const InvoiceLayout = () => {
                             <td>2</td>
                             <td>10%</td>
                             <td>20%</td>
-                            <td className="highlight">0.35 kg</td>
+                            <td className="xhighlight">0.35 kg</td>
                             <td className='p-price'>1282.48</td>
                         </tr>
                         <tr>
@@ -134,7 +134,7 @@ const InvoiceLayout = () => {
                             <td>3</td>
                             <td>10%</td>
                             <td>20%</td>
-                            <td className="highlight">0.35 kg</td>
+                            <td className="xhighlight">0.35 kg</td>
                             <td className='p-price'>2156.80</td>
                         </tr>
                         
@@ -296,8 +296,8 @@ const InvoiceLayout = () => {
                     </table>
                 </div>
                 <div className="align-self-stretch pt-lg-2 pe-lg-3 colname-2 w-100">                    
-                    <div className="d-flex flex-column-reverse flex-sm-column w-100 h-100 text-start text-sm-start my-notes">
-                        <div className="align-self-stretch flex-grow-1 pt-sm-2 pt-md-0">
+                    <div className="d-flex justify-content-evenly flex-column-reverse flex-sm-column w-100 h-100 text-start text-sm-start my-notes">
+                        <div className="Xalign-self-stretch xflex-grow-1 pt-sm-2 pt-md-0 mt-2 mt-sm-0">
                             <p><b>Order Note : </b> At invotools.io, we aim for perfect deliveries every time. In case of a return, please ensure you have the original Brand box, price tag, packing, and invoice, as these are essential for processing your request. Your cooperation is greatly appreciated.                        </p>
                         </div>
                         <div className="w-100 pb-lg-0 pe-1 pb-sm-0 pt-2 pt-sm-0">
@@ -311,7 +311,7 @@ const InvoiceLayout = () => {
             <div className="d-sm-flex align-items-center justify-content-between px-2 py-lg-1 mt-1 mt-sm-0">
                 <div className="py-2 py-lg-2 sec-sign-left">
                     <div className="">
-                        <div className="ps-lg-3">
+                        <div className="">
                             <h5>PAYMENT DETAILS</h5>
                         <p className=""> Credit Card 
                             Transaction Id: <b>310b174b17ba3</b><br/>
@@ -381,7 +381,7 @@ const InvoiceLayout = () => {
             </div>
             <div className="col-sm-8 col-lg-9 align-self-stretch footer-right pb-lg-1">
                 <div className="d-flex align-items-center justify-content-center justify-content-center px-3">
-                <div class='footer-thank text-white font-primary fw-bold text-center fs-6'>
+                <div class='footer-thank text-theme-primary-light font-primary fw-bold text-center fs-6'>
                         THANK YOU!
                     </div>
                     <h6 className="opacity-75 text-center w-100 d-none d-sm-block">FOLLOW US</h6>
@@ -412,14 +412,8 @@ const InvoiceLayout = () => {
             </div>
             <div className="text-center small py-2 bg-black text-theme-primary-light"> 
                 <a href="https://www.invotools.io" target="_blank" className="text-theme-primary-light anchor-dark opacity-75 opacity-hover-100 d-block w-100">                
-                Copyright © 2023 www.invotools.io</a></div>
+                Copyright © 2025 www.invotools.io</a></div>
         </footer>
-        <div className="text-center p-3">For developers : 
-            <a className="me-2 link link-primary" target="_blank" href="https://uxdemo.ayatacommerce.com/invotools/invoice-templates/template2/styleguide.html">Style Guide</a>
-            <a className="me-2 link link-primary" target="_blank" href="https://uxdemo.ayatacommerce.com/invotools/invoice-templates/template2/font-options.html">Font Options</a>
-            <a className="me-2 link link-primary" target="_blank" href="https://uxdemo.ayatacommerce.com/invotools/invoice-templates/template2/font-options_style.html">Font Options-Style</a>
-            <a className="me-2 link link-primary" target="_blank" href="https://uxdemo.ayatacommerce.com/invotools/invoice-templates/template2/grid-sturcture.html">Grid Structure</a>
-        </div>
       </div>    
     </>
   );

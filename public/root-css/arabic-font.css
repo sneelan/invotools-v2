@@ -14,6 +14,7 @@
 .product-total td:last-child{text-align: left!important;}
 
 #sec-notes .colname-2{padding-left: 1rem !important;padding-right: 0rem !important;}
+.my-notes p{text-align: right;}
 
 .link-icon, .shipment-icon{margin: 0 0.5em 0 0!important;}
 

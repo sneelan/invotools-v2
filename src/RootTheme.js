@@ -181,19 +181,19 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                             {/* <span className={`theme-btn ${activeTheme === 'green' ? 'active' : ''}`} style={{backgroundColor:'#437B00'}} onClick={() => handleButtonClick('green')}></span>
                             <span className={`theme-btn ${activeTheme === 'maroon' ? 'active' : ''}`} style={{backgroundColor:'#88004A'}} onClick={() => handleButtonClick('maroon')}></span>
                             <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
-                            <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
+                          
                             <span className={`theme-btn ${activeTheme === 'gray' ? 'active' : ''}`} style={{backgroundColor:'#bbbbbb'}} onClick={() => handleButtonClick('gray')}></span>                             */}                            
                             {/* <span className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-diwali.png' onClick={() => handleButtonClick('diwali')}   /></span>
                             <span className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-thanks.png' onClick={() => handleButtonClick('thanks')}   /></span>                             */}
                             
                            <span className={`theme-btn ${activeTheme === 'blue' ? 'active' : ''}`} style={{backgroundColor:'#005E80'}} onClick={() => handleButtonClick('blue')}></span>
-                             {/* <span className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-xmas.png' onClick={() => handleButtonClick('christmas')}   /></span>
-                            <span className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} ><img src='/img/icon-ads.png' onClick={() => handleButtonClick('ads')} /></span>
-                            <span className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} ><img src='/img/icon-printer.png' onClick={() => handleButtonClick('printer')}  /></span> */}
+                           <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
+                           <span className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-xmas.png' onClick={() => handleButtonClick('christmas')}   /></span>
+                          <span className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} ><img src='/img/icon-ads.png' onClick={() => handleButtonClick('ads')} /></span>
+                          <span className={`theme-btn ${activeTheme === 'printer' ? 'active' : ''}`} ><img src='/img/icon-printer.png' onClick={() => handleButtonClick('printer')}  /></span>
                           </span>   
                           <span className='d-inline-block ms-1' style={{minWidth:'100px',textTransform:'capitalize', fontWeight:'bold'}}>{
-                            activeTheme==='maroon'?'Magenta' : activeTheme==='ads'?'Advertising' :activeTheme==='thanks'?'Thanks Giving' : activeTheme==='printer'?'Printer Friendly':activeTheme}
-                            -{selectedFont}</span>
+                            activeTheme==='maroon'?'Magenta' : activeTheme==='ads'?'Advertising' :activeTheme==='thanks'?'Thanks Giving' : activeTheme==='printer'?'Printer Friendly':activeTheme}</span>
                       </div>
                       </div>                     
                   )}
