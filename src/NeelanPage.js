@@ -13,46 +13,22 @@ function NeelanPage() {
      <div className='border rounded mb-2 overflow-hidden '>
       <h4 className='fw-bold m-0 bg-dark text-white py-2 px-3'>Simple Demo </h4>
         <div className='p-1 ps-3'>
-        <p className='mt-1'>https://invotools-customer.vercel.app/simpledemo/.......clientname......./show</p>
-        <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/simpledemo/oliveliving/show' target='_blank'>https://invotools-customer.vercel.app/simpledemo/oliveliving/show</a></p>
-        <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/simpledemo/dusminute/show' target='_blank'>https://invotools-customer.vercel.app/simpledemo/dusminute/show</a></p>
-        <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/simpledemo/chanel/show' target='_blank'>https://invotools-customer.vercel.app/simpledemo/chanel/show</a></p>
-        <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/simpledemo/ckcjewellers/show' target='_blank'>https://invotools-customer.vercel.app/simpledemo/ckcjewellers/show</a></p>
-        <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/simpledemo/globus/show' target='_blank'>https://invotools-customer.vercel.app/simpledemo/globus/show</a></p>
-        <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/simpledemo/joyalukkas/show' target='_blank'>https://invotools-customer.vercel.app/simpledemo/joyalukkas/show</a></p>
+        <p className='mt-1'>https://invotools-v2.vercel.app/simpledemo/.......clientname......./show</p>
+        <p className='fw-normal  m-0'><a href='https://invotools-v2.vercel.app/simpledemo/oliveliving/show' target='_blank'>https://invotools-v2.vercel.app/simpledemo/oliveliving/show</a></p>
+        <p className='fw-normal  m-0'><a href='https://invotools-v2.vercel.app/simpledemo/dusminute/show' target='_blank'>https://invotools-v2.vercel.app/simpledemo/dusminute/show</a></p>
+        <p className='fw-normal  m-0'><a href='https://invotools-v2.vercel.app/simpledemo/chanel/show' target='_blank'>https://invotools-v2.vercel.app/simpledemo/chanel/show</a></p>
+        <p className='fw-normal  m-0'><a href='https://invotools-v2.vercel.app/simpledemo/ckcjewellers/show' target='_blank'>https://invotools-v2.vercel.app/simpledemo/ckcjewellers/show</a></p>
+        <p className='fw-normal  m-0'><a href='https://invotools-v2.vercel.app/simpledemo/globus/show' target='_blank'>https://invotools-v2.vercel.app/simpledemo/globus/show</a></p>
+        <p className='fw-normal  m-0'><a href='https://invotools-v2.vercel.app/simpledemo/joyalukkas/show' target='_blank'>https://invotools-v2.vercel.app/simpledemo/joyalukkas/show</a></p>
         </div>
      </div>
 
      <div className='border  rounded overflow-hidden'>     
      <h4 className='fw-bold m-0 bg-dark text-white py-2 px-3'>Custom Html Demo</h4>
-      <div className='p-1 ps-3'>
-            <p className='mt-1'>https://invotools-customer.vercel.app/demo/clientname/COLOR/default?included=...themenames....&language=..filepathname...</p>
-            <hr className='border-secondary'/>         
-            
-            
-            <h5 className='text-danger m-0'><b>WarHammer</b></h5>      
-            <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/warhammer/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/warhammer/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English</a></p>
-            <hr className='border-secondary'/>     
-
-            <h5 className='text-danger m-0'><b>Breitling</b></h5>      
-            <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English</a></p>
-            <hr className='border-secondary'/>     
-                
-            <h5 className='text-danger m-0'><b>ckcjewellers</b></h5>      
-            <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/ckcjewellers/gray/default?included=yellow,blue,green,maroon,red,black,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/ckcjewellers/gray/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English</a></p>
-            
-            
-            <hr className='border-secondary'/>         
-            <h5 className='text-danger m-0'><b>Oliveliving</b></h5>      
-            <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/oliveliving/maroon/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/oliveliving/maroon/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
-            <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/oliveliving/gray/default?included=yellow,blue,green,maroon,red,black,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/oliveliving/gray/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
-            <hr className='border-secondary'/>     
+      <div className='p-1 ps-3'>               
             <h5 className='text-danger m-0'><b>Dusminute</b></h5>
-            <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/dusminute/green/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English' target='_blank'>https://invotools-customer.vercel.app/demo/dusminute/green/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
-            <hr className='border-secondary'/>     
-            <h5 className='text-danger m-0'><b>Chanel</b></h5>
-            <p className='fw-normal  m-0'><a href='https://invotools-customer.vercel.app/demo/chanel/gray/default?included=printer&language=English-Arabic,English,Arabic' target='_blank'>https://invotools-customer.vercel.app/demo/chanel/gray/default?included=printer&language=English-Arabic,English,Arabic</a></p>
-            <hr className='border-secondary'/> 
+            <p className='fw-normal  m-0'><a href='https://invotools-v2.vercel.app/demo/dusminute/green/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English' target='_blank'>https://invotools-v2.vercel.app/demo/dusminute/green/default?included=yellow,blue,green,maroon,red,black,gray,printer&language=English</a></p>
+            
      </div>
      </div>
     </div>
