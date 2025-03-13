@@ -103,31 +103,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M15.4,16.6L10.8,12L15.4,7.4L14,6L8,12L14,18L15.4,16.6Z" /></svg>
                         </span>
                   </span>
-                  <div className='d-block d-md-inline-block me-1'>
-                <select value={selectedFont} onChange={handleSelectFont} style={{ padding: '0.5em', borderRadius: '0' , opacity: isCarbonActive ? '0' : ''}}>   
-                    {demoIncludedLang ? (
-                        demoIncludedLang.split(',').map((lang) => (
-                          <option key={lang.toLowerCase()} value={lang.toLowerCase()}>
-                            {lang}
-                          </option>
-                        ))
-                      ) : (
-                          <>
-                          <option value="fira">Fira Sans</option>
-                          <option value="nunito">Nunito Sans</option>
-                          <option value="open">Open Sans</option>
-                          <option value="lato">Lato</option>
-                          <option value="poppins">Poppins</option>
-                          <option value="montserrat">Montserrat</option>
-                          <option value="raleway">Raleway</option>
-                          <option value="ubuntu">Ubuntu</option>
-                          <option value="playfair">Playfair Display</option>
-                          <option value="merriweather">Merriweather</option>
-                          <option value="source">Source Sans Pro</option>
-                          </>
-                      )}                    
-                  </select> 
-                </div>
+
 
               <div className='d-block d-md-inline-block me-1'>
                 <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' , opacity: isCarbonActive ? '0' : ''}}>   
@@ -145,6 +121,32 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                           <option value="spanish">Spanish</option>                                                  
                           <option value="french">French</option>
                            */}
+                          </>
+                      )}                    
+                  </select> 
+                </div>
+
+                <div className='d-block d-md-inline-block me-1'>
+                <select value={selectedFont} onChange={handleSelectFont} style={{ padding: '0.5em', borderRadius: '0' , opacity: isCarbonActive ? '0' : ''}}>   
+                    {demoIncludedLang ? (
+                        demoIncludedLang.split(',').map((lang) => (
+                          <option key={lang.toLowerCase()} value={lang.toLowerCase()}>
+                            {lang}
+                          </option>
+                        ))
+                      ) : (
+                          <>                          
+                          <option value="fira">Fira Sans</option>
+                          <option value="nunito">Nunito Sans</option>
+                          <option value="open">Open Sans</option>
+                          <option value="lato">Lato</option>
+                          <option value="poppins">Poppins</option>
+                          <option value="montserrat">Montserrat</option>
+                          <option value="raleway">Raleway</option>
+                          <option value="ubuntu">Ubuntu</option>
+                          <option value="playfair">Playfair Display</option>
+                          <option value="merriweather">Merriweather</option>
+                          <option value="source">Source Sans Pro</option>
                           </>
                       )}                    
                   </select> 
@@ -184,11 +186,14 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                           
                             <span className={`theme-btn ${activeTheme === 'gray' ? 'active' : ''}`} style={{backgroundColor:'#bbbbbb'}} onClick={() => handleButtonClick('gray')}></span>                             */}                            
                             {/* <span className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-diwali.png' onClick={() => handleButtonClick('diwali')}   /></span>
-                            <span className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-thanks.png' onClick={() => handleButtonClick('thanks')}   /></span>                             */}
+                            <span className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-thanks.png' onClick={() => handleButtonClick('thanks')}   /></span>                             
+                            
+                            <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
+                           <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
+                            */}
                             
                            <span className={`theme-btn ${activeTheme === 'blue' ? 'active' : ''}`} style={{backgroundColor:'#005E80'}} onClick={() => handleButtonClick('blue')}></span>
-                           <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
-                           <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
+                           
 
                            <span className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-xmas.png' onClick={() => handleButtonClick('christmas')}   /></span>
                           <span className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} ><img src='/img/icon-ads.png' onClick={() => handleButtonClick('ads')} /></span>

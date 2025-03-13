@@ -304,7 +304,7 @@ const InvoiceHindi = () => {
                     <p class=""> carte de crédit 
                         Identifiant de transaction par : <b>310b174b17ba3</b><br/>
                         Statut du paiement: <b>Success</b><br/>
-                        Date de paiement: <b>06-09-2023</b><br/>
+                        Date de paiement: <b>13-03-2025</b><br/>
                         Montant payé: <b>€ 505.50 </b></p>
                     </div>
                 </div>

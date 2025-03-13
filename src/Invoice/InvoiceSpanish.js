@@ -303,7 +303,7 @@ const InvoiceSpanish = () => {
                         <p className=""> Tarjeta de crédito
                             ID de transacción: <b>310b174b17ba3</b><br/>
                             Estado de pago: <b>exitoso</b><br/>
-                            Fecha de pago: <b>06-09-2023</b><br/>
+                            Fecha de pago: <b>13-03-2025</b><br/>
                             Monto pagado: <b>€ 505.50 </b></p>
                         </div>
                     </div>

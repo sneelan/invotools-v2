@@ -43,7 +43,7 @@ const InvoiceLayout = () => {
                     <p className="d-inline-block ps-2 ps-sm-0">&nbsp;#FADZZ</p>
                     </span>
                     <h6 className="clear d-inline-block fw-bold">DATE : </h6>
-                    <p className="d-inline-block ps-2 ps-sm-0">&nbsp;Friday 9, Aug 2023</p>
+                    <p className="d-inline-block ps-2 ps-sm-0">&nbsp;Friday 14, Mar 2025</p>
                 </div>
                 <div className="col-sm-4 d-sm-flex align-items-center justify-content-center xpy-2 pt-sm-0">
                     <img src="/invoice-css/assets/images/bar-code.png" className="img-fluid" alt="bar code" />
@@ -52,7 +52,7 @@ const InvoiceLayout = () => {
                     <h6 className="d-inline-block fw-bold mb-2">ORDER NUMBER : </h6>
                     <p className="d-inline-block ps-2 ps-sm-0">&nbsp;OD56522</p>                        
                     <br/><h6 className="clear d-inline-block fw-bold">DATE : </h6>
-                    <p className="d-inline-block ps-2 ps-sm-0">&nbsp;Friday 9, Aug 2023</p>
+                    <p className="d-inline-block ps-2 ps-sm-0">&nbsp;Friday 14, Mar 2025</p>
                 </div>
             </div>
             <div className="row m-0 p-sm-2 p-lg-2 text-center text-sm-start order-info-row2 ">
@@ -316,7 +316,7 @@ const InvoiceLayout = () => {
                         <p className=""> Credit Card 
                             Transaction Id: <b>310b174b17ba3</b><br/>
                             Payment Status: <b>Success</b><br/>
-                            Payment Date: <b>06-09-2023</b><br/>
+                            Payment Date: <b>13-03-2025</b><br/>
                             Amount Paid: <b>₹ 505.50 </b></p>
                         </div>
                     </div>
