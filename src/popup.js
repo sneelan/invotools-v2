@@ -32,7 +32,15 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
   const [apiHtml, setApiHtml] = useState('');
   const [showNotifications, setShowNotifications] = useState(false);
 
+  const [notifications, setNotifications] = useState([
+    { id: 1, text: "Please upload your Id Proof and Address documents.", link: "Click" },
+    { id: 2, text: "You missed it! Enjoy a Special breakfast on us during your stay!", link: "Register here" },
+    { id: 3, text: "Unlock relaxation! Pay just ₹500 and indulge in a ₹2500 Spa Massage for two!!", link: "Pay Now!" }
+  ]);
 
+  const removeNotification = (id) => {
+    setNotifications(notifications.filter((notification) => notification.id !== id));
+  };
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const demoIncludedThemes = params.get('included');
@@ -64,6 +72,12 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
     setOpen(!open);
   };
   const toggleNotification = () => {setShowNotifications(!showNotifications);};
+  useEffect(() => {
+    if (notifications.length === 0) {
+      setShowNotifications(false);
+    }
+  }, [notifications]);  
+
   const openPopup = (popup) => {
     setSelectedPopup(popup);
     setPopupOpen(true);
@@ -141,8 +155,10 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
               {data && data.menuPanelCSS && (<style dangerouslySetInnerHTML={{ __html: data.menuPanelCSS }}></style>)}
               <div className=''>   
                     <span onClick={toggleDrawer} className='box-button' aria-label="menu" id='burger-menu'> <MenuIcon /></span>
-                    <span onClick={toggleNotification} className='box-button notification' aria-label="menu" id='burger-menu'> <NotificationsActiveIcon />
-                    <span>3</span>
+                    <span onClick={toggleNotification} className='box-button notification' aria-label="menu" id='burger-menu'
+                    style={notifications.length === 0 ? { pointerEvents: "none", opacity: 0.5 } : {}}> 
+                    <NotificationsActiveIcon />
+                    {notifications.length > 0 && <span>{notifications.length}</span>}
                     </span>
 
                     {showNotifications && (
@@ -150,16 +166,34 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
                     <div className="notif-messages bg-white shadow p-2 rounded ">
                       <div className="notif-header flex-center p-1 bg-theme-secondary text-white w-100" style={{justifyContent:'space-between', padding:'1em 2em'}}>
                           <h4 className='fw-bold me-1 pe-1'>Recent Notifications</h4>
-                          <div onClick={toggleNotification} className='p-0 h4 fw-bold text-white ' style={{cursor:'pointer'}}>X</div>
+                          <div 
+                          onClick={toggleNotification} 
+                          className='p-0 h4 fw-bold text-white ' style={{cursor:'pointer'}}
+                          >X</div>
                       </div>
-
-                      <ul className=''>
-                        <li className='p-1 h4 fw-normal hover-bg-primary-verylight'>1. Please upload your Id Proof and Address documents. <a href="#" className='fw-bold' style={{color:'blue'}}>Click</a></li>
+                      
+                      <ul>
+                      {notifications.map((notification, index) => (
+                        <>
+                        <li key={notification.id} className="p-1 fw-normal hover-bg-primary-verylight">
+                        {notification.text}{" "}
+                        <a href="#" className="fw-bold" style={{ color: "#0058ff" }}>{notification.link}</a>
+                        <button className="rounded rounded-pill" onClick={() => removeNotification(notification.id)} 
+                          style={{ fontSize: "15px", lineHeight: "1", marginLeft: "10px", background: "none", border: "none", color: "#dd3737", cursor: "pointer" }}>
+                          ✖
+                        </button>                          
+                      </li>
+                      {index !== notifications.length - 1 && <hr className="opacity-25 m-0" />}
+                      </>
+                      ))}
+                    </ul>
+{/*                       <ul className=''>
+                        <li className='p-1 fw-normal hover-bg-primary-verylight'>1. Please upload your Id Proof and Address documents. <a href="#" className='fw-bold' style={{color:'#0058ff'}}>Click</a></li>
                         <hr className='opacity-25 m-0'></hr>
-                        <li className='p-1  h4 fw-normal hover-bg-primary-verylight'><b style={{color:'maroon'}}>2. You missed it!</b> Enjoy a Special breakfast on us during your stay! <a href="#" className='fw-bold' style={{color:'blue'}}>Register here</a></li>
+                        <li className='p-1  fw-normal hover-bg-primary-verylight'>2. <b style={{color:'#e30047'}}>You missed it!</b> Enjoy a Special breakfast on us during your stay! <a href="#" className='fw-bold' style={{color:'#0058ff'}}>Register here</a></li>
                         <hr className='opacity-25 m-0'></hr>
-                        <li className='p-1  h4 fw-normal hover-bg-primary-verylight '><b style={{color:'maroon'}}>3. Unlock relaxation!</b> Pay just ₹500 and indulge in a ₹2500 Spa Massage for two!! <a href="#" className='fw-bold' style={{color:'blue'}}>Pay Now!</a></li>
-                      </ul>
+                        <li className='p-1 fw-normal hover-bg-primary-verylight '>3. <b style={{color:'#e30047'}}>Unlock relaxation!</b> Pay just ₹500 and indulge in a ₹2500 Spa Massage for two!! <a href="#" className='fw-bold' style={{color:'#0058ff'}}>Pay Now!</a></li>
+                      </ul> */}
                     </div>
                     </div>
                     )}
@@ -189,13 +223,15 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
                               const isPDFFile = isExternalLink && popup.externalLink.toLowerCase().endsWith('.pdf');
 
                               return popup.displayStatus === 'active' && popup.showInMenu === 'yes' && (
-                                <a
+                              <a
                                 key={index}
                                 className={`button ${widgetClassName}`}
                                 // Check if it's an external link, add href, otherwise add onClick
-                                {...(isExternalLink ? (
-                                  isPDFFile ? { href: popup.externalLink, target: '_blank'} : { href: popup.externalLink, target: '_blank', rel: 'noopener noreferrer' }
-                                ) : { onClick: () => openPopup(popup) })}
+                                {...(isExternalLink
+                                  ? isPDFFile
+                                    ? { href: popup.externalLink, target: '_blank', ...(popup.menuLabel.toLowerCase() === "download" && { download: "" }) }
+                                    : { href: popup.externalLink, target: '_blank', rel: 'noopener noreferrer' }
+                                  : { onClick: () => openPopup(popup) })}
                               >
                                 {popup.iconSVGCode && (
                                   <span dangerouslySetInnerHTML={{ __html: popup.iconSVGCode }}></span>

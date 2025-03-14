@@ -18,7 +18,7 @@
 			"displayOnPageLoad": "no",
 			"showInMenu": "yes",
 			"menuLabel": "Descargar",
-			"externalLink": "https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/Invoice-Michael-27-Nov-2023-3861-Rs.pdf",
+			"externalLink": "Invoice-Thomas-14-Mar-2025-3861-Rs.pdf",
 			"iconSVGCode": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><title>download</title><path d=\"M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z\" /></svg>"
 		},
 		{
@@ -137,7 +137,7 @@
 			"displayOnPageLoad": "no",
 			"showInMenu": "yes",
 			"menuLabel": "Visitar tienda web",
-			"externalLink": "https://ayatacommerce.com",
+			"externalLink": "https://invotools.io",
 			"displayDevice": "mobile, tablet, desktop",
 			"displayType": "Only PDF",
 			"displayFromDate": "01/01/2024",
