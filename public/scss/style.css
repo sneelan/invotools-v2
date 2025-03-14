@@ -686,6 +686,12 @@ body {
   }
 }
 
+footer .footer-thank {
+  width: 172px;
+  height: 40px;
+  background-image: url("public/invoice-css/assets/imges/footer.thank.png");
+}
+
 /* by Mixin */
 .opacity-75 {
   opacity: 0.75;
@@ -781,6 +787,18 @@ body {
 
 .wrapper {
   min-height: calc(100vh - 50px);
+}
+
+.layout-simple .invoice-wrap {
+  width: 850px;
+}
+
+.layout-small .invoice-wrap {
+  width: 500px;
+}
+
+.layout-bill .invoice-wrap {
+  width: 300px;
 }
 
 @media screen and (min-width: 992px) {
@@ -1364,6 +1382,18 @@ footer a:hover {
   margin: auto;
 }
 
+.layout-small .widget-row .MuiGrid-grid-xs-12 {
+  max-width: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.layout-bill .widget-row .MuiGrid-grid-xs-12 {
+  max-width: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
 /* The device with borders */
 .mobile {
   position: relative;
@@ -1538,4 +1568,4 @@ footer a:hover {
 .theme-green{.widget-title {color:$theme-green!important;}}
 .theme-black{.widget-title {color:$theme-black!important;}}
 .theme-red{.widget-title {color:$theme-red!important;}}
-.theme-maroon{.widget-title {color:$theme-maroon!important;}} *//*# sourceMappingURL=style.css.map */
+.theme-maroon{.widget-title {color:$theme-maroon!important;}} */

@@ -1,6 +1,4 @@
 #header-right{display: none!important;width:0px;}
-/* header .title{margin-left:225px;} */
-/* header .row{flex-direction:row-reverse;} */
 header{padding-right:0!important;}
 header .row .col-md-4{width:50%!important;}
 header .col-md-4:nth-child(2){justify-content: end!important;padding: 0!important;margin-bottom: 0.4em;} 

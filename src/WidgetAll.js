@@ -75,7 +75,7 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
             <Accordion expanded={expanded} onChange={handleChange} 
             classes={{ content: 'p-0 m-0', root: expanded ? 'expanded-accordion' : 'collapsed-accordion' }}>
               <AccordionSummary  expandIcon={<ExpandMoreIcon />} classes={{ content: 'p-0 m-0' }}>  
-              <h6 class="widget-title">{column.title}</h6>
+              <h5 class="widget-title">{column.title}</h5>
               </AccordionSummary>
               <AccordionDetails>
               {InnerContent}
@@ -85,7 +85,7 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
             // Display without Accordion when toggleStatus is 'inactive'
             <div className={`widget make-column-height-same ${widgetClassName} ${addClassFixedwidth} `} style={widgetStyle} id={widgetId}>
               {column.title && (<div className='widget-title-border'>
-                <h6 class="widget-title " style={{margin:'0 1em'}}>{column.title}</h6>
+                <h5 class="widget-title " style={{margin:'0 1em'}}>{column.title}</h5>
                 </div>)}              
               {InnerContent}
               {/* Display a white box without any content */}
@@ -165,8 +165,8 @@ function WidgetAll  ({ activeTheme, clientid,  clientName, invoiceid, font, lang
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}
-<div className={`theme-${activeTheme}`} dir={language === 'arabic'?'rtl':''}>
-<div className='invoice-wrap' style={{ paddingBottom:'1em'}}>
+<div className={`theme-${activeTheme} ${selectedLayout}`} dir={language === 'arabic'?'rtl':''}>
+<div className='invoice-wrap' style={{ paddingBottom:'1em'}} >
       {data &&
         data.rows.map((row, rowIndex) => (
           row.columns.filter((column) => column.displayStatus === 'active').length === 2 ? (

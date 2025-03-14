@@ -1,7 +1,13 @@
+
 #header-right{width: 100%!important; margin: 0!important;padding: 0!important; display: block!important; padding-top: 5px!important; border-top:1px solid #e6e6e6;}
 #header-right *{display:inline!important;text-align: center!important; font-size: 12px!important; margin: 0!important;padding: 0!important;}
 #header-right h4{font-family:unset!important; color:unset; line-height:unset;display:inline!important;}
 #Xheader-right p{display: inline-block!important; text-align: left!important;}
+
+#page-title-lg{justify-content: center !important;align-items: center !important;}
+#page-title-lg span{display: none!important;}
+#page-title-lg .bg-theme-accent{min-width:unset!important;}
+#page-title-lg div{padding:0 0.5em 0 0!important; background-color: unset!important;}
 
 #header-right p, #header-right a{padding-left: 0.25em!important;}
  
@@ -13,13 +19,15 @@
 
 header .col-md-4:nth-child(2){justify-content: end!important;padding: 0!important;margin-bottom: 0.4em;} 
 .logo{ margin-top: 1em!important;margin-bottom: 1em!important;}
+.logo{height: 50px!important;margin:0.25em 0!important;}
 
  .order-info-row1 .col-sm-4:nth-child(2), .order-info-row2 .col-sm-4:nth-child(1),.order-info-row2 .col-sm-4:nth-child(3), 
  .order-info-row1 .col-sm-4:nth-child(3) span.d-block, 
  .order-info-row1 .col-sm-4:nth-child(1) h4:nth-child(2)
  {display: none!important;} 
+ .p-h-price{text-wrap: nowrap;}
 
- .order-info-row1 .col-sm-4:nth-child(1) p{display: none!important;} 
+
  .order-info-row1 .col-sm-4:nth-child(1) span.d-block p {display: inline-block!important; ;} 
  .order-info-row1 .col-sm-4:nth-child(3){ text-align: end;} 
  .order-info-row1 .col-sm-4:nth-child(1){ padding-left: 0.3em!important;} 
@@ -33,6 +41,7 @@ header .col-md-4:nth-child(2){justify-content: end!important;padding: 0!importan
 #sec-notes .align-self-stretch{padding:0!important; }
 .product-total{margin-top:0!important;  }
 .product-total tr{  border-top:initial!important;}
+.product-total .h3{font-size:18px!important;}
 .order-info-row2{padding: 0.25em!important;}
 .Xorder-info-row2, footer{display: none!important;} 
 #sec-notes .align-self-stretch .my-notes {display: none!important;} 
@@ -42,13 +51,14 @@ main.px-2{padding:0 !important;}
 .product th:nth-child(1), .product td:nth-child(1),
 .product th:nth-child(4), .product td:nth-child(4),
 .product th:nth-child(6), .product td:nth-child(6),
-.product th:nth-child(7), .product td:nth-child(7)
+.product th:nth-child(7), .product td:nth-child(7),
+.product th:nth-child(8), .product td:nth-child(8)
 {display: none!important;} 
 .product{font-size:12px!important;}
 .product td:nth-child(2), .product-total{font-size:12px!important;}
 .product th:nth-child(2), .product td:nth-child(2){padding: 0.5em 0 0.5em 0.5em!important;}
 .product tr td:last-child, .product tr th:last-child, .product-total tr td:last-child{padding-right:0.5em!important ;}
-
+.
 .product tr th{padding:0.25em 0!important ; font-weight: normal!important; font-size: 10px!important;}
 .sec-sign-left,.sec-sign-right{padding: 0!important;}
 .sec-sign-left h4:not(td h4), .sec-sign-left p{display: none!important;} 
@@ -60,8 +70,6 @@ main.px-2{padding:0 !important;}
 
 #sec-sign .d-sm-flex{display: block!important;}
 #sec-sign{width: 100%!important;padding:0 0.5em !important;}
-
-.logo{height: 40px!important;margin:0.25em 0!important;}
 
 /* mobile */
 @media screen and (max-width:768px) {
@@ -81,12 +89,18 @@ header .col-md-4:nth-child(2){margin: 0!important;}
 .mob-product-row .p-2{padding:0.25em!important;}
 .order-info-row2 .mb-4{margin-bottom: 0em!important;}
 
-
+#sec-notes{display: block!important;}
+#sec-notes .colname-1{max-width: 100%!important;width: 100%!important;}
 
 
 
 .track-ship td{padding: 0!important;}
-.order-info-row2 *, .order-info-row1 *{font-size: 12px!important; text-transform: none!important;}
+
+#order-info *{font-size: 11px!important; 
+    text-transform: none!important;
+    font-weight:normal!important;margin:0!important;padding:0!important;
+}
+#order-info .order-info-row1 {padding:0.25em 0.5em!important;}
 .order-info-row1 *{margin:0!important; padding: 0!important;}
 .order-info-row1{padding:0 0.5em!important;}
 
@@ -99,7 +113,7 @@ header .col-md-4:nth-child(2){margin: 0!important;}
 #sec-sign .d-sm-flex{display: none!important;}
 #sec-sign::after{
     width: 287px;
-    height: 202.08px;
+    height: 203px;
     content: "";
     background-image: url("/invoice-css/assets/images/bill.png");
     display: block;

@@ -240,7 +240,7 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
                 
                     </style>
               </div>
-           <iframe src={invoiceTemplate} style={{ width: '100%', height: selectedLayout === 'layout-simple' ? '850px' : selectedLayout === 'layout-small' ? '650px' : selectedLayout === 'layout-bill' ? '704px' : '1110px' }}  frameBorder="0" title="invoice" ></iframe>
+           <iframe src={invoiceTemplate} style={{ width: '100%', height: selectedLayout === 'layout-simple' ? '830px' : selectedLayout === 'layout-small' ? '760px' : selectedLayout === 'layout-bill' ? '755px' : '1135px' }}  frameBorder="0" title="invoice" ></iframe>
       </div>
   );
 }

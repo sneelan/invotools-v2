@@ -426,7 +426,7 @@ const InvoiceHindi = () => {
         </div>
         <div className="d-sm-flex flex-sm-row-reverse align-items-start justify-content-between" id="sec-notes">
             <div className="w-100 colname-1">
-                <table className="w-100 product-total mt-2 mt-sm-0">
+                <table className="w-100 product-total pt-0">
                     <tbody>
                         <tr>
                             <td>
