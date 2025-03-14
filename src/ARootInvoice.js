@@ -122,31 +122,45 @@ if(invoLayout!='layout-featured'){
     };
   }, [urlColor, urlLanguage, urlMode, urlFont]); 
 
-  const [htmlContent, setHtmlContent] = useState('');
-  const [filePath, setFilePath] = useState('');
+  const [htmlContent, setHtmlContent] = useState("");
+  const [filePath, setFilePath] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    const basePath = '/invoice';
+    const basePath = process.env.NODE_ENV === "development" ? "/invoice" : "/public/invoice";
     const sanitizedClientName = clientName === "undefined" ? "" : clientName;
-    const newFilePath = sanitizedClientName 
-      ? `${basePath}/client/${sanitizedClientName}/${urlLanguage}.html` 
-      : `${basePath}/${urlLanguage}.html`;
+    const newFilePath = sanitizedClientName
+      ? `${basePath}/client/${sanitizedClientName}/${urlLanguage}.html` // Wrong file for testing
+      : `${basePath}/${urlLanguage}.html`; // Wrong file for testing
 
-      setFilePath(newFilePath);
+    setFilePath(newFilePath);
+    setErrorMessage("");
+    fetch(newFilePath, { cache: "no-store" }) // Prevents caching issues
+      .then((res) => {
+        //console.log("Response status:", res.status); // Debugging log
+        if (!res.ok) {
+          throw new Error(`File not found (HTTP ${res.status})`);
+        }
+        return res.text();
+      })
+      .then((data) => {
+        //console.log("File loaded successfully!"); // Debugging log
+        setHtmlContent(data);
+        //setErrorMessage(""); // Clear previous error
+      })
+      .catch((error) => {
+        //console.error("Fetch Error:", error.message); // Debugging log
+        setHtmlContent(""); // Clear HTML content
+        //setErrorMessage(`File not loaded: ${filePath}`);
+      });
+  }, [urlLanguage, clientName]);
 
-      fetch(newFilePath) // Use newFilePath directly
-      .then((res) => (res.ok ? res.text() : Promise.reject("File not found")))
-      .then(setHtmlContent)
-      .catch(() => setHtmlContent("<p>Invoice not available</p>"));
-  }, [urlLanguage, clientName]);   
-  
   return (
-      <>
-        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-      </>
-    );
-    
-
+    <div>
+      {/* {errorMessage && <p style={{ color: "red", fontWeight: "bold" }}>{errorMessage}</p>} */}
+      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    </div>
+  );
 };
 
 export default ARootInvoice;
