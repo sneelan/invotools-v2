@@ -158,6 +158,7 @@ if(invoLayout!='layout-featured'){
   return (
     <div>
       {/* {errorMessage && <p style={{ color: "red", fontWeight: "bold" }}>{errorMessage}</p>} */}
+      {filePath}
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </div>
   );
