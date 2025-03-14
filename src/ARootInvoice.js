@@ -1,14 +1,14 @@
 import React from 'react';
 import { useEffect,useState,useRef   } from 'react';
 import { useParams } from 'react-router-dom';
-import InvoiceEnglish from './InvoiceEnglish.js';
-import InvoiceHindi from './InvoiceHindi.js';
-import InvoiceSpanish from './InvoiceSpanish.js';
-import InvoiceArabic from './InvoiceArabic.js';
-import InvoiceFrench from './InvoiceFrench.js';
+import InvoiceEnglish from './Invoice/english.js';
+import InvoiceHindi from './Invoice/InvoiceHindi.js';
+import InvoiceSpanish from './Invoice/InvoiceSpanish.js';
+import InvoiceArabic from './Invoice/arabic.js';
+import InvoiceFrench from './Invoice/InvoiceFrench.js';
 
 const ARootInvoice = () => {
-  const { urlLanguage, urlColor, urlMode, urlFont, activeFont, activeTheme, simpleClient, invoLayout } = useParams();  
+  const { urlLanguage, urlColor, urlMode, urlFont, activeFont, activeTheme, simpleClient, invoLayout, clientName } = useParams();  
 
  // Create Bootstrap and fadein.css links only once when the component mounts
  useEffect(() => {
@@ -105,61 +105,48 @@ if(invoLayout!='layout-featured'){
 
 
   
-//  const [initialCssAdded, setInitialCssAdded] = useState(false);
   useEffect(() => { 
-        // Add 'dark-mode' class to the body if urlMode is 'dark'
         document.body.classList.add('py-xl-2');
-
-
        if (urlMode === 'dark' && urlColor!=='printer') {
-       // if (urlMode === 'dark' && urlColor==='yellow') {
           document.body.classList.add('dark-mode');
         } else {
-          // Remove 'dark-mode' class if urlMode is not 'dark'
           document.body.classList.remove('dark-mode');
         }
-    // Set HTML dir attribute based on urlLanguage
     document.documentElement.dir = urlLanguage === 'arabic' ? 'rtl' : '';
     if (urlFont) {      
       const fontClasses = ['font-fira', 'font-nunito', 'font-open', 'font-lato', 'font-poppins', 'font-montserrat', 'font-raleway', 'font-ubuntu', 'font-playfair', 'font-merriweather', 'font-source'];
       fontClasses.forEach(fontClass => document.body.classList.remove(fontClass));
       document.body.classList.add(urlFont);
-  }
-    
-    // Clean up when component unmounts
+  }   
     return () => {
-       // Remove both links if needed
-      //const bootstrapLink = document.getElementById('theme-bootstrap');
-      //const fadeinLink = document.getElementById('theme-fadein');
-      //if (bootstrapLink) {bootstrapLink.remove();}       
-      //if (themeLink) {themeLink.remove(); }
-      //if (fadeinLink) {fadeinLink.remove();} 
     };
   }, [urlColor, urlLanguage, urlMode, urlFont]); 
 
+  const [htmlContent, setHtmlContent] = useState('');
+  const [filePath, setFilePath] = useState('');
 
-    //const imagePath='https://uxdemo.ayatacommerce.com/invotools/invoice-templates/simpledemo/';
-    const imagePath='/img/clients/';
+  useEffect(() => {
+    const basePath = '/invoice';
+    const sanitizedClientName = clientName === "undefined" ? "" : clientName;
+    const newFilePath = sanitizedClientName 
+      ? `${basePath}/client/${sanitizedClientName}/${urlLanguage}.html` 
+      : `${basePath}/${urlLanguage}.html`;
 
+      setFilePath(newFilePath);
 
+      fetch(newFilePath) // Use newFilePath directly
+      .then((res) => (res.ok ? res.text() : Promise.reject("File not found")))
+      .then(setHtmlContent)
+      .catch(() => setHtmlContent("<p>Invoice not available</p>"));
+  }, [urlLanguage, clientName]);   
+  
   return (
-    <> 
-      {/* <div className='bg-white text-black p-1 text-center'>{urlLanguage}----{urlColor}----{urlMode}</div> */}
-      {/* /template/:urlLanguage/:urlColor/:urlMode */}
-      {/* ----{simpleClient} */}
-       {urlLanguage=='english' ? <InvoiceEnglish />
-      :urlLanguage=='hindi'?<InvoiceHindi/>
-      :urlLanguage=='spanish'?<InvoiceSpanish/>
-      :urlLanguage=='arabic'?<InvoiceArabic/>
-      :urlLanguage=='french'?<InvoiceFrench/>
-       :''}       
-       {simpleClient!=='undefined'?
-             <style>{`.logo{background-image: url('${imagePath}${simpleClient}.png')!important; background-size: auto;}`}</style>
-       :''}
-       
+      <>
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      </>
+    );
+    
 
-    </>
-  );
 };
 
 export default ARootInvoice;

@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import ForestIcon from '@mui/icons-material/Forest';
 
 
-function RootTheme({activeFont: propActiveFont, activeTheme: propActiveTheme, clientid, invoiceid, invoiceTemplate}){
+function RootTheme({activeFont: propActiveFont, activeTheme: propActiveTheme, clientid, invoiceid, invoiceTemplate, clientName}){
   const location = useLocation();
   const { search } = useLocation();
   const params = new URLSearchParams(search);
@@ -19,10 +19,7 @@ function RootTheme({activeFont: propActiveFont, activeTheme: propActiveTheme, cl
     const [selectedLayout, setSelectedLayout] = useState('layout-featured');
   const [isCarbonActive, setIsCarbonActive] = useState(false);
   const navigate = useNavigate();
-
-  const pathArgument = location.pathname.split('/'); // Split the path into parts
-  // Check if pathArgument[2] is not available or empty
-  //const isPathArgumentEmpty = !pathArgument[2] || pathArgument[2].trim() === '';
+  const pathArgument = location.pathname.split('/'); 
   const isPathArgumentEmpty = 'show';
 
  
@@ -49,13 +46,13 @@ function RootTheme({activeFont: propActiveFont, activeTheme: propActiveTheme, cl
   const renderSelectedComponent = () => {
     switch (selectedOption) {
       case 'mobile':
-        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid}  clientName={clientName} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       case 'tablet':
-        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid}  clientName={clientName} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       case 'tablet-landscape':
-        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid}  clientName={clientName} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       case 'desktop':
-        return <WidgetAll activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} setActiveTheme={setActiveTheme} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <WidgetAll activeTheme={activeTheme} clientName={clientName} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} setActiveTheme={setActiveTheme} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
       default:
         return null;
     }

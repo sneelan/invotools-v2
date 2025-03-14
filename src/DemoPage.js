@@ -10,7 +10,7 @@ function DemoPage() {
     <div> 
      {/* <WidgetAll clientid={clientid}/> */}
     {<RootTheme clientid={clientid} activeTheme={activeTheme}  invoiceid={invoiceid} />}
-    {/* {activeTheme}---{clientname}--- */}
+    {/* {activeTheme}---{clientName}--- */}
     </div>
   );
 }

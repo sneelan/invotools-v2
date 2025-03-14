@@ -13,7 +13,7 @@ function NeelanPage() {
      <div className='border rounded mb-2 overflow-hidden '>
       <h4 className='fw-bold m-0 bg-dark text-white py-2 px-3'>Simple Demo </h4>
         <div className='p-1 ps-3'>
-        <p className='mt-1'>https://invotools-v2.vercel.app/simpledemo/.......clientname......./show</p>
+        <p className='mt-1'>https://invotools-v2.vercel.app/simpledemo/.......clientName......./show</p>
         <p className='fw-normal  m-0'><a href='/simpledemo/oliveliving/show' target='_blank'>https://invotools-v2.vercel.app/simpledemo/oliveliving/show</a></p>
         <p className='fw-normal  m-0'><a href='/simpledemo/dusminute/show' target='_blank'>https://invotools-v2.vercel.app/simpledemo/dusminute/show</a></p>
         <p className='fw-normal  m-0'><a href='/simpledemo/chanel/show' target='_blank'>https://invotools-v2.vercel.app/simpledemo/chanel/show</a></p>
@@ -26,7 +26,7 @@ function NeelanPage() {
      <div className='border  rounded overflow-hidden'>     
      <h4 className='fw-bold m-0 bg-dark text-white py-2 px-3'>Custom Html Demo</h4>
       <div className='p-1 ps-3'>
-            <p className='mt-1'>https://invotools-v2.vercel.app/demo/clientname/COLOR/default?included=...themenames....&language=..filepathname...</p>
+            <p className='mt-1'>https://invotools-v2.vercel.app/demo/clientName/COLOR/default?included=...themenames....&language=..filepathname...</p>
             <hr className='border-secondary'/>         
             
             

@@ -114,7 +114,7 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
 }
 
 
-function WidgetAll  ({ activeTheme, clientid, invoiceid, font, language, setActiveTheme, simpleClient, simpleTheme,  selectedLayout}) {
+function WidgetAll  ({ activeTheme, clientid,  clientName, invoiceid, font, language, setActiveTheme, simpleClient, simpleTheme,  selectedLayout}) {
   
   const { search } = useLocation();
   const params = new URLSearchParams(search);
@@ -124,11 +124,7 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid, font, language, setActi
   
   const { colorForLanguagePage } = useParams();  
   if(colorForLanguagePage && !activeTheme){activeTheme=colorForLanguagePage;}
-  //if(simpleTheme){activeTheme=simpleTheme;}
- 
-  //if(simpleTheme){setActiveTheme(simpleTheme);}
 
-  //const theme = activeTheme || 'yellow';
   if(!activeTheme){activeTheme='yellow';}
 
   const [data, setData] = useState(null);
@@ -165,7 +161,7 @@ function WidgetAll  ({ activeTheme, clientid, invoiceid, font, language, setActi
 
   return (
     <>
-   <PopupPage activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={language} font={font} setActiveTheme={setActiveTheme} simpleTheme={simpleTheme} simpleClient={simpleClient} selectedLayout={selectedLayout}/>
+   <PopupPage activeTheme={activeTheme} clientid={clientid} clientName={clientName} invoiceid={invoiceid} language={language} font={font} setActiveTheme={setActiveTheme} simpleTheme={simpleTheme} simpleClient={simpleClient} selectedLayout={selectedLayout}/>
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}

@@ -18,9 +18,9 @@ import ModeNightIcon from '@mui/icons-material/ModeNight';
 
 import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import ARootInvoice from './ARootInvoice';
+import ARootInvoice from './Invoice/ARootInvoice';
 
-function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language, setActiveTheme, simpleClient, simpleTheme, selectedLayout }) {
+function PopupPage({ activeTheme, font, clientid, invoiceid,language, setActiveTheme, simpleClient, simpleTheme, selectedLayout }) {
  
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
@@ -30,26 +30,33 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
   const [darkMode, setDarkMode] = useState(false);
   const [invoiceTemplate, setInvoiceTemplate] = useState('');
   const [apiHtml, setApiHtml] = useState('');
+
+  //show Notifications
   const [showNotifications, setShowNotifications] = useState(false);
 
-
+  //searching extra parameter in the url ?included=printer....
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const demoIncludedThemes = params.get('included');
 
+  //const [invoiceTemplate, setInvoiceTemplate] = useState('https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template.html');  
+ 
+  //const [activeTheme, setActiveTheme] = useState(propActiveTheme || 'yellow');
 
+  //checking client id
+  //if(clientid){const clientidHypen = clientid + '-';}
   useEffect(() => {
     const fetchData = async () => {
       try {
         let response;
-/*
        if (clientid) {
+              //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-${clientidHypen}popup.json`);
               response = await fetch(`/json/client/customer-portal-popup-${clientid}-${language}.json`);
         } else {
+              //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-popup.json`);
+              //response = await fetch('/customer-portal-popup.json');
               response = await fetch(`/json/customer-portal-popup-${language}.json`);
         }
-*/
-        response = await fetch(`/json/customer-portal-popup-${language}.json`);
         const data = await response.json(); 
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
@@ -78,24 +85,60 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
       document.body.classList.toggle('dark-mode', !darkMode); 
   };
   
+  //checking client id
+  //let clientidfolder=clientid ? 'demo/'+clientid : 'modern-v1';
+  //https://customer.invotools.io/view/d78abae8-d265-4438-95be-6a267157612f
+  //: `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;
+
   useEffect(() => {    
     const modeSuffix = darkMode ? 'dark' : 'light';
-    const templateURL = clientName
-      ? `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}/${font}/${clientName}`
-      : `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}/${font}/${clientName}`;
-  
-    setInvoiceTemplate(templateURL);
-  }, [activeTheme, font, darkMode, clientid, invoiceid, demoIncludedThemes, language, selectedLayout, clientName]);
+    const colorSuffix = activeTheme ? `-${activeTheme}` : '';
+    const templateName =  clientid ? `template-${language}-${modeSuffix}.html`:`template${colorSuffix}-${modeSuffix}.html`;     
+    
+    //temporary-neelan-testing
+    //if(language==='hindi'){activeTheme='yellow';}
 
- 
+    //const templateURL=`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`;   
+
+    let templateURL= invoiceid === 'default' ? `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/${templateName}`
+    : invoiceid && invoiceid !== 'default'? 'https://dev-invodocz.invotools.io/api/v1/invoice/view/'+invoiceid 
+    : `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}/${font}`;
+
+/*     if(language!=='english'){
+      templateURL = `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/template-yellow-${modeSuffix}-${language}.html`;
+      //setDarkMode(false);
+      //document.body.classList.remove('dark-mode');
+      //setActiveTheme('yellow');
+    } */
+
+    if (demoIncludedThemes && demoIncludedThemes.split(',').includes(activeTheme)) {
+      templateURL = `/demo/${clientid}/template-${activeTheme}-${modeSuffix}.html`;
+    }else{
+      
+    }
+
+    
+    
+    setInvoiceTemplate(templateURL);
+
+  }, [activeTheme, font, darkMode, clientid, invoiceid, demoIncludedThemes, language, selectedLayout]);
+
+/*   const updateInvoiceTemplate = () => {
+    const modeSuffix = darkMode ? 'dark' : 'light';
+    const colorSuffix = activeTheme ? `-${activeTheme}` : '';
+    const templateName = `template${colorSuffix}-${modeSuffix}.html`;
+    setInvoiceTemplate(`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  }; */
   const fetchApiHtml = async () => {
     try {
       const response = await fetch(invoiceTemplate);
       const data = await response.text();
+      // Sanitize the HTML content using DOMPurify
+      //const sanitizedHtml = DOMPurify.sanitize(data);
       setApiHtml(data);
     } catch (error) {
       console.error('Error fetching API data:', error);
-      <div></div>
     }
   };
 
@@ -126,8 +169,26 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
         }
       }
     }
+
   fetchApiHtml();
+
+
   }, [data, showInitialDrawer]);
+
+
+
+
+
+
+/* 
+   useEffect(() => {
+    const modeSuffix = darkMode ? 'dark' : 'light';
+    const colorSuffix = activeTheme ? `-${activeTheme}` : '';
+    const templateName = `template${colorSuffix}-${modeSuffix}.html`;
+    setInvoiceTemplate(`https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/${templateName}`);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  }, [activeTheme, darkMode]);  */
+
 
   return (
     <div>
@@ -173,7 +234,8 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
                           </div>           
                           </div>
                         <div style={{ minWidth: '150px' }} className='drawer-wrap'>
-                        <div className='drawer-box'>                        
+                        <div className='drawer-box'>
+                        {/* <span class='bg-white d-block p-2'>bb{invoiceTemplate}aaa{activeTheme}</span> */}
                             {data && data.popups && data.popups.map((popup, index) => {                       
 
                               // adding widgetClassName based on displayDevice
@@ -239,9 +301,31 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
                         `}
                 
                     </style>
-              </div>
-           <iframe src={invoiceTemplate} style={{ width: '100%', height: selectedLayout === 'layout-simple' ? '850px' : selectedLayout === 'layout-small' ? '650px' : selectedLayout === 'layout-bill' ? '704px' : '1110px' }}  frameBorder="0" title="invoice" ></iframe>
-      </div>
+              </div>   
+
+
+
+
+              {/* <div className='bg-white text-black t-c p-1'>---{darkMode ? 'dark' : 'light'}---{activeTheme}<br/>{invoiceTemplate}</div> */}
+             {/*  <div className='bg-white text-black t-c p-1'>{clientid}-----{invoiceTemplate}---{invoiceid} {language} {setDarkMode} {activeTheme}</div> */}             
+            {/* <ARootInvoice language={language} activeTheme={activeTheme} lightMode={darkMode ? 'dark' : 'light'}/> */} 
+            {/* <div className='bg-white text-black t-c p-1'>{invoiceTemplate} --{invoiceid}</div> */}    
+           {/* {<div className='bg-white text-black t-c p-1'>{simpleTheme}---{invoiceTemplate} --{invoiceid}--{activeTheme}---{selectedLayout}</div>  } */}
+           {/* {<div className='bg-white text-black t-c p-1'> -{invoiceTemplate} </div>  } */}
+            
+           <iframe src={invoiceTemplate} style={{ width: '100%', height: selectedLayout === 'layout-simple' ? '850px' : selectedLayout === 'layout-small' ? '650px' : selectedLayout === 'layout-bill' ? '704px' : '1220px' }}  frameBorder="0" title="invoice" ></iframe>
+              
+{/*               {(invoiceid?             
+                <iframe                    
+                    srcDoc={apiHtml}
+                    style={{ width: '100%'}}  height="1000"  frameBorder="0" title="invoice"
+                  />              
+              : <iframe src={invoiceTemplate} style={{ width: '100%'}} height="1220" frameBorder="0" title="invoice" ></iframe>
+              )} */}
+              
+              
+
+    </div>
   );
 }
 

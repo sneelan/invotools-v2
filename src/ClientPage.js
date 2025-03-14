@@ -21,7 +21,7 @@ function ClientPage() {
      {/* ----{clientid}--{activeTheme}--{invoiceid}--{selectedlanguage}----11 */}
     {<WidgetAll  activeTheme={activeTheme} clientid={clientid} invoiceid={invoiceid} language={selectedlanguage} />}
     {/* {<WidgetAll  activeTheme='gray' clientid='chanel' invoiceid='default' language='english' />} */}
-    {/* {activeTheme}---{clientname}--- */}
+    {/* {activeTheme}---{clientName}--- */}
     </div>
   );
 }

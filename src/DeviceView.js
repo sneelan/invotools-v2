@@ -1,42 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 //import DeviceButtons from './DeviceButtons';
-const DeviceView = ({activeTheme, clientid, invoiceid, language, invoiceTemplate, deviceName, deviceWidth, deviceHeight, simpleClient, simpleTheme, }) => {
-
-  let DatasimpleClient; if (simpleClient) {DatasimpleClient = '?simpleClient=' + simpleClient;}else{  DatasimpleClient = " ";}
-  //if(simpleTheme){activeTheme=simpleTheme;}
-
-  let templateURL = language!=='english' ? '/'+language+'/'+activeTheme+DatasimpleClient : '/'+activeTheme+DatasimpleClient;
+const DeviceView = ({activeTheme, clientid, invoiceid, language, invoiceTemplate, deviceName, deviceWidth, deviceHeight, simpleClient, simpleTheme, clientName,font,selectedLayout}) => {
   
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const demoIncludedThemes = params.get('included');
   const demoIncludedLang = params.get('language');
+  const [filePath, setFilePath] = useState('');
 
-  //const {simpleClient } = useParams();  
-  
-/*   if (invoiceid) {
-    templateURL =
-      invoiceid === 'default'
-        ? `https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/${clientid}/template-${language}-light.html`
-        : `https://dev-invodocz.invotools.io/api/v1/invoice/view/${invoiceid}`;
-  } */
+  useEffect(() => {
+ 
+    const newFilePath =`/template/${language}/${activeTheme}/light/${simpleClient}/${selectedLayout}/${font}/${clientName}`;
+      
 
-  ///client/:clientid/:activeTheme/:invoiceid
-
-if (invoiceid) {
-  templateURL=`/client/${clientid}/${activeTheme}/${invoiceid}?included=${demoIncludedThemes}&language=${demoIncludedLang}&selectedlanguage=${language}`;
-}
-
+    setFilePath(newFilePath);
+  }, [language, activeTheme, clientid, invoiceid, demoIncludedThemes, demoIncludedLang]);
   return (
     <>
             <div class="mt-1">
                 <div className={deviceName}>
                 <div className="content">
-                  {/* <div className='bg-white text-black p-1'>----{clientid}---{language}----<br/>templateURL:{templateURL}<br/>---{invoiceTemplate}--{invoiceid}--{demoIncludedThemes}</div> */}
-                  {/* <div className='bg-white text-black p-1'>----{templateURL}</div> */}
-
-                  <iframe src={`${templateURL}`}  width={deviceWidth} height={deviceHeight} frameBorder="0" />
+                  <iframe src={filePath} width={deviceWidth} height={deviceHeight} frameBorder="0" />
                 </div>
             </div>
             </div>

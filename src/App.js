@@ -7,16 +7,17 @@ import RootTheme from './RootTheme';
 import DemoPage from './DemoPage';
 import { useParams } from 'react-router-dom';
 import ErrorNotFound from './ErrorNotFound';
-import ARootInvoice from './Invoice/ARootInvoice'; 
+import ARootInvoice from './ARootInvoice'; 
 import ClientPage from './ClientPage';
 import NeelanPage from './NeelanPage';
 
 import ViewId from './View_id';
+import NewDemo from './NewDemo';
 
 
 const App = () => {
   // Use the useParams hook to get the values of id1 and id2
-  const { activeTheme, clientid,invoiceid, colorForLanguagePage, urlMode, urlFont, urlColor, urlLanguage, simpleClient, simpleTheme, invoLayout } = useParams();
+  const { activeTheme, clientid,invoiceid, colorForLanguagePage, urlMode, urlFont, urlColor, urlLanguage, simpleClient, simpleTheme, invoLayout,clientName } = useParams();
   
 
   return (
@@ -59,11 +60,12 @@ const App = () => {
         <Route path="/drag" element={<DragFeature />} />
         
 
-        <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient/:invoLayout/:urlFont" element={<ARootInvoice urlLanguage={urlLanguage} urlFont={urlFont} urlColor={urlColor} urlMode={urlMode} selectedLayout={invoLayout}/>}  />
+        <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient/:invoLayout/:urlFont/:clientName" element={<ARootInvoice urlLanguage={urlLanguage} urlFont={urlFont} urlColor={urlColor} urlMode={urlMode} selectedLayout={invoLayout} clientName={clientName}/>}  />
         <Route path="/neelan" element={<NeelanPage />} />
 
 
-       <Route path="/view/508587d1-347c-46c3-9f45-083db8bc4fbb" element={<ViewId src="https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English" />} />
+       <Route path="/view/508587d1-347c-46c3-9f45-183db8bc4fbb" element={<NewDemo />} />
+       {/* <Route path="/view/508587d1-347c-46c3-9f45-183db8bc4fbb" element={<ViewId src="https://invotools-customer.vercel.app/demo/breitling/yellow/default?included=yellow,blue,green,maroon,red,black,gray,printer,diwali,christmas,thanks,ads&language=English" />} /> */}
        {/* <Route path="/sustainability" element={<WidgetAll language='carbon' activeTheme='yellow' />} / */}
        <Route path="/sustainability" element={<RootTheme language='carbon' activeTheme='yellow' />} />
 
