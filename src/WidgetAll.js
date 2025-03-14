@@ -1,6 +1,6 @@
 import PopupPage from './popup';
 import React, { useState, useEffect } from 'react';
-import DeviceButtons from './delete-old/DeviceButtons';
+import DeviceButtons from './DeviceButtons';
 import { useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import {  
