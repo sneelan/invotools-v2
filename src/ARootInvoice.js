@@ -124,41 +124,34 @@ if(invoLayout!='layout-featured'){
 
   const [htmlContent, setHtmlContent] = useState("");
   const [filePath, setFilePath] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+
 
   useEffect(() => {
-    const basePath = process.env.NODE_ENV === "development" ? "/invoice" : "/public/invoice";
+    const basePath = "/invoice";
     const sanitizedClientName = clientName === "undefined" ? "" : clientName;
     const newFilePath = sanitizedClientName
-      ? `${basePath}/client/${sanitizedClientName}/${urlLanguage}.html` // Wrong file for testing
-      : `${basePath}/${urlLanguage}.html`; // Wrong file for testing
+      ? `${basePath}/client/${sanitizedClientName}/${urlLanguage}.html`
+      : `${basePath}/${urlLanguage}.html`;
 
     setFilePath(newFilePath);
-    setErrorMessage("");
-    fetch(newFilePath, { cache: "no-store" }) // Prevents caching issues
-      .then((res) => {
-        //console.log("Response status:", res.status); // Debugging log
+    fetch(newFilePath, { cache: "no-store" })
+      .then((res) => {        
         if (!res.ok) {
           throw new Error(`File not found (HTTP ${res.status})`);
         }
         return res.text();
       })
-      .then((data) => {
-        //console.log("File loaded successfully!"); // Debugging log
+      .then((data) => {        
         setHtmlContent(data);
-        //setErrorMessage(""); // Clear previous error
       })
       .catch((error) => {
-        //console.error("Fetch Error:", error.message); // Debugging log
         setHtmlContent(""); // Clear HTML content
-        //setErrorMessage(`File not loaded: ${filePath}`);
       });
   }, [urlLanguage, clientName]);
 
   return (
-    <div>
-      {/* {errorMessage && <p style={{ color: "red", fontWeight: "bold" }}>{errorMessage}</p>} */}
-      {filePath}
+    <div>     
+      {filePath}----aa---
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </div>
   );
