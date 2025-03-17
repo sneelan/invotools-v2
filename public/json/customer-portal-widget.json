@@ -11,7 +11,7 @@
 					"title": "Buy Products from your Wishlist",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/demo/dusminute/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML": "<iframe src=\"/widget/widget-wishlist-short.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 
 					"displayOrder": "2",
@@ -20,11 +20,32 @@
 					"displayType": "pdf, portal",
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024",
-					"toggleStatus": "inactive",
+					"toggleStatus": "active",
 					"toggleExpand": "yes"
 				}
 			]
-		},
+		},			{
+			"rowNumber": "2",
+			"columns": [
+				
+				{					
+					"title": "Buy Products from your Wishlist - Thumbnails view",
+					"width": "",
+					"height": "",
+					"contentHTML": "<iframe src=\"/widget/widget-wishlist-image.html\" width=\"340\" height=\"360\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentCSS": "",
+
+					"displayOrder": "2",
+					"displayStatus": "active",					
+					"displayDevice": "tablet, desktop",
+					"displayType": "pdf, portal",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024",
+					"toggleStatus": "active",
+					"toggleExpand": "no"
+				}
+			]
+		},	
 		{
 			"rowNumber": "2",
 			"columns": [
@@ -37,9 +58,9 @@
 					"title": "",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-rating.html\" width=\"340\" height=\"400\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML": "<div style=\"background-color:#fec2c2;\" class=\"text-center flex-center h-100 t-c\" style=\"text-align:center;\"><img class=\"\" src=\"/img/clients/demo/reward.png\" ></div>",
 					"contentCSS": "  ",
-					"displayDevice": "tablet, desktop",
+					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only PDF",
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024"
@@ -54,7 +75,7 @@
 					"height": "",
 					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-googlereview.html\" width=\"340\" height=\"400\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
-					"displayDevice": "desktop",
+					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only PDF",
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024"
@@ -78,6 +99,50 @@
 			]
 		},
 		{
+			"rowNumber": "2",
+			"columns": [
+				
+				{					
+					"title": "View Restaurant Menu",
+					"width": "",
+					"height": "",
+					"contentHTML": "<div class=\"text-center t-c\" style=\"text-align:center;\"><img class=\"d-md-none m-auto\" src=\"widget/assets/images/widget/menu_mobile.png\" ><img class=\"d-none d-md-block m-auto\" src=\"widget/assets/images/widget/menu_desktop.png\" ></div>",
+					"contentCSS": "",
+
+					"displayOrder": "2",
+					"displayStatus": "active",					
+					"displayDevice": "mobile, tablet, desktop",
+					"displayType": "pdf, portal",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024",
+					"toggleStatus": "active",
+					"toggleExpand": "no"
+				}
+			]
+		},
+		{
+			"rowNumber": "2",
+			"columns": [
+				
+				{					
+					"title": "Upload Documents and Complete your KYC",
+					"width": "",
+					"height": "",
+					"contentHTML": "<div class=\"text-center t-c\" style=\"text-align:center;\"><img class=\"d-md-none m-auto\" src=\"widget/assets/images/widget/kycform_mobile.png\" ><img class=\"d-none d-md-block m-auto\" src=\"widget/assets/images/widget/kycform_desktop.png\" ></div>",
+					"contentCSS": "",
+
+					"displayOrder": "2",
+					"displayStatus": "active",					
+					"displayDevice": "mobile, tablet, desktop",
+					"displayType": "pdf, portal",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024",
+					"toggleStatus": "active",
+					"toggleExpand": "no"
+				}
+			]
+		},
+		{
 			"rowNumber": "5",
 			"columns": [
 				{
@@ -85,10 +150,10 @@
 					"displayStatus": "active",
 					"toggleStatus": "inactive",
 					"toggleExpand": "no",
-					"title": "Our 15% Festival Off Promotion Video",
+					"title": "Hotel Tour - Watch Video",
 					"width": "",
 					"height": "",
-					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-videobig1.html\" height=\"405\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML":"<iframe src=\"/widget/widget-videobig1.html\" height=\"405\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
@@ -130,7 +195,7 @@
 					"title": "",
 					"width": "",
 					"height": "",
-					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-image.html\" height=\"440\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML":"<iframe src=\"/widget/widget-image.html\" height=\"440\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
@@ -140,26 +205,7 @@
 				}
 			]
 		},
-		{
-			"rowNumber": "3",
-			"columns": [
-				{
-					"displayOrder": "1",
-					"displayStatus": "inactive",
-					"toggleStatus": "active",
-					"toggleExpand": "no",
-					"title": "Recommended Products for you - 25% Off",
-					"width": "",
-					"height": "",
-					"contentHTML": "<iframe src=\"https://form.jotform.com/233201080100431\" frameborder=\"0\" style=\"height:2460px;width:100%;\"></iframe>",
-					"contentCSS": "  ",
-					"displayDevice": "mobile, tablet, desktop",
-					"displayType": "Only Portal",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024"				
-				}
-			]
-		},		
+	
 		{
 			"rowNumber": "1",
 			"columns": [
@@ -167,17 +213,16 @@
 					"title": "Feedback Form",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"xxxxhttps://form.jotform.com/232951550781459?userId=\" frameborder=\"0\" style=\"height:1020px;width:100%;\"></iframe>",
-					"contentCSS": "  ",
+					"contentHTML": "<iframe src=\"/widget/widget-feedback.html\" frameborder=\"0\" style=\"height:1020px;width:100%;\"></iframe>",					
+					"contentCSS": "",
 					"displayOrder": "1",
 					"displayStatus": "active",
-					"displayDevice": "desktop",
+					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "pdf",
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024",
 					"toggleStatus": "active",
 					"toggleExpand": "no"
-					
 				}
 			]
 		},
@@ -188,16 +233,37 @@
 					"title": "Terms & Conditions",
 					"width": "",
 					"height": "",
-					"contentHTML": "<div class=\"t-j\" style=\"padding:1em 2em ;\">By making a purchase through this e-commerce platform, you agree to abide by the following terms and conditions. Payment is due upon order placement. We accept [payment methods], and your order will be processed upon successful payment confirmation. All sales are final, and no refunds or exchanges are permitted unless the product is damaged or defective. Shipping costs and delivery times may vary based on your location. We reserve the right to modify or cancel orders at our discretion. For any inquiries or concerns, please contact our customer support at <u>help@ayatacommerce.com</u></br>Thank you for choosing.</br><b>AyataCommerce</b></div>",
+					"contentHTML": "<div class=\"t-j\" style=\"padding:0em 2em 1em 2em ;\">By making a purchase through this e-commerce platform, you agree to abide by the following terms and conditions. Payment is due upon order placement. We accept [payment methods], and your order will be processed upon successful payment confirmation. All sales are final, and no refunds or exchanges are permitted unless the product is damaged or defective. Shipping costs and delivery times may vary based on your location. We reserve the right to modify or cancel orders at our discretion. For any inquiries or concerns, please contact our customer support at <u>info@invotools.io</u></br>Thank you for choosing.</br><h5>InvoTools.io</h5></div>",
 					"contentCSS": "  ",
 					"displayOrder": "1",
 					"displayStatus": "active",
-					"displayDevice": "desktop",
+					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "pdf",
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024",
 					"toggleStatus": "active",
 					"toggleExpand": "no"
+					
+				}
+			]
+		},
+		{
+			"rowNumber": "1",
+			"columns": [
+				{
+					"title": "",
+					"width": "",
+					"height": "",
+					"contentHTML": "<iframe src=\"/widget/widget-rating.html\" frameborder=\"0\" style=\"height:250px;width:100%;\"></iframe>",					
+					"contentCSS": "  ",
+					"displayOrder": "1",
+					"displayStatus": "active",
+					"displayDevice": "mobile, tablet, desktop",
+					"displayType": "pdf",
+					"displayFromDate": "01/01/2024",
+					"displayToDate": "31/01/2024",
+					"toggleStatus": "inactive",
+					"toggleExpand": "inactive"
 					
 				}
 			]
@@ -213,9 +279,9 @@
 					"title": "Facebook Widget",
 					"width": "",
 					"height": "400",
-					"contentHTML": "<iframe class=\"w-100\" src=\"https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fayatacommerce&tabs=timeline&width=358&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=295989807818552\" height=\"400\" style=\"width:358px;border:none;overflow:hidden;\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\"></iframe>",
+					"contentHTML": "<iframe class=\"w-100\" src=\"https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FGoogle&tabs=timeline&width=358&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=295989807818552\" height=\"400\" style=\"width:358px;border:none;overflow:hidden;\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\"></iframe>",
 					"contentCSS": "  ",
-					"displayDevice": "mobile, desktop",
+					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",
 					"displayToDate": "31/01/2024"
@@ -228,7 +294,7 @@
 					"title": "",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-email.html\" style=\"width:100%\"  height=\"400\" frameborder=\"0\" style=\"overflow:hidden;\"></iframe>",
+					"contentHTML": "<iframe src=\"/widget/widget-email.html\" style=\"width:100%\"  height=\"400\" frameborder=\"0\" style=\"overflow:hidden;\"></iframe>",
 					"contentCSS": "  ",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
@@ -244,7 +310,7 @@
 					"title": "",
 					"width": "",
 					"height": "",
-					"contentHTML":"<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-address.html\" height=\"440\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentHTML":"<iframe src=\"/widget/widget-address.html\" height=\"440\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
 					"contentCSS": "",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
@@ -254,27 +320,7 @@
 				}
 			]
 		},
-		{
-			"rowNumber": "1",
-			"columns": [
-				{
-					"title": "Customer Service Survey Form",
-					"width": "",
-					"height": "",
-					"contentHTML": "<iframe src=\"https://form.jotform.com/233231420979456\" frameborder=\"0\" style=\"height:550px;width:100%;\"></iframe>",
-					"contentCSS": "#client-widget-en-6-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
-					"displayOrder": "1",
-					"displayStatus": "inactive",
-					"displayDevice": "desktop",
-					"displayType": "pdf",
-					"displayFromDate": "01/01/2024",
-					"displayToDate": "31/01/2024",
-					"toggleStatus": "active",
-					"toggleExpand": "no"
-										
-				}
-			]
-		},
+		
 		{
 			"rowNumber": "5",
 			"columns": [
@@ -286,8 +332,8 @@
 					"titlex": "Recent Products - Image Slideshow",
 					"width": "",
 					"height": "",
-					"contentHTML": "<iframe src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/widget-carousel.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
-					"contentCSS": "#client-widget-en-10-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
+					"contentHTML": "<iframe src=\"/widget/widget-carousel-jeweller.html\" width=\"340\" height=\"520\" frameborder=\"0\" style=\"overflow:hidden;width:100%;\"></iframe>",
+					"contentCSS": "#client-widget-en-12-0{box-shadow:none!important;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;background-color:transparent!important;}",
 					"displayDevice": "mobile, tablet, desktop",
 					"displayType": "Only Portal",
 					"displayFromDate": "01/01/2024",

@@ -126,7 +126,7 @@ const InvoiceHindi = () => {
                         <th>
                             تخفيض
                         </th>
-                        <th className="xhighlight">
+                        <th className="highlight carbon">
                             ثاني أكسيد الكربون
                         </th>
                         <th className='p-h-price'>
@@ -156,7 +156,7 @@ const InvoiceHindi = () => {
                         <td>
                             20%
                         </td>
-                        <td className="xhighlight">
+                        <td className="highlight carbon">
                             0.4 كجم
                         </td>
                         <td className='p-price'>
@@ -186,7 +186,7 @@ const InvoiceHindi = () => {
                         <td>
                             20%
                         </td>
-                        <td className="xhighlight">
+                        <td className="highlight carbon">
                             0.35 كجم
                         </td>
                         <td className='p-price'>
@@ -215,7 +215,7 @@ const InvoiceHindi = () => {
                         <td>
                             20%
                         </td>
-                        <td className="xhighlight">
+                        <td className="highlight carbon">
                             0.35 كجم
                         </td>
                         <td className='p-price'>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="assets/extra-css/bootstrap5.3.2/bootstrap.min.css">
+
+
+     
+<style>
+        body {
+           
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+         
+        }
+
+        #feedbackButton {
+            margin-top: 20px;
+        }
+
+        .rating {
+            font-size: 25px;
+            color: #f39c12;
+        }
+
+        .rating .bi-star-fill:hover {
+            color: #2e2e2e;
+        }
+        td{vertical-align: middle;}
+        tr:hover td{background-color:rgb(255, 239, 194);}
+        tr:hover td.bg-warning{background-color:rgb(161, 255, 106)!important;}
+
+        @media (max-width: 600px) {
+            td:first-child,th:first-child, td:nth-child(4),th:nth-child(4)
+            {display: none;}
+    }
+td img{width:50px;}
+td img:hover{cursor: pointer;}
+td{font-size: 14px;}
+        
+    </style>
+    <title>Feedback Page</title>
+</head>
+<body class="bg-white bg-transparent">
+    <div class="container-xl text-center mt-2 px-1">        
+        <h6 class="bg-info bg-opacity-25 py-2 mb-2 fs-5"><b>We offer a <span class="bg-warning fw-bolder px-1 py-2  ">15%</span>flat discount on all of these products!</b><br></h6>
+        <table class="table table-hover table-striped rounded table-bordered ">
+            <thead>
+                <tr >
+                    <th class="bg-dark text-white"></th>
+                    <th class="bg-dark text-white"></th>
+                    <th class="bg-dark text-white ">Product</th>
+                    <th class="bg-dark text-white">Price</th>
+                    <th class="bg-dark text-white ">After Discount</th>
+                    <th class="bg-dark text-white "></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td class="text-start ">
+                        
+                        <img src="assets/images/widget/p1.jpg" alt="Elegant Floral Print Maxi Dress" class="img-thumbnail" class="img-thumbnail" width="50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        
+                    </td>
+                    <td class="text-start ">Elegant Floral Print Maxi Dress</td>
+                    <td>$69.99</td>
+                    <td class="bg-warning bg-opacity-50 fw-bold">$59.49</td>
+                    <td><button onclick="showSuccessToast('Elegant Floral Print Maxi Dress')" class="btn btn-primary btn-sm"><span class="d-md-none">Buy</span><span class="d-none d-md-block">Add to Cart </span></button></td>
+                </tr>
+            
+                <!-- Product 2 -->
+                <tr>
+                    <td>2</td>
+                    <td class="text-start ">
+                        <img src="assets/images/widget/p2.jpg" alt="Classic Cotton Blend Striped Long Sleeve T-Shirt"  class="img-thumbnail" width="50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        
+                    </td>
+                    <td class="text-start ">Classic Cotton Blend Striped Long Sleeve T-Shirt</td>
+                    <td>$24.99</td>
+                    <td class="bg-warning bg-opacity-50 fw-bold">$21.24</td>
+                    <td><button onclick="showSuccessToast('Elegant Floral Print Maxi Dress')" class="btn btn-primary btn-sm"><span class="d-md-none">Buy</span><span class="d-none d-md-block">Add to Cart </span></button></td>
+                </tr>
+            
+                <!-- Product 3 -->
+                <tr>
+                    <td>3</td>
+                    <td class="text-start ">
+                        <img src="assets/images/widget/p3.jpg" alt="Stylish Leather Crossbody Shoulder Bag with Tassel Detail"  class="img-thumbnail" width="50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        
+                    </td>
+                    <td class="text-start ">Stylish Leather Crossbody Shoulder Bag with Tassel Detail</td>
+                    <td>$44.99</td>
+                    <td class="bg-warning bg-opacity-50 fw-bold">$38.24</td>
+                    <td><button onclick="showSuccessToast('Elegant Floral Print Maxi Dress')" class="btn btn-primary btn-sm"><span class="d-md-none">Buy</span><span class="d-none d-md-block">Add to Cart </span></button></td>
+                </tr>
+            
+                <!-- Product 4 -->
+                <tr>
+                    <td>4</td>
+                    <td class="text-start ">
+                        <img src="assets/images/widget/p4.jpg" alt="Sophisticated Wool Blend Winter Coat with Faux Fur Collar"  class="img-thumbnail" width="50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        
+                    </td>
+                    <td class="text-start ">Sophisticated Wool Blend Winter Coat with Faux Fur Collar</td>
+                    <td>$129.99</td>
+                    <td class="bg-warning bg-opacity-50 fw-bold">$109.99</td>
+                    <td><button onclick="showSuccessToast('Elegant Floral Print Maxi Dress')" class="btn btn-primary btn-sm"><span class="d-md-none">Buy</span><span class="d-none d-md-block">Add to Cart </span></button></td>
+                </tr>
+            
+                <!-- Product 5 -->
+                <tr>
+                    <td>5</td>
+                    <td class="text-start ">
+                        <img src="assets/images/widget/p5.jpg" alt="Men's Classic Leather Casual Lace-up Shoes"  class="img-thumbnail" width="50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                       
+                    </td>
+                    <td class="text-start "> Men's Classic Leather Casual Lace-up Shoes</td>
+                    <td>$59.99</td>
+                    <td class="bg-warning bg-opacity-50 fw-bold">$50.99</td>
+                    <td><button onclick="showSuccessToast('Elegant Floral Print Maxi Dress')" class="btn btn-primary btn-sm"><span class="d-md-none">Buy</span><span class="d-none d-md-block">Add to Cart </span></button></td>
+                </tr>
+            
+                <!-- Product 6 -->
+                <tr>
+                    <td>6</td>
+                    <td class="text-start ">
+                        <img src="assets/images/widget/p6.jpg" alt="Chic Striped Linen Summer Dress with Belt"  class="img-thumbnail" width="50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        
+                    </td>
+                    <td class="text-start ">Chic Striped Linen Summer Dress with Belt</td>
+                    <td>$39.99</td>
+                    <td class="bg-warning bg-opacity-50 fw-bold">$33.99</td>
+                    <td><button onclick="showSuccessToast('Elegant Floral Print Maxi Dress')" class="btn btn-primary btn-sm"><span class="d-md-none">Buy</span><span class="d-none d-md-block">Add to Cart </span></button></td>
+                </tr>
+            
+                <!-- Product 7 -->
+                <tr>
+                    <td>7</td>
+                    <td class="text-start ">
+                        <img src="assets/images/widget/p7.jpg" alt="Vintage Inspired Round Sunglasses"  class="img-thumbnail" width="50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        
+                    </td>
+                    <td class="text-start ">Vintage Inspired Round Sunglasses</td>
+                    <td>$19.99</td>
+                    <td class="bg-warning bg-opacity-50 fw-bold">$16.99</td>
+                    <td><button onclick="showSuccessToast('Elegant Floral Print Maxi Dress')" class="btn btn-primary btn-sm"><span class="d-md-none">Buy</span><span class="d-none d-md-block">Add to Cart </span></button></td>
+                </tr>
+            
+                <!-- Product 8 -->
+                <tr>
+                    <td>8</td>
+                    <td class="text-start ">
+                        <img src="assets/images/widget/p8.jpg" alt="Modern Geometric Patterned Throw Pillow Covers (Set of 2)"  class="img-thumbnail" width="50" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        
+                    </td>
+                    <td class="text-start ">Modern Geometric Patterned Throw Pillow Covers (Set of 2)</td>
+                    <td>$34.99</td>
+                    <td class="bg-warning bg-opacity-50 fw-bold">$29.74</td>
+                    <td><button onclick="showSuccessToast('Elegant Floral Print Maxi Dress')" class="btn btn-primary btn-sm"><span class="d-md-none">Buy</span><span class="d-none d-md-block">Add to Cart </span></button></td>
+                </tr>
+            </tbody>
+        </table>
+       
+    </div>
+
+
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalTitle">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center p-0">
+            <img src="" alt="Product Image" id="modalImage"  class="img-fluid m-auto" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.img-thumbnail').forEach(function(thumbnail) {
+        thumbnail.addEventListener('click', function() {
+            var modalImage = document.getElementById('modalImage');
+            var modalTitle = document.getElementById('modalTitle');
+            modalImage.src = this.src;
+            modalTitle.textContent = this.alt;
+        });
+    });
+</script>
+
+
+
+
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Product added to cart successfully!
+                </div>
+                <button onclick="showSuccessToast('Elegant Floral Print Maxi Dress')" type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    <div id="successToast"></div>    
+    <script>
+        function showSuccessToast(productName) {
+            var toast = document.getElementById('successToast');
+            toast.innerHTML = 'Product added to cart successfully!';
+            toast.classList.add('show');
+    
+            setTimeout(function () {
+                toast.classList.remove('show');
+            }, 1000);  // Adjust the timeout (in milliseconds) as needed
+            console.log('Product added to cart:', productName);
+        }
+    </script>
+
+
+
+
+
+
+
+ 
+     
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+
+<style>
+    #successToast {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 15px;
+    background-color: #179e36!important;
+    color: #fff;
+    z-index: 1500;
+}
+
+#successToast.show {
+    display: block;
+}
+</style>
+
+
+
+</html>

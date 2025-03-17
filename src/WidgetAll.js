@@ -114,11 +114,12 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
 }
 
 
-function WidgetAll  ({ activeTheme, clientid,  clientName, invoiceid, font, language, setActiveTheme, simpleClient, simpleTheme,  selectedLayout}) {
+function WidgetAll  ({ activeTheme, clientid,  clientName, invoiceid, font, language, setActiveTheme, simpleClient, simpleTheme,  selectedLayout, carbon, rating}) {
   
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const queryclientforlanguage = params.get('simpleClient');
+  const jsonName='-none';
   if(queryclientforlanguage){simpleClient=queryclientforlanguage;}
 
   
@@ -130,20 +131,21 @@ function WidgetAll  ({ activeTheme, clientid,  clientName, invoiceid, font, lang
   const [data, setData] = useState(null);
   document.body.classList.add(`theme-${activeTheme}`);
 
-  //for different client demo
-  if(clientid){const clientidHypen = clientid + '-';}
   
   useEffect(() => {
     const fetchData = async () => {
       try {
         let response;
-
-       if (clientid) {
+       if (clientName) {
               //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-${clientidHypen}widget.json`);
-              response = await fetch(`/json/client/customer-portal-widget-${clientid}-${language}.json`);
+              response = await fetch(`/json/client/customer-portal-widget-${clientName}-${language}.json`);
+             // jsonName='Client';
+             console.log("---clientid----");
         } else {
               //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json`);
               response = await fetch('/json/customer-portal-widget.json');
+              //jsonName='-default';
+              console.log("---default----");
         }
         const data = await response.json();
         setData(data); // Corrected to use setData instead of setJsonData
@@ -161,7 +163,7 @@ function WidgetAll  ({ activeTheme, clientid,  clientName, invoiceid, font, lang
 
   return (
     <>
-   <PopupPage activeTheme={activeTheme} clientid={clientid} clientName={clientName} invoiceid={invoiceid} language={language} font={font} setActiveTheme={setActiveTheme} simpleTheme={simpleTheme} simpleClient={simpleClient} selectedLayout={selectedLayout}/>
+   <PopupPage activeTheme={activeTheme} clientid={clientid} clientName={clientName} invoiceid={invoiceid} language={language} font={font} setActiveTheme={setActiveTheme} simpleTheme={simpleTheme} simpleClient={simpleClient} selectedLayout={selectedLayout} carbon={carbon} rating={rating}/>
     {data && data.widgetAreaCSS && (
       <style dangerouslySetInnerHTML={{ __html: data.widgetAreaCSS }} ></style>
     )}

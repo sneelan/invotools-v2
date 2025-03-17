@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 //import DeviceButtons from './DeviceButtons';
-const DeviceView = ({activeTheme, clientid, invoiceid, language, invoiceTemplate, deviceName, deviceWidth, deviceHeight, simpleClient, simpleTheme, clientName,font,selectedLayout}) => {
+const DeviceView = ({activeTheme, clientid, invoiceid, language, invoiceTemplate, deviceName, deviceWidth, deviceHeight, simpleClient, simpleTheme, clientName,font,selectedLayout,carbon}) => {
   
   const { search } = useLocation();
   const params = new URLSearchParams(search);
@@ -11,11 +11,11 @@ const DeviceView = ({activeTheme, clientid, invoiceid, language, invoiceTemplate
 
   useEffect(() => {
  
-    const newFilePath =`/template/${language}/${activeTheme}/light/${simpleClient}/${selectedLayout}/${font}/${clientName}`;
+    const newFilePath =`/template/${language}/${activeTheme}/light/${simpleClient}/${selectedLayout}/${font}/${clientName}?carbon=${carbon}`;
       
 
     setFilePath(newFilePath);
-  }, [language, activeTheme, clientid, invoiceid, demoIncludedThemes, demoIncludedLang]);
+  }, [language, activeTheme, clientid, invoiceid, demoIncludedThemes, demoIncludedLang,carbon]);
   return (
     <>
             <div class="mt-1">

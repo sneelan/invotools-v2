@@ -20,7 +20,7 @@ import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ARootInvoice from './ARootInvoice';
 
-function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language, setActiveTheme, simpleClient, simpleTheme, selectedLayout }) {
+function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language, setActiveTheme, simpleClient, simpleTheme, selectedLayout,carbon,rating }) {
  
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
@@ -50,14 +50,14 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
     const fetchData = async () => {
       try {
         let response;
-/*
-       if (clientid) {
-              response = await fetch(`/json/client/customer-portal-popup-${clientid}-${language}.json`);
+
+       if (clientName) {
+              response = await fetch(`/json/client/customer-portal-popup-${clientName}-${language}.json`);
         } else {
               response = await fetch(`/json/customer-portal-popup-${language}.json`);
         }
-*/
-        response = await fetch(`/json/customer-portal-popup-${language}.json`);
+
+        //response = await fetch(`/json/customer-portal-popup-${language}.json`);
         const data = await response.json(); 
         setData(data); // Corrected to use setData instead of setJsonData
       } catch (error) {
@@ -95,11 +95,11 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
   useEffect(() => {    
     const modeSuffix = darkMode ? 'dark' : 'light';
     const templateURL = clientName
-      ? `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}/${font}/${clientName}`
-      : `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}/${font}/${clientName}`;
+      ? `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}/${font}/${clientName}?carbon=${carbon}&rating=${rating}`
+      : `/template/${language}/${activeTheme}/${modeSuffix}/${simpleClient}/${selectedLayout}/${font}/${clientName}?carbon=${carbon}&rating=${rating}`;
   
     setInvoiceTemplate(templateURL);
-  }, [activeTheme, font, darkMode, clientid, invoiceid, demoIncludedThemes, language, selectedLayout, clientName]);
+  }, [activeTheme, font, darkMode, clientid, invoiceid, demoIncludedThemes, language, selectedLayout, clientName,carbon,rating]);
 
  
   const fetchApiHtml = async () => {
@@ -276,6 +276,7 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
                 
                     </style>
               </div>
+              {/* {invoiceTemplate}{carbon} */}
            <iframe src={invoiceTemplate} style={{ width: '100%', height: selectedLayout === 'layout-simple' ? '830px' : selectedLayout === 'layout-small' ? '760px' : selectedLayout === 'layout-bill' ? '755px' : '1135px' }}  frameBorder="0" title="invoice" ></iframe>
       </div>
   );

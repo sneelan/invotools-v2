@@ -996,6 +996,20 @@ footer .footer-right a:hover:hover .s-li svg {
           }
       } */
 }
+.rating-btn {
+  background-color: #FFC500;
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #FFC500;
+  padding: 0.4em 0.7em;
+  border-radius: 5px;
+  margin-left: 0.5em;
+}
+.rating-btn:hover {
+  background-color: #FFC500;
+  border: 1px solid rgba(0, 0, 0, 0.396);
+  color: black;
+}
+
 .social-links a {
   margin-right: 0.25em;
   display: inline-block;

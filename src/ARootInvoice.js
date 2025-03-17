@@ -6,9 +6,19 @@ import InvoiceHindi from './Invoice/InvoiceHindi.js';
 import InvoiceSpanish from './Invoice/InvoiceSpanish.js';
 import InvoiceArabic from './Invoice/arabic.js';
 import InvoiceFrench from './Invoice/InvoiceFrench.js';
+import { useSearchParams } from "react-router-dom";
+
+
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, IconButton, TextField } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+
 
 const ARootInvoice = () => {
-  const { urlLanguage, urlColor, urlMode, urlFont, activeFont, activeTheme, simpleClient, invoLayout, clientName } = useParams();  
+  const { urlLanguage, urlColor, urlMode, urlFont, activeFont, activeTheme, simpleClient, invoLayout, clientName } = useParams(); 
+  
+  const [searchParams] = useSearchParams();
+  const carbon = searchParams.get("carbon"); 
+  const rating = searchParams.get("rating"); 
 
  // Create Bootstrap and fadein.css links only once when the component mounts
  useEffect(() => {
@@ -149,11 +159,115 @@ if(invoLayout!='layout-featured'){
       });
   }, [urlLanguage, clientName]);
 
+  const [modalData, setModalData] = useState({
+    title: "",
+    image: "",
+  });
+
+
   return (
-    <div>     
-      {filePath}----cc---
+    <div>
+      {carbon === "1" && (<style>{`.carbon{display:none!important;}`}</style>)}
+      {rating === "1" && (<style>{`.rating{display:none!important;}`}</style>)}
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <RatingPopup />
     </div>
+  );
+};
+// Rating Popup Component
+  const RatingPopup = () => {
+    const [rating, setRating] = useState(5);
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [open, setOpen] = useState(false);
+    const [modalData, setModalData] = useState({ title: "", image: "" });
+
+    useEffect(() => {
+      const handleRatingClick = (event) => {
+        const button = event.target.closest(".rating-btn");
+        if (button) {
+          setModalData({
+            title: button.getAttribute("data-title"),
+            image: button.getAttribute("data-image"),
+          });
+          setOpen(true);
+        }
+      };
+
+      document.addEventListener("click", handleRatingClick);
+      return () => {
+        document.removeEventListener("click", handleRatingClick);
+      };
+    }, []);
+
+    return (
+      <Dialog open={open} onClose={() => setOpen(false)}
+      sx={{
+        "& .MuiDialog-paper": {
+          position: "fixed",
+          top: "10%", 
+          left: "50%",
+          transform: "translate(-50%, 0)",
+          width: "100%",
+          maxWidth: "400px",
+          padding: "0px",
+        },}}
+        >
+        <DialogTitle className="mb-0 bg-dark text-white d-flex justify-content-between align-items-center p-1 ps-3">
+        <span>Product Review</span>
+        <IconButton onClick={() => setOpen(false)} className="text-white">
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+      <DialogContent className='px-2 py-0'>        
+        <div className="d-flex align-items-center mb-1 pb-2 border-bottom p-2">
+          <img width="40" src={modalData.image} alt={modalData.title} className="me-3" />
+          <span className='fw-boldx'>{modalData.title}</span>
+        </div>
+        <p className='m-0 p-2 fw-bold border-bottom '>Your opinion matters to us. Write your thoughts on this product.</p>
+        <div className="pt-3 mb-3">
+          <label className="d-block fw-bold mb-2">Product Rating: </label>
+          <div>
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                style={{
+                  fontSize: "1.5rem",
+                  cursor: "pointer",
+                  color: star <= rating ? "#FFD700" : "#ccc",
+                }}
+                onClick={() => setRating(star)}
+              >
+                ⭐
+              </span>
+            ))}
+          </div>
+        </div>
+        <TextField
+          fullWidth
+          label="Review Title"
+          variant="outlined"
+          size="small"
+          className="mb-3"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <TextField
+          fullWidth
+          size="small"
+          label="Review Description"
+          variant="outlined"
+          multiline
+          rows={4}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+      </DialogContent>
+      <DialogActions>
+       
+        <a className='btn bg-theme-accent hover-bg-accent text-dark w-100 p-2 rounded h6 fw-normal text-center'>Submit Review</a>
+      </DialogActions>
+    </Dialog>
   );
 };
 

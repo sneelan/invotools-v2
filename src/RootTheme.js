@@ -7,6 +7,7 @@ import DeviceView from './DeviceView';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import ForestIcon from '@mui/icons-material/Forest';
+import StarsIcon from '@mui/icons-material/Stars';
 
 
 function RootTheme({activeFont: propActiveFont, activeTheme: propActiveTheme, clientid, invoiceid, invoiceTemplate, clientName}){
@@ -16,8 +17,10 @@ function RootTheme({activeFont: propActiveFont, activeTheme: propActiveTheme, cl
   const demoIncludedLang = params.get('language');
   const demoIncludedFont = params.get('font');
   const {simpleClient, simpleTheme} = useParams();  
-    const [selectedLayout, setSelectedLayout] = useState('layout-featured');
-  const [isCarbonActive, setIsCarbonActive] = useState(false);
+  const [selectedLayout, setSelectedLayout] = useState('layout-featured');
+  
+
+
   const navigate = useNavigate();
   const pathArgument = location.pathname.split('/'); 
   const isPathArgumentEmpty = 'show';
@@ -46,13 +49,13 @@ function RootTheme({activeFont: propActiveFont, activeTheme: propActiveTheme, cl
   const renderSelectedComponent = () => {
     switch (selectedOption) {
       case 'mobile':
-        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid}  clientName={clientName} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <DeviceView deviceName='mobile' deviceWidth='330' deviceHeight='540' activeTheme={activeTheme} clientid={clientid}  clientName={clientName} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout} carbon={carbon} rating={rating}/>;
       case 'tablet':
-        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid}  clientName={clientName} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <DeviceView deviceName='tablet' deviceWidth='600' deviceHeight='960' activeTheme={activeTheme} clientid={clientid}  clientName={clientName} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout} carbon={carbon} rating={rating}/>;
       case 'tablet-landscape':
-        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid}  clientName={clientName} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <DeviceView deviceName='tablet tablet-landscape' deviceWidth='960' deviceHeight='600' activeTheme={activeTheme} clientid={clientid}  clientName={clientName} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout} carbon={carbon} rating={rating}/>;
       case 'desktop':
-        return <WidgetAll activeTheme={activeTheme} clientName={clientName} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} setActiveTheme={setActiveTheme} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout}/>;
+        return <WidgetAll activeTheme={activeTheme} clientName={clientName} clientid={clientid} invoiceid={invoiceid} font={selectedFont} language={selectedLanguage} setActiveTheme={setActiveTheme} simpleClient={simpleClient} simpleTheme={simpleTheme} selectedLayout={selectedLayout} carbon={carbon} rating={rating}/>;
       default:
         return null;
     }
@@ -60,17 +63,21 @@ function RootTheme({activeFont: propActiveFont, activeTheme: propActiveTheme, cl
 
 const [selectedLanguage, setSelectedLanguage] = useState('english');
 const [selectedFont, setSelectedFont] = useState('fira');
+ 
 
+const [isCarbonActive, setIsCarbonActive] = useState(false);
+const [carbon, setCarbon] = useState(1);
+const handleCarbonClick = () => {
+  setIsCarbonActive(prev => !prev);
+  setCarbon(prev => (prev === 0 ? 1 : 0));
+};
 
-useEffect(() => {
-  if (pathArgument.includes('sustainability')) {
-    setSelectedLanguage('carbon');
-    setIsCarbonActive(true);
-  } else {
-    setSelectedLanguage('english'); // Optional fallback    
-  }
-}, [location.pathname]);
-
+const [isRatingActive, setIsRatingActive] = useState(false);
+const [rating, setRating] = useState(1);
+const handleRatingClick = () => {
+  setIsRatingActive(prev => !prev);
+  setRating(prev => (prev === 0 ? 1 : 0));
+};
 
 const handleSelectLanguage = (event) => {
   setSelectedLanguage(event.target.value); 
@@ -103,7 +110,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
 
 
               <div className='d-block d-md-inline-block me-1'>
-                <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' , opacity: isCarbonActive ? '0' : ''}}>   
+                <select value={selectedLanguage} onChange={handleSelectLanguage} style={{ padding: '0.5em', borderRadius: '0' }}>   
                     {demoIncludedLang ? (
                         demoIncludedLang.split(',').map((lang) => (
                           <option key={lang.toLowerCase()} value={lang.toLowerCase()}>
@@ -173,7 +180,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                   {isPathArgumentEmpty &&(                 
                       //temporary-neelan-testing
                       <div className='d-block d-md-inline-block' style={{ display: selectedLanguage !== 'english' ? 'nonex' : '' }}>
-                      <div class='flex-center ms-1 bg-white rounded' style={{backgroundColor:'#ffffff', padding:'0.5em 1.5em'}}>
+                      <div class='flex-center ms-1 bg-white rounded' style={{backgroundColor:'#ffffff', padding:'0.5em 1em'}}>
                           <span>Theme:</span>
                           <span>
                             <span className={`theme-btn ${activeTheme === 'yellow' ? 'active' : ''}`} style={{backgroundColor:'#FFA100'}} onClick={() => handleButtonClick('yellow')}></span>                            
@@ -201,14 +208,22 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                       </div>
                       </div>                     
                   )}
-{/*                  <div className='d-block d-md-inline-block' style={{ display: selectedOption !== 'desktop' ? 'none' : '', paddingTop:'', display: pathArgument[1] == 'demo' ? 'none' : '' }} onClick={handleCarbonClick}>
+                   <div className='d-block d-md-inline-block' style={{ display: selectedOption !== 'desktop' ? 'none' : '', paddingTop:'', display: pathArgument[1] == 'demo' ? 'none' : '' }} onClick={handleCarbonClick}>
                           <div class='flex-center ms-1 bg-white rounded' style={{padding: '0.5em', background: isCarbonActive ? '#9bfc3f' : ''}}>
                           <span style={{marginRight:'4px'}}>Co2: </span>
                           <span style={{width:'25px', height:'25px'}}>
                             <ForestIcon sx={{ fill: 'green !important' }}/>                           
                             </span>
                       </div>
-                      </div> */}
+                    </div>      
+                    <div className='d-block d-md-inline-block' style={{ display: selectedOption !== 'desktop' ? 'none' : '', paddingTop:'', display: pathArgument[1] == 'demo' ? 'none' : '' }} onClick={handleRatingClick}>
+                          <div class='flex-center ms-1 bg-white rounded' style={{padding: '0.5em', background: isRatingActive ? '#9bfc3f' : ''}}>
+                          <span style={{marginRight:'4px'}}>Rating</span>
+                          <span style={{width:'25px', height:'25px'}}>
+                            <StarsIcon sx={{ fill: 'green !important' }}/>                                                    
+                            </span>
+                      </div>
+                    </div>                  
               </div>
               </div>
           

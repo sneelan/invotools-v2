@@ -10,6 +10,8 @@ import ErrorNotFound from './ErrorNotFound';
 import ARootInvoice from './ARootInvoice'; 
 import ClientPage from './ClientPage';
 import NeelanPage from './NeelanPage';
+import NeelanWidgets from './NeelanWidgets';
+
 
 import ViewId from './View_id';
 import NewDemo from './NewDemo';
@@ -62,6 +64,7 @@ const App = () => {
 
         <Route path="/template/:urlLanguage/:urlColor/:urlMode/:simpleClient/:invoLayout/:urlFont/:clientName" element={<ARootInvoice urlLanguage={urlLanguage} urlFont={urlFont} urlColor={urlColor} urlMode={urlMode} selectedLayout={invoLayout} clientName={clientName}/>}  />
         <Route path="/neelan" element={<NeelanPage />} />
+        <Route path="/widgets" element={<NeelanWidgets/>} />
 
 
        <Route path="/view/508587d1-347c-46c3-9f45-183db8bc4fbb" element={<NewDemo />} />
