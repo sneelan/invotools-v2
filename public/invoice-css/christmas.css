@@ -881,17 +881,28 @@ footer .footer-right a:hover:hover .s-li svg {
       } */
 }
 .rating-btn {
-  background-color: #005E80;
-  color: rgba(0, 0, 0, 0.8);
-  border: 1px solid #005E80;
+  background-color: #a8e6fd;
+  color: #003d53;
+  border: 1px solid #a8e6fd;
   padding: 0.4em 0.7em;
   border-radius: 5px;
   margin-left: 0.5em;
 }
 .rating-btn:hover {
   background-color: #005E80;
-  border: 1px solid rgba(0, 0, 0, 0.396);
+  border: 1px solid #005E80;
   color: black;
+}
+
+.dark-mode .rating-btn {
+  background-color: #003d53;
+  color: #ecf9ff;
+  border: 1px solid #003d53;
+}
+.dark-mode .rating-btn:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
 }
 
 .social-links a {
@@ -1192,6 +1203,30 @@ footer .footer-right a:hover {
 }
 .dark-mode .qrcode:hover {
   border-color: #a8e6fd;
+}
+
+.rating-btn {
+  background-color: #a8e6fd;
+  color: #003d53;
+  border: 1px solid #a8e6fd;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+.rating-btn:hover {
+  background-color: #005E80;
+  color: white;
+  border: 1px solid #005E80;
+}
+
+.dark-mode .rating-btn {
+  background-color: #005E80;
+  color: white;
+  border: 1px solid #005E80;
+}
+.dark-mode .rating-btn:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
 }
 
 @media screen and (max-width: 1024px) {

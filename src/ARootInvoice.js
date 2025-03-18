@@ -100,6 +100,16 @@ if(invoLayout!='layout-featured'){
       }
       }
 
+      if (clientName) {
+        let ClientCSS = document.getElementById('client-css');
+        if (!ClientCSS) {
+          ClientCSS = document.createElement('link');
+          ClientCSS.id = 'client-css';
+          ClientCSS.rel = 'stylesheet';
+          document.head.appendChild(ClientCSS);
+        }
+        ClientCSS.href = `/invoice/client/${clientName}/extra.css`;
+      }    
 
     if (!document.getElementById('theme-fadein')) {
       const fadeinLink = document.createElement('link');
@@ -134,31 +144,39 @@ if(invoLayout!='layout-featured'){
   }, [urlColor, urlLanguage, urlMode, urlFont]); 
 
   const [htmlContent, setHtmlContent] = useState("");
-  const [filePath, setFilePath] = useState("");
+const [filePath, setFilePath] = useState("");
+const [updatedClientName, setUpdatedClientName] = useState("");
 
+useEffect(() => {
+  const basePath = "/invoice";
+  const client = clientName === undefined || clientName === "undefined" ? "" : clientName;
+  
+  setUpdatedClientName(client); // Set client name first
 
-  useEffect(() => {
-    const basePath = "/invoice";
-    const sanitizedClientName = clientName === "undefined" ? "" : clientName;
-    const newFilePath = sanitizedClientName
-      ? `${basePath}/client/${sanitizedClientName}/${urlLanguage}.html`
-      : `${basePath}/${urlLanguage}.html`;
+  const newFilePath = client
+    ? `${basePath}/client/${client}/${urlLanguage}.html`
+    : `${basePath}/${urlLanguage}.html`;
 
-    setFilePath(newFilePath);
-    fetch(newFilePath, { cache: "no-store" })
-      .then((res) => {        
-        if (!res.ok) {
-          throw new Error(`File not found (HTTP ${res.status})`);
-        }
-        return res.text();
-      })
-      .then((data) => {        
-        setHtmlContent(data);
-      })
-      .catch((error) => {
-        setHtmlContent(""); // Clear HTML content
-      });
-  }, [urlLanguage, clientName]);
+  setFilePath(newFilePath); // Then set filePath
+}, [clientName, urlLanguage]);
+
+useEffect(() => {          
+  if (!filePath) return; // Avoid fetching if filePath is empty
+  
+  fetch(filePath, { cache: "no-store" })
+    .then((res) => {        
+      if (!res.ok) {
+        throw new Error(`File not found (HTTP ${res.status})`);
+      }
+      return res.text();
+    })
+    .then((data) => {        
+      setHtmlContent(data);
+    })
+    .catch(() => {
+      setHtmlContent(""); // Clear HTML content on error
+    });
+}, [filePath]); // Depend on `filePath`
 
   const [modalData, setModalData] = useState({
     title: "",

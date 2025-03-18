@@ -889,17 +889,28 @@ footer .footer-right a:hover:hover .s-li svg {
       } */
 }
 .rating-btn {
-  background-color: #FFC500;
-  color: rgba(0, 0, 0, 0.8);
-  border: 1px solid #FFC500;
+  background-color: #FFD95C;
+  color: #643f00;
+  border: 1px solid #FFD95C;
   padding: 0.4em 0.7em;
   border-radius: 5px;
   margin-left: 0.5em;
 }
 .rating-btn:hover {
   background-color: #FFC500;
-  border: 1px solid rgba(0, 0, 0, 0.396);
+  border: 1px solid #FFC500;
   color: black;
+}
+
+.dark-mode .rating-btn {
+  background-color: #643f00;
+  color: #FFEEB5;
+  border: 1px solid #643f00;
+}
+.dark-mode .rating-btn:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
 }
 
 .social-links a {

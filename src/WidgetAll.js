@@ -155,7 +155,7 @@ function WidgetAll  ({ activeTheme, clientid,  clientName, invoiceid, font, lang
     };
 
     fetchData();
-  }, []);
+  }, [language]);
 
   if (!data) {
     return null; // Return early if data is not available yet

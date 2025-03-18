@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/extra-css/bootstrap5.3.2/bootstrap.min.css"> 
+    
+  <title>Get Free Email Updates</title>
+  <style>
+    body {
+      background-color: white!important;
+      color: white;
+    }
+
+    .container {
+      max-width: 960px;
+    }
+    .form-checkout {
+      background-color: white;
+      border-radius: 10px;
+      margin-top: 10px;
+      color: black;
+    }
+  </style>
+</head>
+<body class="bg-transparent pt-1 d-flex align-items-center justify-content-center vh-100">
+  <div class="container p-2 px-3">
+    <div class="form-container">
+      <h6 class="fw-bold mb-3 p-0 text-center h3" style="color:rgb(247, 112, 1);">ابقَ على اطلاع! احصل على عروض وتحديثات حصرية</h6>
+      <form class="needs-validation p-0" novalidate>
+        <div class="rowx g-3 px-2">
+          <div class="xcol-sm-6">
+            <label for="name" class="form-label text-dark">الاسم</label>
+            <input type="text" class="form-control" id="name" placeholder="أدخل اسمك" required>
+            <div class="invalid-feedback">
+                أدخل اسمك
+            </div>
+          </div>
+
+          <div class="xcol-sm-6 mt-3">
+            <label for="email" class="form-label text-dark">عنوان البريد الإلكتروني</label>
+            <input type="email" class="form-control" id="email" placeholder="أدخل بريدك الإلكتروني" required>
+            <div class="invalid-feedback ">
+                عنوان البريد الإلكتروني
+            </div>
+          </div>
+
+          <div class="xcol-12 mt-3 mb-3">
+            <i class="bi bi-lock-fill fs-5 " style="color:rgb(0, 190, 0);"></i> 
+            <span class="text-success ">معلوماتك آمنة معنا!</span>
+          </div>
+
+          <hr class="my-3">
+          <button class="w-100 btn btn-warning btn-lg m-0" type="submit"> انضم اليوم</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-km/MJLlNVRu5L7BrvXBf7qjTOeaL6yojSkIUdqZETCJblUF8b5tKK1r+dg9RLQfG" crossorigin="anonymous"></script>
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict';
+
+      var forms = document.querySelectorAll('.needs-validation');
+
+      Array.from(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+</body>
+</html>
