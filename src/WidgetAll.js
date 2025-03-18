@@ -143,7 +143,7 @@ function WidgetAll  ({ activeTheme, clientid,  clientName, invoiceid, font, lang
              console.log("---clientid----");
         } else {
               //response = await fetch(`https://raw.githubusercontent.com/sneelan/invo-customer-json/main/customer-portal-widget.json`);
-              response = await fetch('/json/customer-portal-widget.json');
+              response = await fetch(`/json/customer-portal-widget-${language}.json`);
               //jsonName='-default';
               console.log("---default----");
         }
