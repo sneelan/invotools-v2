@@ -54,7 +54,7 @@ const InvoiceHindi = () => {
         <div class="row m-0 p-sm-2 p-lg-3 text-center text-sm-start order-info-row2 ">
             <div class="col-sm-4 my-3 my-sm-0 d-flex align-items-center justify-content-center ">
                 <div>
-                    <a class="qrcode d-block rounded" title="Use QR code Scanner for the live PDF link" href="https://invotools.io?invoice-directlink=TEST" target="_blank">
+                    <a class="qrcode d-inline-block rounded" title="Use QR code Scanner for the live PDF link" href="https://invotools.io?invoice-directlink=TEST" target="_blank">
                         <img src="/invoice-css/assets/images/being-qr.svg" width="150" alt="QR code"/>                    
                     </a>
                     <span class="small clear text-center d-block pt-1">invotools.io/az50</span>

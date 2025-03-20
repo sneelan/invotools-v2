@@ -69,7 +69,7 @@ const InvoiceLayout = () => {
         <div className="row m-0 p-sm-2 p-lg-2 text-center text-sm-start order-info-row2">
           <div className="col-sm-4 my-3 my-sm-0 d-flex align-items-center justify-content-center">
             <div>
-              <a className="qrcode d-block rounded" title="استخدم ماسح رمز الاستجابة السريعة QR للحصول على رابط PDF المباشر" href="https://invotools.io?invoice-directlink=TEST" target="_blank">
+              <a className="qrcode d-inline-block rounded" title="استخدم ماسح رمز الاستجابة السريعة QR للحصول على رابط PDF المباشر" href="https://invotools.io?invoice-directlink=TEST" target="_blank">
                 <img src="/invoice-css/assets/images/being-qr.svg" width="110" alt="رمز الاستجابة السريعة" />
               </a>
               <span className="small clear text-center d-block pt-1">أدوات invotools.io/q/az51</span>
@@ -136,7 +136,7 @@ const InvoiceLayout = () => {
         </div>
         <div className="row m-0 p-sm-2 p-lg-2 text-center text-sm-start order-info-row2 ">
             <div className="col-sm-4 my-3 my-sm-0 d-flex align-items-center justify-content-center ">
-                <div><a className="qrcode d-block rounded"
+                <div><a className="qrcode d-inline-block rounded"
                         title="استخدم ماسح رمز الاستجابة السريعة QR للحصول على رابط PDF المباشر"
                         href="https://invotools.io?invoice-directlink=TEST" target="_blank"><img
                             src="/invoice-css/assets/images/being-qr.svg" width="110"

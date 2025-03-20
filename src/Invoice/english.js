@@ -58,7 +58,7 @@ const InvoiceLayout = () => {
             <div className="row m-0 p-sm-2 p-lg-2 text-center text-sm-start order-info-row2 ">
                 <div className="col-sm-4 my-3 my-sm-0 d-flex align-items-center justify-content-center ">
                     <div>
-                        <a className="qrcode d-block rounded" title="Use QR code Scanner for the live PDF link" href="https://invotools.io?invoice-directlink=TEST" target="_blank">
+                        <a className="qrcode d-inline-block rounded" title="Use QR code Scanner for the live PDF link" href="https://invotools.io?invoice-directlink=TEST" target="_blank">
                           <img src="/invoice-css/assets/images/being-qr.svg" width="110" alt="QR code" />                    
                         </a>
                         <span className="small clear text-center d-block pt-1">invotools.io/q/az51</span>
