@@ -37,7 +37,7 @@ const InvoiceHindi = () => {
             <div className="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom order-info-row1">
                 <div className="col-sm-4 ps-lg-4 text-end">
                     <span className="d-block "><h4 className="text-uppercase d-inline-block ">رقم الفاتورة : </h4>
-                    <p className="d-inline-block pe-2 pe-sm-1">#FADZZ</p>
+                    <p className="d-inline-block pe-2 pe-sm-1">#852352</p>
                     </span>
                     <h4 className="clear text-uppercase d-inline-block ">تاريخ : </h4>
                     <p className="d-inline-block pe-2 pe-sm-1">الجمعة 9 أغسطس2023</p>

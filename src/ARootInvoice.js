@@ -171,17 +171,28 @@ useEffect(() => {
       return res.text();
     })
     .then((data) => {        
-      setHtmlContent(data);
+      // Get today's date in the required format
+      const today = new Date();
+      const formattedDate = today.toLocaleDateString("en-US", {
+        weekday: "long",
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
+
+      // Use regex to replace date inside <p class="... today-date ...">
+      const updatedHtml = data.replace(
+        /<p([^>]*\btoday-date\b[^>]*)>.*?<\/p>/g, 
+        `<p$1>${formattedDate}</p>`
+      );
+
+      setHtmlContent(updatedHtml);
     })
     .catch(() => {
       setHtmlContent(""); // Clear HTML content on error
     });
 }, [filePath]); // Depend on `filePath`
 
-  const [modalData, setModalData] = useState({
-    title: "",
-    image: "",
-  });
 
 
   return (

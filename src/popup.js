@@ -248,7 +248,7 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
                     </Drawer>
 
                     <Dialog id="mypopup" open={popupOpen} onClose={closePopup} aria-labelledby="popup-title" dir={language === 'arabic'?'rtl':''}>
-                      <style dangerouslySetInnerHTML={{ __html: selectedPopup.contentHTML  }} style={{overflow: 'hidden'}} />
+                      <style dangerouslySetInnerHTML={{ __html: selectedPopup.iframeHTML  }} style={{overflow: 'hidden'}} />
                       <h2 id="popup-title" className='flex-center'>
                         <span style={{paddingRight:'1em'}}>{selectedPopup.title}</span>
                         <a onClick={closePopup} aria-label="close" className='d-inline-block line-height-normal cursor-pointer' href="#">
@@ -256,7 +256,7 @@ function PopupPage({ activeTheme, font, clientid, clientName, invoiceid,language
                         </a>           
                       </h2>
                       <div className='popup-body'>              
-                          {selectedPopup.contentHTML && ( <div className='t-c' dangerouslySetInnerHTML={{ __html: selectedPopup.contentHTML  }} style={{overflow: 'hidden'}} />  )}
+                          {selectedPopup.iframeHTML && ( <div className='t-c' dangerouslySetInnerHTML={{ __html: selectedPopup.iframeHTML  }} style={{overflow: 'hidden'}} />  )}
                           {selectedPopup.contentCSS && ( <style dangerouslySetInnerHTML={{ __html: selectedPopup.contentCSS }} />  )}
                         
                       </div>   

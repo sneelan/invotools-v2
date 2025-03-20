@@ -58,12 +58,10 @@ function ColumnComponent({ column, grid, sm, md, lg, length, columnclass, rowInd
   
   const InnerContent = (   
     <>
-    {column.contentHTML && ( <div className='t-c h-100' dangerouslySetInnerHTML={{ __html: column.contentHTML }} style={{overflow: 'hidden', xlineHeight:'50%'}} />  )}
+    {column.iframeHTML && ( <div className='t-c h-100' dangerouslySetInnerHTML={{ __html: column.iframeHTML }} style={{overflow: 'hidden', xlineHeight:'50%'}} />  )}
     {column.contentCSS && ( <style className='t-c' dangerouslySetInnerHTML={{ __html: column.contentCSS }} />  )}
     </>
     );
-  
-
     const handleChange = () => {
       setExpanded(!expanded);//accordion
     }; 

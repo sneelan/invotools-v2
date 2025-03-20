@@ -40,10 +40,10 @@ const InvoiceLayout = () => {
             <div className="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom order-info-row1">
                 <div className="col-sm-4 ps-lg-4 pb-2 pb-md-0">
                     <span className="d-block "><h6 className="d-inline-block fw-bold mb-2">INVOICE NO : </h6>
-                    <p className="d-inline-block ps-2 ps-sm-0">&nbsp;#FADZZ</p>
+                    <p className="d-inline-block ps-2 ps-sm-0">&nbsp;#852352</p>
                     </span>
                     <h6 className="clear d-inline-block fw-bold">DATE : </h6>
-                    <p className="d-inline-block ps-2 ps-sm-0">&nbsp;Friday 14, Mar 2025</p>
+                    <p className="d-inline-block ps-2 ps-sm-0 today-date">&nbsp;Friday 14, Mar 2025</p>
                 </div>
                 <div className="col-sm-4 d-sm-flex align-items-center justify-content-center xpy-2 pt-sm-0">
                     <img src="/invoice-css/assets/images/bar-code.png" className="img-fluid" alt="bar code" />
@@ -52,7 +52,7 @@ const InvoiceLayout = () => {
                     <h6 className="d-inline-block fw-bold mb-2">ORDER NUMBER : </h6>
                     <p className="d-inline-block ps-2 ps-sm-0">&nbsp;OD56522</p>                        
                     <br/><h6 className="clear d-inline-block fw-bold">DATE : </h6>
-                    <p className="d-inline-block ps-2 ps-sm-0">&nbsp;Friday 14, Mar 2025</p>
+                    <p className="d-inline-block ps-2 ps-sm-0 today-date">&nbsp;Friday 14, Mar 2025</p>
                 </div>
             </div>
             <div className="row m-0 p-sm-2 p-lg-2 text-center text-sm-start order-info-row2 ">

@@ -7,7 +7,7 @@
 			"title": "Downloading PDF file now",
 			"width": "500",
 			"height": "200",
-			"contentHTML": "<div style=\"padding:2em ;\"></br></br></br></br></br><b>Downloading is progresss. please wait....<b></div>",
+			"iframeHTML": "<div style=\"padding:2em ;\"></br></br></br></br></br><b>Downloading is progresss. please wait....<b></div>",
 			"contentCSS": "",
 			"displayOrder": "1",
 			"displayStatus": "active",
@@ -25,7 +25,7 @@
 			"title": "Make Payment through Stripe",
 			"width": "",
 			"height": "",
-			"contentHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/payment-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/payment-desk.png\"></a><div/>",
+			"iframeHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/payment-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/payment-desk.png\"></a><div/>",
 			"contentCSS": "",
 
 			"displayOrder": "1",
@@ -55,7 +55,7 @@
 			"title": "Send Invoice",
 			"width": "",
 			"height": "",
-			"contentHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"/img/pop/share.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"/img/pop/share.png\"></a> <div/>",
+			"iframeHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"/img/pop/share.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"/img/pop/share.png\"></a> <div/>",
 			"contentCSS": "",
 			"iconSVGCode": "<svg  width=\"24\" height=\"24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><title>share-variant</title><path d=\"M21,12L14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12Z\" /></svg>"			
 		},
@@ -73,7 +73,7 @@
 			"title": "Save to drive",
 			"width": "",
 			"height": "",
-			"contentHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/save-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/save-desk.png\"></a><div/>",
+			"iframeHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/save-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/save-desk.png\"></a><div/>",
 			"contentCSS": "",
 			"iconSVGCode": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10.6667 5.33333H1.77778V1.77778H10.6667M8 14.2222C7.29276 14.2222 6.61448 13.9413 6.11438 13.4412C5.61428 12.9411 5.33333 12.2628 5.33333 11.5556C5.33333 10.8483 5.61428 10.17 6.11438 9.66994C6.61448 9.16984 7.29276 8.88889 8 8.88889C8.70724 8.88889 9.38552 9.16984 9.88562 9.66994C10.3857 10.17 10.6667 10.8483 10.6667 11.5556C10.6667 12.2628 10.3857 12.9411 9.88562 13.4412C9.38552 13.9413 8.70724 14.2222 8 14.2222ZM12.4444 0H1.77778C0.791111 0 0 0.8 0 1.77778V14.2222C0 14.6937 0.187301 15.1459 0.520699 15.4793C0.854097 15.8127 1.30628 16 1.77778 16H14.2222C14.6937 16 15.1459 15.8127 15.4793 15.4793C15.8127 15.1459 16 14.6937 16 14.2222V3.55556L12.4444 0Z\" /></svg>"
 		},
@@ -91,7 +91,7 @@
 			"title": "Feedback",
 			"width": "",
 			"height": "",
-			"contentHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/feedback-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/feedback-desk.png\"></a><div/>",
+			"iframeHTML": "<div class=\"\"><a href=\"#\"><img class=\"py-1 d-md-none img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/feedback-mobile.png\"><img  class=\"d-none d-md-block p-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/feedback-desk.png\"></a><div/>",
 			"contentCSS": "",
 			"iconSVGCode": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M6.3 18C6.06131 18 5.83239 17.9052 5.6636 17.7364C5.49482 17.5676 5.4 17.3387 5.4 17.1V14.4H1.8C1.32261 14.4 0.864773 14.2104 0.527208 13.8728C0.189642 13.5352 0 13.0774 0 12.6V1.8C0 0.801 0.81 0 1.8 0H16.2C16.6774 0 17.1352 0.189642 17.4728 0.527208C17.8104 0.864773 18 1.32261 18 1.8V12.6C18 13.0774 17.8104 13.5352 17.4728 13.8728C17.1352 14.2104 16.6774 14.4 16.2 14.4H10.71L7.38 17.739C7.2 17.91 6.975 18 6.75 18H6.3ZM13.5 8.1V6.3H11.7V8.1H13.5ZM9.9 8.1V6.3H8.1V8.1H9.9ZM6.3 8.1V6.3H4.5V8.1H6.3Z\" /></svg>"
 		},
@@ -109,7 +109,7 @@
 			"title": "Contact us",
 			"width": "",
 			"height": "",
-			"contentHTML": "<div class=\"\"><a href=\"#\" target\"_blank\"><img class=\"py-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/contact.png\"><a/><div/>",
+			"iframeHTML": "<div class=\"\"><a href=\"#\" target\"_blank\"><img class=\"py-1 img-fluid\" src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/contact.png\"><a/><div/>",
 			"contentCSS": "",
 			"iconSVGCode": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M3.21778 6.92444C4.49778 9.44 6.56 11.5022 9.07556 12.7822L11.0311 10.8267C11.28 10.5778 11.6267 10.5067 11.9378 10.6044C12.9333 10.9333 14 11.1111 15.1111 11.1111C15.3469 11.1111 15.573 11.2048 15.7397 11.3715C15.9064 11.5382 16 11.7643 16 12V15.1111C16 15.3469 15.9064 15.573 15.7397 15.7397C15.573 15.9064 15.3469 16 15.1111 16C11.1034 16 7.25983 14.4079 4.42594 11.5741C1.59206 8.74017 0 4.89661 0 0.888889C0 0.653141 0.0936505 0.427048 0.260349 0.260349C0.427048 0.0936505 0.653141 0 0.888889 0H4C4.23575 0 4.46184 0.0936505 4.62854 0.260349C4.79524 0.427048 4.88889 0.653141 4.88889 0.888889C4.88889 2 5.06667 3.06667 5.39556 4.06222C5.49333 4.37333 5.42222 4.72 5.17333 4.96889L3.21778 6.92444Z\" /></svg>"
 		},
@@ -127,7 +127,7 @@
 			"title": "",
 			"width": "",
 			"height": "",			
-			"contentHTML": "",
+			"iframeHTML": "",
 			"contentCSS": "",
 			"iconSVGCode": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M16 10V16C16 16.5304 15.7893 17.0391 15.4142 17.4142C15.0391 17.7893 14.5304 18 14 18H2C1.46957 18 0.960859 17.7893 0.585786 17.4142C0.210714 17.0391 0 16.5304 0 16V4C0 3.46957 0.210714 2.96086 0.585786 2.58579C0.960859 2.21071 1.46957 2 2 2H8V4H2V16H14V10H16ZM10 0V2H14.586L6.793 9.793L8.207 11.207L16 3.414V8H18V0H10Z\" fill=\"black\"/></svg>"
 		},
@@ -145,7 +145,7 @@
 			"title": "Chat Now",
 			"width": "",
 			"height": "",			
-			"contentHTML": "<div class=\"p-0\"><img class=\"img-fluid\" style=\"background-color: #eaeef3;\"src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/chat2.png\"> <div class=\"d-none d-lg-block\" style=\"background-color: #eaeef3;\"></br></br></br></br></br></br></div> </div><form id=\"myForm\">\n  <textarea placeholder=\"Enter your message and press enter.\" type=\"text\" ></textarea>\n  <div class=\"arrow-icon flex-center h-100\" id=\"sendButton\">&#10132;</div>\n</form> <div class=\"t-c p-1\" style=\"background-color:#6a6a6a;font-size:12px;color:#d9d9d9;\">Powered by chatbot</div>    <style>\n #myForm{\n  background-color: #1e1e1e; padding:0;display: flex;\n  align-items: center;\n  width: 100%;\n  padding: 0;height:60px;\n}\n\n #myForm textarea {\n  flex: 1;\n  width: 100%; height: 60px;padding: 8px;\n  border: 1px solid #ccc;\n  border-radius: 0px;\n  outline: none;\n}\n\n #myForm input::placeholder {\n  color: #aaa;\n}\n\n #myForm .arrow-icon {\n  padding: 8px; color:white;cursor: pointer; } #myForm .arrow-icon:hover {transition:0s;background-color:#0066ff;} #mypopup{top:unset;left:unset;} #mypopup .popup-body{} </style>",
+			"iframeHTML": "<div class=\"p-0\"><img class=\"img-fluid\" style=\"background-color: #eaeef3;\"src=\"https://uxdemo.ayatacommerce.com/invotools/invoice-templates/modern-v1/assets/images/popup/chat2.png\"> <div class=\"d-none d-lg-block\" style=\"background-color: #eaeef3;\"></br></br></br></br></br></br></div> </div><form id=\"myForm\">\n  <textarea placeholder=\"Enter your message and press enter.\" type=\"text\" ></textarea>\n  <div class=\"arrow-icon flex-center h-100\" id=\"sendButton\">&#10132;</div>\n</form> <div class=\"t-c p-1\" style=\"background-color:#6a6a6a;font-size:12px;color:#d9d9d9;\">Powered by chatbot</div>    <style>\n #myForm{\n  background-color: #1e1e1e; padding:0;display: flex;\n  align-items: center;\n  width: 100%;\n  padding: 0;height:60px;\n}\n\n #myForm textarea {\n  flex: 1;\n  width: 100%; height: 60px;padding: 8px;\n  border: 1px solid #ccc;\n  border-radius: 0px;\n  outline: none;\n}\n\n #myForm input::placeholder {\n  color: #aaa;\n}\n\n #myForm .arrow-icon {\n  padding: 8px; color:white;cursor: pointer; } #myForm .arrow-icon:hover {transition:0s;background-color:#0066ff;} #mypopup{top:unset;left:unset;} #mypopup .popup-body{} </style>",
 			"contentCSS": "",
 			"iconSVGCode": "<svg width=\"21\" height=\"21\" viewBox=\"0 0 21 21\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M18.1665 0.916504H2.83317C2.32484 0.916504 1.83733 1.11844 1.47788 1.47788C1.11844 1.83733 0.916504 2.32484 0.916504 2.83317V20.0832L4.74984 16.2498H18.1665C18.6748 16.2498 19.1623 16.0479 19.5218 15.6885C19.8812 15.329 20.0832 14.8415 20.0832 14.3332V2.83317C20.0832 2.32484 19.8812 1.83733 19.5218 1.47788C19.1623 1.11844 18.6748 0.916504 18.1665 0.916504ZM4.74984 7.62484H16.2498V9.5415H4.74984M12.4165 12.4165H4.74984V10.4998H12.4165M16.2498 6.6665H4.74984V4.74984H16.2498\" /></svg>"
 		}

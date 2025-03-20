@@ -36,7 +36,7 @@ const InvoiceSpanish = () => {
             <div className="row m-0 py-2 p-lg-2 text-center text-sm-start border-2 border-white border-bottom order-info-row1">
                 <div className="col-sm-4 ps-lg-4 ">
                     <span className="d-block "><h4 className="text-uppercase d-inline-block ">FACTURA NO :</h4>
-                    <p className="d-inline-block ps-2 ps-sm-0">#FADZZ</p>
+                    <p className="d-inline-block ps-2 ps-sm-0">#852352</p>
                     </span>
                     <h4 className="clear text-uppercase d-inline-block ">FECHA : </h4>
                     <p className="d-inline-block ps-2 ps-sm-0">viernes 9 agosto 2023</p>

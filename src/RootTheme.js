@@ -97,7 +97,7 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
         <div className='wrapper'>          
           {/* {simpleClient}+++{simpleTheme}+++ */}
               {renderSelectedComponent()}
-              <div id="setting" className={`setting-sticky invoice-wrap1 t-c p-1 ${isSettingOpen ? 'open' : ''}`}>
+              <div id="setting" className={`d-none d-lg-block setting-sticky invoice-wrap1 t-c p-1 ${isSettingOpen ? 'open' : ''}`}>
               <div>                  
                   <span id='setting-btn' onClick={toggleSetting}>
                         <span className={`${isSettingOpen ? 'd-none' : ''}`}>
@@ -192,12 +192,12 @@ const customStyles = selectedOption === 'mobile' || selectedOption === 'tablet' 
                             {/* <span className={`theme-btn ${activeTheme === 'diwali' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-diwali.png' onClick={() => handleButtonClick('diwali')}   /></span>
                             <span className={`theme-btn ${activeTheme === 'thanks' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-thanks.png' onClick={() => handleButtonClick('thanks')}   /></span>                             
                             
-                            <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
+                            
                            <span className={`theme-btn ${activeTheme === 'black' ? 'active' : ''}`} style={{backgroundColor:'#000000'}} onClick={() => handleButtonClick('black')}></span>
                             */}
                             
                            <span className={`theme-btn ${activeTheme === 'blue' ? 'active' : ''}`} style={{backgroundColor:'#005E80'}} onClick={() => handleButtonClick('blue')}></span>
-                           
+                           <span className={`theme-btn ${activeTheme === 'red' ? 'active' : ''}`} style={{backgroundColor:'#bd0009'}} onClick={() => handleButtonClick('red')}></span>
 
                            <span className={`theme-btn ${activeTheme === 'christmas' ? 'active' : ''}`} style={{ display: selectedLanguage === 'arabic' ? 'none' : '' }}><img src='/img/icon-xmas.png' onClick={() => handleButtonClick('christmas')}   /></span>
                           <span className={`theme-btn ${activeTheme === 'ads' ? 'active' : ''}`} ><img src='/img/icon-ads.png' onClick={() => handleButtonClick('ads')} /></span>
